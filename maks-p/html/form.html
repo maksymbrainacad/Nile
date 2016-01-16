@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>page with form</title>
+  </head>
+  <body>
+    <form action="index.html" method="POST" >
+      <input type="hidden" name="hiddenField" value="secret" />
+
+      <input type="text" name="require" disabled />
+
+      <select name="selectElement">
+        <option></option>
+        <option disabled value="one">one</option>
+        <option selected value="two">two</option>
+        <option value="three">three</option>
+      </select>
+
+      <div>
+        <textarea rows="" cols="" maxlength="140" name="richtext" placeholder="placeholder"
+        >text</textarea>
+      </div>
+
+      <input type="submit" value="send" />
+    </form>
+  </body>
+</html>
