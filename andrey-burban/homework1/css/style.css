@@ -1,0 +1,36 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/*HEADER*/
+h1{
+  text-align: center;
+  margin-top: 15px;
+}
+
+/*CONTENT*/
+.column{
+  display: inline-block;
+}
+.quiz{
+  margin: 20px 150px;
+}
+.radio{
+  padding: 20px;
+}
+.video{
+  float:right;
+  margin-top: 1px;
+}
+.text{
+  margin: 10px;
+}
+fieldset{
+  padding: 10px;
+}
