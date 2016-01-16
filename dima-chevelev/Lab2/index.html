@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+    <body>
+			<form action="index.html" method="POST">
+				<fieldset>
+					<legend>Personal</legend>
+						<div>
+							<input type="text" name="Usersname" id="Nameuser" placeholder="Your name">
+							<label for="Nameuser">Please write your name</label>
+						</div>
+
+						<div> 
+							<select name="City" id="YourCity">
+								<option value=""></option>
+								<option value="London" selected>London</option>
+								<option value="Paris">Paris</option>
+								<option value="NewYork">New York</option>
+							</select>
+							<label for="YourCity">Please choose your city</label>
+						</div>
+
+						<div>
+							<textarea name="address" id="youraddress" cols="30" rows="10">
+							</textarea>
+							<label for="youraddress">Please write your address</label>
+						</div>
+
+						<div> Do you want to respond?
+							<input type="radio" name="choose" value="yes">Yes
+							<input type="radio" name="choose" value="no" disabled>No
+						</div>
+						<div>
+							<input type="checkbox" name="18years" value="18years"> I am over 18 years old
+						</div>
+						<div>
+							<input type="submit" value="send">
+						</div>
+				</fieldset>
+			</form>
+
+        
+        <script src="js/main.js"></script>
+    </body>
+</html>
