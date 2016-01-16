@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User information</title>
+  </head>
+  <body>
+    <form action="data_base.html"
+          method="POST"
+          size="200">
+      <fieldset>
+        <legend align="center">Personal information</legend>
+          <div>
+            <label for="first_last name">Your name is</label>
+            <input id="first_last name" type="text" placeholder="Enter your name"/>
+          </div>
+          <br />
+        <div>
+          <label for="select_city">You live in</label>
+          <select id="select_city" name="selection of the residence city">
+            <option value="" ></option>
+            <option value='Kiev'>Kiev</option>
+            <option value='Lviv'>Lviv</option>
+            <option value='Dnipropetrovsk'>Dnipropetrovsk</option>
+            <option value='Vinnitsa'>Vinnitsa</option>
+          </select>
+        </div>
+        <div>
+          <label for="exact_address">And your exact address is</label>
+          <textarea id="exact_address" type="text" rows="1" cols="100" placeholder="You can write your address here"></textarea>
+        </div>
+        <br />
+        <fieldset>
+            <legend>Are you ready to check our content?</legend>
+              <label>
+                <input type="radio" name="answer" value="Yes"/>Yes
+              </label>
+          <br />
+            <label>
+              <input type="radio" name="answer" value="No" disabled="" />No
+            </label>
+        </fieldset>
+        <br />
+        <input type="submit" name="sending info" value="Send" alt="Click the button if you are ready to send data" />
+      </fieldset>
+    </form>
+  </body>
+</html>
