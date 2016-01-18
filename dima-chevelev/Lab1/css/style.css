@@ -1,0 +1,13 @@
+.header {
+	font: 30px Arial, sans-serif bold;
+	color: #fff;
+	background-color: #7EA6F4;
+	height: 100px;
+}
+
+.text {
+	font: 20px Arial, sans-serif normal;
+	color: #A7CDCC;
+	background-color: #004A55;
+	height: 150px;
+}
