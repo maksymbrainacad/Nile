@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Questions</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+       <form action="index.html" method="post"> <!--form-->
+         <fieldset>
+          <legend>Our perfect form</legend>
+
+         <br />
+         <fieldset>
+           <legend>Your personal info</legend>
+            <label>
+             Name <br /> <br />
+              <input type="text" name="name" placeholder="John"> <br /> <br />
+            </label>
+            <label>
+             Last Name <br /> <br />
+             <input type="text" name="last name" placeholder="Smith"> <br /> <br />
+            </label>
+            <label>
+            DOB <br /> </br>
+             <input type="number" step="1" min="1920" max="2000"> <br /> <br />
+            </label>
+          </fieldset>
+            <fieldset>
+              <legend>Where are you from?</legend>
+              <label>
+                <select class="origin2" name="country" multiple>
+                  <option value="Ukraine"> Ukraine </option>
+                  <option value="USA"> USA </option>
+                  <option value="Sweden"> Sweden </option>
+                  <option value="UK"> UK </option>
+                </select> <br /> <br />
+              </label>
+
+              Your home adress <br /> <br />
+            <textarea name="additional information" id="" cols="20" rows="5">
+            </textarea> <br /> <br />
+            <label>
+            </fieldset>
+              <fieldset>
+                <legend>Respond</legend>
+              <label>
+                <input type="radio" name="respond" value="Yes">Yes
+                <input type="radio" name="respond" value="No" disabled="">No
+
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Do you like our form?</legend>
+            <label>
+              <input type="radio" name="question" value="Yes"> Yes
+            </label>
+            <label>
+              <input type="radio" name="question" value="No"> No
+            </label>
+            <label>
+              <input type="radio" name="question" value="Maybe"> Maybe
+            </label> <br /> <br />
+          </fieldset>
+            <label>
+            <input type="checkbox">I agree with the terms and conditions
+          </label> <br /> <br />
+              <input type="submit" value="send form">
+    </fieldset>
+      </form>
+      <div>
+      <table border="1"> <!--table-->
+
+        <caption>Programing languages</caption>
+        <tr>
+          <th>Id</th>
+          <th colspan="2">Year of studying</th>
+          <th rowspan="3">language</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td colspan="2">1990</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td colspan="2">1995</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td colspan="1">2000</td>
+          <td colspan="2">node.js</td>
+        </tr>
+      </table>
+    </div>
+    </body>
+  </html>
