@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RegistrationForm</title>
+    <link type="Registration_form.css" rel="stylesheet" href="../css/Registration_form.css" />
+  </head>
+  <body>
+    <div id="Registration_Form">
+     <h2>Зарегистрируйтесь</h2>
+     <form action="Registration_form.html"
+      method="POST"
+      name="name">
+      <fieldset>
+       <p>Как вас зовут?</p>
+       <div>
+         <input type="text"
+         name='1name'
+         placeholder="First name" />
+
+         <input type="text"
+         name='2name'
+         placeholder="Last name" />
+       </div>
+
+       <p>Имя пользователя</p>
+       <div>
+        <input type="text"
+        name='UserName'
+        placeholder="@gmail.com" />
+       </div>
+       <p>Придумайте пароль</p>
+       <div>
+        <input type="password"
+        name='password'
+        placeholder='Password' />
+        <input type="password"
+        name='password'
+        placeholder="Confirm password" />
+       </div>
+       <p>Дата рождения</p>
+       <div>
+        <input type="text"
+        name="day"
+        placeholder="day" size="2">
+        <select name="month">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <input type="text"
+        name="year"
+        placeholder="year" size="3">
+      </div>
+      <p>Пол</p>
+      <div>
+        <label>Man<input type="radio" name="sex" value="Male"></label>
+        <label>Woman<input type="radio" name="sex" value="Female"></label>
+      </div>
+      <p>Докажите, что вы не робот:</p>
+        <p><label>Я не робот!
+          <input type="checkbox"
+          name="iAmNotRobot"
+          value=""
+          required />
+        </label>
+        </p>
+        <p>
+         <div>
+          <label>Я прочитал условия лицензионного соглашения
+           <input type="checkbox"
+           name="admit"
+           value=""
+           required />
+          </label>
+         </div>
+        </p>
+        <p>О себе:</p>
+        <div>
+          <textarea name="about" rows="8" cols="40" maxlength="300"></textarea>
+        </div>
+        <div>
+         <input type="submit" value="Зарегистрироваться">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,98 @@
+table {
+  background-image: linear-gradient(rgba(133, 24, 140, 0.4), rgba(127, 84, 130, 0.23)), url(../html/sins_images/background.jpg);
+}
+
+.no {
+  opacity: 0;
+}
+
+th {
+  font-size: 20px;
+  font-family: Helvetica;
+  color: 	#ffcce5;
+  text-shadow: 2px 3px 3px black;
+}
+
+tr {
+  align-content: center;
+  text-align: center;
+  color: #ffcce5;
+}
+
+h1 {
+  font-size: 20px;
+  font-family: Helvetica;
+  color: 	#66004c;
+  text-shadow: 5px 5px 7px black;
+  text-align: center;
+}
+
+#envy {
+  background-color: #29a329;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#sloth {
+  background-color: #3333ff;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#gluttony {
+  background-color: #d279a6;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#wrath {
+  background-color: #800000;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#pride {
+  background-color: #732673;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#lust {
+  background-color: #cc0052;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#greed {
+  background-color: #ffc34d;
+  border: 2px black solid;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
