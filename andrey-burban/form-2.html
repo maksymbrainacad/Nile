@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google form</title>
+  <style>
+    fieldset{
+      float: right;
+      background-color: lightgray;
+    }
+    .submit{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <fieldset style="width:362px";>
+      <form action="index.html" method="post">
+        <label>
+          <p>Как вас зовут</p>
+          <input type="text" name="Имя" placeholder="Имя" required>
+          <input type="text" name="Фамилия" placeholder="Фамилия" required>
+        </label>
+        <label>
+          <p>Придумайте имя пользователя</p>
+          <input type="text" name="Имя пользователя" placeholder="@gmail.com" size="45%" required>
+        </label>
+        <p><a href="https://accounts.google.com/SignUp?hl=ru">Использовать текущий адрес эл. почты</a></p>
+        <label>
+          <p>Придумайте пароль</p>
+          <input type="password" name="пароль" size="45%" required>
+        </label>
+        <label>
+          <p>Подтвердите пароль</p>
+          <input type="password" name=" подтвердите пароль" size="45%" required>
+        </label>
+        <table>
+            <tr>
+              <td>Дата рождения</td>
+            </tr>
+            <tr>
+            <td><input type="text" name="день" placeholder="день" size="10%"required></td>
+            <td><select name="месяц" required="">
+                <option value="месяц">месяц</option>
+                <option value="январь">январь</option>
+                <option value="февраль">февраль</option>
+                <option value="март">март</option>
+                <option value="апрель">апрель</option>
+                <option value="май">май</option>
+                <option value="июнь">июль</option>
+                <option value="июль">июль</option>
+                <option value="август">август</option>
+                <option value="март">сентябрь</option>
+                <option value="март">октябрь</option>
+                <option value="март">ноябрь</option>
+                <option value="март"декабрь</option>
+              </select> </td>
+            <td><input type="text" name="год" placeholder="год" size="12%" required=""></td>
+          </tr>
+        </table>
+            <label>
+            <p>Пол</p>
+                 <select name="пол">
+              <option value="...">...</option>
+              <option value="женский">Женский</option>
+              <option value="мужской">Мужской</option>
+              <option value="не указан">Не указан</option>
+                </select>
+            </label>
+          <label>
+            <p>Мобильный телефон</p>
+            <p><input type="text" name="мобильный телефон" size="45%" required></p>
+          </label>
+          <label>
+            <p>Запасной адрес эл. почты</p>
+            <p><input type="text" name="эл. почта" size="45%" required></p>
+          </label>
+            <p>Докажите, что вы не робот</p>
+            <p><input type="checkbox" name="чекбокс"> Пропустить эту проверку. Может <br /> потребоваться проверка по телефону.</p>
+        </label>
+        <fieldset>
+          <label>
+          <img src="https://www.google.com/recaptcha/api/image?c=03AHJ_Vuv3I4fzbs7NFc875J3k-KDrABJ5zT_tcQMAi7HVTl8i0-hEmZRRupwEH7DbCvkSzKQtdgzpsG_LWH3O2DNMIBoc-Rg-nyEtD4_KSCiUaAPn0SDS1lVYY62lOrOWT8GueLKKwf_VcZsSWMUVar9Uy56AB4n1zaS_7WtnJHNXC9DyImlv1JQlsDLWWXfdqqruhlh40-oAvXVOyf7kWipflXq-a7x1EsULjbIuU1VB5dOCpVB5oDg" alt="капча">
+          Введите текст:</p>
+          <input type="text" name="капча" size="45%" required>
+        </label>
+        </fieldset>
+        <label>
+          <p>Страна</p>
+          <select name="страна">
+            <option value="Украни">Украина</option>
+            <option value="США">США</option>
+            <option value="Швеция">Швеция</option>
+          </select>
+        </label> <br /> <br />
+        <label>
+          <input type="checkbox"> Я принимаю <span><a href="https://www.google.com.ua/intl/ru/policies/terms/regional.html">Условия использования</a></span> и соглашаюсь с <a href="https://www.google.com.ua/intl/ru/policies/privacy/">политикой конфединциальности</a> Google.
+        </label> <br /> <br />
+        <label>
+          <input type="submit" value="Далее" class="submit">
+        </label>
+     </form>
+    </fieldset>
+  </div>
+</body>
+</html>
