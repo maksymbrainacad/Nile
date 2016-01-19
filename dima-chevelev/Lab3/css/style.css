@@ -1,0 +1,129 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+html {height: 100%;} 
+
+body {
+	height: 100%;
+	font: 14px/18px 'Times New Roman', Times, sans-serif;
+	background-color: #FFF;
+}
+ 
+ol, ul {
+	list-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+a, a:hover {text-decoration: none;}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {clear: both;}
+
+.left {float:left;}
+.right {float:right;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+
+
+
+
+fieldset {
+	text-align: center;
+	margin: 30px 0 0 500px;
+	width: 400px;
+	padding: 15px;
+	background-color: #f1f1f1;
+}
+
+p.header {
+	text-align: center;
+	margin-top: 30px;
+	font: 38px "Open Sans Condensed", sans-serif;
+}
+
+p {
+	font: 13px Arial, sans-serif;
+	font-weight: bold;
+	text-align: left;
+	margin: 0 0 3px 35px;
+}
+
+input {
+	padding-left: 5px;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+input:hover {
+	border: solid 1px #2F3847;
+}
+
+
+#form input[name="username"],
+#form input[name="usersurname"] {
+	width: 145px;
+	margin-right: 6px;
+}
+
+#form input[name="email"],
+#form input[name="userpassword"],
+#form textarea {
+	width: 300px;
+}
+
+#form input[name="userday"] {
+	width: 90px;
+}
+
+#form input[name="useryear"] {
+	width: 110px;
+}
+
+#form select {
+	height: 30px;
+}
+
+#form input[type="submit"] {
+	margin-top: 10px;
+	height: 30px;
+	width: 100px;
+	background-color: #4a8dfb;
+	border: none;
+	color: white;
+}
+
+#form input[type="submit"]:hover {
+	background-color: #297acc;
+}
