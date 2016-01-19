@@ -1,0 +1,49 @@
+
+body {
+
+  /*background-color: grey;
+  background-image: url(../img/5.jpg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-attachment: fixed;
+  вместо указанного выше используем код указанный ниже*/
+   background: grey url(../img/5.jpg) no-repeat top right fixed;
+}
+
+a,
+a:link,
+a:hover {
+  color: yellow;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.main {
+  height: 400px;
+  width: 400px;
+  background-color: rgba(255,0,0,0.5);
+}
+
+.one {
+  color: #df56cd;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.two {
+  text-align: right;
+  text-decoration: line-through;
+  font-size: 22px;
+  text-shadow: 5px 1px 2px
+}
+
+.three {
+  text-indent: 50px;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
