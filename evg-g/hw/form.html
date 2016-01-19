@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Регистрация Пользователя</title>
+    <link rel="stylesheet" href="style.css" />
+    <style media="all">
+      #wrapper {
+        width: 600px;
+        margin: 0 auto;
+      }
+
+      #header {
+        text-align: center;
+      }
+
+      #form-r {
+        background: #e2e2e2;
+      }
+
+      #table-form {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      td {
+        background: #f1f1f1;
+        width: 25%;
+        margin: 0 auto;
+
+      }
+      input {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+      <header>
+        <h1>Заполните Форму Регистрации</h1>
+      </header>
+     </div>
+     <div id="form-regisration">                                                 <!-- Форма регистрации -->
+       <form id="form-r" action="bigBrother.html" method="post">
+         <table id="table-form">
+           <caption>Регистрация пользователя</caption>
+           <tr>
+             <td colspan="2">                                                    <!-- Имя -->
+               <label for="user-name">Как вас зовут</label> <br />
+               <input type="text" id="user-name" name="user-name" placeholder="Имя" required/>
+             </td>
+             <td colspan="2">                                                    <!-- Фамилия -->
+               <input type="text" id="user-surname" name="user-surname" placeholder="Фамилия" required/>
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Имя пользователя -->
+               <label for="nick-name">Придумайте имя пользователя</label> <br />
+               <input type="text" id="nick-name" name="nick-name" placeholder="@gmail.com" required/> <br />
+               <label for="nick-name">
+                 <a href="#">Использовать текущий адрес эл. почты</a>
+               </label>
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Пароль пользователя-->
+               <label for="user-password">Придумайте пароль</label> <br />
+               <input type="password" id="user-password" name="user-password" required />
+             </td>
+           <tr>
+             <td colspan="4">                                                    <!-- Подтверждение пароля пользователя-->
+               <label for="user-password-confirm">Подтвердите пароль</label> <br />
+               <input type="password" id="user-password-confirm" name="user-password-confirm" required />
+             </td>
+           </tr>
+           <tr>
+             <td>                                                                <!-- Дата рождения-->
+               <label for="data-birdth">Дата рождения</label> <br />
+               <input type="text" id="data-birdth" name="data-birdth" placeholder="День" required /> <!-- День рождения-->
+             </td>
+             <td colspan="2">                                                    <!-- Месяц рождения-->
+               <select id="month-birdth" name="month-birdth" required>
+                 <option value="месяц" disabled="disabled" selected="selected">месяц</option>
+                 <option value="январь">январь</option>
+                 <option value="февраль">февраль</option>
+                 <option value="март">март</option>
+                 <option value="апрель">апрель</option>
+                 <option value="май">май</option>
+                 <option value="июнь">июнь</option>
+                 <option value="июль">июль</option>
+                 <option value="август">август</option>
+                 <option value="сентябрь">сентябрь</option>
+                 <option value="октябрь">октябрь</option>
+                 <option value="ноябрь">ноябрь</option>
+                 <option value="декабрь">декабрь</option>
+               </select>
+             </td>
+             <td>
+               <input type="text" id="year-birdth" name="year-birdth" placeholder="год" required />  <!-- Год рождения -->
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Пол -->
+               <label for="user-sex">Пол</label> <br />
+               <select id="user-sex" name="user-sex" required >
+                 <option value="..." disabled="disabled" selected="selected">...</option>
+                 <option value="Женский">Женский</option>
+                 <option value="Мужской">Мужской</option>
+                 <option value="Не указан">Не указан</option>
+               </select>
+             </td>
+           </tr>
+           <tr>
+             <td>                                                                <!-- Телефон пользователя-->
+               <label for="user-phone">Мобильный телефон</label> <br />
+               <select id="user-phone" name="user-phone" required>
+                 <option value="Country-phone" disabled="disabled" selected="selected">Страна</option>
+                 <option value="Ukraine-phone">Украина</option>
+                 <option value="Russian-phone">Россия</option>
+                 <option value="Romania-phone">Румыния</option>
+               </select>
+             </td>
+             <td colspan="3">
+               <input type="tel" id="user-phon-number" name="user-phon-number" placeholder="ваш номер" required/>
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Запасной адрес эл. почты-->
+               <label for="extra-email">Дополнительный адрес эл. почты</label> <br />
+               <input type="email" id="extra-emaile" name="extra-emaile" placeholder="ваш имейл" required/>
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Проверка на робота-->
+               <label for="no-robot">Докажите, что вы не робот</label> <br />
+               <input type="checkbox" id="no-robot" name="no-robot" value="no-robot" />
+               <label for="no-robot">Пропустить эту проверку. Может потребоваться проверка по телефону.</label>
+             </td>
+            <tr>
+             <td colspan="4">
+               <img src="image/capcha.png" alt="гадом буду я не робот" />
+             </td>
+           </tr>
+           <tr>
+             <td colspan="3">
+               <label for="capcha-text">Введите текст с картинки:</label> <br />
+               <input type="text" id="capcha-text" name="capcha-text" required />
+             </td>
+             <td>
+               <img src="image/icon.png" alt="иконки капчи" />
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Страна проживания-->
+               <label for="country">Страна</label> <br />
+               <select id="country" name="country" required>
+                 <option value="Country-live" disabled="disabled" selected="selected">Где вы постоянно проживаете</option>
+                 <option value="Ukraine-live">Украина</option>
+                 <option value="Russia-live">Россия</option>
+                 <option value="Romania-live">Румыния</option>
+               </select>
+             </td>
+           </tr>
+           <tr>
+             <td colspan="4">                                                    <!-- Принятие условий-->
+               <input type="checkbox" id="confirm" name="confirm" value="confirm" required />
+               <label for="confirm">
+                 Я принимаю <a href="#">Условия использования</a>
+                 и соглашаюсь с <a href="#">политикой конфиденциыльности</a>
+                 вашего сайта.
+               </label>
+             </td>
+           </tr>
+         </table>
+         <br />
+         <input type="reset" id="reset-button" name="reset-button" value="Сбросить">   <!-- Кнопка сброса -->
+         <input type="submit" id="submit-button" name="submit-button" value="Далее">   <!-- Кнопка далее-->
+       </form>
+       <a href="bigBrother.html">Для чего мы собираем эти данные?</a>                  <!-- Большой Брат )) -->
+     </div>
+    </div>
+  </body>
+</html>
