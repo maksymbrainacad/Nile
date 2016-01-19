@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    	<p class="header">Registration form</p>
+		<form id="form" action="index.html" method="POST">
+			<fieldset>
+				<div class="block contact-name">
+					<p>Name</p>
+					<input type="text" name="username" id="yourname" placeholder="First">
+					<input type="text" name="usersurname" id="yoursurname" placeholder="Last">
+				</div>
+				<div class="block contact-email">
+					<label for="useremail"><p>Choose your email</p></label>
+					<input type="text" name="email" id="useremail" placeholder="@gmail.com">
+				</div>
+				<div class="block contact-password">
+					<label for="yourpassword"><p>Create a password</p></label>
+					<input type="password" name="userpassword" id="yourpassword">
+				</div>
+				<div class="block contact-birthday">
+					<p>Birthday</p>
+					<input type="text" name="userday" id="yourday" placeholder="Day">
+					<select name="Month" id="yourmonth">
+						<option value="January">January</option>
+						<option value="February">February</option>
+						<option value="Marth">Marth</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						<option value="September">September</option>
+						<option value="October">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+					</select>
+					<input type="text" name="useryear" id="youryear" placeholder="Year">
+				</div>
+				<div class="block contact-comment">
+					<label for="yourcomment"><p>Your comment</p></label>
+					<textarea name="usercomment" id="yourcomment" cols="30" rows="10"></textarea>
+				</div>
+				<div class="block contact-sendform">
+					<input type="submit" value="Send">
+				</div>
+			</fieldset>
+		</form>
+   
+    </body>
+</html>
