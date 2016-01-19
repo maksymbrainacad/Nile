@@ -1,0 +1,20 @@
+form {
+  background-color: #e5ffff;
+  border-radius: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+#Registration_Form {
+  margin: auto;
+  display: block;
+  width: 450px;
+  height: auto;
+  border-radius: 100px;
+}
+
+fieldset {
+  border-radius: 30px;
+}
