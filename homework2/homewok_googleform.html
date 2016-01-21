@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>GoogleOForm</title>
+    <link rel="stylesheet" href="styles/styles.css" charset="utf-8">
   </head>
   <body>
     <div><img src="images/gl.png" alt="123" height="35" width="100" />
     </div>
-    <p><img src="images/gl2.png" alt="123" align="left" height="580" width="760"/></p>
-      <form action="index.html" method="post">
-        <fieldset>
+          <form action="index.html" method="post">
+      <div class="one">
           Как вас зовут
           <table>
             <tr>
@@ -23,10 +23,11 @@
           </table>
               <div>
                 Придумате имя пользователя
+              </div>
           <div>
               <input type="text" name="name" placeholder="@gmail.com">
           </div>
-          <div >
+          <div class="three">
             <a href="https://accounts.google.com/SignUpWithoutGmail?dsh=6693773413468090491&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount#FirstName=&LastName=">Использовать текущий адрес email</a>
           </div>
           Придумайте пароль
@@ -35,11 +36,11 @@
         </div>
         <div>
           Подтвердите пароль
+        </div>
           <div>
             <input type="text" name="name" >
           </div>
-        </div>
-        <div>
+              <div class="two">
         <table>  Дата рождения
           <tr>
             <td>
@@ -64,14 +65,14 @@
             </td>
           </tr>
         </table>
-        <div> Пол <div>
+      </div>
+         Пол <div>
           <input list="2" placeholder="..." >
           <datalist id="2">
             <option>мужской</option>
               <option>женский</option>
             </div>
-                  </div>
-                    <div> Номер телефона
+          <div> Номер телефона
                     </div>
         <div>  <input type="text" name="name" value="+380">
         </div>    <div> Дополнительный адрес эл. почты
@@ -98,7 +99,7 @@
           <input type="button" name="name" value="Далее">
           </div>
 
-                        </fieldset>
+        </div>
             </form>
     </div>
   </body>
