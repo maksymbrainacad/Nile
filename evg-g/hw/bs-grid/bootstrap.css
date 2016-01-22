@@ -1,0 +1,55 @@
+header {
+    text-align: center;
+    color: #e6e2eb;
+    padding-left: 155px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-image: url(image/bg.png);
+    width: 1200px;
+    height: 620px;
+}
+
+.general {
+    width: 800px;
+    position: absolute;
+    top: 127px;
+    left: 108px;
+
+}
+
+.line::after {                        /* Обнуление потока вывода */
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.line [class^="col-"] {
+    font-size: 14px;
+    height: 37.8px;
+    border: 1px solid #ddd8e5;
+    background-color: #e6e2eb;
+    float: left;
+    margin-bottom: 13px;
+    padding-left: 10px;
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+
+.col-md-12 {
+    width: 8.33333%;
+}
+
+.col-md-8 {
+    width: 66.66664%;
+}
+
+.col-md-6 {
+    width: 50%;
+
+}
+
+.col-md-4 {
+  width: 33.33333%;
+}
