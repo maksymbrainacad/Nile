@@ -26,7 +26,7 @@ header {
 }
 
 .line [class^="col-"] {
-    font-size: 14px;
+    font-size: 13px;
     height: 37.8px;
     border: 1px solid #ddd8e5;
     background-color: #e6e2eb;
