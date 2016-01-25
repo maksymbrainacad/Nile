@@ -1,0 +1,14 @@
+.list {
+  list-style-image: url(../image/rf.png);
+}
+
+.sprites .first-zombi {
+  width: 120px;
+  height: 130px;
+  background: url(../image/zs.png) no-repeat;
+  opacity: 0.5;
+}
+.sprites .second-zombi {
+
+  
+}
