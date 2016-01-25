@@ -1,0 +1,29 @@
+body {
+background-image: url(../images/gl2.png);
+background-repeat: no-repeat;
+}
+
+table{
+table-layout: fixed;
+width: 75%;
+
+
+}
+ .one{
+background-color: rgba(222,221, 221, 0.5);
+font-family: helvetica;
+margin-left: 60%;
+margin-right: 10%;
+font-size: 15px;
+
+ }
+
+ .two {
+background-color: red
+width: 90px;
+ }
+
+.three{
+
+
+}
