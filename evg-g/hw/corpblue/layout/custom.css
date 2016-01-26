@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url(image/bg/bgbody.jpg);
+  position: relative;
+}
+
+.top-line {                               /* Фон верхней линии*/
+  width: inherit;
+  height: 0.5%;
+  background-color: #7e7e7e;
+  position: absolute;
+  top: 0;
+}
+
+.bg-footer {                               /* Подвал*/
+  width: inherit;
+  height: 15%;
+  background-color: #7e7e7e;
+  position: absolute;
+  bottom: 0;
+}
+
+.wrapper {                             /* Обложка */
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #927698;
+}
+
+.header {                               /*Шапка Сайта*/
+  width: 100%;
+  height: 20%;
+  position: relative;
+  top: 10px;
+}
+
+.top {                                  /*Блок ТОР*/
+  width: inherit;
+}
+
+.top::after {                           /*Очистка потока вывода*/
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {                                  /*Логотип Верхний*/
+  float: left;
+  position: relative;
+  bottom: -10px;
+}
+
+.search {                               /*Блок поиска*/
+  float: right;
+  position: relative;
+  bottom: -10px;
+  width: 210px;
+  height: 32px;
+}
+
+.enter {
+  width: inherit;
+  height: inherit;
+}
+
+.enter::after {
+  content: '';
+  clear: both;
+  display: block;
+
+}
+
+.f-enter-search {
+  width: inherit;
+  height: inherit;
+}
+
+.enter-search {                           /*Поле ввода поиска*/
+
+  width: 160px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid #e7e7e7;
+  background: #f3f3f3;
+
+}
+
+.button-go {                               /*Кнопка поиска*/
+  float: right;
+  width: 42px;
+  height: inherit;
+  margin-right: 8px;
+}
+
+.go {
+  width: inherit;
+  height: inherit;
+  background: #29c5e6;
+  border-radius: 0;
+  border: none;
+}
+
+.menu {                                             /*Горизонтальное Меню */
+  font-size: 0px;
+  position: relative;
+  top: 10px;
+
+}
+.menu ul::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.menu ul li {
+  float: left;
+  height: auto;
+  width: 12.5%;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  list-style-type: none;
+
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #999;
+}
+
+.menu ul li:hover,
+.menu ul li a:hover {
+  color: #fff;
+  background-color: #29c5e6;
+}
+
+.menu ul li:hover {
+  display: block;
+}
+
+
+.project-menu li {                                  /* Выпадающее меню*/
+  display: none;
+  position: absolute;
+
+}
+
+
+.banner {                                            /* Блок Баннера */
+  height: 275px;
+  position: relative;
+  margin-top: 50px;
+  background-size: cover;
+  background-image: url(image/banner-home-first.jpg);
+}
