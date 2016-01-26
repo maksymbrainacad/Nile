@@ -33,7 +33,7 @@ body {
   width: 80%;
   height: 100%;
   margin: 0 auto;
-  background-color: #927698;
+  /* background-color: #927698; */
 }
 
 .header {                               /*Шапка Сайта*/
@@ -125,9 +125,7 @@ body {
   float: left;
   height: auto;
   width: 12.5%;
-  background-color: #f3f3f3;
   margin: 0;
-  padding: 10px 0;
   font-size: 14px;
   text-transform: uppercase;
   text-align: center;
@@ -138,23 +136,23 @@ body {
 .menu ul li a {
   text-decoration: none;
   color: #999;
+  display: block;
+  padding: 10px 0;
 }
 
-.menu ul li:hover,
 .menu ul li a:hover {
   color: #fff;
   background-color: #29c5e6;
-}
-
-.menu ul li:hover {
   display: block;
 }
 
-
-.project-menu li {                                  /* Выпадающее меню*/
+.project-menu {                                  /* Выпадающее меню*/
   display: none;
   position: absolute;
+}
 
+.menu ul li:hover .project-menu {
+  display: block;
 }
 
 
