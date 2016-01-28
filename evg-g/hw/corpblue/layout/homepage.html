@@ -2,76 +2,118 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>WiteSquare</title>
+    <title>WhiteSquare</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="custom.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="top-line"> </div>               <!-- Фон ТОР линии-->
-                                                <!-- Обложка -->
-    <div class="wrapper">
-      <header>
-        <div class="header">                    <!-- Шапка-->
-          <div class=top>                           <!-- Блок ТОР-->
-            <div class="logo">                        <!-- Логотип -->
-              <img src="image/logo/logoUp.png" alt="WhiteSquare" />
-            </div>
-            <div class="search">                      <!-- Поиск -->
-              <div class="enter">                        <!-- Поле Ввода в Поиск-->
-                <form class="f-enter-search" action="#" method="post">
-                  <input class="enter-search" type="text" name="enter-search" placeholder="Search" >
-                    <div class="button-go">               <!-- Кнопка Поиска-->
-                      <input class="go" type="submit" name="search-submit" value="GO">
-                    </div>
-                </form>
-              </div>
-            </div>
-          </div>                                    <!-- Конец Блок ТОР-->
-          <div class="menu">                        <!-- Блок Меню-->
-            <ul>
+    <!-- start wrapper -->
+    <div id="wrapper">
+      <!-- start top -->
+      <div id="top">
+        <div id="logo">
+          <img src="image/logo/logoUp.png" alt="WhiteSquare" />
+        </div>
+        <div id="search">
+          <form id="form-search" action="#" method="post">
+            <input id="input-search" class="borbackgrey" type="text" name="request-search" placeholder="search">
+            <input class="btn-go" type="submit" name="go" value="go">
+          </form>
+        </div>
+      </div>
+      <!-- end top -->
+      <!-- start menu -->
+      <div id="menu">
+        <ul class="borbackgrey">
+          <li>
+            <a href="#">home</a>
+          </li>
+          <li>
+            <a href="#">about us</a>
+          </li>
+          <li>
+            <a href="#">servises</a>
+          </li>
+          <li>
+            <a href="#">partners</a>
+          </li>
+          <li>
+            <a href="#">customers</a>
+          </li>
+          <li id="extra-menu">
+            <a href="#">projects ▼</a>
+            <ul class="dropdown">
               <li>
-                <a href="#">home</a>
+                <a href="#">1 projects</a>
               </li>
               <li>
-                <a href="#">about us</a>
+                <a href="#">2 projects</a>
               </li>
               <li>
-                <a href="#">services</a>
-              </li>
-              <li>
-                <a href="#">partners</a>
-              </li>
-              <li>
-                <a href="#">customers</a>
-              </li>
-              <li>
-                <a href="#">projects ▼</a>
-                  <ul class="project-menu">         <!-- Выпадающее меню-->
-                    <li>
-                      <a href="#">first project</a>
-                    </li>
-                    <li>
-                      <a href="#">second project</a>
-                    </li>
-                    <li>
-                      <a href="#">third project</a>
-                    </li>
-                  </ul>
-              </li>
-              <li>
-                <a href="#">careers</a>
-              </li>
-              <li>
-                <a href="#">contact</a>
+                <a href="#">3 projects</a>
               </li>
             </ul>
-          </div>                                    <!-- Конец Блок Меню-->
-        </div>
-      </header>
-      <div class="banner">                      <!-- Баннер -->
-    <!--    <img src="image/banner-home-first.jpg" alt="Реклама" /> -->
+          </li>
+          <li>
+            <a href="#">careers</a>
+          </li>
+          <li>
+            <a href="#">contact</a>
+          </li>
+        </ul>
       </div>
-    </div>                                      <!-- Конец Обложка -->
-                                                <!-- Фон подвала-->
-    <div class="bg-footer"> </div>
+      <!-- end menu -->
+      <!-- start banner -->
+      <div id="banner">
+        <img src="image/banner-home-first.jpg" alt="" />
+      </div>
+      <div id="banner-nav" class="borbackgrey">
+        <ul class="b-n">
+          <li>
+            <a href="#">
+              <span>1</span>
+              Lorem Ipsum Dolop
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>2</span>
+              Ultricies Pellentesque
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>3</span>
+              Aliquam ipsum
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>4</span>
+              Nullam sed mauris ut
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- end banner -->
+      <!-- start about -->
+      <div id="about" class="bg-line">
+        <h3>About WhiteSquare</h3>
+        <div class="g-l"></div>
+        <img src="image/square.png" alt="" />
+        <p>
+          In ultricies pellentesque massa a porta. Aliquam ipsum enim, hendrerit ut porta nec, ullamcorper et nulla. In eget mi dui, sit amet scelerisque nunc. Aenean augue arcu, convallis ac vulputate vitae, mollis non lectus. Donec hendrerit lacus ac massa ornare hendrerit sagittis lacus tempor. Vivamus et dui et neque accumsan varius et ut erat. Enean augue arcu, convallis ac ultrices.
+        </p>
+        <a href="#">Read more</a>
+      </div>
+      <!-- end about -->
+    </div>
+    <!-- end wrapper -->
+    <!-- start footer -->
+    <div id="footer">
+
+    </div>
+    <!-- end wrapper -->
   </body>
 </html>
