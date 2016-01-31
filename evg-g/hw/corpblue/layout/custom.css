@@ -25,9 +25,7 @@ body {
 /* 1.1 WRAPPER */
 #wrapper {
   width: 960px;
-  min-height: 1080px;
   margin: 0 auto;
-  /*background-color: green;*/
 }
 
 /* 1.2 TOP */
@@ -201,7 +199,6 @@ li#extra-menu:hover ul {
   margin-top: 32px;
   height: 588px;
   width: 960px;
-  background-color: red;
 }
 
 .main-content {
@@ -212,7 +209,6 @@ li#extra-menu:hover ul {
 .row-1 {
   height: 212px;
   width: 480px;
-  /*background-color: #a9eb2e;*/
   box-sizing: border-box;
   float: left;
 }
@@ -314,7 +310,6 @@ line-height: 1.5;
 .row-2 {
   height: 212px;
   width: 320px;
-  /*background-color: #a9eb2e;*/
   box-sizing: border-box;
   float: left;
 }
@@ -344,7 +339,6 @@ line-height: 1.2;
 .row-3 {                                       /*?????????????????????????????????????*/
   height: 164px;
   width: 960px;
-  /*background-color: #22ccc2;*/
   box-sizing: border-box;
 }
 
@@ -362,6 +356,87 @@ line-height: 1.2;
 .footer-wrap {
   height: 112px;
   width: 960px;
-  background-color: #40ed51;
   margin: 0 auto;
+}
+
+.footer-wrap::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.foot-col-1 {
+  height: 112px;
+  width: 288px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.foot-col-2 {
+  height: 112px;
+  width: 192px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.foot-h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.foot-line{
+  margin-left: 10px;
+}
+
+.foot-data {
+  font-size: 11px;
+  color: #c99;
+  padding-left: 10px;
+}
+
+.foot-p-c-1 {
+  font-size: 11px;
+  color: #ccc;
+  text-align: justify;
+  padding-left: 10px;
+  padding-top: 5px;
+  line-height: 1.2;
+}
+
+.social {
+  height: 54px;
+  width: 110px;
+  padding-left: 10px;
+  padding-top: 6px;
+}
+
+.map {
+  padding-left: 10px;
+  padding-top: 2px;
+  float: left;
+}
+
+.map-2 {
+  margin-left: 50px;
+}
+
+.map li {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.logo-f {
+  padding-left: 125px;
+  padding-top: 30px;
+}
+
+.foot-p-c-4 {
+  font-size: 10px;
+  color: #ccc;
+  padding-left: 96px;
+  padding-top: 10px;
 }
