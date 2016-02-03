@@ -206,6 +206,12 @@ li#extra-menu:hover ul {
   overflow: hidden;
 }
 
+.container::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
 .row-1 {
   height: 212px;
   width: 480px;
