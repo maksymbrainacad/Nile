@@ -47,9 +47,9 @@ input {
     border: 1px solid #e2e2e2;
 }
 
-.submit {
-    float: right;
+.submit { /* Убрала float: right*/
     position: absolute;
+    right: 0;
     height: 40px;
     width: 43px;
     background: #26c4e5;
