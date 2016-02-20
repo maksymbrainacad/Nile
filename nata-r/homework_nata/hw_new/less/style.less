@@ -10,11 +10,12 @@
 
 .nav {
   background-color: @color_nav;
-  height: 48px;
   .margings();
   .clearfix();
   position: fixed;
-  width: 60%;
+  width: 600px;
+  left: 0;
+  right: 0;
 }
 
 /*убираем коменты с класса, указанного ниже и коментим указанный выше и
@@ -24,7 +25,6 @@
 /*
 .nav-wide {
   background-color: @color_nav;
-  height: 50px;
   position: fixed;
   width: 100%;
 }
@@ -82,6 +82,7 @@
 .baner-texts {
   padding-bottom: 70px;
   padding-top: 120px;
+  width: 600px;
   .margings();
 }
 
@@ -99,13 +100,17 @@
 }
 
 .learn-more {
+  .margings();
+  width: 120px;
+  a {
   text-decoration: none;
   color: @color_text1;
   background-color: #404040;
   font-size: 10px;
   padding: 10px 25px;
-  margin-left: 40%;
 }
+}
+
 
 .content {
   width: 100%;
@@ -117,6 +122,7 @@
 .content-inner {
   .margings();
   .clearfix();
+  width:600px;
 }
 
 .article {
@@ -165,6 +171,7 @@
 .how {
   color: @color_text1;
   .margings();
+  width:600px;
     p {
       text-align: center;
       text-transform: uppercase;
@@ -176,6 +183,7 @@
 .container {
   .margings();
   .clearfix();
+  width:600px;
   padding: 20px 0 25px 0;
 }
 
@@ -189,6 +197,7 @@
   .margings();
   .clearfix();
   padding: 10px 5px 5px 5px;
+  width:600px;
 }
 
 .projects-big {
@@ -238,6 +247,7 @@
       .margings();
       padding-top: 5px;
       .clearfix();
+      width:600px;
     }
 }
 
