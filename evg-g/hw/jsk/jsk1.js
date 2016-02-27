@@ -122,7 +122,7 @@ alert (arr);
 var arrSort = [2, 65, 54, 8, 96, 73, 15];
 alert (arrSort.sort()); // отсортировать значения элементов массива по алфавиту
 
-arrSort.sort(function(a, b){    // отсортировать значения элементов массива по авозрастанию
+arrSort.sort(function(a, b){    // отсортировать значения элементов массива по возрастанию
   if (a<b) {
     return -1;
   }   else if (a>b) {
@@ -134,7 +134,7 @@ arrSort.sort(function(a, b){    // отсортировать значения �
 
 alert (arrSort);
 ========================================================
-*/                                        // обьекты
+                                        // обьекты
 var o = {lname: 'Doe', fname: 'Jone', age: 25};
 
 console.log(o);
@@ -143,3 +143,51 @@ console.log(o['fname']); // обращение к тому же элементу
 
 o.a = {b: { c: { d:{}}}}
 console.log(o);
+==========================================================
+
+var markerAvto = +prompt('Введите количество авто');
+
+var avto = [];
+
+for (var i = 0; i < markerAvto; i++) {
+  var firmName = prompt('Введите марку авто №'+i);
+  var modelName = prompt('Введите модель авто №'+i);
+  var engineDisplacement = +prompt('Введите обьем двигателя авто №'+i);
+  avto[i] = {firmName: firmName, modelName: modelName, engineDisplacement: engineDisplacement};
+}
+
+console.log(avto);
+
+for (var i = 0; i < markerAvto; i++) {
+  if (avto[i]['engineDisplacement'] >=2.0) {
+    console.log(avto[i]);
+  }
+}
+
+avto.sort(function(a, b) {
+    if (a.firmName < b.firmName) {
+      return -1;
+    } else if (a.firmName > b.firmName) {
+      return 1;
+    }
+
+    return 0;
+})
+
+console.log(avto);
+=====================================================
+*/
+function sum(x, y) {
+  return x+y;
+}
+
+//console.log(sum(1, 2));
+
+var sum1 = function() {
+  console.log(arguments);                        //arguments для передачи любого количества значений
+  console.log(arguments.length);                 // создает ПСЕВДО-МАССИВ, выглядит как массив и имеет длинну,
+  console.log(typeof arguments);                 // но прототипы не такие как у массива, и
+};
+
+sum1(1, 2);
+sum1(1, 2, 3, 4);
