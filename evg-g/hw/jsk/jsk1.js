@@ -176,14 +176,26 @@ avto.sort(function(a, b) {
 
 console.log(avto);
 =====================================================
-*/
+
 function sum(x, y) {
-  return x+y;
+  var result = 0;
+  i = 0;
+  counts = arguments.length;
+
+  for (; i < counts; i++) {
+    result += arguments[i];
+  }
+  return result;
 }
 
-//console.log(sum(1, 2));
+var sum1 = sum (1, 2);
+var sum2 = sum (1, 2, 3, 4);
+var sum3 = sum (1, 2, 3, 4, 5, 5, 55, 66);
 
-var sum1 = function() {
+console.log(sum1);
+console.log(sum2);
+console.log(sum3);
+
   console.log(arguments);                        //arguments для передачи любого количества значений
   console.log(arguments.length);                 // создает ПСЕВДО-МАССИВ, выглядит как массив и имеет длинну,
   console.log(typeof arguments);                 // но прототипы не такие как у массива, и
@@ -191,3 +203,115 @@ var sum1 = function() {
 
 sum1(1, 2);
 sum1(1, 2, 3, 4);
+==============================================
+                                         // калькулятор
+var operations = {
+  plus: function(a, b) {
+  return  a + b;
+  },
+
+  minus: function(a, b) {
+  return a - b;
+  },
+
+  inc: function(a) {
+  return ++a;
+  },
+
+  dec: function(a) {
+  return --a;
+  },
+};
+
+console.log(operations.plus(3, 4));
+console.log(operations.minus(5, 4));
+console.log(operations.inc(5));
+console.log(operations.dec(9));
+================================================
+                                             // вызов функции каждые х милисекунд
+setInterval(function () {
+  console.log('setInterval');
+}, 5000); // , х - параметр времени в милисекундах
+----------------------------------
+
+var i = 0;
+
+var interval = setInterval(function () {
+  console.log('setInterval ', + i++);
+}, 1*1000); // , х - параметр времени в милисекундах
+
+setTimeout(function() {                           // вызов функции один раз через х милисекунд
+  console.log('setTimeout');
+  clearInterval(interval);                        // остановит выполнение переменной
+}, 5000);  // , х - параметр времени в милисекундах
+======================================================
+
+function run() {
+  var i = 0;
+  var counts = arguments.length;               // счетчик длинны аргументов
+
+  for (; i < counts; i++) {
+    arguments[i]();                             // это у нас функция
+  }
+}
+
+run(function(a) {console.log(1); },
+    function(b) {console.log(2); }
+)
+===========================================================
+
+function loop(x) {
+  if (x >= 10 ) {
+    return;
+  }
+  console.log(x);
+  loop(x + 1);
+}
+
+loop(1);
+===============================================
+                                // сложение всех чисел от передаваемого аргумента
+function loop(x) {
+  var sum = 0;
+
+  if (x <= 0) {
+    return 0;
+  }
+
+  return x + loop(x - 1);
+
+}
+
+console.log(loop(5));
+==================================================
+                               // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+function sum(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+console.log(sum(1));
+console.log(sum(1)(2)); //3
+====================================================
+
+function l(a) {
+  return function (arr) {
+    var i = 0;
+    var arrLength = arr.length;
+
+    for (; i < arrLength; i++ ) {
+    console.log(arr[i] * a);
+    }
+  };
+}
+
+console.log(l(2)([1, 2, 3, 4]));
+========================================================
+*/
+(function(x) {
+  console.log(x);
+  if (x > 0 ) {
+    arguments.callee(--x);          // вызов функции самой себя аргументом arguments.callee
+  }
+})(5);
