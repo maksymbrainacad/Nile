@@ -292,7 +292,7 @@ function sum(x) {
 }
 
 console.log(sum(1));
-console.log(sum(1)(2)); //3
+console.log(sum(1)(2)); //3  // карринг !!!!!!!!!!!!!!!!!!!!!!!!!
 ====================================================
 
 function l(a) {
@@ -308,10 +308,128 @@ function l(a) {
 
 console.log(l(2)([1, 2, 3, 4]));
 ========================================================
-*/
+
 (function(x) {
   console.log(x);
   if (x > 0 ) {
     arguments.callee(--x);          // вызов функции самой себя аргументом arguments.callee
   }
 })(5);
+=========================================================
+                                    // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+function sum(x) {
+  var z = 5 + x;
+
+  return function(y) {
+    return x + y;
+  };
+}
+
+var newFun = sum(2);
+console.log(newFun(3));
+
+console.log(sum(1));
+console.log(sum(1)(3)); //3  // вызов каррингом !!!!!!!!!!!!!!!!!!!!!!!!!
+====================================================
+                                           // функция КОНСТРУКТОР
+'use strict'
+function f() {
+  this.a = '1';
+  this.b = '2';
+}
+
+var instance = new f();                    //new вызов функции конструктора
+//var badInstance = f();              // this === window, здесь создалась глобальная переменная, а это плохо
+
+console.log(instance);
+console.log(instance.a);
+console.log(a);
+
+=====================================================
+                                // ПРОТОТИПЫ
+var animal = {
+  run: true
+};
+
+var rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+for (var x in rabbit) {               // вернуть все пропперти свойственные rabbit.
+  if (rabbit.hasOwnProperty(x)) {    // вернуть только пропперти свойственные rabbit.
+    console.log(x, rabbit[x]);
+  }
+}
+console.log(animal.hasOwnProperty('run'));  // вернуть только пропперти свойственные animal.
+----------------------------------------
+                                         // косяки!!!!!!!! не работают наследование прототипов
+function animal(say) {
+  var a = 4;                               // приватная переменная, доступна только внутри function animal(say)
+
+  this.say = function() {
+    return say + a;
+  };
+  this.run = true;
+}
+
+function smartAnimal() {
+  this.eat = function() {
+    return 'om nom nom';
+  },
+  this.jump = function() {
+    return 'oh ye';
+  };
+}
+
+var tempFunc = function() {};
+tempFunc.prototype = animal.prototype;
+smartAnimal.prototype =  tempFunc.prototype;
+
+var fish = new smartAnimal('bul-bul-bul');
+
+
+var actions = {
+  eat: function() {
+    return 'om nom nom';
+  },
+  jump: function() {
+    return 'oh ye';
+  }
+}
+
+for (key in actions) {
+ animal.prototype[key] = actions[key];
+}
+
+
+var cat = new animal('meow');
+var dog = new animal('wow');
+
+
+console.log(cat.say(), cat.eat(), cat.run);
+console.log(dog.say(), dog.eat(), dog.run);
+console.log(fish);
+console.log(fish.eat());
+===============================================
+*/                                                // Вызов функции с заданным КОНТЕКСТОМ!!!!
+var f = function( {
+  this.x = 5;        // window.x = 5   (*1)
+    (function() {
+      this.x = 3;    // window.x = 3   (*1)  и (*2 второй вывод в консоль)
+    })();
+    console.log(this.x);
+};
+
+var obj = {
+  x: 4,
+  m: function() {
+    console.log(this.x);
+  }
+};
+
+//f(); // 3  (*1)   отрабатывает как функция
+//var a = new f(); // 5  (*2)   отрабатывает как обьект, игнорируя внутреннюю анонимную функцию
+obj.m();  // 4
+//var f2 = new obj.m(); // undefined  создаст обект из значения ключа m:, а там х не определена
+obj.m.call({x:5});  // 5    перезаписывает контекст на заданный нами
