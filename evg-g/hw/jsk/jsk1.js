@@ -412,7 +412,7 @@ console.log(dog.say(), dog.eat(), dog.run);
 console.log(fish);
 console.log(fish.eat());
 ===============================================
-*/                                                // Вызов функции с заданным КОНТЕКСТОМ!!!!
+                                                // Вызов функции с заданным КОНТЕКСТОМ!!!!
 var f = function( {
   this.x = 5;        // window.x = 5   (*1)
     (function() {
@@ -433,3 +433,136 @@ var obj = {
 obj.m();  // 4
 //var f2 = new obj.m(); // undefined  создаст обект из значения ключа m:, а там х не определена
 obj.m.call({x:5});  // 5    перезаписывает контекст на заданный нами
+======================================================
+*/                                      // СОЗДАНИЕ НОВОГО КОНСТРУКТОРА, ОБЬЕКТОВ И ПЕРЕОПРЕДЕЛЕНИЕ ПРОТОТИПОВ
+'use strict'
+
+function Animal(name) {            //  так описывается функция конструктор
+                                         //  она хранится и выполнится при *
+  this.name = name;
+  this.birthday = new Date();
+}
+
+Animal.prototype.say = function() {
+  console.log(this.name);
+};
+
+Animal.prototype.getDayOfBirth = function() {
+  console.log(this.name + ' : ' + this.birthday);
+};
+
+// var cat = new Animal('cat');         // * обьявлении ключа new
+// var dog = new Animal('dog');        // * обьявлении ключа new
+
+// console.log(cat);
+// console.log(dog);
+
+function Cat(name) {                     // arguments   Наследник от Animal
+  Animal.apply(this, arguments);       // this   вызов конструктора Родителя на выполнение, первый параметр задает
+}                                      // область видимости конструктора
+
+var tempFunc = function () {};               // перенос прототипов от класса в новый обьект
+tempFunc.prototype = Animal.prototype;       // используя временную переменную и перезаписью прототипов сначала в нее
+Cat.prototype = new tempFunc();              // и перезаписью прототипов из нее в новый обьект
+
+Cat.prototype.say = function(arg) {
+  if (arg === undefined) {
+  console.log('Cat name: ');
+  Animal.prototype.say.apply(this, arguments);  // .apply - обращаемся к методу .say родителя Animal.prototype
+  } else {
+    console.log(arg);
+  }
+};
+
+Cat.prototype.run = function() {              // добавляем новый метод в класс Cat
+  console.log('run...');
+};
+
+function Dog () {                           // this   вызов конструктора Родителя на выполнение, первый параметр задает
+  Animal.apply(this, arguments);           // область видимости конструктора
+}
+
+Dog.prototype = Object.create(Animal.prototype);    // перенос прототипов от класса в новый обьект с помощью метода Object.create
+
+Dog.prototype.sit = function() {
+  console.log('I am siting');
+}
+
+Dog.prototype.say = function(arg) {
+  if (arg === undefined) {
+  console.log('Dog name: ');
+  Animal.prototype.say.apply(this, arguments);  // .apply - обращаемся к методу .say родителя Animal.prototype
+  } else {
+    console.log(arg);
+  }
+};
+
+
+function BreedsCat () {
+  Cat.apply(this, arguments);
+}
+
+BreedsCat.prototype = Object.create(Cat.prototype);
+
+BreedsCat.prototype.sit = function() {
+  console.log('I am siting too');
+};
+
+var breeds = {
+  sit: function() {
+    console.log(this.name + ': I am siting');
+  },
+  serve: function() {
+    console.log('I am serving');
+  }
+};
+
+function BreedsDog() {
+  Dog.apply(this, arguments);
+}
+
+BreedsDog.prototype = Object.create(Dog.prototype);
+BreedsDog.prototype.run = function () {
+  console.log('running....');
+};
+
+for (var key in breeds) {
+  BreedsDog.prototype[key] = breeds[key];
+}
+
+var rex = new BreedsDog('Rex')
+var fiona = new BreedsCat('Fiona');
+var bobik = new Dog('Bobik');
+var luna;
+var mittens = new Cat('Mittens');
+
+rex.getDayOfBirth();
+rex.say();
+rex.say('gav');
+rex.run();
+rex.sit();
+rex.serve();
+
+fiona.getDayOfBirth();
+fiona.say('meow');
+fiona.run();
+fiona.sit();
+
+bobik.getDayOfBirth();
+bobik.say();
+bobik.say('gav gav');
+bobik.sit();
+
+mittens.say();
+
+setTimeout(function() {
+  luna = new Cat('Luna');
+
+  luna.getDayOfBirth();
+  luna.say();
+  luna.run();
+}, 1000);
+
+setTimeout(function() {
+  luna.getDayOfBirth();
+}, 2000);
