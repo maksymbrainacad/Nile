@@ -362,7 +362,7 @@ function choicRandom(min, max) {
 
 console.log( choicRandom(0, 100) );
 =================================================
-                                           // перевод в разные регистры
+                                                       // перевод в разные регистры
 function ucFirst(str) {
   // только пустая строка в логическом контексте даст false
   if (!str) return str;
@@ -373,7 +373,7 @@ function ucFirst(str) {
 console.log(ucFirst('petya'));
 
 =================================================
-                                           // проверка на спам
+                                                               // проверка на спам
 function checkSpam(str) {
   var marker = -1,
   a = str.toLowerCase();
@@ -394,7 +394,7 @@ console.log(checkSpam('buy ViAgRA now'));  //Spam
 console.log(checkSpam('free xxxxx'));  //Spam
 console.log(checkSpam("innocent rabbit"));  //innocent rabbit
 =================================================
-                                           // усечение строки
+                                                               // усечение строки
 function truncate(str, maxlength) {
   var strLength = str.length,
       delta = strLength - +maxlength,
@@ -410,7 +410,7 @@ function truncate(str, maxlength) {
 
 console.log(truncate('0123456789 123456789', 10));
 =================================================
-                                         // Выделение числа из строки
+                                                      // Выделение числа из строки
 
 function extractCurrencyValue(str) {
   var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];

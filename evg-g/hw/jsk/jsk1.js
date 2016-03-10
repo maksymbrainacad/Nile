@@ -569,8 +569,8 @@ setTimeout(function() {
 
 
 =============================================================
-*/                                                         // Home Work Наследование прототипов
-'use strict'
+*/                                                        // Home Work Наследование прототипов
+'use strict';
 
 function Animal(nameAnimal, voiceAnimal) {
   this.nameAnimal = nameAnimal;
@@ -606,11 +606,10 @@ Smarty.prototype.voice =  function() {
 
 
 function Cat(name) {
-  Animal.apply(this, arguments);
-  this.voiceAnimal = "Myow-Myow!";
+  //this.voiceAnimal = "Myow-Myow!";
+  Animal.call(this, name, "Myow-Myow!");
 }
 
-Cat.prototype = Object.create(Animal.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
 Cat.prototype = Object.create(Smarty.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
 
 Cat.prototype.say = function(arg) {
@@ -639,7 +638,6 @@ function Dog() {
   this.voiceAnimal = "Wow-Wow!";
 }
 
-Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype = Object.create(Smarty.prototype);
 
 Dog.prototype.say = function(arg) {
@@ -692,3 +690,96 @@ rex.serve(); // I am serving
 rex.voice();
 rex.sit(); // I am sitting
 rex.stand();
+/*=============================================================
+                                                        // Home Work Наследование прототипов разбор в классе
+'use strict';
+
+function declare(className, superClass, props) {
+  if (typeof className !== 'string') {
+    props = superClass;
+    superClass = className;
+    className =  undefined;
+  }
+
+  var classConstrucor = function(name) { this.name = name},
+      superClassLength,
+      method;
+
+      if (superClass !== null && superClass.length) {
+        superClassLength = superClass.length;
+      }
+
+  if (typeof superClass === 'function') {
+    classConstrucor.prototype = Object.create(superClass.prototype);
+
+  } else if (typeof superClass === 'object' && superClassLength && superClassLength !== 0) {
+
+    var i = 0,
+        tempFunct = function() {};
+
+    for (; i < superClassLength; i++) {
+      for (method in superClass[i].prototype) {
+        tempFunct.prototype[method] = superClass[i].prototype[method];
+      }
+    }
+
+    classConstrucor.prototype = new tempFunct();
+  }
+
+  for (method in props) {
+    classConstrucor.prototype[method] = props[method];
+  }
+
+if (className) {
+  window[className] = classConstrucor;
+} else {
+  return classConstrucor;
+}
+}
+
+declare('Animal', null, {
+  name: 'Animal name',                          // если в ключе нет функции, она считается полем и вызывается как *
+  say: function() { console.log('say'); }
+});
+
+declare('Smarty', null, {
+  serve: function() { console.log('I am serving'); }
+});
+
+declare('Cat', Animal, {
+  run: function() { console.log('I am running'); }
+});
+
+declare('Dog', [Animal, Smarty], {
+  sit: function() { console.log('I am sitting'); }
+});
+
+
+(function() {
+  var AnimalLocal = declare(null, {
+    say: function() { console.log('local say'); }
+  });
+
+  var catLocal = new AnimalLocal();
+
+  catLocal.say();
+}) ();
+
+var cat = new Animal();
+var smarty = new Smarty();
+var fiona = new Cat();
+var rex = new Dog();
+
+
+cat.say();
+console.log(cat.name);  // * вызов поля
+
+smarty.serve();
+
+fiona.say();
+fiona.run();
+
+rex.say();
+rex.serve();
+rex.sit();
+*/
