@@ -398,7 +398,7 @@ var actions = {
   }
 }
 
-for (key in actions) {
+for (var key in actions) {
  animal.prototype[key] = actions[key];
 }
 
@@ -434,7 +434,7 @@ obj.m();  // 4
 //var f2 = new obj.m(); // undefined  создаст обект из значения ключа m:, а там х не определена
 obj.m.call({x:5});  // 5    перезаписывает контекст на заданный нами
 ======================================================
-*/                                      // СОЗДАНИЕ НОВОГО КОНСТРУКТОРА, ОБЬЕКТОВ И ПЕРЕОПРЕДЕЛЕНИЕ ПРОТОТИПОВ
+                                   // СОЗДАНИЕ НОВОГО КОНСТРУКТОРА, ОБЬЕКТОВ И ПЕРЕОПРЕДЕЛЕНИЕ ПРОТОТИПОВ
 'use strict'
 
 function Animal(name) {            //  так описывается функция конструктор
@@ -530,7 +530,7 @@ for (var key in breeds) {
   BreedsDog.prototype[key] = breeds[key];
 }
 
-var rex = new BreedsDog('Rex')
+var rex = new BreedsDog('Rex');
 var fiona = new BreedsCat('Fiona');
 var bobik = new Dog('Bobik');
 var luna;
@@ -566,3 +566,129 @@ setTimeout(function() {
 setTimeout(function() {
   luna.getDayOfBirth();
 }, 2000);
+
+
+=============================================================
+*/                                                         // Home Work Наследование прототипов
+'use strict'
+
+function Animal(nameAnimal, voiceAnimal) {
+  this.nameAnimal = nameAnimal;
+  this.voiceAnimal = voiceAnimal;                 //??????????????????????????????
+}
+
+Animal.prototype.say = function() {
+  console.log('I am animal - '+ this.nameAnimal);
+};
+
+Animal.prototype.voice = function(nameAnimal) {        //?????????????????????///
+  console.log(this.voiceAnimal);
+};
+
+
+
+
+function Smarty(nameAnimal) {
+  Animal.apply(this, arguments);
+}
+
+Smarty.prototype = Object.create(Animal.prototype);    // перенос прототипов от класса в новый обьект с помощью метода Object.create
+
+Smarty.prototype.serve =  function() {
+    console.log('I am Smarty animal - '+ this.nameAnimal + ' I like serve');
+  };
+
+Smarty.prototype.voice =  function() {
+    console.log('I am Smarty animal - '+ this.nameAnimal + ' I have voice: ' + this.voiceAnimal);
+  };
+
+
+
+
+function Cat(name) {
+  Animal.apply(this, arguments);
+  this.voiceAnimal = "Myow-Myow!";
+}
+
+Cat.prototype = Object.create(Animal.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
+Cat.prototype = Object.create(Smarty.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
+
+Cat.prototype.say = function(arg) {
+  if (arg === undefined) {
+  console.log('Cat name: ' + this.nameAnimal);
+  Animal.prototype.say.apply(this, arguments);  // .apply - обращаемся к методу .say родителя Animal.prototype
+  } else {
+    console.log(this.nameAnimal + ' say: ' + arg);
+  }
+};
+
+
+Cat.prototype.run = function() {
+  console.log(this.nameAnimal + ': I am quickly run!');
+};
+
+Cat.prototype.jump = function() {
+  console.log(this.nameAnimal + ': I am jumping!');
+};
+
+
+
+
+function Dog() {
+  Animal.apply(this, arguments);
+  this.voiceAnimal = "Wow-Wow!";
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Smarty.prototype);
+
+Dog.prototype.say = function(arg) {
+  if (arg === undefined) {
+  console.log('Dog name: ' + this.nameAnimal);
+  Animal.prototype.say.apply(this, arguments);  // .apply - обращаемся к методу .say родителя Animal.prototype
+  } else {
+    console.log(this.nameAnimal + ' say: ' + arg);
+  }
+};
+
+Dog.prototype.sit = function() {
+  console.log(this.nameAnimal + ': I am sit!');
+};
+
+Dog.prototype.stand = function () {
+  console.log(this.nameAnimal + ': I am stand!');
+};
+
+
+var cat = new Animal('Cat');
+var dog = new Animal('Dog');
+var fiona = new Cat('Fiona');
+var diana = new Cat('Diana');
+var rex = new Dog('Rex');
+
+
+cat.say(); // cat
+
+dog.say(); // dog
+
+fiona.say(); // Fiona
+fiona.say('Pyssy cat'); // Pyssy cat
+fiona.serve();
+fiona.voice();
+fiona.run(); // I am running
+fiona.jump();
+
+diana.say();
+diana.say('I am pyssy cat too');
+diana.serve();
+diana.voice();
+diana.run();
+diana.jump();
+
+
+rex.say(); // Rex
+rex.say('Pyssy dog'); // Pyssy dog
+rex.serve(); // I am serving
+rex.voice();
+rex.sit(); // I am sitting
+rex.stand();

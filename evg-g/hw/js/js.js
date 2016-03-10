@@ -362,4 +362,77 @@ function choicRandom(min, max) {
 
 console.log( choicRandom(0, 100) );
 =================================================
-*/                                            // Генератор случайных чисел из интервала мин - макс
+                                           // перевод в разные регистры
+function ucFirst(str) {
+  // только пустая строка в логическом контексте даст false
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+console.log(ucFirst('petya'));
+
+=================================================
+                                           // проверка на спам
+function checkSpam(str) {
+  var marker = -1,
+  a = str.toLowerCase();
+
+  return !!(~a.indexOf('viagra') || ~a.indexOf('xxx'));
+
+// if ( a.indexOf("viagra") != -1 ||  a.indexOf("xxx") != -1) {
+  // marker = 0;
+
+// } else if ( a.indexOf("xxx") != -1 ) {
+  // marker = 0;
+// };
+
+  // return (marker == -1) ? str : 'Spam'
+}
+
+console.log(checkSpam('buy ViAgRA now'));  //Spam
+console.log(checkSpam('free xxxxx'));  //Spam
+console.log(checkSpam("innocent rabbit"));  //innocent rabbit
+=================================================
+                                           // усечение строки
+function truncate(str, maxlength) {
+  var strLength = str.length,
+      delta = strLength - +maxlength,
+      newStrLength = +maxlength - 3,
+      endStr = '...';
+
+  if (delta > 0) {
+    str = str.slice(0, newStrLength) + endStr;
+  };
+
+  return str;
+}
+
+console.log(truncate('0123456789 123456789', 10));
+=================================================
+                                         // Выделение числа из строки
+
+function extractCurrencyValue(str) {
+  var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  for (var i = 0; i < str.length; i++) {
+    for (var j = 0; j < num.length; j++) {
+      if (str[i] == num[j]) {
+        str = str.slice(i);
+        break;
+      };
+    };
+  };
+
+  return +str;
+}
+
+console.log(extractCurrencyValue('UAH 120'));
+=================================================
+*/                                            // Объекты
+
+var user = {};
+user.name = 'Vasya';
+user.surname = 'Petrov';
+user['name'] = 'Sergey';
+delete user['name'];
