@@ -111,6 +111,10 @@ alert (arr);
 alert (arr.length);   // длинна массива
 alert (arr.indexOf('hi'));   // в каком индексе лежит 'hi'
 arr.push ('last'); // добавить элемент 'last' в конец массива
+arr.pop (); // удалитьть элемент  в конце массива
+arr.unshift ('Start'); // добавить элемент 'Start' в начало массива
+arr.shift ('); // удалитьть элемент в начале массива
+
 alert (arr);
 
 delete arr[2]; // стереть в массиве элемент под индексом [2] а в обьекте { } удалит этот элемент
@@ -569,7 +573,7 @@ setTimeout(function() {
 
 
 =============================================================
-*/                                                        // Home Work Наследование прототипов
+                                                       // Home Work Наследование прототипов
 'use strict';
 
 function Animal(nameAnimal, voiceAnimal) {
@@ -690,9 +694,9 @@ rex.serve(); // I am serving
 rex.voice();
 rex.sit(); // I am sitting
 rex.stand();
-/*=============================================================
-                                                        // Home Work Наследование прототипов разбор в классе
-'use strict';
+=============================================================
+*/                                                        // Home Work Наследование прототипов разбор в классе
+//'use strict';
 
 function declare(className, superClass, props) {
   if (typeof className !== 'string') {
@@ -701,7 +705,7 @@ function declare(className, superClass, props) {
     className =  undefined;
   }
 
-  var classConstrucor = function(name) { this.name = name},
+  var classConstrucor = function() {},
       superClassLength,
       method;
 
@@ -730,6 +734,14 @@ function declare(className, superClass, props) {
     classConstrucor.prototype[method] = props[method];
   }
 
+  classConstrucor.prototype._className = className;
+
+  classConstrucor.prototype.inherited = function(args) {
+    // Animal.prototype.getName.apply(this, arguments);
+    // superClass.prototype[arguments.callee.caller.name].apply(this, args);   Бок не работает
+  };
+
+
 if (className) {
   window[className] = classConstrucor;
 } else {
@@ -739,16 +751,32 @@ if (className) {
 
 declare('Animal', null, {
   name: 'Animal name',                          // если в ключе нет функции, она считается полем и вызывается как *
-  say: function() { console.log('say'); }
+  say: function() { console.log('say'); },
+
+  getName: function() {
+    console.log(this.className + this.name);
+  }
+
 });
+
+
 
 declare('Smarty', null, {
   serve: function() { console.log('I am serving'); }
 });
 
+
+
 declare('Cat', Animal, {
-  run: function() { console.log('I am running'); }
+  run: function() { console.log('I am running'); },
+
+  getName: function() {
+    console.log('Cat: say');
+    this.inherited(arguments);
+  }
 });
+
+
 
 declare('Dog', [Animal, Smarty], {
   sit: function() { console.log('I am sitting'); }
@@ -778,8 +806,58 @@ smarty.serve();
 
 fiona.say();
 fiona.run();
+fiona.getName();
+console.log(fiona.name);  // * вызов поля
+
+
 
 rex.say();
 rex.serve();
 rex.sit();
+/* =============================================================
+                                              // Вывод максимального элемента в массиве
+var array = [2, 4, 6, 3, 55, 3, 44, 23, 65],
+    length = array.length,
+    max = 0,
+    i = 0;
+
+for (; i < length; i++) {
+  if (array[i] > max) {
+    max = array[i];
+  }
+}
+
+console.log(max);
+=============================================================
+                                               // изменение координат обьекта
+function Shape(name) {
+  this.name = name;
+  this.x = 0;
+  this.y = 0;
+}
+
+Shape.prototype.getCords = function () {
+  return {
+    x: this.x,
+    y: this.y
+  };
+};
+
+Shape.prototype.setCords = function (a, b) {
+    this.x = a ;
+    this.y = b ;
+
+};
+
+Shape.prototype.getName = function () {
+  return this.name;
+};
+
+
+var ball = new Shape('ball');
+
+console.log(ball.getName());
+console.log(ball.getCords());
+ball.setCords(1, 1);
+console.log(ball.getCords());
 */
