@@ -274,7 +274,7 @@ function loop(x) {
 
 loop(1);
 ===============================================
-                                // сложение всех чисел от передаваемого аргумента
+                                                      // сложение всех чисел от передаваемого аргумента
 function loop(x) {
   var sum = 0;
 
@@ -288,7 +288,7 @@ function loop(x) {
 
 console.log(loop(5));
 ==================================================
-                               // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+                                                       // Замыкание функции !!!!!!!!!!!!!!!!!!!!
 function sum(x) {
   return function(y) {
     return x + y;
@@ -296,7 +296,7 @@ function sum(x) {
 }
 
 console.log(sum(1));
-console.log(sum(1)(2)); //3  // карринг !!!!!!!!!!!!!!!!!!!!!!!!!
+console.log(sum(1)(2)); //3                             // карринг !!!!!!!!!!!!!!!!!!!!!!!!!
 ====================================================
 
 function l(a) {
@@ -316,11 +316,11 @@ console.log(l(2)([1, 2, 3, 4]));
 (function(x) {
   console.log(x);
   if (x > 0 ) {
-    arguments.callee(--x);          // вызов функции самой себя аргументом arguments.callee
+    arguments.callee(--x);                                  // вызов функции самой себя аргументом arguments.callee
   }
 })(5);
 =========================================================
-                                    // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+                                                            // Замыкание функции !!!!!!!!!!!!!!!!!!!!
 function sum(x) {
   var z = 5 + x;
 
@@ -333,9 +333,9 @@ var newFun = sum(2);
 console.log(newFun(3));
 
 console.log(sum(1));
-console.log(sum(1)(3)); //3  // вызов каррингом !!!!!!!!!!!!!!!!!!!!!!!!!
+console.log(sum(1)(3)); //3                 // вызов каррингом !!!!!!!!!!!!!!!!!!!!!!!!!
 ====================================================
-                                           // функция КОНСТРУКТОР
+                                                         // функция КОНСТРУКТОР
 'use strict'
 function f() {
   this.a = '1';
@@ -350,7 +350,7 @@ console.log(instance.a);
 console.log(a);
 
 =====================================================
-                                // ПРОТОТИПЫ
+                                                           // ПРОТОТИПЫ
 var animal = {
   run: true
 };
@@ -695,7 +695,7 @@ rex.voice();
 rex.sit(); // I am sitting
 rex.stand();
 =============================================================
-*/                                                        // Home Work Наследование прототипов разбор в классе
+                                                       // Home Work Наследование прототипов разбор в классе
 //'use strict';
 
 function declare(className, superClass, props) {
@@ -732,13 +732,13 @@ function declare(className, superClass, props) {
 
   for (method in props) {
     classConstrucor.prototype[method] = props[method];
+    classConstrucor.prototype[method]._methodName = method;
   }
 
   classConstrucor.prototype._className = className;
-
   classConstrucor.prototype.inherited = function(args) {
     // Animal.prototype.getName.apply(this, arguments);
-    // superClass.prototype[arguments.callee.caller.name].apply(this, args);   Бок не работает
+    superClass.prototype[args.callee._methodName].apply(this, args);
   };
 
 
@@ -814,8 +814,8 @@ console.log(fiona.name);  // * вызов поля
 rex.say();
 rex.serve();
 rex.sit();
-/* =============================================================
-                                              // Вывод максимального элемента в массиве
+=============================================================
+                                           // Вывод максимального элемента в массиве
 var array = [2, 4, 6, 3, 55, 3, 44, 23, 65],
     length = array.length,
     max = 0,
@@ -855,9 +855,44 @@ Shape.prototype.getName = function () {
 
 
 var ball = new Shape('ball');
+var ball22 = new Shape('ball22');
 
 console.log(ball.getName());
 console.log(ball.getCords());
 ball.setCords(1, 1);
+ball22.setCords(22, 22);
 console.log(ball.getCords());
-*/
+console.log(ball22.getCords());
+=============================================================
+                                                //  Замыкание функции с задержкой выполнения
+for (var i = 0; i < 5; i++) {
+  (function(j) {
+    setTimeout(function() {
+      console.log(j);
+    }, 2*60*1000);
+  })(i);
+}
+=============================================================
+                                               //  Home work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var _= function() {
+  return {
+    findKey: function(obj, str) {
+      return ...;
+    }
+  };
+};
+
+var o = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 'a',
+  f: 'b',
+  e: 3
+};
+
+_.findKey(o, 2); // 'b'
+_.findKey(o, 3); // ['c', 'e']
+_.findKey(o, 'a'); // 'd'
+===============================================================
+*/                                                // DOM Element
