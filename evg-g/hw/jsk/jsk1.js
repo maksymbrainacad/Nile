@@ -111,6 +111,10 @@ alert (arr);
 alert (arr.length);   // длинна массива
 alert (arr.indexOf('hi'));   // в каком индексе лежит 'hi'
 arr.push ('last'); // добавить элемент 'last' в конец массива
+arr.pop (); // удалитьть элемент  в конце массива
+arr.unshift ('Start'); // добавить элемент 'Start' в начало массива
+arr.shift ('); // удалитьть элемент в начале массива
+
 alert (arr);
 
 delete arr[2]; // стереть в массиве элемент под индексом [2] а в обьекте { } удалит этот элемент
@@ -270,7 +274,7 @@ function loop(x) {
 
 loop(1);
 ===============================================
-                                // сложение всех чисел от передаваемого аргумента
+                                                      // сложение всех чисел от передаваемого аргумента
 function loop(x) {
   var sum = 0;
 
@@ -284,7 +288,7 @@ function loop(x) {
 
 console.log(loop(5));
 ==================================================
-                               // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+                                                       // Замыкание функции !!!!!!!!!!!!!!!!!!!!
 function sum(x) {
   return function(y) {
     return x + y;
@@ -292,7 +296,7 @@ function sum(x) {
 }
 
 console.log(sum(1));
-console.log(sum(1)(2)); //3  // карринг !!!!!!!!!!!!!!!!!!!!!!!!!
+console.log(sum(1)(2)); //3                             // карринг !!!!!!!!!!!!!!!!!!!!!!!!!
 ====================================================
 
 function l(a) {
@@ -312,11 +316,11 @@ console.log(l(2)([1, 2, 3, 4]));
 (function(x) {
   console.log(x);
   if (x > 0 ) {
-    arguments.callee(--x);          // вызов функции самой себя аргументом arguments.callee
+    arguments.callee(--x);                                  // вызов функции самой себя аргументом arguments.callee
   }
 })(5);
 =========================================================
-                                    // Замыкание функции !!!!!!!!!!!!!!!!!!!!
+                                                            // Замыкание функции !!!!!!!!!!!!!!!!!!!!
 function sum(x) {
   var z = 5 + x;
 
@@ -329,9 +333,9 @@ var newFun = sum(2);
 console.log(newFun(3));
 
 console.log(sum(1));
-console.log(sum(1)(3)); //3  // вызов каррингом !!!!!!!!!!!!!!!!!!!!!!!!!
+console.log(sum(1)(3)); //3                 // вызов каррингом !!!!!!!!!!!!!!!!!!!!!!!!!
 ====================================================
-                                           // функция КОНСТРУКТОР
+                                                         // функция КОНСТРУКТОР
 'use strict'
 function f() {
   this.a = '1';
@@ -346,7 +350,7 @@ console.log(instance.a);
 console.log(a);
 
 =====================================================
-                                // ПРОТОТИПЫ
+                                                           // ПРОТОТИПЫ
 var animal = {
   run: true
 };
@@ -569,8 +573,8 @@ setTimeout(function() {
 
 
 =============================================================
-*/                                                         // Home Work Наследование прототипов
-'use strict'
+                                                       // Home Work Наследование прототипов
+'use strict';
 
 function Animal(nameAnimal, voiceAnimal) {
   this.nameAnimal = nameAnimal;
@@ -606,11 +610,10 @@ Smarty.prototype.voice =  function() {
 
 
 function Cat(name) {
-  Animal.apply(this, arguments);
-  this.voiceAnimal = "Myow-Myow!";
+  //this.voiceAnimal = "Myow-Myow!";
+  Animal.call(this, name, "Myow-Myow!");
 }
 
-Cat.prototype = Object.create(Animal.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
 Cat.prototype = Object.create(Smarty.prototype);   // перенос прототипов от класса в новый обьект с помощью метода Object.create
 
 Cat.prototype.say = function(arg) {
@@ -639,7 +642,6 @@ function Dog() {
   this.voiceAnimal = "Wow-Wow!";
 }
 
-Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype = Object.create(Smarty.prototype);
 
 Dog.prototype.say = function(arg) {
@@ -692,3 +694,205 @@ rex.serve(); // I am serving
 rex.voice();
 rex.sit(); // I am sitting
 rex.stand();
+=============================================================
+                                                       // Home Work Наследование прототипов разбор в классе
+//'use strict';
+
+function declare(className, superClass, props) {
+  if (typeof className !== 'string') {
+    props = superClass;
+    superClass = className;
+    className =  undefined;
+  }
+
+  var classConstrucor = function() {},
+      superClassLength,
+      method;
+
+      if (superClass !== null && superClass.length) {
+        superClassLength = superClass.length;
+      }
+
+  if (typeof superClass === 'function') {
+    classConstrucor.prototype = Object.create(superClass.prototype);
+
+  } else if (typeof superClass === 'object' && superClassLength && superClassLength !== 0) {
+
+    var i = 0,
+        tempFunct = function() {};
+
+    for (; i < superClassLength; i++) {
+      for (method in superClass[i].prototype) {
+        tempFunct.prototype[method] = superClass[i].prototype[method];
+      }
+    }
+
+    classConstrucor.prototype = new tempFunct();
+  }
+
+  for (method in props) {
+    classConstrucor.prototype[method] = props[method];
+    classConstrucor.prototype[method]._methodName = method;
+  }
+
+  classConstrucor.prototype._className = className;
+  classConstrucor.prototype.inherited = function(args) {
+    // Animal.prototype.getName.apply(this, arguments);
+    superClass.prototype[args.callee._methodName].apply(this, args);
+  };
+
+
+if (className) {
+  window[className] = classConstrucor;
+} else {
+  return classConstrucor;
+}
+}
+
+declare('Animal', null, {
+  name: 'Animal name',                          // если в ключе нет функции, она считается полем и вызывается как *
+  say: function() { console.log('say'); },
+
+  getName: function() {
+    console.log(this.className + this.name);
+  }
+
+});
+
+
+
+declare('Smarty', null, {
+  serve: function() { console.log('I am serving'); }
+});
+
+
+
+declare('Cat', Animal, {
+  run: function() { console.log('I am running'); },
+
+  getName: function() {
+    console.log('Cat: say');
+    this.inherited(arguments);
+  }
+});
+
+
+
+declare('Dog', [Animal, Smarty], {
+  sit: function() { console.log('I am sitting'); }
+});
+
+
+(function() {
+  var AnimalLocal = declare(null, {
+    say: function() { console.log('local say'); }
+  });
+
+  var catLocal = new AnimalLocal();
+
+  catLocal.say();
+}) ();
+
+var cat = new Animal();
+var smarty = new Smarty();
+var fiona = new Cat();
+var rex = new Dog();
+
+
+cat.say();
+console.log(cat.name);  // * вызов поля
+
+smarty.serve();
+
+fiona.say();
+fiona.run();
+fiona.getName();
+console.log(fiona.name);  // * вызов поля
+
+
+
+rex.say();
+rex.serve();
+rex.sit();
+=============================================================
+                                           // Вывод максимального элемента в массиве
+var array = [2, 4, 6, 3, 55, 3, 44, 23, 65],
+    length = array.length,
+    max = 0,
+    i = 0;
+
+for (; i < length; i++) {
+  if (array[i] > max) {
+    max = array[i];
+  }
+}
+
+console.log(max);
+=============================================================
+                                               // изменение координат обьекта
+function Shape(name) {
+  this.name = name;
+  this.x = 0;
+  this.y = 0;
+}
+
+Shape.prototype.getCords = function () {
+  return {
+    x: this.x,
+    y: this.y
+  };
+};
+
+Shape.prototype.setCords = function (a, b) {
+    this.x = a ;
+    this.y = b ;
+
+};
+
+Shape.prototype.getName = function () {
+  return this.name;
+};
+
+
+var ball = new Shape('ball');
+var ball22 = new Shape('ball22');
+
+console.log(ball.getName());
+console.log(ball.getCords());
+ball.setCords(1, 1);
+ball22.setCords(22, 22);
+console.log(ball.getCords());
+console.log(ball22.getCords());
+=============================================================
+                                                //  Замыкание функции с задержкой выполнения
+for (var i = 0; i < 5; i++) {
+  (function(j) {
+    setTimeout(function() {
+      console.log(j);
+    }, 2*60*1000);
+  })(i);
+}
+=============================================================
+                                               //  Home work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var _= function() {
+  return {
+    findKey: function(obj, str) {
+      return ...;
+    }
+  };
+};
+
+var o = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 'a',
+  f: 'b',
+  e: 3
+};
+
+_.findKey(o, 2); // 'b'
+_.findKey(o, 3); // ['c', 'e']
+_.findKey(o, 'a'); // 'd'
+===============================================================
+*/                                                // DOM Element
