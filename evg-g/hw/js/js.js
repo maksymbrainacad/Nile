@@ -429,7 +429,7 @@ function extractCurrencyValue(str) {
 
 console.log(extractCurrencyValue('UAH 120'));
 =================================================
-                                             // Объекты
+                                                             // Объекты
 
 var user = {};
 user.name = 'Vasya';
@@ -437,7 +437,7 @@ user.surname = 'Petrov';
 user['name'] = 'Sergey';
 delete user['name'];
 =================================================
-                                         // Проверка Объекта на содержимое
+                                                            // Проверка Объекта на содержимое
 function isEmpty(obj) {
   var key,
       counter = 0;
@@ -463,7 +463,7 @@ schedule["8:30"] = "подъём";
 
 console.log( isEmpty(schedule) ); // false
 =================================================
-                                           // Cумма всех свойств Объекта
+                                                                 // Cумма всех свойств Объекта
 
 "use strict";
 
@@ -582,7 +582,7 @@ for (; item !== null; i++) {
 console.log(arr);
 console.log(sum);
 =================================================
-                                                        // Поиск в  массиве
+                                                                   // Поиск в  массиве
 arr = ["test", 2, 1.5, false];
 
 function find(obj, value) {
@@ -605,7 +605,7 @@ console.log(find(arr, 0)); // -1
 console.log(find(arr, false)); // 3
 
 =================================================
-                                                         // Фильтр диапазона в массиве
+                                                               // Фильтр диапазона в массиве
 var arr = [1, 4, 6, 8, 1.3, 2, 3, 9, 0, 3.5, 4, 5],
     filtrArr = [],
     i = 0;
@@ -622,7 +622,7 @@ function filterRange(arr, a, b) {
 
 console.log(filterRange(arr, 3, 8));
 =================================================
-                                                 // Подмасив с максимальной суммой элементов в  массиве
+                                                        // Подмасив с максимальной суммой элементов в  массиве
 function getMaxSubSum(arr) {
   var maxSum = 0,
     partialSum = 0;
@@ -642,7 +642,7 @@ console.log(getMaxSubSum([-2, -1, 1, 2])); // 3
 console.log(getMaxSubSum([100, -9, 2, -3, 5])); // 100
 console.log(getMaxSubSum([1, 2, 3])); // 6 (неотрицательные - берем всех)
 =================================================
-                                                 // Добавление класса в строку
+                                                                 // Добавление класса в строку
 function addClass(obj, cls) {
   var classes = obj.className ? obj.className.split(' ') : [];
 
@@ -666,7 +666,7 @@ addClass(obj, 'me'); // obj.className='open menu new me'
 
 alert( obj.className ); // "open menu new me"
 =================================================
-                                                 // Обработка данных в строке массива
+                                                                  // Обработка данных в строке массива
 
 function camelize(str) {
   var arr = str.split('-');
@@ -682,7 +682,7 @@ console.log(camelize("background-color"));
 console.log(camelize("list-style-image"));
 console.log(camelize("-webkit-transition"));
 =================================================
-                                                 // Удаление класса из строки
+                                                                   // Удаление класса из строки
 function removeClass(obj, cls) {
   var classes = obj.className.split(' ');
 
@@ -704,7 +704,7 @@ console.log(removeClass(obj, 'open')); // obj.className='menu'
 
 console.log( obj.className ); // "menu"
 =================================================
-                                                 // Фильтрация массива по диапазону
+                                                              // Фильтрация массива по диапазону
 function filterRangeInPlace(arr, a, b) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] < a || arr[i] > b) {
@@ -718,7 +718,7 @@ var obj = [5, 3, 8, 1];
 
 console.log(filterRangeInPlace(obj, 1, 4));
 =================================================
-*/                                                  // Сортировка массива в обратном порядке
+                                                           // Сортировка массива в обратном порядке
 var arr = [5, 2, 1, -10, 8];
 
 function compareReverse(a, b) {
@@ -727,3 +727,25 @@ function compareReverse(a, b) {
 
 arr.sort(compareReverse);
 console.log(arr);
+=================================================
+                                                         // Копирование массива и сортировка копии
+var arr = ["HTML", "JavaScript", "CSS"],
+    arrSorted = [],
+    i = 0;
+
+    for (; i < arr.length; i++) {
+      arrSorted[i] = arr[i];
+    }
+
+    function sortArr(a, b) {
+      return b < a;
+    }
+
+arrSorted.sort(sortArr);
+
+// ... ваш код ...
+
+console.log(arr); // HTML, JavaScript, CSS (без изменений)
+console.log(arrSorted); // CSS, HTML, JavaScript
+=================================================
+*/                                                           // 

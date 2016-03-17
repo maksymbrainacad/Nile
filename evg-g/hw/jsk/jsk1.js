@@ -873,14 +873,26 @@ for (var i = 0; i < 5; i++) {
   })(i);
 }
 =============================================================
-                                               //  Home work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-var _= function() {
+                                                              // DOM Element - см папку dom
+
+=============================================================
+                                                      //  Поиск в массиве по значению, вывод ключей при совпадении
+var _= (function() {
   return {
-    findKey: function(obj, str) {
-      return ...;
+    findKey: function (obj, value) {
+
+      var arrKeys = [];
+
+      for (key in obj) {
+        if (obj[key] == value) {
+          arrKeys.push(key);
+        }
+      }
+      return (arrKeys.length > 1) ? arrKeys : arrKeys.join();
     }
   };
-};
+})();
+
 
 var o = {
   a: 1,
@@ -891,8 +903,165 @@ var o = {
   e: 3
 };
 
-_.findKey(o, 2); // 'b'
-_.findKey(o, 3); // ['c', 'e']
-_.findKey(o, 'a'); // 'd'
-===============================================================
-*/                                                // DOM Element
+console.log(_.findKey(o, 2)); // 'b'
+console.log(_.findKey(o, 3)); // ['c', 'e']
+console.log(_.findKey(o, 'a')); // 'd'
+
+=============================================================
+                                      //  Поиск в массиве по значениям из обьекта, вывод ключей при совпадении
+var _= (function() {
+  return {
+    findKey: function (obj, objValue) {
+      var key,
+          method,
+          step,
+          arrKeys = [],
+          counter = 0,
+          objValueLength = (function _size(objValue) {
+                           var arr = Object.keys(objValue),
+                              length = arr.length;
+
+                           return length;
+                         })(objValue);
+
+     for (key in obj) {
+       outer:
+        for (method in objValue) {
+            counter = 0;
+          for (step in objValue) {
+            if (obj[key][step] != objValue[step]) {
+              break outer;
+           } else {
+             counter++;
+           }
+          }
+
+          if (counter == objValueLength) {
+            arrKeys.push(key);
+            counter = 0;
+            break outer;
+          }
+        }
+      }
+      return (arrKeys.length > 1) ? arrKeys : arrKeys.join();
+    }
+  };
+})();
+
+var users = {
+  'barney':  { 'age': 36, 'active': true, 'comment': 'a' },
+  'fred':    { 'age': 40, 'active': false, 'comment': 'b' },
+  'pebbles': { 'age': 1,  'active': true, 'comment': 'c' },
+  'nick':    { 'age': 1,  'active': true, 'comment': 'd' },
+};
+
+console.log( _.findKey(users, { 'age': 1, 'active': true, 'comment': 'd' }) ); // > nick
+console.log( _.findKey(users, { 'age': 1, 'active': true }) ); // > ["pebbles", "nick"]
+console.log( _.findKey(users, { 'active': true }) ); // > ["barney", "pebbles", "nick"]
+console.log( _.findKey(users, { 'age': 40 }) ); // > 'fred'
+
+=============================================================
+                                              //  Длинна обьекта
+function _size(obj) {
+  var arr = Object.keys(obj);
+  var length = arr.length;
+
+  return length;
+}
+
+
+var a = ['a', 'b', 'c'];
+var o = { 0: 'a', 1: 'b', 2: 'c', 3: 'd'};
+
+
+console.log(_size(a));
+console.log(_size(o));
+
+=============================================================
+*/                                              //  Вывод уникальных значений из массива
+var _ = ( function() {
+  return {
+    difference: function(firstArr, secondArr) {
+
+      console.log("Первый массив данных: ", firstArr); // → [3, 1]);
+      console.log("Второй массив данных: ", secondArr); // → [3, 1]);
+      
+      var uniqueValueArr = [],
+          uniqueFirstArr = [],
+          uniqueSecondArr = [],
+          indexFirstArr = [],
+          indexSecondArr = [],
+          firstLength = firstArr.length,
+          secondLength = secondArr.length,
+          counter = 0,
+          i = 0,
+          j = 0;
+
+          // choice unique value from First Array
+      for (; i < firstLength; i++) {
+
+        for (; j < secondLength; j++) {
+          if ( firstArr[i] != secondArr[j] ) {
+            counter++;
+          }
+        }
+
+        j = 0;
+
+        if (counter == secondLength) {
+          indexFirstArr.push(firstArr.indexOf(firstArr[i]));
+        }
+
+        counter = 0;
+      }
+
+      i = 0;
+      for (; i < indexFirstArr.length; i++) {
+        uniqueFirstArr.push(firstArr[indexFirstArr[i]]);
+      }
+
+      console.log('Массив индексов уникальных элементов из первого массива: ');
+      console.log(indexFirstArr);
+      console.log('Массив уникальных элементов из первого массива: ');
+      console.log(uniqueFirstArr);
+
+
+                      // choice unique value from Second Array
+      i = 0;
+      for (; i < secondLength; i++) {
+
+        for (; j < firstLength; j++) {
+          if ( secondArr[i] != firstArr[j] ) {
+            counter++;
+          }
+        }
+
+        j = 0;
+
+        if (counter == firstLength) {
+          indexSecondArr.push(secondArr.indexOf(secondArr[i]));
+        }
+
+        counter = 0;
+      }
+
+      i = 0;
+      for (; i < indexSecondArr.length; i++) {
+        uniqueSecondArr.push(secondArr[indexSecondArr[i]]);
+      }
+
+      console.log('Массив индексов уникальных элементов из второгого массива: ');
+      console.log(indexSecondArr);
+      console.log('Массив уникальных элементов из второго массива: ');
+      console.log(uniqueSecondArr);
+
+                            // merge uniques value from First and Second Arrays
+      uniqueValueArr = uniqueFirstArr.concat(uniqueSecondArr);
+
+      console.log('Массив уникальных элементов из первого и второгого массивов: ');
+      return uniqueValueArr;
+    }
+  }
+})();
+
+console.log(_.difference([3, 2, 1], [4, 2])); // → [3, 1]);
