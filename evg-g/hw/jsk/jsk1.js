@@ -910,19 +910,20 @@ console.log(_.findKey(o, 'a')); // 'd'
 =============================================================
                                       //  Поиск в массиве по значениям из обьекта, вывод ключей при совпадении
 var _= (function() {
-  return {
+  return {                                   Корректировки
+    size: function(objValue) {
+      var arr = Object.keys(objValue),
+         length = arr.length;
+
+      return length;
+    },
     findKey: function (obj, objValue) {
       var key,
           method,
           step,
           arrKeys = [],
           counter = 0,
-          objValueLength = (function _size(objValue) {
-                           var arr = Object.keys(objValue),
-                              length = arr.length;
-
-                           return length;
-                         })(objValue);
+          objValueLength = this.size(objValue);
 
      for (key in obj) {
        outer:
@@ -978,14 +979,14 @@ console.log(_size(a));
 console.log(_size(o));
 
 =============================================================
-*/                                              //  Вывод уникальных значений из массива
+                                              //  Вывод уникальных значений из массива
 var _ = ( function() {
   return {
     difference: function(firstArr, secondArr) {
 
       console.log("Первый массив данных: ", firstArr); // → [3, 1]);
       console.log("Второй массив данных: ", secondArr); // → [3, 1]);
-      
+
       var uniqueValueArr = [],
           uniqueFirstArr = [],
           uniqueSecondArr = [],
@@ -1065,3 +1066,5 @@ var _ = ( function() {
 })();
 
 console.log(_.difference([3, 2, 1], [4, 2])); // → [3, 1]);
+=============================================================
+*/                                              //
