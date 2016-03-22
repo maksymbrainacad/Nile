@@ -87,7 +87,7 @@ mainForm.addEventListener('submit', function(e) {           /// возвраща
 });
 
 =======================================================
-*/                                                              //formReg.html
+                                                             //formReg.html
 window.addEventListener('load', function() {
   var regForm =  document.querySelector('[data-id="regForm"]'),
       capchaNode =  document.querySelector('[data-id="capcha"]'),
@@ -123,32 +123,100 @@ window.addEventListener('load', function() {
 
 
 
-  /*  if (!regForm.name.value) {
-      console.log('No User Name');
-    }
+  //   if (!regForm.name.value) {
+    //   console.log('No User Name');
+    // }
+    //
+    // if (!regForm.email.value) {
+    //   console.log('No Email');
+    // } else if (!/\S+@\S+\.\S+/.test(regForm.email.value)) {   //// регулярное выражение для проверки введенных
+    //   console.log('No correct Email');                       ////данных в поле имейл на содержание @ и .
+    // }
+    //
+    // if (!regForm.password.value) {
+    //   console.log('No Password');
+    // } else if (regForm.password.value !== regForm.confirmPassword.value) {
+    //     console.log('Password dosn`t match');
+    //   }
+    //
+    // if (!regForm.confirmPassword.value) {
+    //   console.log('No Confirm Password');
+    // }
+    //
+    // if (!regForm.capcha.value) {
+    //   console.log('No capcha');
+    // } else if (regForm.capcha.value !== capcha) {
+    //   console.log('Capcha is not correct');
+    // }
 
-    if (!regForm.email.value) {
-      console.log('No Email');
-    } else if (!/\S+@\S+\.\S+/.test(regForm.email.value)) {   // регулярное выражение для проверки введенных
-      console.log('No correct Email');                       // данных в поле имейл на содержание @ и .
-    }
 
-    if (!regForm.password.value) {
-      console.log('No Password');
-    } else if (regForm.password.value !== regForm.confirmPassword.value) {
-        console.log('Password dosn`t match');
+    e.preventDefault();
+    return false;
+  });
+});
+
+=======================================================
+*/                                                              //searchForm.html
+                                                                 // Всплывающие подсказки при заполнении поля ввода
+window.addEventListener('load', function() {
+  var searchForm =   document.querySelector('[data-id="search-form"]'),
+      searchTextInput = searchForm['search-text'],
+      listNode = document.querySelector('[data-id="list"]'),
+      noDataNode = document.querySelector('[data-id="no-data"]');
+
+
+
+  var search = function(searchDb, searchText) {
+    //   var result = [];                                     // один из методов анализа подстроки
+    //
+    // for (var i = 0; i < searchDb.length; i++) {
+    //   if (searchDb[i].startsWith(searchText)) {
+    //     result.push(searchDb[i]);
+    //   }
+    // }
+    // return result;
+
+    var result = searchDb.filter(function(value) {
+      return value.indexOf(searchText) === 0;
+    });
+
+    return result;
+  };
+
+  searchTextInput.addEventListener('keyup', function(e) {
+    var searchText = searchTextInput.value;
+
+    if (searchText) {
+      var result = search(searchDb, searchText),
+          listHtml = '',
+          resultLength = result.length,
+          i = 0;
+
+      if (resultLength) {
+        for(; i < resultLength; i++) {
+          var value = result[i];
+
+          listHtml += '<li data-search = "' +value + '">' + (i+1) + ': ' + value + '</li>';
+        }
+
+          listNode.innerHTML = listHtml;
+          noDataNode.style.display = 'none';
+      } else {
+        listNode.innerHTML = '';
+        noDataNode.style.display = 'block';
       }
+    } else { listNode.innerHTML = ''; }
+  });
 
-    if (!regForm.confirmPassword.value) {
-      console.log('No Confirm Password');
+  listNode.addEventListener('click', function(e) {
+    if (e.target !== e.currentTarget) {
+      searchTextInput.value = e.target.getAttribute('data-search');
     }
+  });
 
-    if (!regForm.capcha.value) {
-      console.log('No capcha');
-    } else if (regForm.capcha.value !== capcha) {
-      console.log('Capcha is not correct');
-    }
-  */
+  searchForm.addEventListener('submit', function(e) {
+
+    window.open('https://www.google.com.ua/webhp?#q=' + searchTextInput.value.split(' ').join('+'));   // строка поиска для гугла
 
     e.preventDefault();
     return false;
