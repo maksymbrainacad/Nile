@@ -743,9 +743,43 @@ var arr = ["HTML", "JavaScript", "CSS"],
 
 arrSorted.sort(sortArr);
 
-// ... ваш код ...
-
 console.log(arr); // HTML, JavaScript, CSS (без изменений)
 console.log(arrSorted); // CSS, HTML, JavaScript
 =================================================
-*/                                                           // 
+*/                                                           // Разбитие массива на подмассивы заданной длинны
+var _= ( function () {
+  return {
+    chunk: function(arr, innerArrLength) {
+      var arrLength = arr.length,
+          clonArr = arr.slice(),
+          clonArrLength = clonArr.length,
+          tempElement,
+          newArr = [];
+
+      if (arrLength <= innerArrLength) {
+        newArr = clonArr.slice();
+          // for (var i = arrLength; i < innerArrLength; i++) {
+            // newArr[i] = [];
+            return newArr;
+          // }
+        }
+
+      if (arrLength > innerArrLength) {
+        while (clonArrLength > 0) {
+          tempElement = clonArr.splice(0, innerArrLength);
+          newArr.push(tempElement);
+          clonArrLength -= innerArrLength;
+          }
+      }
+      return newArr;
+    }
+  }
+})();
+ // console.log('Первый ввод:');
+ // console.log(_.chunk(['a', 'b', 'c', 'd'], 2));  // → [['a', 'b'], ['c', 'd']]
+ // console.log('Второй ввод:');
+ // console.log(_.chunk(['a', 'b', 'c', 'd'], 3));  // → [['a', 'b', 'c'], ['d']]
+ // console.log('Третий ввод:');
+ // console.log(_.chunk(['a', 'b', 'c', 'd'], 6));  // → [['a', 'b', 'c', 'd']]
+
+console.log(_.chunk(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 2));
