@@ -200,7 +200,7 @@ switch (a) {
     console.log('A not 0, not 1, not 2, not 3');
 }
 ==========================================================================
-                                                    // проверка возраста
+                                                                           // проверка возраста
 function checkAge(age) {
   return (age > 18) ? true : confirm('Родители разрешили?');
   }
@@ -214,7 +214,7 @@ function checkAge(age) {
 
 checkAge(13);
 ==========================================================
-                                             // Возврат Минимального числа
+                                                                          // Возврат Минимального числа
 function min(a, b) {
   var result;
   var a = +prompt('Enter A', '');
@@ -247,7 +247,7 @@ function min(a, b) {
 
 console.log(min(4, 3));
 ==================================================
-                                             // Число Х в степени Н
+                                                                               // Число Х в степени Н
 function pow(x, n) {
 
   x = +prompt ('Enter X', '');
@@ -263,7 +263,7 @@ function pow(x, n) {
 
 console.log(pow());
 ================================================
-                                            // сумма всех целых чисел до числа Х
+                                                                        // сумма всех целых чисел до числа Х
 function sumTo(n) {
   var sum = n,
       ni = n;
@@ -294,7 +294,7 @@ function sumTo(n) {
 
 console.log(sumTo(100));  // 5050
 ================================
-                                            // Произведение всех целых чисел до числа Х
+                                                                  // Произведение всех целых чисел до числа Х
 function factorial(n) {
   return (n > 1) ? n * factorial(n-1) : n;
 //  return n ? n * factorial(n - 1) : 1;
@@ -308,7 +308,7 @@ function factorial(n) {
 
 console.log(factorial(5));
 ==================================
-                                                 // Число Фибоначи
+                                                                  // Число Фибоначи
 function fib(n) {
 //  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
   var a = 1,
@@ -323,7 +323,7 @@ function fib(n) {
 
 console.log(fib(5));
 =======================================
-                                                  // Возврат дробной части
+                                                                  // Возврат дробной части
 function getDecimal(num) {
   if (num < 0) {
     num = -num;
@@ -373,7 +373,7 @@ function ucFirst(str) {
 console.log(ucFirst('petya'));
 
 =================================================
-                                                               // проверка на спам
+                                                                       // проверка на спам
 function checkSpam(str) {
   var marker = -1,
   a = str.toLowerCase();
@@ -394,7 +394,7 @@ console.log(checkSpam('buy ViAgRA now'));  //Spam
 console.log(checkSpam('free xxxxx'));  //Spam
 console.log(checkSpam("innocent rabbit"));  //innocent rabbit
 =================================================
-                                                               // усечение строки
+                                                                             // усечение строки
 function truncate(str, maxlength) {
   var strLength = str.length,
       delta = strLength - +maxlength,
@@ -410,7 +410,7 @@ function truncate(str, maxlength) {
 
 console.log(truncate('0123456789 123456789', 10));
 =================================================
-                                                      // Выделение числа из строки
+                                                                           // Выделение числа из строки
 
 function extractCurrencyValue(str) {
   var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -429,7 +429,7 @@ function extractCurrencyValue(str) {
 
 console.log(extractCurrencyValue('UAH 120'));
 =================================================
-                                                             // Объекты
+                                                                             // Объекты
 
 var user = {};
 user.name = 'Vasya';
@@ -437,7 +437,7 @@ user.surname = 'Petrov';
 user['name'] = 'Sergey';
 delete user['name'];
 =================================================
-                                                            // Проверка Объекта на содержимое
+                                                                            // Проверка Объекта на содержимое
 function isEmpty(obj) {
   var key,
       counter = 0;
@@ -463,7 +463,7 @@ schedule["8:30"] = "подъём";
 
 console.log( isEmpty(schedule) ); // false
 =================================================
-                                                                 // Cумма всех свойств Объекта
+                                                                          // Cумма всех свойств Объекта
 
 "use strict";
 
@@ -523,7 +523,7 @@ console.log(menu);
 //   title: "My menu"
 // };
 =================================================
-                                                     // Последний элемент массива
+                                                                  // Последний элемент массива
 
 function last(arr) {
   var arrLastIndex = arr.length - 1;
@@ -540,7 +540,7 @@ a.push('Computer');
 
 console.log(a);
 =================================================
-                                                    // Работа с началом и концом  массива
+                                                             // Работа с началом и концом  массива
 var styles = ['Jaz', 'Bluez'];
 console.log(styles);
 
@@ -556,7 +556,7 @@ console.log(styles);
 styles.unshift('Rap', 'Raggi');
 console.log(styles);
 =================================================
-                                                      // Случайный элемент из массива
+                                                                    // Случайный элемент из массива
 var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"],
     min = 0,
     max = arr.length - 1,
@@ -565,7 +565,7 @@ var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"],
 console.log(arr);
 console.log(arr[rand]);
 =================================================
-                                                     // Сумма всех элементов из массива
+                                                                   // Сумма всех элементов из массива
 var arr = [],
     item,
     sum = 0,
