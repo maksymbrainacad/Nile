@@ -156,7 +156,7 @@ window.addEventListener('load', function() {
 });
 
 =======================================================
-*/                                                              //searchForm.html
+                                                             //searchForm.html
                                                                  // Всплывающие подсказки при заполнении поля ввода
 window.addEventListener('load', function() {
   var searchForm =   document.querySelector('[data-id="search-form"]'),
@@ -222,3 +222,47 @@ window.addEventListener('load', function() {
     return false;
   });
 });
+=======================================================
+*/                                                              //jqeryFunction.html
+                                                                  //определение по какой кнопке клик
+                                                                  // и перезапись класса в КСС
+var functions = {
+  show: show,
+  hide: hide,
+  setColor: setColor
+}
+
+window.addEventListener('load', function() {
+  var actionsNode = document.querySelector('[data-id="actions"]'),
+      selectorInput = document.querySelector('input[name="selector"]'),      // получили ноду инпута
+      colorInput = document.querySelector('input[name="color"]');           // получили ноду цвета
+
+  actionsNode.addEventListener('click', function(e) {
+    if (e.target !== e.currentTarget) {                         // определили на каком месте по странице был клик
+      var action = e.target.getAttribute('action'),               // получили описание с кликнутого места
+          el = document.querySelector(selectorInput.value);        // вписали в переменную введенное пользователем значение
+
+
+        if (action == 'setColor') {
+          functions[action](el, colorInput.value);                //вызвали функцию с заданным описанием цвета
+        } else {
+          functions[action](el);                                  //вызвали функцию с заданным описанием клика
+        }
+    }
+
+    e.stopPropagation();
+    return false;
+  });
+});
+
+function show(el) {
+  el.style.display = '';
+}
+
+function hide(el) {
+  el.style.display = 'none';
+}
+
+function setColor(el, color) {
+  el.style.color = color;
+}
