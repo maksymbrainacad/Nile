@@ -229,8 +229,12 @@ window.addEventListener('load', function() {
 var functions = {
   show: show,
   hide: hide,
-  setColor: setColor
+  setColor: setColor,
+  slideUp: slideUp,
+  slideDown: slideDown,
+  fadeOut: fadeOut
 }
+
 
 window.addEventListener('load', function() {
   var actionsNode = document.querySelector('[data-id="actions"]'),
@@ -265,4 +269,50 @@ function hide(el) {
 
 function setColor(el, color) {
   el.style.color = color;
+}
+
+
+function slideUp(el) {
+  el.style.overflow = 'hidden';
+
+  var interval = setInterval(function() {
+    if (el.offsetHeight == 0) {
+      clearInterval(interval);
+    } else {
+      el.style.height = Math.floor(el.offsetHeight/2) + 'px';                    // offsetHeight вернуть высоту блока с паддингами
+    }
+  }, 200)
+}
+
+
+function slideDown(el) {
+  var clone = el.cloneNode(true);                                  //создаем клон нашего элемента
+  clone.style.visibility = 'hidden';                               // скрываем его от пользователя
+  clone.style.height = '';                                         // обнуляем высоту до первоночальной
+  document.body.appendChild(clone);                               //вписываем в ДОМ структуру последним элементом
+
+  var cloneHeigth = clone.offsetHeight;                         //получаем начальную высоту блока до скрытия его
+
+  var interval = setInterval(function() {
+    if (el.offsetHeight >= cloneHeigth) {
+      clearInterval(interval);
+    } else {
+      el.style.height = el.offsetHeight + 10 + 'px';                    // offsetHeight вернуть высоту блока с паддингами
+    }
+  }, 200);
+
+  document.body.removeChild(clone);                              //удаляем клон элемента из ДОМ структуры
+}
+
+function fadeOut(el) {
+  var interval = setInterval(function() {
+    var opacity = el.style.opacity || 1;
+
+    if (opacity <= 0) {
+      el.style.display = 'none';
+      clearInterval(interval);
+    } else {
+      el.style.opacity = opacity - 0.1;
+    }
+  }, 200);
 }
