@@ -275,9 +275,9 @@ function setColor(el, color) {
 function slideUp(el) {
   el.style.overflow = 'hidden';
 
-  var interval = setInterval(function() {
+  el.interval = setInterval(function() {
     if (el.offsetHeight == 0) {
-      clearInterval(interval);
+      clearInterval(el.interval);
     } else {
       el.style.height = Math.floor(el.offsetHeight/2) + 'px';                    // offsetHeight вернуть высоту блока с паддингами
     }
@@ -286,6 +286,8 @@ function slideUp(el) {
 
 
 function slideDown(el) {
+  clearInterval(el.interval);
+
   var clone = el.cloneNode(true);                                  //создаем клон нашего элемента
   clone.style.visibility = 'hidden';                               // скрываем его от пользователя
   clone.style.height = '';                                         // обнуляем высоту до первоночальной
@@ -293,9 +295,9 @@ function slideDown(el) {
 
   var cloneHeigth = clone.offsetHeight;                         //получаем начальную высоту блока до скрытия его
 
-  var interval = setInterval(function() {
+  el.interval = setInterval(function() {
     if (el.offsetHeight >= cloneHeigth) {
-      clearInterval(interval);
+      clearInterval(el.interval);
     } else {
       el.style.height = el.offsetHeight + 10 + 'px';                    // offsetHeight вернуть высоту блока с паддингами
     }

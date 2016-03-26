@@ -359,7 +359,7 @@ var rabbit = {
   jumps: true,
   __proto__: animal
 };
-
+                                       // hasOwnProperty(Х) - проверяет, есть ли у обьекта метод (прототип) Х 
 for (var x in rabbit) {               // вернуть все пропперти свойственные rabbit.
   if (rabbit.hasOwnProperty(x)) {    // вернуть только пропперти свойственные rabbit.
     console.log(x, rabbit[x]);
