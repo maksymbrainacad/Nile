@@ -7,8 +7,13 @@ window.addEventListener('load', function() {
   actionsNode.addEventListener('click', function(e) {
 
       var textAreaInput = textAreaNode.value;
-      var transformText = [];
+      var transformText = textAreaInput.split( );
+      var transformTextLength = transformText.length;
       var i = 0;
+
+      for (; i < transformTextLength; i++) {
+          
+      }
 
       document.querySelector('[data-id="animationText"]').innerHTML = textAreaInput;
 
