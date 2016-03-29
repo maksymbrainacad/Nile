@@ -232,14 +232,15 @@ var functions = {
   setColor: setColor,
   slideUp: slideUp,
   slideDown: slideDown,
-  fadeOut: fadeOut
+  fadeOut: fadeOut,
+  fadeIn: fadeIn,
 }
 
 
 window.addEventListener('load', function() {
-  var actionsNode = document.querySelector('[data-id="actions"]'),
+  var actionsNode = document.querySelector('[data-id="actions"]'),           // получили ноду действия
       selectorInput = document.querySelector('input[name="selector"]'),      // получили ноду инпута
-      colorInput = document.querySelector('input[name="color"]');           // получили ноду цвета
+      colorInput = document.querySelector('input[name="color"]'),           // получили ноду цвета
 
   actionsNode.addEventListener('click', function(e) {
     if (e.target !== e.currentTarget) {                         // определили на каком месте по странице был клик
@@ -275,9 +276,9 @@ function setColor(el, color) {
 function slideUp(el) {
   el.style.overflow = 'hidden';
 
-  el.interval = setInterval(function() {
+  el.interval = setInterval(function() {                           //фиксируем сетинтервал для нашего элемента
     if (el.offsetHeight == 0) {
-      clearInterval(el.interval);
+      clearInterval(el.interval);                               // обнуляем интервал для нашего элемента
     } else {
       el.style.height = Math.floor(el.offsetHeight/2) + 'px';                    // offsetHeight вернуть высоту блока с паддингами
     }
@@ -286,7 +287,8 @@ function slideUp(el) {
 
 
 function slideDown(el) {
-  clearInterval(el.interval);
+  clearInterval(el.interval);                                  // обнуляем интервал для нашего элемента
+
 
   var clone = el.cloneNode(true);                                  //создаем клон нашего элемента
   clone.style.visibility = 'hidden';                               // скрываем его от пользователя
@@ -295,9 +297,9 @@ function slideDown(el) {
 
   var cloneHeigth = clone.offsetHeight;                         //получаем начальную высоту блока до скрытия его
 
-  el.interval = setInterval(function() {
+  el.interval = setInterval(function() {                //фиксируем сетинтервал для нашего элемента
     if (el.offsetHeight >= cloneHeigth) {
-      clearInterval(el.interval);
+      clearInterval(el.interval);                       // обнуляем интервал для нашего элемента
     } else {
       el.style.height = el.offsetHeight + 10 + 'px';                    // offsetHeight вернуть высоту блока с паддингами
     }
@@ -307,14 +309,34 @@ function slideDown(el) {
 }
 
 function fadeOut(el) {
-  var interval = setInterval(function() {
+  clearInterval(el.interval);                                  // обнуляем интервал для нашего элемента
+
+  el.interval = setInterval(function() {
     var opacity = el.style.opacity || 1;
 
     if (opacity <= 0) {
       el.style.display = 'none';
-      clearInterval(interval);
+      clearInterval(el.interval);
     } else {
       el.style.opacity = opacity - 0.1;
     }
   }, 200);
 }
+
+function fadeIn(el) {
+  el.interval = setInterval(function() {
+    var opacity = el.style.opacity;
+
+    if (opacity >= 1) {
+      clearInterval(el.interval);
+    } else {
+      el.style.display = '';
+      el.style.opacity = +opacity + 0.1;
+    }
+  }, 200);
+}
+
+// function timeAnimation(time) {
+  // time = timeInput.value;
+
+// }
