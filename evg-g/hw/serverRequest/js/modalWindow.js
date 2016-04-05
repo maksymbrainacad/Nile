@@ -1,7 +1,8 @@
 window.addEventListener('load', function() {
   var modalBtns = document.querySelectorAll('[data-modal]'),
       modalsOverlayNode = document.getElementsByClassName('modals-overlay')[0], // [0] берем первый элемент из коллекции нод
-      zIndex = 1000;
+      zIndex = 1000,
+      modalTemplate;
 
   var showModal = function(modalNode) {
     modalNode.setAttribute('data-opened', 'true');       // вписываем доп атрибут для модального окна,
@@ -22,36 +23,60 @@ window.addEventListener('load', function() {
       if (modalNode) {
         showModal(modalNode);
       } else {
-        var modalUrl = btnNode.getAttribute('data-modal-url');  //получили в переменную шаблон модального окна
+        var modalUrl = btnNode.getAttribute('data-modal-url'),  //получили в переменную шаблон модального окна
+            addAndShowModal = function (modalHtml) {            
+              modalsOverlayNode.innerHTML += modalHtml;
+
+              modalNode = modalsOverlayNode.querySelector('[data-modal-id ="' + modalId + '"]');
+
+              showModal(modalNode);
+
+              var subModalBtns = modalsOverlayNode.querySelectorAll('[data-modal]');
+                                                                                    // проверяем и вписываем все новые кнопки от новых модальных окон
+              Array.prototype.forEach.call(subModalBtns, function(subModalBtns) {   //запускаем метод forEach для коллекции нод modalBtns как будто для массива
+                subModalBtns.addEventListener('click', onModalBtnClick);
+              })
+
+            }
 
         if (modalUrl) {
-          var req = new XMLHttpRequest();                   // в переменную положили команду создающую новый запрос на сервер
-
-          req.open('GET', modalUrl, true);      // open - открыть новое соединение и сформируем ГЕТ запрос на сервер,
-                                                          // третий параметр true - асинхронная загрузка, false - синхронная загрузка (бок)
-
-          req.onreadystatechange = function (aEvt) {      // обработка запроса на ошибки после выполнения
-            if (req.readyState === 4) {                   // readyState статус готовности к приемке запроса
-              if (req.status === 200) {                   // status статус ответа от сервера
-                modalsOverlayNode.innerHTML += req.responseText;
-
-                modalNode = modalsOverlayNode.querySelector('[data-modal-id ="' + modalId + '"]');
-
-                showModal(modalNode);
-
-                var subModalBtns = modalsOverlayNode.querySelectorAll('[data-modal]');
-                                                                                      // проверяем и вписываем все новые кнопки от новых модальных окон
-                Array.prototype.forEach.call(subModalBtns, function(subModalBtns) {   //запускаем метод forEach для коллекции нод modalBtns как будто для массива
-                  subModalBtns.addEventListener('click', onModalBtnClick);
-                })
-
-              } else {
-                console.error(req, aEvt);                //если запрос не выполниться, показываем ошибку
-              }
+          $ajax({                                               // формируем запрос на сервер, вызываея его нашей функцией $ajax
+            url: modalUrl,
+            success: function(result) {
+              addAndShowModal(result);
             }
-          };
+          });
+        } else {
+          var url = btnNode.getAttribute('data-url');  //получили в переменную json для модального окна
 
-          req.send(null);                            // и отправить этот запрос на сервер (null - для ГЕТ запросов)
+          if (url) {
+            $ajax({
+              url: url,
+              responseType: 'json',
+              success: function(result) {
+                var onTamplateLoaded = function () {
+                  var modalHandlebars = Handlebars.compile(modalTemplate); // формируем новое модальное окно на лету из принятой json строки
+                                                                            //  Handlebars.compile(modalTemplate) возвращает функцию нашего шаблона
+                  result.modalId = modalId;                                 // передаем айдишник из jsona в шаблон
+                  var modalHtml = modalHandlebars(result);
+
+                  addAndShowModal(modalHtml);
+                };
+
+                if (modalTemplate) {
+                  onTamplateLoaded();
+                } else {
+                    $ajax({
+                      url: '/modals/temlates_modal.html',
+                      success: function(result) {
+                        modalTemplate = result;
+                        onTamplateLoaded();
+                      }
+                    });
+                }
+              }
+            });
+          }
         }
       }
     }
