@@ -1,9 +1,30 @@
+@import "variables.less";
+@import "mixins.less";
+
+
+/*
+  NAVIGATION
+  1.0 GLOBAL
+  2.0 PAGE INDEX
+  2.1 SECTION TOP
+
+  3.0 SECTION CONTENT
+
+  4.0 SECTION FOOTER
+
+  5.0 MEDIA RESPONSIVE STYLE
+*/
+
+
+/* 1.0 GLOBAL */
 body {
+  position: relative;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   font-size: 14px;
   color: #373E44;
-  background-image: url(../img/background/body/school_blue.jpg);
+  line-height: 22px;
+  background-image: @bodyBackgroundImageUrl;
 }
 
 
@@ -11,6 +32,49 @@ img {                 // правило для адаптирования бол
   max-width: 100%;
   height: auto;
 }
+
+/* ============================ 2.0 PAGE INDEX ================================ */
+/* ============================ 2.1 SECTION TOP  ============================== */
+
+
+.wrapper-top {                         //??????? не срабатывает ширина обложки (((
+  width: @wrapperTopWidth;
+}
+
+.block-social-icon {
+  background-image: @blockSocialIconBackgroundImageUrl;
+  height: @blockSocialIconHeigth;
+}
+
+.social-icon {
+  span {
+    i {
+      color: @socialIconColor;
+      padding-left: @socialIconPaddingLeft;
+      padding-top:@blockSocialIconHeigth/3;
+    }
+  }
+}
+
+.logo-brand {
+  width: @logoBrandWidth;
+}
+
+.header-menu {
+  top: @blockSocialIconHeigth;
+  height: @headerMenuHeigth;
+}
+
+/* ======================= 3.0 SECTION CONTENT ================================ */
+.wrapper-content {
+  margin-top: @wrapperContentMarginTop;
+}
+
+/* 4.0 SECTION FOOTER */
+
+
+
+/* 5.0 MEDIA RESPONSIVE STYLE */
 
 // Large Devices, Wide Screens
 @media only screen and (max-width : 1200px) {
