@@ -17,11 +17,11 @@ function $ajax(obj) {                           // функция формиру
   if (!obj) {            // проверка, если пользователь не ввел данные при запросе
     obj = {};
   }
-
   var method = obj.method || 'GET',
       url = obj.url,
       asynchronus = obj.async || true,
       responseType = obj.responseType || 'text',
+      headers = obj.headers,
       success = obj.success,
       error = obj.error || function (req, aEvt) { console.error(req, aEvt); },
       data = obj.data || null;
@@ -31,7 +31,14 @@ function $ajax(obj) {                           // функция формиру
 
       req.open(method, url, asynchronus);      // open - открыть новое соединение и сформируем запрос на сервер
 
-      req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // отправляем заголовок X-Requested-With запроса с содержанием XMLHttpRequest для сервера
+      req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // отправляем заголовок запроса для сервера
+
+      if (headers) {
+        var headerIndex;                                            // проходимся по обьекту и вписываем все заголовки и содержимое, 
+        for (headerIndex in headers) {
+          req.setRequestHeader(headerIndex, headers[headerIndex]);
+        }
+      }
 
       req.onreadystatechange = function (aEvt) {      // обработка запроса на ошибки после выполнения
         if (req.readyState === 4) {                   // readyState статус готовности к приемке запроса

@@ -1,0 +1,172 @@
+{
+    "results": [
+        {
+            "user": {
+                "gender": "female",
+                "name": {
+                    "title": "miss",
+                    "first": "nevaeh",
+                    "last": "hughes"
+                },
+                "location": {
+                    "street": "6015 mockingbird ln",
+                    "city": "maitland",
+                    "state": "western australia",
+                    "zip": 6671
+                },
+                "email": "nevaeh.hughes@example.com",
+                "username": "whiteleopard386",
+                "password": "novifarm",
+                "salt": "YnIyuG4K",
+                "md5": "3612b17652cefc9daf7db126538a23c4",
+                "sha1": "0be27f2a8099b056260c4f213274c5d70209034a",
+                "sha256": "1da0a8d08f6e5d071d218fb310af399bd945664a6f6b160d81d0860988749c62",
+                "registered": 1107831038,
+                "dob": 861934766,
+                "phone": "02-2660-1092",
+                "cell": "0437-365-606",
+                "TFN": "164278503",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/women/45.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/women/45.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/45.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "female",
+                "name": {
+                    "title": "miss",
+                    "first": "michelle",
+                    "last": "richards"
+                },
+                "location": {
+                    "street": "4451 sunset st",
+                    "city": "geelong",
+                    "state": "south australia",
+                    "zip": 4919
+                },
+                "email": "michelle.richards@example.com",
+                "username": "whitebutterfly343",
+                "password": "keeper",
+                "salt": "khGYoIXl",
+                "md5": "f687dd2bc8a37e629f6ccff5c533626d",
+                "sha1": "37270a19f734a7e7c9f1366b027b9150833fedd0",
+                "sha256": "20dbda04e75c5ad0367755946b45cb07520e486ecb8f48d5cdd41c3217bf53e0",
+                "registered": 1056088857,
+                "dob": 299753556,
+                "phone": "03-1436-4135",
+                "cell": "0441-983-047",
+                "TFN": "238323616",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/women/89.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/women/89.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/89.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "female",
+                "name": {
+                    "title": "ms",
+                    "first": "heidi",
+                    "last": "curtis"
+                },
+                "location": {
+                    "street": "1169 northaven rd",
+                    "city": "melbourne",
+                    "state": "australian capital territory",
+                    "zip": 7649
+                },
+                "email": "heidi.curtis@example.com",
+                "username": "bluepeacock282",
+                "password": "twat",
+                "salt": "w9dCovRz",
+                "md5": "03a10c7942b8c13896f3970ed369bfed",
+                "sha1": "5dfb5ce979817580518fb7827b6eb6d74e31b403",
+                "sha256": "052d0d3db3d28708bef39a8f0495a41c999b244b97ffbb382e2bfc2743021bc7",
+                "registered": 1226119571,
+                "dob": 1355387585,
+                "phone": "01-2283-4335",
+                "cell": "0495-400-262",
+                "TFN": "440605983",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/women/81.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/women/81.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/81.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "female",
+                "name": {
+                    "title": "mrs",
+                    "first": "hazel",
+                    "last": "day"
+                },
+                "location": {
+                    "street": "4614 camden ave",
+                    "city": "darwin",
+                    "state": "new south wales",
+                    "zip": 1071
+                },
+                "email": "hazel.day@example.com",
+                "username": "tinysnake408",
+                "password": "2626",
+                "salt": "JoJOycbY",
+                "md5": "32de4ed6cdb0c0e61e3bb6f95469ed7e",
+                "sha1": "18ee1995c92565b7b44cc608565762311d4cc4f1",
+                "sha256": "865ffa1f43870fc534e04d0f59f85912f5caa920363d6c8040712af6f2e337b8",
+                "registered": 1273843960,
+                "dob": 47744766,
+                "phone": "02-9140-6685",
+                "cell": "0429-312-926",
+                "TFN": "763393071",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/women/23.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/women/23.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/23.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "randall",
+                    "last": "west"
+                },
+                "location": {
+                    "street": "1975 mcclellan rd",
+                    "city": "coffs harbour",
+                    "state": "south australia",
+                    "zip": 920
+                },
+                "email": "randall.west@example.com",
+                "username": "smalldog175",
+                "password": "flex",
+                "salt": "gXa3KpIb",
+                "md5": "2b357df46424b1dbfd9e62ad8dc16eb7",
+                "sha1": "a991e4cedbec80353616552e94468c494ece6f29",
+                "sha256": "9cffd014a791a6142c94315d2b02d78aafd86a12e3514f620fc9258bb5959d42",
+                "registered": 946681863,
+                "dob": 456900992,
+                "phone": "05-3817-7901",
+                "cell": "0495-114-451",
+                "TFN": "571733419",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/49.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/49.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/49.jpg"
+                }
+            }
+        }
+    ],
+    "nationality": "AU",
+    "seed": "39a329f3262979e000",
+    "version": "0.8"
+}

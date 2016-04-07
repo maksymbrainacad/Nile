@@ -1,0 +1,36 @@
+.gallery-preview {
+  list-style-type: none;
+  position: relative;
+  height: 100px;
+}
+
+.gallery-preview li {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease;
+
+}
+
+.gallery-preview li.active {
+  display: block;;
+  opacity: 1;
+}
+
+.gallery-thumbnails {
+  list-style-type: none;
+}
+
+.gallery-thumbnails li {
+  float: left;;
+}
+
+.gallery-thumbnails li.active {
+  border: 2px solid #00f;
+}
+
+.gallery-thumbnails::after {
+  content: '';
+  display: block;
+  clear: both;
+
+}
