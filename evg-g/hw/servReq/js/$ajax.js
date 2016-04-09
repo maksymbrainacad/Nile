@@ -31,10 +31,10 @@ function $ajax(obj) {                           // функция формиру
 
       req.open(method, url, asynchronus);      // open - открыть новое соединение и сформируем запрос на сервер
 
-      req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // отправляем заголовок запроса для сервера
+      // req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // отправляем заголовок запроса для сервера
 
       if (headers) {
-        var headerIndex;                                            // проходимся по обьекту и вписываем все заголовки и содержимое, 
+        var headerIndex;                                            // проходимся по обьекту и вписываем все заголовки и содержимое,
         for (headerIndex in headers) {
           req.setRequestHeader(headerIndex, headers[headerIndex]);
         }
@@ -59,5 +59,5 @@ function $ajax(obj) {                           // функция формиру
         }
       };
 
-      req.send(data);
+      req.send(data);                           // отправка запроса при все ок
 }

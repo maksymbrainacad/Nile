@@ -30,14 +30,13 @@
 
     galleryThumbnailsNode = galleryNode.querySelector('[data-id="gallery-thumbnails"]');
 
-                                                                                            // действия на кликb по стрелкам
+                                            // Начало: действия на клики по стрелкам для preview
     galleryNode.querySelector('[data-action="left"]').addEventListener('click', function() {
       var index = activIndex - 1;
       if (index < 0) {
         index = thumbnailsListNodes.length - 1;
       }
       setActive(index);
-      console.log(index);
     });
 
     galleryNode.querySelector('[data-action="right"]').addEventListener('click', function() {
@@ -46,9 +45,27 @@
         index = 0;
       }
       setActive(index);
-      console.log(index);
     });
-                                                                                        //===================
+                                            // Конец: действия на клики по стрелкам preview
+
+                                            // Начало: действия на клики по стрелкам для thumbnails
+    var actionsBtns = galleryNode.querySelectorAll('[data-action-thumbnails]');
+
+    Array.prototype.forEach.call(actionsBtns, function(actionBtn) {   //запускаем метод forEach для коллекции нод actionsBtns как будто для массива
+      actionBtn.addEventListener('click', function(e) {
+        var action = e.target.getAttribute('data-action-thumbnails'),
+            sign = action === 'left' ? -1 : 1,
+            currentMarginLeft = parseInt(galleryThumbnailsNode.style.marginLeft || 0, 10);
+              // проверка на положение картинок и запрет прокрутки в начале и конце линейки привьюшек
+            if ((currentMarginLeft === 0 && sign === 1) || (currentMarginLeft * -1 >= (thumbnailsListNodes.length * 50 / 2) && sign === -1)) {
+              return;
+            }
+
+            galleryThumbnailsNode.style.marginLeft =(currentMarginLeft + 50 * sign) + 'px';
+      });
+    });
+
+                                            // Конец: действия на клики по стрелкам thumbnails
 
     galleryThumbnailsNode.addEventListener('click', function(e) {
       if (e.target !== e.currentTarget) {

@@ -1,12 +1,7 @@
 window.addEventListener('load', function() {
   $ajax({
-    url: '/user.json',                         // запрос на сервер randomuser.me данных пользователей в кол-ве result=5
+    url: 'http://api.randomuser.me/?results=10',                         // запрос на сервер randomuser.me данных пользователей в кол-ве result=10
     responseType: 'json',                       //  передаваемые данные в json формате
-    headers: {
-      // 'Access-Control-Allow-Headers': '*',         // можем отправить любые заголовки
-      // 'Access-Control-Allow-Origin': '*',          // можем отправить любое содержание
-      // 'Access-Control-Request-Method': '*'  //
-    },
     success: function(users) {
       var usersCount = users.results.length,
           usersList = '',
@@ -15,9 +10,9 @@ window.addEventListener('load', function() {
 
       if (usersCount) {
         for (; i < usersCount; i++) {
-          usersList += '<li> <img src="' + users.results[i].user.picture.medium + '" alt=""/></li>';               // путь в файле json где лежат картинки
+          usersList += '<li> <img src="' + users.results[i].picture.medium + '"data-popup="' + users.results[i].picture.large + '" alt=""/></li>';             // путь в файле  где лежат картинки
 
-          usersListPreview += '<li> <img src="' + users.results[i].user.picture.thumbnail + '" alt=""/></li>';               // путь в файле json где лежат картинки
+          usersListPreview += '<li> <img src="' + users.results[i].picture.thumbnail + '" alt=""/></li>';   // путь в файле  где лежат картинки
         }
       }
 
@@ -26,6 +21,11 @@ window.addEventListener('load', function() {
       document.querySelector('[data-id="gallery-thumbnails"]').innerHTML = usersListPreview;
 
       Gallery.init(document.querySelector('[data-id="gallery"]'));     // подключаем функцию галереи после получения и отрисовки фоток юзеров от сервера
+
+      Popup.init({
+        queryBy: '[data-popup]',  // формируем модальные окна для всех имейджей у которых есть data-popup
+        urlAtrr: 'data-popup'
+      });
     }
   });
 });

@@ -10,12 +10,24 @@
       <span data-action="left">&lt;</span>
       <span data-action="right">&gt;</span>
       <ul class="gallery-preview" data-id="gallery-preview"></ul>
-      <ul class="gallery-thumbnails" data-id="gallery-thumbnails"></ul>
+
+      <div class="gallery-thumbnails-box">
+        <span data-action-thumbnails="left">&lt;</span>
+        <span data-action-thumbnails="right">&gt;</span>
+
+        <div class="gallery-thumbnails-overflow">
+          <ul class="gallery-thumbnails" data-id="gallery-thumbnails"></ul>
+        </div>
+      </div>
     </div>
 
 
+    <script src="/libs/handlebars-v4.0.5.js"></script>
+
+    <script src="/js/popup.js"></script>
     <script src="/js/gallery.js"></script>
     <script src="/js/$ajax.js"></script>
+
     <script src="/js/app.js"></script>
   </body>
 </html>
