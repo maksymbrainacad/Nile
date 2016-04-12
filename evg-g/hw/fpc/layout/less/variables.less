@@ -1,17 +1,21 @@
 /* 1.0 GLOBAL */
 @bodyBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body
+@link-color: #666;             // цвет ссылок
+@link-hover-color: darken(@link-color, 15%);   // цвет ссылок при наведении
+@link-visited-color: darken(@link-color, 25%);   // цвет просмотренных ссылок
+
 
 /* 2.0 PAGE INDEX */
 /* 2.1 SECTION TOP */
 
-@wrapperTopWidth: 400px;     // ширина обложки блока ТОР     ??? не срабатывает
+@wrapperTopWidth: 900px;     // ширина обложки блока ТОР     ??? не срабатывает
 @blockSocialIconHeigth: 30px;    // высота блока социальных иконок
 @blockSocialIconBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body блока социальных иконок
 @socialIconColor: #54626f;     // цвет социальных иконок
-@socialIconPaddingLeft: 10px; // отступ социальных иконок друг от друга
+@socialIconPaddingLeft: 5px; // отступ социальных иконок друг от друга
 @logoBrandWidth: 250px;     // ширина логотипа компании
 @headerMenuHeigth: 100px;   // высота горизонтального меню
 
 /* 2.0 PAGE INDEX */
 /* 3.0 SECTION CONTENT */
-@wrapperContentMarginTop: @blockSocialIconHeigth + @headerMenuHeigth;
+@wrapperContentMarginTop: @blockSocialIconHeigth + @headerMenuHeigth; //отступ с верху блока CONTENT

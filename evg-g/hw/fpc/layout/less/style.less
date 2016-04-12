@@ -27,10 +27,24 @@ body {
   background-image: @bodyBackgroundImageUrl;
 }
 
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+  &:visited {
+    color: @link-visited-color;
+    text-decoration: none;
+  }
+}
 
 img {                 // правило для адаптирования больших изображений
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* ============================ 2.0 PAGE INDEX ================================ */
@@ -47,12 +61,9 @@ img {                 // правило для адаптирования бол
 }
 
 .social-icon {
-  span {
-    i {
-      color: @socialIconColor;
-      padding-left: @socialIconPaddingLeft;
-      padding-top:@blockSocialIconHeigth/3;
-    }
+  i {
+    color: @socialIconColor;
+    padding-left: @socialIconPaddingLeft;
   }
 }
 
@@ -68,6 +79,11 @@ img {                 // правило для адаптирования бол
 /* ======================= 3.0 SECTION CONTENT ================================ */
 .wrapper-content {
   margin-top: @wrapperContentMarginTop;
+}
+
+.foto {                           // фото блок руководитель проекта
+  max-width: 250px;
+  max-height: auto;
 }
 
 /* 4.0 SECTION FOOTER */
