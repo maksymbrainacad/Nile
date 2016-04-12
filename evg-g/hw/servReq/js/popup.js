@@ -17,7 +17,9 @@
         footer: ''
       });
 
-      document.body.innerHTML += popupHtml;      // добавили отрисованное окно в хтмд структуру
+      var popupEl = document.createElement('div');
+      popupEl.innerHTML = popupHtml;
+      document.body.appendChild(popupEl);  // добавили отрисованное окно в хтмд структуру последним элементом
     };
 
 
