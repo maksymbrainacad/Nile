@@ -1,0 +1,13 @@
+.container div {
+	width: 100px;
+	height: 100px;
+	border: 2px solid grey;
+}
+
+.green {
+	background-color: green;
+}
+
+.red {
+	background-color: red;
+}
