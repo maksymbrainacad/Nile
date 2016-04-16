@@ -1,4 +1,4 @@
-(function() {
+;(function() {
   'use strict';
 
   function Animal(type) {
@@ -6,16 +6,19 @@
   }
 
   Animal.prototype.getData = function (success, error) {
+    var successBind = success.bind(this);
+    var errorBind = error.bind(this);
+
     $ajax({
       url: '/animals/' + this.type + '.json',
-      success: success,
-      error: error
+      success: successBind,
+      error: errorBind
     });
   };
 
   if (!window.constructors){
-    window.constructors = {
-      Animal: Animal
-    };
+    window.constructors = {};
   }
+
+  window.constructors.Animal = Animal;
 })();
