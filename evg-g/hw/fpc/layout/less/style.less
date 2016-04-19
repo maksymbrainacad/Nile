@@ -19,27 +19,49 @@
 /* 1.0 GLOBAL */
 body {
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  font-size: 14px;
-  color: #373E44;
-  line-height: 22px;
+  font-family: @bodyFontFamily;
+  font-weight: @bodyFontWeight;
+  font-size: @bodyFontSize;
+  color: @bodyColor;
+  line-height: @bodyLineHeight;
   background-image: @bodyBackgroundImageUrl;
 }
 
-a {
-  color: @link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: @link-hover-color;
-    text-decoration: none;
-  }
-  &:visited {
-    color: @link-visited-color;
-    text-decoration: none;
-  }
+.h2-custom,
+.h3-custom {
+  font-family: @hCustomFontFamily;
+  font-weight: @hCustomFontWeight;
+  line-height: @hCustomLineHeight;
+  text-transform: uppercase;
+  color: @hCustomColor;
+  margin-top: @hCustomMarginTop;
+  margin-bottom: @hCustomMarginBottom;
 }
+
+.h2-custom {
+  font-size: @h2CustomFontSize;
+}
+
+.h3-custom {
+  font-size: @h3CustomFontSize;
+}
+
+a {
+  color: @linksColor;
+  text-decoration: none;
+}
+  :active {
+    text-decoration: none;
+    color: @linksHoverColor;  //!!!!!!!!!!!!!!!!!!!!!
+  }
+  :hover {
+    text-decoration: none;
+    color: @linksHoverColor;
+  }
+  :visited {
+    color: @linksVisitedColor;
+    text-decoration: none;
+  }
 
 img {                 // правило для адаптирования больших изображений
   max-width: 100%;
@@ -50,10 +72,11 @@ img {                 // правило для адаптирования бол
 /* ============================ 2.0 PAGE INDEX ================================ */
 /* ============================ 2.1 SECTION TOP  ============================== */
 
-
 .wrapper-top {                         //??????? не срабатывает ширина обложки (((
   width: @wrapperTopWidth;
 }
+
+/* ================= Top Soci Icon Block ===== =======*/
 
 .block-social-icon {
   background-image: @blockSocialIconBackgroundImageUrl;
@@ -61,25 +84,133 @@ img {                 // правило для адаптирования бол
 }
 
 .social-icon {
-  i {
-    color: @socialIconColor;
-    padding-left: @socialIconPaddingLeft;
+  padding-left: @socialIconPaddingLeft;
+  a {
+
   }
+    :hover {
+      color: @socialIconColorHover;
+    }
+    i {
+      color: @socialIconColor;
+    }
 }
+
+/* ================= Header Menu Block =============*/
 
 .logo-brand {
   width: @logoBrandWidth;
 }
 
-.header-menu {
+.header-menu-block {
   top: @blockSocialIconHeigth;
   height: @headerMenuHeigth;
+}
+
+.navbar-default {
+  .navbar-collapse {
+    .header-menu-list {
+      float: right;
+      li {
+      margin-top: (@headerMenuHeigth / 2) - (@bodyFontSize / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
+      text-transform: uppercase;
+        a {
+          font-weight: 400;
+          color: @headerMenuListLinkColor;
+          padding-top: @headerMenuListLinkPaddingTop;
+          padding-bottom: @headerMenuListLinkPaddingBottom;
+        }
+          :hover {
+            border-bottom: 2px solid @headerMenuListLinkActiveBorderColor;
+            box-shadow: 3px 3px 3px @headerMenuListLinkActiveShadowColor;
+            color: @headerMenuListLinkHoverColor;
+          }
+      }
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-collapse {
+    .navbar-nav {
+      .menu-active-link {
+        border-bottom: 2px solid @headerMenuListLinkActiveBorderColor;
+        box-shadow: 3px 3px 3px @headerMenuListLinkActiveShadowColor;
+        a {
+          color: @headerMenuListLinkActiveColor;
+        }
+      }
+    }
+  }
 }
 
 /* ======================= 3.0 SECTION CONTENT ================================ */
 .wrapper-content {
   margin-top: @wrapperContentMarginTop;
 }
+
+/* ================= Banner Block ============= */
+/* ===== Buttons ========= */
+.btn-primary-custom {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background-color: @btnPrimaryCustomColor;
+  border-color: @btnPrimaryCustomBorderColor;
+
+}
+
+.btn-primary-custom:focus,
+.btn-primary-custom.focus {
+  color: #fff;
+  background-color: @btnPrimaryCustomFocusColor;
+  border-color: @btnPrimaryCustomBorderFocusColor;
+}
+.btn-primary-custom:hover {
+  color: #fff;
+  background-color: @btnPrimaryCustomHoverColor;
+  border-color: @btnPrimaryCustomBorderHoverColor;
+}
+.btn-primary-custom:active,
+.btn-primary-custom.active,
+.open > .dropdown-toggle.btn-primary-custom {
+  color: #fff;
+  background-color: @btnPrimaryCustomActiveColor;
+  border-color: @btnPrimaryCustomBorderActiveColor;
+}
+.btn-primary-custom:active:hover,
+.btn-primary-custom.active:hover,
+.open > .dropdown-toggle.btn-primary-custom:hover,
+.btn-primary-custom:active:focus,
+.btn-primary-custom.active:focus,
+.open > .dropdown-toggle.btn-primary-custom:focus,
+.btn-primary-custom:active.focus,
+.btn-primary-custom.active.focus,
+.open > .dropdown-toggle.btn-primary-custom.focus {
+  color: #fff;
+  background-color: @btnPrimaryCustomPushColor;
+  border-color: @btnPrimaryCustomBorderPushColor;
+}
+.btn-primary-custom:active,
+.btn-primary-custom.active,
+.open > .dropdown-toggle.btn-primary-custom {
+  background-image: none;
+}
+.btn-primary-custom.disabled:hover,
+.btn-primary-custom[disabled]:hover,
+fieldset[disabled] .btn-primary-custom:hover,
+.btn-primary-custom.disabled:focus,
+.btn-primary-custom[disabled]:focus,
+fieldset[disabled] .btn-primary-custom:focus,
+.btn-primary-custom.disabled.focus,
+.btn-primary-custom[disabled].focus,
+fieldset[disabled] .btn-primary-custom.focus {
+  background-color: @btnPrimaryCustomColor;
+  border-color: @btnPrimaryCustomBorderColor;
+}
+
+
 
 .foto {                           // фото блок руководитель проекта
   max-width: 250px;
@@ -93,45 +224,45 @@ div.social-icon-footer div {
 }
 
 .social-icon-footer a {
-  width: 75px;
-  height: 76px;
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
   display: block;
 }
 
 .social-icon-footer-facebook {
-  width: 75px;
-  height: 76px;
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -6px 0;
+  background-position: 0 -40px;
 }
 
 .social-icon-footer-facebook a:hover {
   background: @socialIconFooterUrl;
-  background-position: -6px -89px;
+  background-position: 0 0;
 }
 
 .social-icon-footer-google {
-  width: 75px;
-  height: 76px;
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -89px 0;
+  background-position: -40px -40px;
 }
 
 .social-icon-footer-google a:hover {
   background: @socialIconFooterUrl;
-  background-position: -89px -87px;
+  background-position: -40px 0;
 }
 
 .social-icon-footer-twitter {
-  width: 75px;
-  height: 76px;
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -172px 0;
+  background-position: -80px -40px;
 }
 
 .social-icon-footer-twitter a:hover {
   background: @socialIconFooterUrl;
-  background-position: -172px -86px;
+  background-position: -80px 0;
 }
 
 /* ===== Contact ===== */
@@ -141,24 +272,24 @@ div.social-icon-footer div {
 }
 
 .contact-mail {
-  width: 35px;
-  height: 30px;
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -300px 0;
+  background-position: -120px -40px;
 }
 
 .contact-phone {
-  width: 35px;
-  height: 30px;
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -337px 0;
+  background-position: -160px -40px;
 }
 
 .contact-adress {
-  width: 35px;
-  height: 30px;
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
-  background-position: -261px 0;
+  background-position: -200px -40px;
 }
 
 /* 5.0 MEDIA RESPONSIVE STYLE */

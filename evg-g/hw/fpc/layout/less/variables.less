@@ -1,25 +1,80 @@
+/* 0.0 MIXINS.LESS */
+// ============= Тени для текста
+@textShadowColor: rgba(51, 102, 102, 0.74);  // цвет тени текста
+@textShadowHorizontalShift: 3px; // смещение по горизонтали тени текста
+@textShadowVerticalShift: 2px;   // смещение по вертикали тени текста
+@textShadowBlur: 4px;   // размытие тени текста
+
 /* 1.0 GLOBAL */
 @bodyBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body
-@link-color: #666;             // цвет ссылок
-@link-hover-color: darken(@link-color, 15%);   // цвет ссылок при наведении
-@link-visited-color: darken(@link-color, 25%);   // цвет просмотренных ссылок
+@bodyFontFamily: 'Open Sans', sans-serif; // основное семейство шрифтов для body
+@bodyFontWeight: normal; // основное начертание шрифтов для body
+@bodyFontSize: 14px; // основное размер шрифта для body
+@bodyColor: #373E44; // основное цвет шрифта для body
+@bodyLineHeight: 22px; // основной межстрочный интервал для body
+
+@hCustomFontFamily: inherit; // основное семейство шрифтов для Заголовков h
+@hCustomFontWeight: 500; // основное начертание шрифтов для Заголовков h
+@hCustomLineHeight: 1.1;  // основной межстрочный интервал для Заголовков h
+@hCustomColor: inherit; // основное цвет шрифта для Заголовков h
+@hCustomMarginTop: 20px; // отступ с верху от Заголовков h
+@hCustomMarginBottom: 10px; // отступ с низу от Заголовков h
+
+@h2CustomFontSize: 30px; // размер шрифта для Заголовков h2
+@h3CustomFontSize: 24px; // размер шрифта для Заголовков h3
+
+@linksColor: #666;                           // цвет ссылок
+@linksHoverColor: darken(@linksColor, 15%);   // цвет ссылок при наведении
+@linksVisitedColor: darken(@linksColor, 25%);  // цвет просмотренных ссылок
 
 
 /* 2.0 PAGE INDEX */
 /* 2.1 SECTION TOP */
 
-@wrapperTopWidth: 900px;     // ширина обложки блока ТОР     ??? не срабатывает
-@blockSocialIconHeigth: 30px;    // высота блока социальных иконок
+@wrapperTopWidth: 900px;     // ширина обложки блока ТОР                               ??? не срабатывает
+@blockSocialIconHeigth: 25px;    // высота блока социальных иконок
 @blockSocialIconBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body блока социальных иконок
-@socialIconColor: #54626f;     // цвет социальных иконок
+@socialIconColor: rgba(65, 75, 76, 0.52);     // цвет социальных иконок
+@socialIconColorHover: #366;   // цвет социальных иконок при наведении
 @socialIconPaddingLeft: 5px; // отступ социальных иконок друг от друга
-@logoBrandWidth: 250px;     // ширина логотипа компании
-@headerMenuHeigth: 100px;   // высота горизонтального меню
+
+@logoBrandWidth: 250px;                  // ширина логотипа компании
+
+@headerMenuHeigth: 100px;                // высота горизонтального меню
+@headerMenuListLinkPaddingTop: 10px;     // отступ с верхуссылок в меню
+@headerMenuListLinkPaddingBottom: 10px;  // отступ с низу от ссылок в меню
+@headerMenuListLinkColor: #373E44;       // цвет шрифта ссылок в меню
+@headerMenuListLinkActiveColor: #366; // цвет шрифта активной ссылки в меню
+@headerMenuListLinkHoverColor: #366;  // цвет шрифта ссылок при наведении в меню
+@headerMenuListLinkActiveBorderColor: #366; // цвет рамки активной ссылоки в меню
+@headerMenuListLinkHoverBorderColor: #366;  // цвет рамки ссылок при наведении в меню
+@headerMenuListLinkActiveShadowColor: rgba(201, 201, 201, 1); // цвет тени активной ссылоки в меню
+@headerMenuListLinkHoverShadowColor: rgba(201, 201, 201, 1);  // цвет тени ссылок при наведении в меню
+
 
 /* 2.0 PAGE INDEX */
 /* 3.0 SECTION CONTENT */
 @wrapperContentMarginTop: @blockSocialIconHeigth + @headerMenuHeigth; //отступ с верху блока CONTENT
 
+@btnPrimaryCustomColor: #366; // цвет кнопки в банере
+@btnPrimaryCustomBorderColor: darken(@btnPrimaryCustomColor, 25%); // цвет рамки кнопки в банере
+
+@btnPrimaryCustomHoverColor: lighten(@btnPrimaryCustomColor, 12%); // цвет кнопки в банере при наведении
+@btnPrimaryCustomBorderHoverColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при наведении
+
+@btnPrimaryCustomActiveColor: lighten(@btnPrimaryCustomColor, 15%); // цвет кнопки в банере при Active
+@btnPrimaryCustomBorderActiveColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnPrimaryCustomPushColor: lighten(@btnPrimaryCustomColor, 12%); // цвет кнопки в банере при Active
+@btnPrimaryCustomBorderPushColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnPrimaryCustomFocusColor: lighten(@btnPrimaryCustomColor, 10%); // цвет кнопки в банере при фокусе
+@btnPrimaryCustomBorderFocusColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при фокусе
+
 /* 2.0 PAGE INDEX */
 /* 4.0 SECTION FOOTER */
 @socialIconFooterUrl: url(../img/sprite.png);
+@socialIconFooterSizeImgWidth: 40px;
+@socialIconFooterSizeImgHeigth: 40px;
+@contactFooterSizeImgWidth: 40px;
+@contactFooterSizeImgHeigth: 40px;
