@@ -1,40 +1,4 @@
-function router() {
-  var url = location.hash.split('/');
-  var currentPage = url[1] || 'main';
-  var contentNode = document.querySelector('[data-id="content"]');
-
-  var pages = {
-    main: {
-      title: 'Main page',
-      view: '<h1>Welcome</h1>'
-    },
-    about: {
-      authorization: true,
-      title: 'About page',
-      view: '<h1>About</h1>', // 'views/about.html'
-      controller: function() {
-        this.querySelector('h1')
-            .addEventListener('click', function() {
-              console.log('about controller');
-            });
-      }
-    }
-  };
-
-  var page = pages[currentPage];
-
-  contentNode.innerHTML = page.view;
-
-  if (page.controller) {
-    page.controller.call(contentNode);
-  }
-
-  if (page.title) {
-    document.title = page.title;
-  }
-}
-
-window.addEventListener('hashchange', router);
+window.onload = function() {};
 
 window.addEventListener('load', function() {
   var modalLoginForm = document.querySelector('[data-id="modal-login-form"]'),
@@ -79,6 +43,4 @@ window.addEventListener('load', function() {
   logInNode.querySelector('button').addEventListener('click', function() {
     modalLoginForm.classList.add('modal-overlay-active');
   });
-
-  router();
 });
