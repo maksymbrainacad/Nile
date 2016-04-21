@@ -1,0 +1,62 @@
+.main-header {
+  border: 1px solid #333;
+}
+
+.main-header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.main-header .log-in,
+.main-header .log-out {
+  display: none;
+  float: right;
+}
+
+.modals-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.modals-overlay-active {
+  display: block;
+}
+
+.modals-overlay .modal {
+  background-color: #fff;
+  min-height: 200px;
+  min-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.modals-overlay .modal .modal-header {
+  background: #666;
+  color: #ccc;
+}
+
+.modals-overlay .modal .modal-header .btn-close {
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.modals-overlay .modal .modal-footer {
+  background: #666;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #ccc;
+}

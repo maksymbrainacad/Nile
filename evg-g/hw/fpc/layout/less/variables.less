@@ -5,6 +5,13 @@
 @textShadowVerticalShift: 2px;   // смещение по вертикали тени текста
 @textShadowBlur: 4px;   // размытие тени текста
 
+// ============= Тени для кнопок
+@btnShadowColor: rgba(51, 102, 102, 0.5);  // цвет тени кнопок
+@btnShadowHorizontalShift: 2px; // смещение по горизонтали тени кнопок
+@btnShadowVerticalShift: 3px;   // смещение по вертикали тени кнопок
+@btnShadowBlur: 4px;   // размытие тени кнопок
+@btnShadowEnhanced: 2px;   // расширение тени кнопок
+
 /* 1.0 GLOBAL */
 @bodyBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body
 @bodyFontFamily: 'Open Sans', sans-serif; // основное семейство шрифтов для body
@@ -56,6 +63,10 @@
 /* 3.0 SECTION CONTENT */
 @wrapperContentMarginTop: @blockSocialIconHeigth + @headerMenuHeigth; //отступ с верху блока CONTENT
 
+// ===== Button Primary
+@btnPrimaryCustomMarginBottom: 10px; // отступ  снизу от кнопки в банере
+@btnPrimaryCustomFontSize: 14px; // размер шрифта для кнопки в банере
+
 @btnPrimaryCustomColor: #366; // цвет кнопки в банере
 @btnPrimaryCustomBorderColor: darken(@btnPrimaryCustomColor, 25%); // цвет рамки кнопки в банере
 
@@ -70,6 +81,40 @@
 
 @btnPrimaryCustomFocusColor: lighten(@btnPrimaryCustomColor, 10%); // цвет кнопки в банере при фокусе
 @btnPrimaryCustomBorderFocusColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при фокусе
+
+// ===== Button Default
+@btnDefaultCustomMarginBottom: 10px; // отступ  снизу от кнопки в банере
+@btnDefaultCustomFontSize: 14px; // размер шрифта для кнопки в банере
+
+@btnDefaultCustomColor: #7cc7c7; // цвет кнопки в банере
+@btnDefaultCustomBorderColor: darken(@btnDefaultCustomColor, 25%); // цвет рамки кнопки в банере
+
+@btnDefaultCustomHoverColor: darken(@btnDefaultCustomColor, 12%); // цвет кнопки в банере при наведении
+@btnDefaultCustomBorderHoverColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при наведении
+
+@btnDefaultCustomActiveColor: darken(@btnDefaultCustomColor, 15%); // цвет кнопки в банере при Active
+@btnDefaultCustomBorderActiveColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnDefaultCustomPushColor: darken(@btnDefaultCustomColor, 12%); // цвет кнопки в банере при Active
+@btnDefaultCustomBorderPushColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnDefaultCustomFocusColor: darken(@btnDefaultCustomColor, 10%); // цвет кнопки в банере при фокусе
+@btnDefaultCustomBorderFocusColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при фокусе
+
+// ==== Buttons Link
+@btnLinkColor: #fff; // цвет ссылок в кнопках Primary & Default
+@btnLinkHoverColor: #000; // цвет ссылок при наведении в кнопках Primary & Default
+
+// ==== Corporat Programm Block
+@corporateProgrammItemBackgroundImageUrl: url(../img/background/body/geometry.jpg); // фоновое изображение для блоков Corporat Programm
+@corporateProgrammItemPadding: 10px; // внутренние круговые отступы для блоков Corporat Programm
+@corporateProgrammItemMarginRight: 2px; // отступ с права для блоков Corporat Programm
+@corporateProgrammItemMarginBottom: 2px; // отступ с низу для блоков Corporat Programm
+@corporateProgrammItemMaxWidth: 290px; // максимальная ширина блоков Corporat Programm
+@corporateProgrammItemLinkFontSize: 12px; // размер шрифта ссылок блоков Corporat Programm
+
+
+
 
 /* 2.0 PAGE INDEX */
 /* 4.0 SECTION FOOTER */
