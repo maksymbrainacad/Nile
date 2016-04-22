@@ -5,9 +5,19 @@ window.addEventListener('load', function() {
 		first = document.querySelector('[data-id="first"]');
 
 	function toggle(el, className) {
-		if(el.classList.contains(className)) {
-			el.classList.remove(className);
-		} else {el.classList.add(className)}
+
+		var attrib = el.getAttribute('class') || '';
+		var	attribArr = attrib.split(' '),
+			index = attribArr.indexOf(className);
+
+		if(index === -1) {
+			attribArr.push(className);
+		} else {
+			attribArr.splice(index, 1);
+		}
+
+		var attribStr = attribArr.join(' ');
+		el.className = attribStr;
 	}
 
 	toggle(third, 'green');
