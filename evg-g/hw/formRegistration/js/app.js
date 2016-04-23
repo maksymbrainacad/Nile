@@ -4,7 +4,9 @@ window.addEventListener('load', function() {
       logInNode = document.querySelector('.log-in'),
       logOutNode = document.querySelector('.log-out'),
 
-      user = JSON.parse(localStorage.getItem('user'));
+      // user = JSON.parse(localStorage.getItem('user'));
+
+      user = JSON.parse(getCookie('user') || null);
 
 /* Начало инициализации пользователя */
   if (user) {
@@ -23,10 +25,16 @@ window.addEventListener('load', function() {
     var email = e.target.email.value;
     var password = e.target.password.value;
 
-    localStorage.setItem('user', JSON.stringify({   // добавляем нового пользователя в localStorage
+    // localStorage.setItem('user', JSON.stringify({   // добавляем нового пользователя в localStorage
+    //   email: email,
+    //   password: password
+    // }));
+
+    setCookie('user', JSON.stringify({   // добавляем нового пользователя в Cookie
       email: email,
       password: password
     }));
+
 
     modalLoginForm.classList.remove('modals-overlay-active');
 
@@ -37,7 +45,8 @@ window.addEventListener('load', function() {
   });
 
   logOutNode.querySelector('button').addEventListener('click', function() {
-    localStorage.removeItem('user');                  // удаляем пользователя из localStorage
+    // localStorage.removeItem('user');                  // удаляем пользователя из localStorage
+    deleteCookie('user');
     location.reload();                                  //location глобальный обьект который хранит данные о местоположении пользователя, reload перезагрузка страници
 
   });

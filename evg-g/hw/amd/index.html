@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AMD</title>
+  </head>
+  <body>
+
+
+    <script src= "/libs/require.js"></script>
+    <script>
+      requirejs(['app/app'],     // активируем подключенные библиотеки, принимает массив путей( откуда и что подгрузить)
+        function (app) {      // передаем активируемые библиотеки
+          app.run();
+        }
+      );
+    </script>
+  </body>
+</html>

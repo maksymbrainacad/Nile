@@ -3,7 +3,12 @@ function Login(prevHash) {
     var email = e.target.email.value;
     var password = e.target.password.value;
 
-    localStorage.setItem('user', JSON.stringify({   // добавляем нового пользователя в localStorage
+    // localStorage.setItem('user', JSON.stringify({   // добавляем нового пользователя в localStorage
+    //   email: email,
+    //   password: password
+    // }));
+
+    setCookie('user', JSON.stringify({   // добавляем нового пользователя в Cookie
       email: email,
       password: password
     }));
