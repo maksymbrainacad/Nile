@@ -27,15 +27,20 @@ body {
   background-image: @bodyBackgroundImageUrl;
 }
 
+.h1-custom,
 .h2-custom,
 .h3-custom {
   font-family: @hCustomFontFamily;
   font-weight: @hCustomFontWeight;
   line-height: @hCustomLineHeight;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: @hCustomColor;
   margin-top: @hCustomMarginTop;
   margin-bottom: @hCustomMarginBottom;
+}
+
+.h1-custom {
+  font-size: @h1CustomFontSize;
 }
 
 .h2-custom {
@@ -298,14 +303,72 @@ fieldset[disabled] .btn-default-custom.focus {
   }
 }
 
+/* ================= Next Training Block ============= */
+.next-training {
+  .next-training-list {
+    list-style-type: none;
+    padding: @nextTrainingListPaddingVertical @nextTrainingListPaddingHorizontal;
+    li {
+      border: 1px solid @nextTrainingListBorderColor;
+      margin-bottom: @nextTrainingListMarginBottom;
+      a {
+        text-transform: uppercase;
+        font-size: @nextTrainingListLinkFontSize;
+        padding-left: @nextTrainingListLinkPaddingLeft;
+        background-color: @nextTrainingListLinkBackgroundColor;
+        display: block;
+        &:hover {
+          background-color: @nextTrainingListLinkHoverBackgroundColor;
+          color: @nextTrainingListLinkHoverColor;
+          text-decoration: none;
+          .btn-shadow();
+        }
+      }
+    }
+  }
+}
 
-
-
-
+/* =============== Director ===========================*/
 .foto {                           // фото блок руководитель проекта
-  max-width: 250px;
+  max-width: @fotoMaxWidth;
+  max-height: auto;
+  border: 1px solid @fotoBorderColor;
+  padding: @fotoPadding;
+}
+
+#svgelem-think {
+  max-width: @fotoMaxWidth;
   max-height: auto;
 }
+
+#gradient {
+  .of-start {
+    stop-color: @gradientOfStartColor;
+    stop-opacity: 0;
+  }
+
+  .of-end {
+    stop-color: @gradientOfEndColor;
+    stop-opacity: 1;
+  }
+}
+
+.gradient {
+  fill: url(#gradient);
+  stroke: @gradientBorderColor;
+  stroke-width: @gradientBorderWidth;
+}
+
+.svg-text {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.svg-text-autor {
+  .svg-text();
+  font-size: @svgTextAutorFontSize;
+}
+
 
 /* ======================== 4.0 SECTION FOOTER ================================ */
 /* ===== Social Network ===== */
