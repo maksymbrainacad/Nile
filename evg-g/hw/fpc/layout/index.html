@@ -56,7 +56,7 @@
       <!-- End Bloc Social Icon -->
       <header>
       <!-- Start Bloc Header Menu -->
-        <nav class="navbar navbar-default navbar-fixed-top header-menu-block">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-right header-menu-block">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -84,48 +84,36 @@
           </div><!-- /.container-fluid -->
         </nav>
       </header>
-      <!-- Start Bloc Header Menu -->
+      <!-- End Bloc Header Menu -->
     </section>
     <!-- End Top -->
+
+    <!-- Start anchor Scroll-Top -->
+    <section>
+      <div><a id='scroll-top'></a></div>
+    </section>
+    <!-- End anchor Scroll-Top -->
 
     <!-- Start Content -->
     <section class="wrapper-content">
       <section class="banner">
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
-              <div class="container-fluid text-center">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-                    <p>
-                      Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-                    </p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-                    <p>
-                      Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-                    </p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                      <a class="btn-link" href="#">личностный рост</a>
-                    </button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                      <a href="#">бизнес  тренинги</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <div class="col-md-8 text-center">
+              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
+              <p>
+                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
+              </p>
+              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
+              <p>
+                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
+              </p>
+              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
+                <a class="btn-link-custom" href="#">личностный рост</a>
+              </button>
+              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
+                <a href="#">бизнес  тренинги</a>
+              </button>
             </div>
             <div class="col-md-4">
               <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
@@ -229,14 +217,14 @@
                   <div class="col-md-12">
                     <svg id="svgelem-think" class="center-block">
                       <defs>
-                        <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                        <radialGradient id="svg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                           <stop offset="0%" class="of-start"/>
                           <stop offset="100%" class="of-end"/>
                         </radialGradient>
                       </defs>
-                      <ellipse cx="230" cy="22" rx="15" ry="10" class="gradient"/>
-                      <ellipse cx="200" cy="40" rx="30" ry="20" class="gradient"/>
-                      <ellipse cx="100" cy="70" rx="100" ry="50" class="gradient"/>
+                      <ellipse cx="230" cy="22" rx="15" ry="10" class="svg-gradient"/>
+                      <ellipse cx="200" cy="40" rx="30" ry="20" class="svg-gradient"/>
+                      <ellipse cx="100" cy="70" rx="100" ry="50" class="svg-gradient"/>
                       <text x="70" y="42" class="svg-text">В жизни</text>
                       <text x="40" y="55" class="svg-text">очень важно иметь</text>
                       <text x="30" y="70" class="svg-text">ГОЛУБУЮ и РОЗОВУЮ</text>
@@ -289,7 +277,7 @@
         </div>
       </section>
       <section>
-        <div class="container-fluid">
+        <div class="container">
           <div class="row">
             <div class="col-md-12">
               <h3 class="h3-custom text-center">Наши Клиенты</h3>
@@ -350,14 +338,17 @@
       </section>
     </section>
     <!-- End Content -->
+    <!-- Start Footer -->
     <section class="wrapper-footer">
       <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <h3 class="h3-custom">Тренинги</h3>
-              <nav>
-                <ul>
+        <div class="container-fluid main-footer">
+          <div class="container">
+            <div class="row">
+          </div>
+            <div class="col-md-3 main-footer-item">
+              <h4 class="h4-custom">Тренинги</h4>
+              <nav class="footer-menu">
+                <ul class="footer-menu-list">
                   <li>
                     <a href="#">КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ</a>
                   </li>
@@ -388,10 +379,10 @@
                 </ul>
               </nav>
             </div>
-            <div class="col-md-3">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-              <nav>
-                <ul>
+            <div class="col-md-3 main-footer-item">
+              <h4 class="h4-custom">Корпоративные программы</h4>
+              <nav class="footer-menu">
+                <ul class="footer-menu-list">
                   <li>
                     <a href="#">бизнес тренинги</a>
                   </li>
@@ -407,13 +398,13 @@
                 </ul>
               </nav>
             </div>
-            <div class="col-md-3">
-              <h3 class="h3-custom">О Нас</h3>
+            <div class="col-md-3 main-footer-item">
+              <h4 class="h4-custom">О Нас</h4>
               <p>
                 Мы проводим диагностику и выстраиваем тренинги исключительно под Ваши сегодняшние задачи и потребности.
               </p>
               <div class="social-icon-footer clearfix">
-                <h3 class="h3-custom">Мы в сетях</h3>
+                <h4 class="h4-custom">Мы в сетях</h4>
                   <div class="social-icon-footer-facebook pull-left">
                     <a href="#"></a>
                   </div>
@@ -425,8 +416,8 @@
                   </div>
               </div>
             </div>
-            <div class="col-md-3 clearfix contact-footer">
-              <h3 class="h3-custom">Контакты</h3>
+            <div class="col-md-3 clearfix main-footer-item contact-footer">
+              <h4 class="h4-custom">Контакты</h4>
               <p>
                 Общую информацию о тренингах, семинарах, консультациях можно получить обратившись :
               </p>
@@ -453,30 +444,44 @@
         </div>
       </section>
       <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-11">
-              <p>
-                Все права защищены. Разрешается републикация материалов сайта в интернете с обязательным указанием активной ссылки на сайт © 2016 www.tc-pegas.ru
-              </p>
-              <p>
-                Powered by <a href="#">Mr.X</a>
-              </p>
-            </div>
-            <div class="col-md-1">
-              <a href="#">^</a>
+        <div class="container-fluid bottom-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <p>
+                   © 2015 - 2016 | Developed Student Mister-X
+                </p>
+                <p>
+                  Final Practice for Sertification | Brain Academy | Programming FrontEnd | Group Kiev_F5 | Team Lead Petrenko Maksim
+                </p>
+              </div>
+              <div class="col-md-4">
+                <div class="row text-center">
+                  <div class="col-md-12">
+                    <a class="scroll-top center-block" href="#scroll-top"></a>
+                  </div>
+                  <div class="col-md-12">
+                    <p>go up</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </section>
-    <!-- Start Footer -->
     <!-- End Footer -->
-
 <!-- Подключение библиотеки jQuery -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/js/bootstrap.js"></script>
+<!-- Остановка автопрокрутки карусели -->
+        <script>
+          $('.carousel').carousel({
+          pause: true,
+          interval: false
+          });
+        </script>
   </body>
 </html>

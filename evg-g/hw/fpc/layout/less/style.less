@@ -29,7 +29,8 @@ body {
 
 .h1-custom,
 .h2-custom,
-.h3-custom {
+.h3-custom,
+.h4-custom {
   font-family: @hCustomFontFamily;
   font-weight: @hCustomFontWeight;
   line-height: @hCustomLineHeight;
@@ -51,22 +52,26 @@ body {
   font-size: @h3CustomFontSize;
 }
 
+.h4-custom {
+  font-size: @h4CustomFontSize;
+}
+
 a {
   color: @linksColor;
   text-decoration: none;
-}
-  :active {
+  &:active {
     text-decoration: none;
     color: @linksHoverColor;  //!!!!!!!!!!!!!!!!!!!!!
   }
-  :hover {
+  &:hover {
     text-decoration: none;
     color: @linksHoverColor;
   }
-  :visited {
+  &:visited {
     color: @linksVisitedColor;
     text-decoration: none;
   }
+}
 
 img {                 // правило для адаптирования больших изображений
   max-width: 100%;
@@ -115,7 +120,7 @@ img {                 // правило для адаптирования бол
 .navbar-default {
   .navbar-collapse {
     .header-menu-list {
-      float: right;
+      // float: right;
       li {
       margin-top: (@headerMenuHeigth / 2) - (@bodyFontSize / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
       text-transform: uppercase;
@@ -124,12 +129,12 @@ img {                 // правило для адаптирования бол
           color: @headerMenuListLinkColor;
           padding-top: @headerMenuListLinkPaddingTop;
           padding-bottom: @headerMenuListLinkPaddingBottom;
-        }
-          :hover {
+          &:hover {
             border-bottom: 2px solid @headerMenuListLinkActiveBorderColor;
             box-shadow: 3px 3px 3px @headerMenuListLinkActiveShadowColor;
             color: @headerMenuListLinkHoverColor;
           }
+        }
       }
     }
   }
@@ -151,7 +156,7 @@ img {                 // правило для адаптирования бол
 
 /* ======================= 3.0 SECTION CONTENT ================================ */
 .wrapper-content {
-  margin-top: @wrapperContentMarginTop;
+  padding-top: @wrapperContentPaddingTop;
 }
 
 /* ================= Banner Block ============= */
@@ -278,13 +283,59 @@ fieldset[disabled] .btn-default-custom.focus {
   border-color: @btnDefaultCustomBorderColor;
 }
 
+.btn-link-custom,
+.btn-link-custom:active,
+.btn-link-custom.active,
+.btn-link-custom[disabled],
+fieldset[disabled] .btn-link-custom {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-link-custom,
+.btn-link-custom:hover,
+.btn-link-custom:focus,
+.btn-link-custom:active {
+  border-color: transparent;
+}
+
+.btn-link-custom:hover,
+.btn-link-custom:focus {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.btn-link-custom[disabled]:hover,
+fieldset[disabled] .btn-link-custom:hover,
+.btn-link-custom[disabled]:focus,
+fieldset[disabled] .btn-link-custom:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+
 // ==== Buttons Link
 .btn-primary-custom,
-.btn-default-custom {
+.btn-default-custom,
+.btn-link-custom {
   a {
     color: @btnLinkColor;
     &:hover {
+      text-decoration: none;
       color: @btnLinkHoverColor;
+    }
+    &:active {
+      text-decoration: none;
+      color: @btnLinkHoverColor;
+    }
+    &:focus {
+      text-decoration: none;
+      color: @btnLinkHoverColor;
+    }
+    &:visited {
+      text-decoration: none;
     }
   }
 }
@@ -338,10 +389,10 @@ fieldset[disabled] .btn-default-custom.focus {
 
 #svgelem-think {
   max-width: @fotoMaxWidth;
-  max-height: auto;
+  max-height: 120px;
 }
 
-#gradient {
+#svg-gradient {
   .of-start {
     stop-color: @gradientOfStartColor;
     stop-opacity: 0;
@@ -353,8 +404,8 @@ fieldset[disabled] .btn-default-custom.focus {
   }
 }
 
-.gradient {
-  fill: url(#gradient);
+.svg-gradient {
+  fill: url(#svg-gradient);
   stroke: @gradientBorderColor;
   stroke-width: @gradientBorderWidth;
 }
@@ -371,6 +422,33 @@ fieldset[disabled] .btn-default-custom.focus {
 
 
 /* ======================== 4.0 SECTION FOOTER ================================ */
+/* Main Footer*/
+.main-footer {
+  margin-top: @mainFooterMarginTop;
+  .liner-gradient ();
+  .main-footer-item {
+    padding: @mainFooterItemPaddingVertical @mainFooterItemPaddingHorizontal;
+  }
+}
+
+/* Footer Menu*/
+.footer-menu-list {
+  text-transform: lowercase;
+  list-style-type: none;
+  padding-left: @footerMenuListPaddingLeft;
+  li {
+    font-size: @footerMenuListLiFontSize;
+    color: @footerMenuListLiColor;
+    &:before {
+    content: "»";
+    }
+    a {
+      color: @footerMenuListLiLinkColor;
+    }
+  }
+}
+
+
 /* ===== Social Network ===== */
 div.social-icon-footer div {
   margin-right: 10px;
@@ -422,6 +500,7 @@ div.social-icon-footer div {
 .contact-footer .contact-info {
   padding-top: 8px;
   padding-left: 40px;
+  font-size: 12px;
 }
 
 .contact-mail {
@@ -443,6 +522,27 @@ div.social-icon-footer div {
   height: @contactFooterSizeImgHeigth;
   background: @socialIconFooterUrl;
   background-position: -200px -40px;
+}
+
+/* Bottom Footer*/
+.bottom-footer {
+  background-color: @bottomFooterBacgroundColor;
+  padding-top: @bottomFooterPaddingTop;
+  color: @bottomFooterColor;
+  font-size: @bottomFooterFontSize;
+}
+
+.scroll-top {
+  width: @scrollTopWidth;
+  height: @scrollTopHeight;
+  border: 1px solid @scrollTopBorderColor;
+  display: block;
+  background: @socialIconFooterUrl;
+  background-position: -241px -1px;
+  .transform();
+  a {
+    display: block;
+  }
 }
 
 /* 5.0 MEDIA RESPONSIVE STYLE */

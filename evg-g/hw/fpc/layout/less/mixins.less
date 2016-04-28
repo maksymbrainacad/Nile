@@ -39,3 +39,36 @@
    -moz-box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur @btnShadowEnhanced @btnShadowColor;
         box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur @btnShadowEnhanced @btnShadowColor;
 }
+
+.liner-gradient {    // линейный градиент (фон для футера)
+  background: @topColor;
+  background:        -webkit-gradient(left top, left bottom, color-stop(@topColorLocation, @topColor), color-stop(@middleColorLocation, @middleColor), color-stop(@bottomColorLocation, @bottomColor));
+  background: -webkit-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:    -moz-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:     -ms-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:      -o-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:         linear-gradient(to bottom, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#277076', GradientType=0 );
+}
+
+// CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
+.transform { // начальная координата вращения
+  -webkit-transform: @transformRotateX @transformRotateY @transformRotateZ;
+     -moz-transform: @transformRotateX @transformRotateY @transformRotateZ;
+      -ms-transform: @transformRotateX @transformRotateY @transformRotateZ;
+       -o-transform: @transformRotateX @transformRotateY @transformRotateZ;
+          transform: @transformRotateX @transformRotateY @transformRotateZ;
+  &:hover { // конечная координата вращения
+    -webkit-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
+       -moz-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
+        -ms-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
+         -o-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
+    -webkit-border-radius: @transformHoverBorderRadius;  // округление углов при наведении
+       -moz-border-radius: @transformHoverBorderRadius;
+            border-radius: @transformHoverBorderRadius;
+    -webkit-transition: all @transformHoverTimeAnimation ease-out; // время прохождения анимации при наведении
+       -moz-transition: all @transformHoverTimeAnimation ease-out;
+         -o-transition: all @transformHoverTimeAnimation ease-out;
+            transition: all @transformHoverTimeAnimation ease-out;
+  }
+}

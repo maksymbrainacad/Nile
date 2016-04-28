@@ -8,7 +8,8 @@ define({
     },
     {
       id: 3,
-      name: 'Armen'
+      name: 'Armen',
+      active: true
     },
     {
       id: 4,
