@@ -5,7 +5,8 @@ window.addEventListener('load', function() {
     loginFormNode = document.querySelector('[data-id="login-form"]'),
     logInNode = document.querySelector('.log-in'),
     logOutNode = document.querySelector('.log-out'),
-    user = JSON.parse(localStorage.getItem('user'));
+    //user = JSON.parse(localStorage.getItem('user'));
+    user = JSON.parse(getCookie('user') || null);
 
   /* Start: Init */
   if (user) {
@@ -22,7 +23,11 @@ window.addEventListener('load', function() {
     var email = e.target.email.value;
     var password = e.target.password.value;
 
-    localStorage.setItem('user', JSON.stringify({
+    /*localStorage.setItem('user', JSON.stringify({
+      email: email,
+      password: password
+    }));*/
+    setCookie('user', JSON.stringify({
       email: email,
       password: password
     }));

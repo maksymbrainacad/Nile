@@ -15,7 +15,8 @@ define(['app/router', 'app/users/users'], function (router, users) {
       url: '/main',
       controller: function() {
         console.log('Main Page');
-      }
+      },
+      template: '<h1>Main Page</h1>'
     });
 
     router.config({
@@ -25,6 +26,7 @@ define(['app/router', 'app/users/users'], function (router, users) {
     return {
         run: function() {
           console.log('App runned');
+          router.run();
         }
     }
 });

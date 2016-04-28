@@ -2,6 +2,8 @@ define(function() {
   var routes = {};
   var $templateCache = {};
   var appNode;
+  var controllerData;
+
 
   var locationChange = function() {
     var url = location.hash.split('/');
@@ -10,31 +12,41 @@ define(function() {
     var page = routes[currentPage];
 
     if (routes[currentPage] && routes[currentPage].controller) {
-      routes[currentPage].controller();
+      controllerData = routes[currentPage].controller();
     }
 
     if (routes[currentPage] && routes[currentPage].title) {
       document.title = routes[currentPage].title;
     }
 
+    var templateCompile = function(template) {
+      var templateHandlebars = Handlebars.compile(template);
+      appNode.innerHTML = templateHandlebars({
+        name: 'Test',
+        routes: routes,
+        data: controllerData
+      });
+    }
+
     if (page.template || $templateCache[page.templateUrl]) {
-      appNode.innerHTML = page.template || $templateCache[page.templateUrl];
+      templateCompile(page.template || $templateCache[page.templateUrl]);
     } else if (page.templateUrl) {
       $ajax({
         url: page.templateUrl,
         success: function(template) {
-          appNode.innerHTML = template;
+          templateCompile(template);
           $templateCache[page.templateUrl] = template;
         },
         error: function() {
           location.hash = '#/404';
         }
       });
+    } else {
+      templateCompile('<h1>Template not found</h1>');
     }
   };
 
   window.addEventListener('hashchange', locationChange);
-  window.addEventListener('load', locationChange);
 
   return {
     addRoute: function(route) {
@@ -42,6 +54,9 @@ define(function() {
     },
     config: function(config) {
       appNode = config.appNode;
+    },
+    run: function() {
+      locationChange();
     }
   };
 });
