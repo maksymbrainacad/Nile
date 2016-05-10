@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('load', function() {
   var req = new (XMLHttpRequest  || ActiveXObject)();          //создали новый ajax запрос на сервер (ActiveXObject - для ИЕ), создается для каждого нового запроса и используется один раз
 
   req.open('GET', '/data/user.json', true);   //открыли новый ajax запрос на сервер указывая метод, путь и способ загрузки (true-асинхронный, false - синхронный)
