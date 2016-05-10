@@ -5,7 +5,6 @@
     <title>Final Practice</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Совместимость Бутстрап для последней версии ИЕ-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Активация адаптивности Бутстрап -->
-    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <link href="/css/bootstrap.css" rel="stylesheet">   <!-- Подключение стилей Бутстрапа -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -73,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right header-menu-list">
-                <li class="menu-active-link"><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
+                <li><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
                 <li><a href="/template/header_menu/schedule/schedule.html">расписание</a></li>
                 <li><a href="/template/header_menu/registration_participiant/registration_participiant.html">регистрация участника</a></li>
                 <li><a href="/template/header_menu/motivators/motivators.html">мотиваторы</a></li>
@@ -96,76 +95,6 @@
 
     <!-- Start Content -->
     <section class="wrapper-content">
-      <section class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 text-center">
-              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-              <p>
-                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-              </p>
-              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-              <p>
-                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                <a class="btn-link-custom" href="/template/corporate_programs/training_development/training_development.html">личностный рост</a>
-              </button>
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/schedule/schedule.html">бизнес  тренинги</a>
-              </button>
-            </div>
-            <div class="col-md-4">
-              <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="corporate-programm text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                <img src="/img/corporate_program/business-trening.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                бизнес-тренинги
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                <img src="/img/corporate_program/treningi-razvitia.jpeg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                тренинги развития
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                <img src="/img/corporate_program/corporate-program.png" alt="" />
-              </a>
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                корпоративные программы
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                <img src="/img/corporate_program/kouch.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                индивидуальный коучинг и консультации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="next-training">
         <div class="container">
           <div class="row">
@@ -195,7 +124,7 @@
                           <a href="/template/training/time_management/time_management.html">ЦЕЛЕПОЛАГАНИЕ И ТАЙМ-МЕНЕДЖМЕНТ НА 100%</a>
                         </li>
                         <li>
-                          <a href="/template/training/emotional_intelligence/emotional_intelligence.html">ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ</a>
+                          <a class="next-training-active-li-link" href="/template/training/emotional_intelligence/emotional_intelligence.html">ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ</a>
                         </li>
                         <li>
                           <a href="/template/training/sales_skills/sales_skills.html">МАСТЕРСТВО ПРОДАЖ</a>
@@ -235,48 +164,140 @@
             </div>
             <!-- Start SPA-CONTENT -->
             <div class="col-md-8 spa-content">
-              <h1 class="h1-custom">Рады приветствовать Вас на сайте Тренингового центра Пегас</h1>
-              <article class="">
-                <h3 class="h3-custom indent">Мы проводим бизнес-тренинги и тренинги личностного развития</h3>
+              <h1 class="h1-custom">Эмоциональный Интеллект</h1>
+              <blockquote class="blockquote-custom blockquote-reverse">
                 <p>
-                  Индивидуальные и комплексные решения, авторская концепция обучающих мероприятий помогают нам максимально полно и конкретно отвечать на запросы наших клиентов. А широкий выбор и разнообразие тренинговых программ позволят Вам выбрать действительно актуальное и эффективное обучающее мероприятие.
+                  Успешный человек должен научиться вызывать у окружающих нужные ему эмоциональные реакции.
                 </p>
+                <footer>
+                  Дэниел Гоулман
+                </footer>
+              </blockquote>
+              <p class="indent">
+                Наверное, каждому приходилось спрашивать себя, почему одни люди всегда позитивны, а другие, наоборот, пребывают в подавленном состоянии. <em>Почему одни с легкостью и радостью знакомятся с новыми людьми, а другим на это нужно намного больше времени. Почему одни переживают сложности, проявляя стойкость и силу духа, а других даже мелочь способна выбить из колеи</em>.
+              </p>
+              <p class="indent">
+                Все дело в эмоциональном интеллекте, то есть способности понимать свои и чужие эмоции, правильно на них реагировать и контролировать.
+              </p>
+              <p class="indent">
+                Термин "Эмоциональный интеллект" возник довольно недавно. Это был своеобразный ответ на вопрос, почему вчерашние успешные ученики и студенты не достигали карьерных высот и были неудачливы в личной жизни. Предполагалось, что обладая достаточно высоким IQ, человек способен быстро и легко продвигаться по карьерной лестнице, но результаты и исследования все никак не улавливали эту связь. Тогда психологи и социологи обратили внимание на другие способности и задатки личности, такие как, <em>позитивный взгляд на жизнь, умение себя мотивировать, заводить и поддерживать знакомства и др</em>. Оказалось, что причина относительного успеха одних и неудачи других, при равном IQкроется в EQ (эмоциональном интеллекте).
+              </p>
+              <p class="indent">
+                В понятие "Эмоциональный интеллект" входят 4 важнейших аспекта: понимание своих эмоций, умение ими управлять, понимание чужих эмоций и способность поддерживать взаимоотношения. У каждого человека разное соотношение между этими способностями, но формировать и развивать их крайне важно.
+              </p>
+              <p class="indent">
+                Вообще, правильное обращение с эмоциями позволяет сделать их союзниками, а не саботажниками. Эмоции часто помогают нам принимать верные решения (несмотря на распространенное мнение, что в делах должен решать только разум), идти своим путем, чувствовать внутреннюю гармонию и справляться с каждодневным стрессом, а также стать более продуктивным и успешным.
+              </p>
+              <p class="indent">
+                <strong>Этот тренинг-семинар для Вас, если:</strong>
+              </p>
+              <ul>
+                <li>
+                  Вы стремитесь понять природу и смысл своих эмоций
+                </li>
+                <li>
+                  Хотите быть успешнее и увереннее в межличностном общении
+                </li>
+                <li>
+                  Стремитесь к более полной самореализации
+                </li>
+                <li>
+                  Ищите внутреннюю мотивацию и вдохновение
+                </li>
+                <li>
+                  Хотите научиться понимать мотивы и поступки других людей
+                </li>
+              </ul>
+              <h4 class="h4-custom indent">
+                Программа тренинга:
+              </h4>
+              <ol>
+                <li>
+                  <strong>Эмоции и разум</strong>
+                </li>
                 <p>
-                  В нашей работе мы опираемся прежде всего на потребности наших клиентов, на актуальный круг вопросов и задач, стоящих перед ними, а также максимальную практичность и применимость полученных знаний в повседневной жизни.
+                  Как думает наш мозг: где и почему зарождаются эмоции.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Участвуйте в наших бизнес-семинарах и тренингах личностного развития!</h3>
+                <li>
+                  <strong>Позитивная и деструктивная сила эмоций</strong>
+                </li>
                 <p>
-                  <em>И Вы</em>:
+                  Когда эмоции мешают, а когда помогают (анализ случаев из опыта участников). Техники, помогающие определить позитивный и деструктивный потенциал эмоции.
                 </p>
-                <ul>
-                  <li>Наладите и улучшите все сферы жизни</li>
-                  <li>Быстрее продвинетесь в выбранном направлении</li>
-                  <li>Расширите сферы развития Вашего бизнеса</li>
-                  <li>Научитесь максимально четко ставить цель и добиваться своего</li>
-                  <li>Получите новый взгляд на привычные вещи</li>
-                  <li>Вдохновитесь новым видением и решениями</li>
-                </ul>
+                <li>
+                  <strong>Эмоциональный интеллект</strong>
+                </li>
                 <p>
-                  <em>Наша миссия</em>: помогать Вам быстрей и проще достигнуть намеченных целей.
+                  Чем IQотличается от EQ.Основные составляющие эмоционального интеллекта и их специфика.
                 </p>
+                <li>
+                  <strong>Чистые эмоции и их значение в нашей жизни</strong>
+                </li>
                 <p>
-                  <em>От нас</em>: инструменты, знания, навыки, концепции, вдохновение.
+                  Гнев, радость, страх, уныние: характеристики, способы распознавания и управления.
                 </p>
+                <li>
+                  <strong>Развитие эмоционального интеллекта</strong>
+                </li>
                 <p>
-                  <em>От Вас</em>: желание учиться и развиваться.
+                  Как научиться осознавать и распознавать свои эмоции, управлять ими. Техники саморегуляции и стресс-менеджмента. Осознание и управление чужими эмоциями. Эмоциональное заражение и техники преодоления. Принципы построения доверительных отношений. Развитие эмпатии.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
+                <li>
+                  <strong>Самомотивация</strong>
+                </li>
                 <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
+                  Как повысить свою внутреннюю мотивацию и поддерживать позитивный внутренний диалог.
                 </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+              </ol>
+              <p class="indent">
+                <strong>Посетив тренинг-семинар "Эмоциональный интеллект: искусство управления эмоциями"</strong>:
+              </p>
+              <ul>
+                <li>
+                  Вы научитесь лучше понимать себя и других
+                </li>
+                <li>
+                  Освоите простые техники осознания и управления эмоциями
+                </li>
+                <li>
+                  Научитесь слышать внутренний голос
+                </li>
+                <li>
+                  Станете увереннее
+                </li>
+                <li>
+                  Научитесь справляться со стрессом
+                </li>
+                <li>
+                  Улучшите отношения в семье, с друзьями и коллегами
+                </li>
+              </ul>
+
+              <h4 class="h4-custom indent">Как проходит тренинг "Эмоциональный интеллект: искусство управления эмоциями"?</h4>
+              <p>
+                1-дневный интенсив (Больше теории). Время проведения: 10.00 - 18.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 2700 $
+              </p>
+              <p>
+                2-дневный (Больше практики). Время проведения: 10.00 - 17.00 Суббота, 10.00 - 15.00 Воскресенье
+              </p>
+              <p>
+                Стоимость участия: 4300 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Автор и ведущая: Кира Цымбалова, бизнес-тренер/коуч</em></strong>
+              </p>
+              <p>
+                <em>После прохождения обучения участникам выдается сертификат и комплект учебных материалов.</em>
+              </p>
+              <p class="indent">
+                <strong>Данной теме также может быть посвящен индивидуальный и групповой коучинг</strong>
+              </p>
             </div>
             <!-- End SPA-CONTENT -->
           </div>

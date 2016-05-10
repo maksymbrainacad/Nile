@@ -1,4 +1,16 @@
 /* 0.0 MIXINS.LESS */
+// ============= Внутренние отступы для блока
+@indentPaddingTop: 20px; // внутренний отступ сверху для блока
+@indentPaddingBottom: 10px; // внутренний отступ снизу для блока
+
+// ============= Наружные отступы для блока
+@offsetMarginTop: 20px; // наружный отступ сверху для блока
+@offsetMarginTBottom: 10px; // наружный отступ снизу для блока
+
+// ============= Маркер списка "галочка"
+@markerTickFontSize: @bodyFontSize; // размер шрифта маркера списка
+@markerTickColor: @bodyColor; // цвет шрифта маркера списка
+
 // ============= Тени для текста
 @textShadowColor: rgba(51, 102, 102, 0.74);  // цвет тени текста
 @textShadowHorizontalShift: 3px; // смещение по горизонтали тени текста
@@ -21,6 +33,26 @@
 
 @bottomColor: rgba(39,112,118,1); // нижний третий цвет фона футера
 @bottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона футера
+
+// ============= Фон для пунктов списка расписания тренингов - Линейный градиент
+@scheduleListLiTopColor: rgba(255,255,255,1); // верхний первый цвет фона пунктов списка расписания тренингов
+@scheduleListLiTopColorLocation: 0%; // локация размаха верхнего первого цвет фона пунктов списка расписания тренингов
+
+@scheduleListLiMiddleColor: rgba(255,255,255,0.5); // средний второй цвет фона пунктов списка расписания тренингов
+@scheduleListLiMiddleColorLocation: 80%; // локация размаха среднего второго цвет фона пунктов списка расписания тренингов
+
+@scheduleListLiBottomColor: rgba(255,255,255,0.2); // нижний третий цвет фона пунктов списка расписания тренингов
+@scheduleListLiBottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона пунктов списка расписания тренингов
+
+// ============= Фон для ссылок пунктов списка расписания тренингов - Линейный градиент
+@scheduleListLiLinkTopColor: rgba(33,180,226,0.5); // верхний первый цвет фона ссылок пунктов списка расписания тренингов rgba(33,180,226,0.7)
+@scheduleListLiLinkTopColorLocation: 44%; // локация размаха верхнего первого цвет фона ссылок пунктов списка расписания тренингов
+
+@scheduleListLiLinkMiddleColor: rgba(33,180,226,0.3); // средний второй цвет фона ссылок пунктов списка расписания тренингов
+@scheduleListLiLinkMiddleColorLocation: 76%; // локация размаха среднего второго цвет фона ссылок пунктов списка расписания тренингов
+
+@scheduleListLiLinkBottomColor: rgba(33,180,226,0.2); // нижний третий цвет фона ссылок пунктов списка расписания тренингов
+@scheduleListLiLinkBottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона ссылок пунктов списка расписания тренингов
 
 // ==== CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
 @transformRotateX: rotateX(0deg); // начальная координата вращения по оси Х
@@ -51,10 +83,10 @@
 @hCustomMarginTop: 20px; // отступ с верху от Заголовков h
 @hCustomMarginBottom: 10px; // отступ с низу от Заголовков h
 
-@h1CustomFontSize: 36px; // размер шрифта для Заголовков h1
-@h2CustomFontSize: 30px; // размер шрифта для Заголовков h2
-@h3CustomFontSize: 24px; // размер шрифта для Заголовков h3
-@h4CustomFontSize: 18px; // размер шрифта для Заголовков h4
+@h1CustomFontSize: 30px; // размер шрифта для Заголовков h1 36
+@h2CustomFontSize: 26px; // размер шрифта для Заголовков h2 30
+@h3CustomFontSize: 22px; // размер шрифта для Заголовков h3 24
+@h4CustomFontSize: 18px; // размер шрифта для Заголовков h4 18
 
 @linksColor: #666;            // цвет ссылок
 @linksHoverColor: darken(@linksColor, 15%);   // цвет ссылок при наведении
@@ -153,6 +185,9 @@
 @nextTrainingListLinkHoverColor: #fff; // цвет шрифта ссылки пункта списка тренингов при Hovere
 @nextTrainingListLinkHoverBackgroundColor: #366; // цвет фона ссылки пункта списка тренингов при Hovere
 
+@nextTrainingListActiveLiLinkColor: #fff; // цвет шрифта ссылки активного пункта списка тренингов
+@nextTrainingListActiveLiLinkBackgroundColor: #366; // цвет фона ссылки активного пункта списка тренингов
+
 // ==== Director
 @fotoMaxWidth: 250px; // макс ширина фото
 @fotoBorderColor: #373E44; // цвет рамки фото
@@ -197,3 +232,107 @@
 @scrollTopWidth: 40px;  // ширина кнопки прокрутки сайта в начало страници
 @scrollTopHeight: 40px; // высота кнопки прокрутки сайта в начало страници
 @scrollTopBorderColor: #fff;  // цвет рамки кнопки прокрутки сайта в начало страници
+
+
+
+/*  3.0 PAGE SCHEDULE */
+@scheduleListPaddingVertical: 5px; // отступ сверху и снизу списка расписания тренингов
+@scheduleListPaddingHorizontal: 10px; // отступ справа и слева списка расписания тренингов
+
+@scheduleListLiBorderColor: #000; // цвет рамки пункта списка расписания тренингов
+@scheduleListLiMarginBottom: 5px; // отступ снизу пункта списка расписания тренингов
+@scheduleListLiBorderRadius: 40px 0 40px 0; // закругление рамки пункта списка расписания тренингов
+
+@scheduleListLinkFontSize: 12px; // размер шрифта ссылки пункта списка расписания тренингов
+@scheduleListLinkrColor: #333639;  // цвет шрифта ссылки пункта списка расписания тренингов
+@scheduleListLinkPaddingLeft: 25px; // отступ слева ссылки пункта списка расписания тренингов
+@scheduleListLinkBackgroundColor: #fff; // цвет фона ссылки пункта списка расписания тренингов
+@scheduleListLinkAfterFontSize: 15px; // размер шрифта контента After ссылки пункта списка расписания тренингов
+@scheduleListLinkAfterPaddingLeft: 10px; // отступ слева контента After ссылки пункта списка расписания тренингов
+
+@scheduleListLinkHoverColor: #fff; // цвет шрифта ссылки пункта списка расписания тренингов при Hovere
+@scheduleListLinkHoverBackgroundColor: #366; // цвет фона ссылки пункта списка расписания тренингов при Hovere
+
+@scheduleListTextMargin: -7px 23px 0; // отступы текста после ссылки пункта списка расписания тренингов
+@scheduleListTextFontSize: 10px; // размер шрифта текста после ссылки пункта списка расписания тренингов
+
+
+/* ===================== 3.1 PAGE T_GOAL_SETTING ============== */
+@blockquoteCustomFontSize: 12px; // размер шрифта в цитатах
+@blockquoteCustomBorderRightColor: #366; // цвет правой рамки в цитатах
+
+
+/* 4.0 PAGE CONTACTS */
+
+
+
+/* 5.0 MEDIA RESPONSIVE STYLE */
+/* Large devices .col-lg- (large desktops, 1200px and up) */
+  /* ========2.1 SECTION TOP  */
+  /* ======== Carousel Block ================ */
+@carouselChildPadding1200: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
+
+
+
+
+/* Medium devices .col-md- (desktops, 992px and up) */
+  /* ========2.1 SECTION TOP  */
+  /* ==== Top Social Icon Block*/
+@socialIconRowMarginRight992: 10px; // отступ строки соц иконок справа
+
+/* =======Header Menu Block*/
+@logoBrandWidth992: 250px;                  // ширина логотипа компании
+@headerMenuListLinkFontSize992: 12px;       // размер шрифта ссылок в меню
+
+// ==== Corporat Programm Block
+@corporateProgrammItemMaxWidth992: 240px; // максимальная ширина блоков Corporat Programm
+@corporateProgrammItemLinkFontSize992: 10px; // размер шрифта ссылок блоков Corporat Programm
+
+/* ======== Carousel Block ================ */
+@carouselChildPadding992: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
+
+
+
+/* Small devices .col-sm- (tablets, 768px and up) */
+  /* ========2.1 SECTION TOP  */
+  /* ==== Top Social Icon Block*/
+@socialIconRowMarginRight768: 10px; // отступ строки соц иконок справа
+
+  /* =======Header Menu Block*/
+@headerMenuHeigth768: 60px;                // высота горизонтального меню
+
+
+@logoBrandWidth768: 100px;                  // ширина логотипа компании
+@headerMenuListLinkFontSize768: 10px;       // размер шрифта ссылок в меню
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemMarginLeft768:56px; // отступы слева для блоков Corporat Programm
+@corporateProgrammItemMarginBottom768: @corporateProgrammItemMarginLeft768; // отступ с низу для блоков Corporat Programm
+
+  // ==== Next Training Block
+@nextTrainingListMargin768: 0 180px; // отступ справа и слева блока списка тренингов
+
+
+
+
+
+/* Extra small devices .col-xs- (phones,320px and up) */
+  /* ========2.1 SECTION TOP  */
+  /* ==== Top Social Icon Block*/
+@socialIconRowMarginRight320: 10px; // отступ строки соц иконок справа
+
+  /* =======Header Menu Block*/
+@headerMenuHeigth320:70px;  // высота выпадающего блока Header Menu
+
+@logoBrandWidth320: 150px;                  // ширина логотипа компании
+
+@headerMenuListBackgroundColor320: #daf5ed;       // цвет фона списка в Header меню
+@headerMenuListMarginTop320: 19px;       // отступ списка сверху в Header меню
+@headerMenuListLiMarginTop320: 0;       // отступ пункта списка сверху в Header меню
+@headerMenuListLinkHoverColor320: #fff; // цвет шрифта ссылки пункта списка в Header меню при Hovere
+@headerMenuListLinkHoverBackgroundColor320: #366; // цвет фона ссылки пункта списка в Header меню при Hovere
+
+
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemMargin320: 0 auto 2px; // отступы для блоков Corporat Programm

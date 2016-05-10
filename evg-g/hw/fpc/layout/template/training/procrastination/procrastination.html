@@ -5,7 +5,6 @@
     <title>Final Practice</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Совместимость Бутстрап для последней версии ИЕ-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Активация адаптивности Бутстрап -->
-    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <link href="/css/bootstrap.css" rel="stylesheet">   <!-- Подключение стилей Бутстрапа -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -73,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right header-menu-list">
-                <li class="menu-active-link"><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
+                <li><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
                 <li><a href="/template/header_menu/schedule/schedule.html">расписание</a></li>
                 <li><a href="/template/header_menu/registration_participiant/registration_participiant.html">регистрация участника</a></li>
                 <li><a href="/template/header_menu/motivators/motivators.html">мотиваторы</a></li>
@@ -96,76 +95,6 @@
 
     <!-- Start Content -->
     <section class="wrapper-content">
-      <section class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 text-center">
-              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-              <p>
-                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-              </p>
-              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-              <p>
-                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                <a class="btn-link-custom" href="/template/corporate_programs/training_development/training_development.html">личностный рост</a>
-              </button>
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/schedule/schedule.html">бизнес  тренинги</a>
-              </button>
-            </div>
-            <div class="col-md-4">
-              <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="corporate-programm text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                <img src="/img/corporate_program/business-trening.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                бизнес-тренинги
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                <img src="/img/corporate_program/treningi-razvitia.jpeg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                тренинги развития
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                <img src="/img/corporate_program/corporate-program.png" alt="" />
-              </a>
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                корпоративные программы
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                <img src="/img/corporate_program/kouch.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                индивидуальный коучинг и консультации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="next-training">
         <div class="container">
           <div class="row">
@@ -201,7 +130,7 @@
                           <a href="/template/training/sales_skills/sales_skills.html">МАСТЕРСТВО ПРОДАЖ</a>
                         </li>
                         <li>
-                          <a href="/template/training/procrastination/procrastination.html">ПРОКРАСТИНАЦИИ</a>
+                          <a class="next-training-active-li-link" href="/template/training/procrastination/procrastination.html">ПРОКРАСТИНАЦИИ</a>
                         </li>
                       </ul>
                     </nav>
@@ -235,48 +164,105 @@
             </div>
             <!-- Start SPA-CONTENT -->
             <div class="col-md-8 spa-content">
-              <h1 class="h1-custom">Рады приветствовать Вас на сайте Тренингового центра Пегас</h1>
-              <article class="">
-                <h3 class="h3-custom indent">Мы проводим бизнес-тренинги и тренинги личностного развития</h3>
+              <h1 class="h1-custom">Прокрастинация</h1>
+              <blockquote class="blockquote-custom blockquote-reverse">
                 <p>
-                  Индивидуальные и комплексные решения, авторская концепция обучающих мероприятий помогают нам максимально полно и конкретно отвечать на запросы наших клиентов. А широкий выбор и разнообразие тренинговых программ позволят Вам выбрать действительно актуальное и эффективное обучающее мероприятие.
+                  Любой человек способен выполнить любое количество работы при условии, что это не то, что он должен делать в настоящий момент.
                 </p>
-                <p>
-                  В нашей работе мы опираемся прежде всего на потребности наших клиентов, на актуальный круг вопросов и задач, стоящих перед ними, а также максимальную практичность и применимость полученных знаний в повседневной жизни.
-                </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Участвуйте в наших бизнес-семинарах и тренингах личностного развития!</h3>
-                <p>
-                  <em>И Вы</em>:
-                </p>
-                <ul>
-                  <li>Наладите и улучшите все сферы жизни</li>
-                  <li>Быстрее продвинетесь в выбранном направлении</li>
-                  <li>Расширите сферы развития Вашего бизнеса</li>
-                  <li>Научитесь максимально четко ставить цель и добиваться своего</li>
-                  <li>Получите новый взгляд на привычные вещи</li>
-                  <li>Вдохновитесь новым видением и решениями</li>
-                </ul>
-                <p>
-                  <em>Наша миссия</em>: помогать Вам быстрей и проще достигнуть намеченных целей.
-                </p>
-                <p>
-                  <em>От нас</em>: инструменты, знания, навыки, концепции, вдохновение.
-                </p>
-                <p>
-                  <em>От Вас</em>: желание учиться и развиваться.
-                </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
-                <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
-                </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+                <footer>
+                  Джон Перри
+                </footer>
+              </blockquote>
+              <h4 class="h4-custom">Как перестпть откладывать жизнь на потом</h4>
+              <p class="indent">
+                Вам знакомы фразы:
+              </p>
+              <p>
+                - Сейчас делать этого не буду, сделаю это потом...
+              </p>
+              <p>
+                - Примусь сразу, как только выпью чашечку кофе/устрою перекур/поболтаю с коллегой...
+              </p>
+              <p>
+                - Завтра появятся новые идеи...
+              </p>
+              <p>
+                - Сделаю после перерыва...
+              </p>
+              <p>
+                А работа не идет, вы тянете, тянете, тянете... А потом или делаете все в последний момент, лишь бы успеть или срываете дедлайн.
+              </p>
+              <p class="indent">
+                <strong>Такое откладывание дел на потом называется прокрастинацией.</strong>
+              </p>
+              <p class="indent">
+                ПРОКРАСТИНАЦИЯ - это форма поведения, которая защищает нас от беспокойства и тревоги, связанными с принятием сложного решения или начала какого-то дела. Проблема заключается в том, что избавившись от одной тревоги, прокрастинатор моментально приобретает другую. Он испытывает внутреннее (а зачастую и внешнее) давление и чувство вины, что он так и не принялся за работу или потратил на нее недостаточно времени.
+              </p>
+              <p class="indent">
+                Негативный внутренний диалог: <strong>"Ты должен", "У тебя нет времени на развлечения", "Просто сядь и сделай"</strong> формирует у прокрастинатора представлении о себе, как человеке <strong>постоянно заваленном работой, как о жертве, которой "не дают" наслаждаться жизнью</strong>. В то же время из-за невыполнения каких-то заданий и срывов дедлайнов страдает работа. Прокрастинатор не отдыхает полноценно, потому что либо запрещает себе отдыхать, либо отдыхает, испытывая вину. В таком изнуряющем повторении <strong>страдает чувство удовлетворения от выполненной работы, уверенность в себе, формируется представление о себе как о ленивом человеке, которого нужно заставлять и принуждать</strong>.
+              </p>
+              <p class="indent">
+                <strong>Тренинг "Прокрастинация" - поможет вам справиться с этой проблемой!</strong>
+              </p>
+              <h4 class="h4-custom indent">
+                Что будет на тренинге:
+              </h4>
+              <ul>
+                <li>
+                  Причины прокрастинации: боязнь успеха, боязнь неудачи, перфекционизм
+                </li>
+                <li>
+                  Мышление прокрастинатора. Меняем разрушительные мыслеобразы на установки успешного и продуктивного человека
+                </li>
+                <li>
+                  Как я прокрастинирую (откладываю дела на потом)? Отследите свое расписание и поймете, что крадет ваше время и чем вы в действительности хотите заниматься
+                </li>
+                <li>
+                  Зачем нам прокрастинация? Польза и потенциал прокрастинации
+                </li>
+                <li>
+                  Техники преодоления прокрастинации без жесткого тайм-менеджмента и расписания. Нахождение мотивации и вдохновения
+                </li>
+              </ul>
+              <p class="indent">
+                <strong>Результаты, которые получили участники тренинга</strong>:
+              </p>
+              <ul>
+                <li>
+                  Освободились от давления и внутреннего конфликта "Ты должен"
+                </li>
+                <li>
+                  Научились отдыхать полноценно и без чувства вина
+                </li>
+                <li>
+                  Избавились от вредных привычек (телевизор, соц.сети и т.д.)
+                </li>
+                <li>
+                  Сформировали позитивные установки и привычку действовать незамедлительно
+                </li>
+                <li>
+                  Стали личностью, которой стремились стать
+                </li>
+              </ul>
+              <h4 class="h4-custom indent">Как проходит тренинг "Как перестать откладывать жизнь на потом"?</h4>
+              <p>
+                1-дневный интенсив (Больше теории). Время проведения: 10.00 - 18.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 2600 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Автор и ведущая: Кира Цымбалова, бизнес-тренер/коуч</em></strong>
+              </p>
+              <p>
+                <em>После прохождения обучения участникам выдается сертификат и комплект учебных материалов.</em>
+              </p>
+              <p class="indent">
+                <strong>Данной теме также может быть посвящен индивидуальный и групповой коучинг</strong>
+              </p>
             </div>
             <!-- End SPA-CONTENT -->
           </div>

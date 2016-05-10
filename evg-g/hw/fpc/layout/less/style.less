@@ -1,16 +1,20 @@
 @import "variables.less";
 @import "mixins.less";
 
-
 /*
   NAVIGATION
   1.0 GLOBAL
   2.0 PAGE INDEX
   2.1 SECTION TOP
+  2.2 SECTION CONTENT
+  2.3 SECTION FOOTER
 
-  3.0 SECTION CONTENT
+  3.0 PAGE SCHEDULE
+  3.1 PAGE T_GOAL_SETTING (ТРЕНИНГ ЦЕЛЕПОЛАГАНИЯ)
+  3.2 PAGE T_COMMUNICATION (ТРЕНИНГ КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ)
 
-  4.0 SECTION FOOTER
+  4.0 PAGE CONTACTS
+
 
   5.0 MEDIA RESPONSIVE STYLE
 */
@@ -34,7 +38,6 @@ body {
   font-family: @hCustomFontFamily;
   font-weight: @hCustomFontWeight;
   line-height: @hCustomLineHeight;
-  // text-transform: uppercase;
   color: @hCustomColor;
   margin-top: @hCustomMarginTop;
   margin-bottom: @hCustomMarginBottom;
@@ -61,7 +64,7 @@ a {
   text-decoration: none;
   &:active {
     text-decoration: none;
-    color: @linksHoverColor;  //!!!!!!!!!!!!!!!!!!!!!
+    color: @linksHoverColor;
   }
   &:hover {
     text-decoration: none;
@@ -86,25 +89,23 @@ img {                 // правило для адаптирования бол
   width: @wrapperTopWidth;
 }
 
-/* ================= Top Soci Icon Block ===== =======*/
+/* ================= Top Social Icon Block ===== =======*/
 
 .block-social-icon {
   background-image: @blockSocialIconBackgroundImageUrl;
   height: @blockSocialIconHeigth;
-}
-
-.social-icon {
-  padding-left: @socialIconPaddingLeft;
   a {
-
-  }
-    :hover {
-      color: @socialIconColorHover;
-    }
+    display: block;
+    padding-left: @socialIconPaddingLeft;
     i {
       color: @socialIconColor;
+      &:hover {
+      color: @socialIconColorHover;
+      }
     }
+  }
 }
+
 
 /* ================= Header Menu Block =============*/
 
@@ -115,12 +116,12 @@ img {                 // правило для адаптирования бол
 .header-menu-block {
   top: @blockSocialIconHeigth;
   height: @headerMenuHeigth;
+  .btn-shadow();
 }
 
 .navbar-default {
   .navbar-collapse {
     .header-menu-list {
-      // float: right;
       li {
       margin-top: (@headerMenuHeigth / 2) - (@bodyFontSize / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
       text-transform: uppercase;
@@ -154,7 +155,7 @@ img {                 // правило для адаптирования бол
   }
 }
 
-/* ======================= 3.0 SECTION CONTENT ================================ */
+/* ======================= 2.2 SECTION CONTENT ================================ */
 .wrapper-content {
   padding-top: @wrapperContentPaddingTop;
 }
@@ -376,8 +377,18 @@ fieldset[disabled] .btn-link-custom:focus {
         }
       }
     }
+    .next-training-active-li-link {
+      background-color: @nextTrainingListActiveLiLinkBackgroundColor;
+      color: @nextTrainingListActiveLiLinkColor;
+      text-decoration: none;
+      .btn-shadow();
+    }
+  }
+  .btn-default-custom {
+    .offset();
   }
 }
+
 
 /* =============== Director ===========================*/
 .foto {                           // фото блок руководитель проекта
@@ -385,6 +396,7 @@ fieldset[disabled] .btn-link-custom:focus {
   max-height: auto;
   border: 1px solid @fotoBorderColor;
   padding: @fotoPadding;
+  .btn-shadow();
 }
 
 #svgelem-think {
@@ -420,8 +432,15 @@ fieldset[disabled] .btn-link-custom:focus {
   font-size: @svgTextAutorFontSize;
 }
 
+/* =============== SPA-CONTENT Block ===========================*/
 
-/* ======================== 4.0 SECTION FOOTER ================================ */
+.spa-content {
+  background-color: #f8f8f8;
+  .btn-shadow();
+}
+
+
+/* ======================== 2.3 SECTION FOOTER ================================ */
 /* Main Footer*/
 .main-footer {
   margin-top: @mainFooterMarginTop;
@@ -497,7 +516,7 @@ div.social-icon-footer div {
 }
 
 /* ===== Contact ===== */
-.contact-footer .contact-info {
+.contact-info {
   padding-top: 8px;
   padding-left: 40px;
   font-size: 12px;
@@ -545,24 +564,248 @@ div.social-icon-footer div {
   }
 }
 
+
+// =================  3.0 PAGE SCHEDULE =========================
+.schedule-list {
+  list-style-type: none;
+  padding: @scheduleListPaddingVertical @scheduleListPaddingHorizontal;
+  li {
+    border: 1px solid @scheduleListLiBorderColor;
+    margin-bottom: @scheduleListLiMarginBottom;
+    border-radius: @scheduleListLiBorderRadius;
+    overflow: hidden;
+    .schedule-list-li-liner-gradient();
+    .btn-shadow ();
+    a {
+      text-transform: uppercase;
+      font-size: @scheduleListLinkFontSize;
+      color: @scheduleListLinkrColor;
+      padding-left: @scheduleListLinkPaddingLeft;
+      background-color: @scheduleListLinkBackgroundColor;
+      display: block;
+      .schedule-list-li-a-liner-gradient();
+      &:hover {
+        background: @scheduleListLinkHoverBackgroundColor;
+        color: @scheduleListLinkHoverColor;
+        text-decoration: none;
+        .btn-shadow();
+      }
+      &:after {
+      font-size: @scheduleListLinkAfterFontSize;
+      padding-left: @scheduleListLinkAfterPaddingLeft;
+      content: "→";
+      }
+    }
+    p {
+      margin: @scheduleListTextMargin;
+      font-size: @scheduleListTextFontSize;
+      span {
+        font-style: italic;
+        .text-shadow ();
+      }
+    }
+  }
+}
+
+/* ===================== 3.1 PAGE T_GOAL_SETTING (ТРЕНИНГ ЦЕЛЕПОЛАГАНИЯ) ============== */
+.blockquote-custom {
+  font-size: @blockquoteCustomFontSize;
+  font-style: italic;
+  border-right: 2px solid @blockquoteCustomBorderRightColor;
+}
+
+/*============= 3.2 PAGE T_COMMUNICATION (ТРЕНИНГ КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ) ===== */
+.list-marker li {
+  &:before {
+    .marker-tick();
+  }
+}
+
+
+/*============================== 4.0 PAGE CONTACTS ===== */
+.form-contacts {
+  margin-left: 10px;
+  .field {
+    height: 40px;
+    width: 300px;
+  }
+  .field-1 {
+    min-height: 180px;
+    max-height: 180px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+
+
+
+
+
+
+
 /* 5.0 MEDIA RESPONSIVE STYLE */
 
-// Large Devices, Wide Screens
-@media only screen and (max-width : 1200px) {
+/* Large devices .col-lg- (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* ============================ 2.1 SECTION TOP  ============================== */
+  /* ======== Carousel Block ================ */
+  .carousel-child {
+    padding: @carouselChildPadding1200;
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: 750px;
+    height: 320px;
+  }
+
 
 }
 
-// Medium Devices, Desctops
-@media only screen and (max-width : 992px) {
+
+/* Medium devices .col-md- (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* ============================ 2.1 SECTION TOP  ============================== */
+  /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight992;
+  }
+
+  /* ================= Header Menu Block =============*/
+  .logo-brand {
+    width: @logoBrandWidth992;
+  }
+
+  .header-menu-list {
+    li {
+      a {
+        font-size: @headerMenuListLinkFontSize992;
+      }
+    }
+  }
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    max-width: @corporateProgrammItemMaxWidth992;
+    a {
+      font-size: @corporateProgrammItemLinkFontSize992;
+    }
+  }
+
+  /* ======== Carousel Block ================ */
+  .carousel-child {
+    padding: @carouselChildPadding992;
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: 620px;
+    height: 320px;
+  }
+
+
+
 
 }
 
-// Small Devices, Tablets
-@media only screen and (max-width : 767px) {
+
+/* Small devices .col-sm- (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* ============================ 2.1 SECTION TOP  ============================== */
+    /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight768;
+  }
+
+    /* ================= Header Menu Block =============*/
+  .header-menu-block {
+    height: @headerMenuHeigth768;
+  }
+
+
+  .logo-brand {
+    width: @logoBrandWidth768;
+  }
+
+  .navbar-default {
+    .navbar-collapse {
+      .header-menu-list {
+        li {
+          margin-top: (@headerMenuHeigth768 / 2) - (@headerMenuListLinkFontSize768 / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
+          a {
+            font-size: @headerMenuListLinkFontSize768;
+          }
+        }
+      }
+    }
+  }
+
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    margin-left: @corporateProgrammItemMarginLeft768;
+    margin-bottom: @corporateProgrammItemMarginBottom768;
+
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: 720px;
+    height: 300px;
+  }
+
 
 }
 
-// Extra Small Devices, Phones
-@media only screen and (max-width : 480px) {
+
+/* Extra small devices .col-xs- (phones,320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+    /* ============================ 2.1 SECTION TOP  ============================== */
+    /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight320;
+  }
+
+  /* ================= Header Menu Block =============*/
+  .header-menu-block {
+    height: @headerMenuHeigth320;
+  }
+
+  .navbar-default {
+    .navbar-collapse {
+      .header-menu-list {
+        background-color: @headerMenuListBackgroundColor320;
+        margin-top: @headerMenuListMarginTop320;
+        li {
+          margin-top: @headerMenuListLiMarginTop320;
+          a {
+            &:hover {
+              background-color: @headerMenuListLinkHoverBackgroundColor320;
+              color: @headerMenuListLinkHoverColor320;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .logo-brand {
+    width: @logoBrandWidth320;
+    margin-left: 30px;
+  }
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    margin: @corporateProgrammItemMargin320;
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: 300px;
+    height: 300px;
+  }
+
 
 }

@@ -5,7 +5,6 @@
     <title>Final Practice</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Совместимость Бутстрап для последней версии ИЕ-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Активация адаптивности Бутстрап -->
-    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <link href="/css/bootstrap.css" rel="stylesheet">   <!-- Подключение стилей Бутстрапа -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -73,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right header-menu-list">
-                <li class="menu-active-link"><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
+                <li><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
                 <li><a href="/template/header_menu/schedule/schedule.html">расписание</a></li>
                 <li><a href="/template/header_menu/registration_participiant/registration_participiant.html">регистрация участника</a></li>
                 <li><a href="/template/header_menu/motivators/motivators.html">мотиваторы</a></li>
@@ -96,76 +95,6 @@
 
     <!-- Start Content -->
     <section class="wrapper-content">
-      <section class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 text-center">
-              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-              <p>
-                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-              </p>
-              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-              <p>
-                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                <a class="btn-link-custom" href="/template/corporate_programs/training_development/training_development.html">личностный рост</a>
-              </button>
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/schedule/schedule.html">бизнес  тренинги</a>
-              </button>
-            </div>
-            <div class="col-md-4">
-              <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="corporate-programm text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                <img src="/img/corporate_program/business-trening.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                бизнес-тренинги
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                <img src="/img/corporate_program/treningi-razvitia.jpeg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                тренинги развития
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                <img src="/img/corporate_program/corporate-program.png" alt="" />
-              </a>
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                корпоративные программы
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                <img src="/img/corporate_program/kouch.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                индивидуальный коучинг и консультации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="next-training">
         <div class="container">
           <div class="row">
@@ -189,7 +118,7 @@
                           <a href="/template/training/goal_setting/goal_setting.html">ТРЕНИНГ ЦЕЛЕПОЛАГАНИЕ</a>
                         </li>
                         <li>
-                          <a href="/template/training/stress/stress.html">СТРЕСС-МЕНЕДЖМЕНТ</a>
+                          <a class="next-training-active-li-link" href="/template/training/stress/stress.html">СТРЕСС-МЕНЕДЖМЕНТ</a>
                         </li>
                         <li>
                           <a href="/template/training/time_management/time_management.html">ЦЕЛЕПОЛАГАНИЕ И ТАЙМ-МЕНЕДЖМЕНТ НА 100%</a>
@@ -235,48 +164,156 @@
             </div>
             <!-- Start SPA-CONTENT -->
             <div class="col-md-8 spa-content">
-              <h1 class="h1-custom">Рады приветствовать Вас на сайте Тренингового центра Пегас</h1>
-              <article class="">
-                <h3 class="h3-custom indent">Мы проводим бизнес-тренинги и тренинги личностного развития</h3>
+              <h1 class="h1-custom">Стресс Менеджмент</h1>
+              <blockquote class="blockquote-custom blockquote-reverse">
                 <p>
-                  Индивидуальные и комплексные решения, авторская концепция обучающих мероприятий помогают нам максимально полно и конкретно отвечать на запросы наших клиентов. А широкий выбор и разнообразие тренинговых программ позволят Вам выбрать действительно актуальное и эффективное обучающее мероприятие.
+                  Стресс — это не то, что с вами случилось, а то, как вы это воспринимаете.
                 </p>
-                <p>
-                  В нашей работе мы опираемся прежде всего на потребности наших клиентов, на актуальный круг вопросов и задач, стоящих перед ними, а также максимальную практичность и применимость полученных знаний в повседневной жизни.
-                </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Участвуйте в наших бизнес-семинарах и тренингах личностного развития!</h3>
-                <p>
-                  <em>И Вы</em>:
-                </p>
-                <ul>
-                  <li>Наладите и улучшите все сферы жизни</li>
-                  <li>Быстрее продвинетесь в выбранном направлении</li>
-                  <li>Расширите сферы развития Вашего бизнеса</li>
-                  <li>Научитесь максимально четко ставить цель и добиваться своего</li>
-                  <li>Получите новый взгляд на привычные вещи</li>
-                  <li>Вдохновитесь новым видением и решениями</li>
-                </ul>
-                <p>
-                  <em>Наша миссия</em>: помогать Вам быстрей и проще достигнуть намеченных целей.
-                </p>
-                <p>
-                  <em>От нас</em>: инструменты, знания, навыки, концепции, вдохновение.
-                </p>
-                <p>
-                  <em>От Вас</em>: желание учиться и развиваться.
-                </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
-                <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
-                </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+                <footer>
+                  Ганс Селье
+                </footer>
+              </blockquote>
+              <h4 class="h4-custom">Эмоции в Управлении или Стресс-Менеджмент</h4>
+              <p class="indent">
+                Каждый день нам, так или иначе, приходится справляться со стрессом на рабочем месте. Иногда более успешно, иногда менее. От того насколько специалист умеет и готов справляться со стрессом и стрессорами зависит <em>количество подписанных контрактов, заключенных сделок, атмосфера и взаимодействие в коллективе, продуктивность и удовлетворение от работы и результатов</em>.
+              </p>
+              <p class="indent">
+                <strong>Стресс-менеджмент</strong> - это управление стрессом, техники, которые помогают быстро восстанавливать эмоциональную форму. Стресс опасен принятием <em>деструктивных решений, снижением концентрации и мотивации</em>. Поэтому так важно научиться контролировать его уровень в повседневной и трудовой жизни.
+              </p>
+              <p class="indent">
+                <strong>Эмоциональный интеллект</strong> - это способность осознавать свои и чужие эмоции, управлять ими, поддерживать и налаживать взаимоотношения. <strong>Развитие эмоциональных компетенций</strong> - это ключ к созданию созидающей и сплоченной команды. <em>Непонимание эмоций и мотивов сотрудников ведет к конфликтам на рабочем месте, внутреннему саботажу, ослабляет мотивацию и производительность</em>.
+              </p>
+              <p class="indent">
+                Тренинг Эмоции в управлении и стресс-менеджмент направлен на развитие эмоциональных компетенций, осознание факторов, приводящих к стрессу, и конструктивную работу с эмоциями и стрессом на рабочем месте.
+              </p>
+              <p class="indent">
+                <strong>Если для Вас важно</strong>:
+              </p>
+              <ul>
+                <li>
+                  Понять природу возникновения и управления эмоциями
+                </li>
+                <li>
+                  Осознать потенциал и ограничения в межличностном взаимодействии ваш и ваших сотрудников
+                </li>
+                <li>
+                  Понять и управлять мотивацией и мотивами сотрудников
+                </li>
+                <li>
+                  Научиться справляться со стрессом в любой ситуации
+                </li>
+                <li>
+                  Регулировать уровень стресса ваших сотрудников
+                </li>
+              </ul>
+              <p class="indent">
+                <strong>Тренинг Эмоции в управлении и стресс-менеджмент для вас!</strong>
+              </p>
+              <p class="indent">
+                <strong>Кому</strong>: <em>руководителям, бизнесменам, предпринимателям, специалистам, всем желающим укрепить свои лидерские навыки и повысить эмоциональные компетенции</em>.
+              </p>
+              <h4 class="h4-custom">
+                Программа тренинга:
+              </h4>
+              <p>
+                <strong>Блок 1. Эмоции в управлении</strong>
+              </p>
+              <ul>
+                <li>
+                  <em>Понятие эмоционального интеллекта (EQ). Основные составляющие эмоционального интеллекта</em>
+                </li>
+                <li>
+                  <em>Составляющие успеха. Отличия IQ от EQ. Баланс между разумом и чувством. Самомотивация и мотивация</em>
+                </li>
+                <li>
+                  <em>Эмоциональное лидерство. Стили лидерства (идеалистический, обучающий, товарищеский, демократический, амбициозный, авторитарный)</em>
+                </li>
+                <li>
+                  <em>Техники управления эмоциями</em>
+                </li>
+              </ul>
+              <p>
+                <strong>Блок 2. Стресс-менеджмент</strong>
+              </p>
+              <ul>
+                <li>
+                  <em>Понятие стресса и дистресса. Факторы, вызывающие стресс</em>
+                </li>
+                <li>
+                  <em>Эмоциональное выгорание. Понятие, причины, способы предотвращения</em>
+                </li>
+                <li>
+                  <em>Навыки управления стрессом. Восстановление после стресса</em>
+                </li>
+              </ul>
+              <p class="indent">
+                <strong>Результаты, которые получили участники тренинга</strong>:
+              </p>
+              <ul>
+                <li>
+                  <em>Научились осознавать и регулировать эмоции</em>
+                </li>
+                <li>
+                  <em>Выработали наиболее предпочтительный стиль лидерства</em>
+                </li>
+                <li>
+                  <em>Научились справлять со стрессом, осознавать причину и факторы его возникновения</em>
+                </li>
+                <li>
+                  <em>Стали более продуктивными и счастливыми на рабочем месте</em>
+                </li>
+                <li>
+                  <em>Выработали мышление, помогающее справлять со стрессом</em>
+                </li>
+              </ul>
+
+
+              <h4 class="h4-custom indent">Как проходит тренинг "Эмоции в управлении. Стресс-менеджмент"?</h4>
+              <p>
+                1-дневный интенсив (Больше теории). Время проведения: 10.00 - 18.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 3700 $
+              </p>
+              <p>
+                2-дневный (Больше практики). Время проведения: 10.00 - 17.00 Суббота, 10.00 - 15.00 Воскресенье
+              </p>
+              <p>
+                Стоимость участия: 5100 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Также в отдельном формате проходят тренинги "Эмоциональный интеллект" и "Стресс-менеджмент".</em></strong>
+              </p>
+              <p>
+                <strong>Эмоциональный интеллект</strong>. Время проведения: 11.00 - 19.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 2900 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p>
+                <strong>Стресс-менеджмент</strong>. Время проведения: 11.00 - 19.00; Воскресенье
+              </p>
+              <p>
+                Стоимость участия: 2900 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Автор и ведущая: Кира Цымбалова, бизнес-тренер/коуч</em></strong>
+              </p>
+              <p>
+                <em>После прохождения обучения участникам выдается сертификат и комплект учебных материалов.</em>
+              </p>
+              <p class="indent">
+                <strong>Данной теме также может быть посвящен индивидуальный и групповой коучинг</strong>
+              </p>
             </div>
             <!-- End SPA-CONTENT -->
           </div>

@@ -28,6 +28,23 @@
   text-transform: uppercase;
 }
 
+.indent {             // внутренние отступы для блока
+  padding-top: @indentPaddingTop;
+  padding-bottom: @indentPaddingBottom;
+}
+
+.offset {             // наружные отступы для блока
+  margin-top: @offsetMarginTop;
+  margin-bottom: @offsetMarginTBottom;
+}
+
+.marker-tick {        // маркер списка "галочка"
+  font-family: Wingdings;
+  font-size: @markerTickFontSize;
+  color: @markerTickColor;
+  content: 'ü';
+}
+
 .text-shadow {         // тени для текста
 -webkit-text-shadow: @textShadowHorizontalShift @textShadowVerticalShift @textShadowBlur @textShadowColor;
    -moz-text-shadow: @textShadowHorizontalShift @textShadowVerticalShift @textShadowBlur @textShadowColor;
@@ -49,6 +66,28 @@
   background:      -o-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
   background:         linear-gradient(to bottom, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#277076', GradientType=0 );
+}
+
+.schedule-list-li-liner-gradient {  // линейный градиент (фон для пунктов списка расписания тренингов)
+  background: @scheduleListLiTopColor;
+  background:        -webkit-gradient(left top, right top, color-stop(@scheduleListLiTopColorLocation, @scheduleListLiTopColor), color-stop(@scheduleListLiMiddleColorLocation, @scheduleListLiMiddleColor), color-stop(@scheduleListLiBottomColorLocation, @scheduleListLiBottomColor));
+  background: -webkit-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:    -moz-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:     -ms-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:      -o-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:         linear-gradient(to right, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5a5b5', endColorstr='#fafafa', GradientType=1 );
+}
+
+.schedule-list-li-a-liner-gradient {  // линейный градиент (фон для ссылок пункта списка расписания тренингов)
+  background: @scheduleListLiLinkTopColor;
+  background:        -webkit-gradient(left top, left bottom, color-stop(@scheduleListLiLinkTopColorLocation, @scheduleListLiLinkTopColor), color-stop(@scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkMiddleColor), color-stop(@scheduleListLiLinkBottomColorLocation, @scheduleListLiLinkBottomColor));
+  background: -webkit-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:    -moz-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:     -ms-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:      -o-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:         linear-gradient(to bottom, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39bded', endColorstr='#b7deed', GradientType=0 );
 }
 
 // CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)

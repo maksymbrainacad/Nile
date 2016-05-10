@@ -5,7 +5,6 @@
     <title>Final Practice</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Совместимость Бутстрап для последней версии ИЕ-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Активация адаптивности Бутстрап -->
-    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <link href="/css/bootstrap.css" rel="stylesheet">   <!-- Подключение стилей Бутстрапа -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -73,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right header-menu-list">
-                <li class="menu-active-link"><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
+                <li><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
                 <li><a href="/template/header_menu/schedule/schedule.html">расписание</a></li>
                 <li><a href="/template/header_menu/registration_participiant/registration_participiant.html">регистрация участника</a></li>
                 <li><a href="/template/header_menu/motivators/motivators.html">мотиваторы</a></li>
@@ -96,76 +95,6 @@
 
     <!-- Start Content -->
     <section class="wrapper-content">
-      <section class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 text-center">
-              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-              <p>
-                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-              </p>
-              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-              <p>
-                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                <a class="btn-link-custom" href="/template/corporate_programs/training_development/training_development.html">личностный рост</a>
-              </button>
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/schedule/schedule.html">бизнес  тренинги</a>
-              </button>
-            </div>
-            <div class="col-md-4">
-              <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="corporate-programm text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                <img src="/img/corporate_program/business-trening.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                бизнес-тренинги
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                <img src="/img/corporate_program/treningi-razvitia.jpeg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                тренинги развития
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                <img src="/img/corporate_program/corporate-program.png" alt="" />
-              </a>
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                корпоративные программы
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                <img src="/img/corporate_program/kouch.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                индивидуальный коучинг и консультации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="next-training">
         <div class="container">
           <div class="row">
@@ -180,7 +109,7 @@
                           <a href="/template/training/communication/communication.html">коммуникация И КОНФЛИКТОЛОГИЯ</a>
                         </li>
                         <li>
-                          <a href="/template/training/telemarketing/telemarketing.html">ТЕЛЕМАРКЕТИНГ</a>
+                          <a class="next-training-active-li-link" href="/template/training/telemarketing/telemarketing.html">ТЕЛЕМАРКЕТИНГ</a>
                         </li>
                         <li>
                           <a href="/template/training/perfectionism/perfectionism.html">ПЕРФЕКЦИОНИЗМ</a>
@@ -235,48 +164,160 @@
             </div>
             <!-- Start SPA-CONTENT -->
             <div class="col-md-8 spa-content">
-              <h1 class="h1-custom">Рады приветствовать Вас на сайте Тренингового центра Пегас</h1>
-              <article class="">
-                <h3 class="h3-custom indent">Мы проводим бизнес-тренинги и тренинги личностного развития</h3>
+              <h1 class="h1-custom">Телемаркетинг</h1>
+              <blockquote class="blockquote-custom blockquote-reverse">
                 <p>
-                  Индивидуальные и комплексные решения, авторская концепция обучающих мероприятий помогают нам максимально полно и конкретно отвечать на запросы наших клиентов. А широкий выбор и разнообразие тренинговых программ позволят Вам выбрать действительно актуальное и эффективное обучающее мероприятие.
+                  Мощный инструмент повышения продаж, проведения маркетинговых исследований, а также один из способов информационного и рекламного воздействия на целевую аудиторию.
+                </p>
+                <footer>
+                  Тимур Асланов
+                </footer>
+              </blockquote>
+              <ul>
+                <li>
+                  Хотите приобрести новых клиентов с помощью телефонных звонков?
+                </li>
+                <li>
+                  Как не упустить клиента, заинтересовать и убедить его выбрать именно вас? Как настроить себя на телефонные переговоры?
+                </li>
+                <li>
+                  Каждый день приходится преодолевать секретарей, кучу негативных эмоций, совершая холодный обзвон, а результата все нет?
+                </li>
+                <li>
+                  Как правильно поставить цель для телефонного звонка и оценить эффективность своей работы?
+                </li>
+              </ul>
+              <p class="indent">
+                Телефонные переговоры - это лицо и имидж компании. Выбирая товар или услугу, человек просматривает сайт, а затем набирает номер телефона. Этот звонок и есть первая встреча клиента и компании, они либо подойдут друг другу, либо разойдутся, так и не встретившись "вживую". Потери клиентов на этапе телефонных переговоров - непозволительная роскошь. А если клиенты привлекаются в компанию по средством исходящих телефонных звонков, то незнание принципов ведения и навыков презентации и аргументации подобны бизнес самоубийству. Конечно, даже не составляя и не пользуясь алгоритмами телефонных звонков можно привлекать клиентов, но процент привлечение и скорость обработки заказа до статуса "выполнен" займет куда больше времени.
+              </p>
+              <p class="indent">
+                Приняв участие в тренинге <strong>"Как успешно продавать по телефону"</strong>:
+              </p>
+              <ul>
+                <li>
+                  Вы научитесь управлять ходом телефонного разговора
+                </li>
+                <li>
+                  Настроитесь на положительные эмоции
+                </li>
+                <li>
+                  Увеличите КПД Ваших телефонных переговоров
+                </li>
+              </ul>
+              <p class="indent">
+                Для кого?
+              </p>
+              <ul>
+                <li>
+                  Руководителям и специалистам отделов продаж и call-центров
+                </li>
+                <li>
+                  Предпринимателям и собственникам бизнеса
+                </li>
+                <li>
+                  Телемаркетологам
+                </li>
+                <li>
+                  Менеджерам по работе с корпоративными клиентами
+                </li>
+                <li>
+                  Офис-менеджерам
+                </li>
+                <li>
+                  Тренинг-менеджерам
+                </li>
+              </ul>
+              <p class="indent">
+                Почему тренинг "Как успешно продавать по телефону" эффективен?
+              </p>
+              <ul>
+                <li>
+                  На тренинге участники получают системную и полную информацию о телефонных переговорах
+                </li>
+                <li>
+                  Основу тренинга составляют практические задания
+                </li>
+                <li>
+                  Убираем страхи и барьеры, неуверенность в своих силах
+                </li>
+                <li>
+                  Формируем внутреннюю мотивацию
+                </li>
+                <li>
+                  Заряжаем энергией и желанием достигать результата
+                </li>
+              </ul>
+              <h4 class="h4-custom indent">
+                Программа тренинга:
+              </h4>
+              <ol>
+                <li>
+                  <strong>Базовые знания о телефонных переговорах</strong>
+                </li>
+                <p>
+                  Отличия и специфика телефонных переговоров от общения лично.
                 </p>
                 <p>
-                  В нашей работе мы опираемся прежде всего на потребности наших клиентов, на актуальный круг вопросов и задач, стоящих перед ними, а также максимальную практичность и применимость полученных знаний в повседневной жизни.
+                  Факторы успешности в телефонном разговоре. На что ваш собеседник обращает внимание. Виды звонков: входящие, исходящие, горячие, холодные звонки.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Участвуйте в наших бизнес-семинарах и тренингах личностного развития!</h3>
+                <li>
+                  <strong>Скрипты</strong>
+                </li>
                 <p>
-                  <em>И Вы</em>:
+                  Алгоритм входящего, исходящего, горячего телефонного звонка. Цели телефонного звонка. Формирование четкой, продуктивной цели.
                 </p>
-                <ul>
-                  <li>Наладите и улучшите все сферы жизни</li>
-                  <li>Быстрее продвинетесь в выбранном направлении</li>
-                  <li>Расширите сферы развития Вашего бизнеса</li>
-                  <li>Научитесь максимально четко ставить цель и добиваться своего</li>
-                  <li>Получите новый взгляд на привычные вещи</li>
-                  <li>Вдохновитесь новым видением и решениями</li>
-                </ul>
+                <li>
+                  <strong>Холодный звонок: суть и специфика</strong>
+                </li>
                 <p>
-                  <em>Наша миссия</em>: помогать Вам быстрей и проще достигнуть намеченных целей.
+                  Мотивация: зачем вы делаете холодные звонки. Барьеры: что мешает быть успешным в холодных звонках. <em>Заменяем негативные установки на продуктивные</em>.
                 </p>
+                <li>
+                  <strong>Алгоритм холодного звонка</strong>
+                </li>
                 <p>
-                  <em>От нас</em>: инструменты, знания, навыки, концепции, вдохновение.
+                  Цель холодного звонка, постановка измеримой, ясной цели. Выделяем критерии успешности. Продажа товара и продажа встречи: особенности и отличия.
+                  <ul>
+                    <li>
+                      Сбор информации
+                    </li>
+                    <li>
+                      Обход секретарей. Первая фраза. Возражения: "пришлите на почту", "нас это не интересует"
+                    </li>
+                    <li>
+                      Составляем <strong>скрипт холодного звонка</strong>
+                    </li>
+                    <li>
+                      Разговор с ЛПР. Как создать первое впечатление. Назначение встречи
+                    </li>
+                  </ul>
                 </p>
+                <li>
+                  <strong>Стресс-менеджмент в телефонных продажах</strong>
+                </li>
                 <p>
-                  <em>От Вас</em>: желание учиться и развиваться.
+                  Как победить страх холодного звонка. Примеры самомотивации. Как управлять своими эмоциями и сохранить настрой на результат.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
-                <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
-                </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+              </ol>
+              <h4 class="h4-custom indent">Как проходит тренинг "Как успешно продавать по телефону"?</h4>
+              <p>
+                1 день. Время проведения: 10.00-18.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 2300 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Автор и ведущая: Кира Цымбалова, бизнес-тренер/коуч</em></strong>
+              </p>
+              <p>
+                <em>После прохождения обучения участникам выдается сертификат и комплект учебных материалов.</em>
+              </p>
+              <p class="indent">
+                <strong>Данной теме также может быть посвящен индивидуальный и групповой коучинг</strong>
+              </p>
             </div>
             <!-- End SPA-CONTENT -->
           </div>

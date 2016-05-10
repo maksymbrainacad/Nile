@@ -5,7 +5,6 @@
     <title>Final Practice</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Совместимость Бутстрап для последней версии ИЕ-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Активация адаптивности Бутстрап -->
-    <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <link href="/css/bootstrap.css" rel="stylesheet">   <!-- Подключение стилей Бутстрапа -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -73,7 +72,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right header-menu-list">
-                <li class="menu-active-link"><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
+                <li><a href="/index.html">главная<span class="sr-only">(current)</span></a></li>
                 <li><a href="/template/header_menu/schedule/schedule.html">расписание</a></li>
                 <li><a href="/template/header_menu/registration_participiant/registration_participiant.html">регистрация участника</a></li>
                 <li><a href="/template/header_menu/motivators/motivators.html">мотиваторы</a></li>
@@ -96,76 +95,6 @@
 
     <!-- Start Content -->
     <section class="wrapper-content">
-      <section class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 text-center">
-              <h2 class="h2-custom text-shadow upper-case">тренинг центр - "пегас"</h2>
-              <p>
-                Мы понимаем и ценим желание компаний и людей развиваться и достигать новых вершин и успеха
-              </p>
-              <h3 class="h3-custom text-shadow upper-case">крылья для вас и вашего бизнеса</h3>
-              <p>
-                Мы предлагаем индивидуальные и комплексные решения для Вашего развития, а так же развития и процветания Вашего бизнеса
-              </p>
-              <button type="button" class="btn btn-primary btn-primary-custom btn-shadow center-block">
-                <a class="btn-link-custom" href="/template/corporate_programs/training_development/training_development.html">личностный рост</a>
-              </button>
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/schedule/schedule.html">бизнес  тренинги</a>
-              </button>
-            </div>
-            <div class="col-md-4">
-              <img class="img-responsive center-block" src="/img/pegas.png" alt="pegas-horse" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="corporate-programm text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="h3-custom">Корпоративные программы</h3>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                <img src="/img/corporate_program/business-trening.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/business_training/business_training.html">
-                бизнес-тренинги
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                <img src="/img/corporate_program/treningi-razvitia.jpeg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/training_development/training_development.html">
-                тренинги развития
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                <img src="/img/corporate_program/corporate-program.png" alt="" />
-              </a>
-              <a href="/template/corporate_programs/corporate_program/corporate_program.html">
-                корпоративные программы
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3 corporate-programm-item">
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                <img src="/img/corporate_program/kouch.jpg" alt="" />
-              </a>
-              <a href="/template/corporate_programs/coaching/coaching.html">
-                индивидуальный коучинг и консультации
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="next-training">
         <div class="container">
           <div class="row">
@@ -198,7 +127,7 @@
                           <a href="/template/training/emotional_intelligence/emotional_intelligence.html">ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ</a>
                         </li>
                         <li>
-                          <a href="/template/training/sales_skills/sales_skills.html">МАСТЕРСТВО ПРОДАЖ</a>
+                          <a class="next-training-active-li-link" href="/template/training/sales_skills/sales_skills.html">МАСТЕРСТВО ПРОДАЖ</a>
                         </li>
                         <li>
                           <a href="/template/training/procrastination/procrastination.html">ПРОКРАСТИНАЦИИ</a>
@@ -235,48 +164,198 @@
             </div>
             <!-- Start SPA-CONTENT -->
             <div class="col-md-8 spa-content">
-              <h1 class="h1-custom">Рады приветствовать Вас на сайте Тренингового центра Пегас</h1>
-              <article class="">
-                <h3 class="h3-custom indent">Мы проводим бизнес-тренинги и тренинги личностного развития</h3>
+              <h1 class="h1-custom">Мастерство Продаж</h1>
+              <blockquote class="blockquote-custom blockquote-reverse">
                 <p>
-                  Индивидуальные и комплексные решения, авторская концепция обучающих мероприятий помогают нам максимально полно и конкретно отвечать на запросы наших клиентов. А широкий выбор и разнообразие тренинговых программ позволят Вам выбрать действительно актуальное и эффективное обучающее мероприятие.
+                  Успех определяется умениями, настойчивостью и ясной целью.
                 </p>
+                <footer>
+                  Кира Цымбалова
+                </footer>
+              </blockquote>
+              <p>
+                Профессиональные знания менеджера по продажам сегодня не роскошь и факультатив, а данность. От того насколько компетентен менеджер по продажам, насколько хорошо он слышит и понимает своего клиента, зависит количество успешных продаж и сделок. Сегодня мы уже не можем ссылаться только на качества нашего товара, мы должны формировать на него спрос, убеждать клиентов покупать именно у нас. О продажах можно найти огромное количество информации, но, как понять, что из всего этого работает, и как применять это в своей практике - другое дело. Так и пылиться эта гора "знаний" где-то в интернете, книгах и головах. А вытащить все это наружу мешает лень, страх и непонимание, что со всем этим делать.
+              </p>
+              <p class="indent">
+                  <strong>Авторский тренинг Киры Цымбаловой Мастерство продаж</strong> - это ключ к реальному росту профессионализма в продажах. Курс посвящен формированию мышления и навыков успешного продавца.
+              </p>
+              <p class="indent">
+                На тренинге мы:
+              </p>
+              <ul>
+                <li>
+                  Научим как теорию перевести в практику
+                </li>
+                <li>
+                  Системно изложим подробную информацию о продажах
+                </li>
+                <li>
+                  Поможем преодолеть психологические барьеры
+                </li>
+                <li>
+                  Внедрим эффективные техники в работу
+                </li>
+              </ul>
+              <p class="indent">
+                Научиться не просто продавать, а делать это виртуозно, легко, играючи - вот цель курса. Успех в продажах напрямую связан со знаниями и опытом. Как известно опыт приходит не сразу, но умения и навыки можно формировать уже сейчас. Знание техник и применение их на практике увеличивает прибыль и количество довольных клиентов. А правильный ежедневный настрой укрепляет мотивацию.
+              </p>
+              <h4 class="h4-custom">Почему тренинг "Мастерство продаж" Киры Цымбаловой эффективен?</h4>
+              <ul>
+                <li>
+                  <strong>Комплексный подход</strong> позволяет участникам получить максимально полную и системную информацию
+                </li>
+                <li>
+                  <strong>Большой объем практических упражнений</strong> позволяет закрепить все полученные знания
+                </li>
+                <li>
+                  <strong>Разнообразие и вариативность игровых заданий</strong> дает участнику возможность выступать в разных ролях и полнее осознать движущие мотивы сторон
+                </li>
+                <li>
+                  <strong>Реально работающие техники и методики</strong>, которые можно сразу применять на практике
+                </li>
+                <li>
+                  <strong>Анализ конкретных ситуаций из практики участников</strong> поможет систематизировать опыт
+                </li>
+                <li>
+                  <strong>Заряд энергии и мотивации</strong> вдохнет новый смысл в привычную деятельность
+                </li>
+              </ul>
+              <p class="indent">
+                <strong>Для кого?</strong>
+              </p>
+              <ul>
+                <li>
+                  Руководителям и специалистам отделов продаж
+                </li>
+                <li>
+                  Руководителям малого и среднего бизнеса
+                </li>
+                <li>
+                  Менеджерам по продажам и работе с корпоративными клиентами
+                </li>
+                <li>
+                  Всем желающим улучшить свои продажи и выйти на новый уровень
+                </li>
+              </ul>
+              <h4 class="h4-custom indent">Программа тренинга:</h4>
+              <ul>
+                <li>
+                  <strong>Философия продаж</strong>
+                </li>
                 <p>
-                  В нашей работе мы опираемся прежде всего на потребности наших клиентов, на актуальный круг вопросов и задач, стоящих перед ними, а также максимальную практичность и применимость полученных знаний в повседневной жизни.
+                  Что такое продажа. Понимание продажи как действия. Как сохранить инициативу. Как управлять ходом продажи.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Участвуйте в наших бизнес-семинарах и тренингах личностного развития!</h3>
+                <li>
+                  <strong>Внутренние барьеры и их преодоление</strong>
+                </li>
                 <p>
-                  <em>И Вы</em>:
+                  Что мешает менеджерам продавать. Разберем основные ошибки, неработающие убеждения, которые заставляют тормозить продажи и мешают их успеху. Мыслеобразы и установки, отличающие успешного продавца от неуспешного. <strong>Меняем мышление - меняем действия - меняется результат</strong>.
                 </p>
-                <ul>
-                  <li>Наладите и улучшите все сферы жизни</li>
-                  <li>Быстрее продвинетесь в выбранном направлении</li>
-                  <li>Расширите сферы развития Вашего бизнеса</li>
-                  <li>Научитесь максимально четко ставить цель и добиваться своего</li>
-                  <li>Получите новый взгляд на привычные вещи</li>
-                  <li>Вдохновитесь новым видением и решениями</li>
-                </ul>
+                <li>
+                  <strong>Продажа товара и услуги</strong>
+                </li>
                 <p>
-                  <em>Наша миссия</em>: помогать Вам быстрей и проще достигнуть намеченных целей.
+                  Что важно знать об этапах продаж. Ключевые отличия продажи товара от продажи услуг. Маркетинг услуг.
                 </p>
+                <li>
+                  <strong>Этапы продаж:</strong>
+                </li>
+                  <ul>
+                    <li>
+                      <em>Приветствие</em>
+                    </li>
+                    <p>
+                      Установление контакта. Что можно увидеть сразу: типы клиентов и работа с ними.
+                    </p>
+                    <li>
+                      <em>Выявление потребностей</em>
+                    </li>
+                    <p>
+                      Техника СПИН. Алгоритм вопросов, помогающий выявить истинные потребности. Как убедить клиента в том, что ему нужно то, что вы продаете.
+                    </p>
+                    <li>
+                      <em>Презентация</em>
+                    </li>
+                    <p>
+                      Как выгодно продемонстрировать товар. Работа с потребностями. На каком языке вы говорите с клиентом "факт" - "преимущество" - "выгода".
+                    </p>
+                    <li>
+                      <em>Работа с возражениями</em>
+                    </li>
+                    <p>
+                      Как с помощью правильно выявленной потребности избежать возражений. Типы сопротивлений клиентов. Как выявить скрытые возражения клиента.
+                    </p>
+                    <li>
+                      <em>Завершение сделки</em>
+                    </li>
+                    <p>
+                      Типичные ошибки. Алгоритм закрытия сделки. Как убедить клиента купить у вас прямо сейчас.
+                    </p>
+                  </ul>
+                <li>
+                  <strong>Эмоции в продажах</strong>
+                </li>
                 <p>
-                  <em>От нас</em>: инструменты, знания, навыки, концепции, вдохновение.
+                  Управление эмоциями. Подстройка под клиента. Стресс-менеджмент в продажах.
                 </p>
+                <li>
+                  <strong>Постпродажное обслуживание</strong>
+                </li>
                 <p>
-                  <em>От Вас</em>: желание учиться и развиваться.
+                  Что происходит после совершения покупки. Как формируется лояльность клиентов.
                 </p>
-              </article>
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
+                <li>
+                  <strong>Самомотивация и Целеполагание</strong>
+                </li>
                 <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
+                  Как настраиваться на тяжелых клиентов. Грамотная саморегуляция. Как правильно поставить цель и определить личные критерии успешности.
                 </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+              </ul>
+              <p class="indent">
+                На тренинг <strong>"Мастерство продаж" вы</strong>:
+              </p>
+              <ul>
+                <li>
+                  быстро найдете проблемные точки в ваших продажах
+                </li>
+                <li>
+                  научитесь контролировать и вести сделку от начала до завершения
+                </li>
+                <li>
+                  устраните барьеры, мешающие вам продавать
+                </li>
+                <li>
+                  научитесь анализировать процесс сделки в момент ее совершения
+                </li>
+                <li>
+                  освоите простые техники концентрации на результате
+                </li>
+              </ul>
+              <h4 class="h4-custom indent">Как проходит тренинг "Мастерство Продаж"?</h4>
+              <p>
+                1-дневный интенсив (Больше теории). Время проведения: 10.00 - 18.00; Суббота
+              </p>
+              <p>
+                Стоимость участия: 3900 $
+              </p>
+              <p>
+                2-дневный (Больше практики). Время проведения: 10.00 - 17.00 Суббота, 10.00 - 15.00 Воскресенье
+              </p>
+              <p>
+                Стоимость участия: 6800 $
+              </p>
+              <p>
+                Дата проведения: по мере набора группы
+              </p>
+              <p class="indent">
+                <strong><em>Автор и ведущая: Кира Цымбалова, бизнес-тренер/коуч</em></strong>
+              </p>
+              <p>
+                <em>После прохождения обучения участникам выдается сертификат и комплект учебных материалов.</em>
+              </p>
+              <p class="indent">
+                <strong>Данной теме также может быть посвящен индивидуальный и групповой коучинг</strong>
+              </p>
             </div>
             <!-- End SPA-CONTENT -->
           </div>
