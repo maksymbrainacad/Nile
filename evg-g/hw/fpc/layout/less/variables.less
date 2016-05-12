@@ -17,7 +17,7 @@
 @textShadowVerticalShift: 2px;   // смещение по вертикали тени текста
 @textShadowBlur: 4px;   // размытие тени текста
 
-// ============= Тени для кнопок
+// ============= Тени для кнопок и блоков
 @btnShadowColor: rgba(51, 102, 102, 0.5);  // цвет тени кнопок
 @btnShadowHorizontalShift: 2px; // смещение по горизонтали тени кнопок
 @btnShadowVerticalShift: 3px;   // смещение по вертикали тени кнопок
@@ -70,7 +70,7 @@
 
 /* 1.0 GLOBAL */
 @bodyBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body
-@bodyFontFamily: 'Open Sans', sans-serif; // основное семейство шрифтов для body
+@bodyFontFamily: 'Open Sans', sans-serif; // основное семейство шрифтов для body ( Condensed)
 @bodyFontWeight: normal; // основное начертание шрифтов для body
 @bodyFontSize: 14px; // основное размер шрифта для body
 @bodyColor: #373E44; // основное цвет шрифта для body
@@ -87,6 +87,17 @@
 @h2CustomFontSize: 26px; // размер шрифта для Заголовков h2 30
 @h3CustomFontSize: 22px; // размер шрифта для Заголовков h3 24
 @h4CustomFontSize: 18px; // размер шрифта для Заголовков h4 18
+
+@hDecorPaddingBottom: 5px; // внутренний отступ декора снизу от заголовков h
+@hDecorBordergBottomHeight: 1px; // высота рамки снизу декора заголовков h
+@hDecorBordergBottomColor: rgba(112, 126, 138, 0.69); // цвет рамки снизу декора заголовков h
+
+@hDecorAfterMargin: -1px; // внешние отступы сверху и снизу декор-планки от заголовков h
+@hDecorAfterTop: 5px; // позиция сверху декор-планки от заголовков h
+@hDecorAfterBackgroundColor: #277076; // цвет фона декор-планки заголовков h
+@hDecorAfterHeight: 1px; // высота декор-планки заголовков h
+@hDecorAfterWidth: 150px; // ширина декор-планки заголовков h
+
 
 @linksColor: #666;            // цвет ссылок
 @linksHoverColor: darken(@linksColor, 15%);   // цвет ссылок при наведении
@@ -118,8 +129,11 @@
 
 
 /* 2.0 PAGE INDEX */
-/* 3.0 SECTION CONTENT */
+/* 2.2 SECTION CONTENT */
 @wrapperContentPaddingTop: @blockSocialIconHeigth + @headerMenuHeigth; // внутренний отступ с верху в блоке CONTENT
+// ===== Banner block
+@bannerBackgroundImageUrl: url(../img/background/body/light_grey.jpg); // фоновое изображение для bannera
+
 
 // ===== Button Primary
 @btnPrimaryCustomMarginBottom: 10px; // отступ  снизу от кнопки в банере
@@ -167,15 +181,18 @@
 @corporateProgrammItemBackgroundImageUrl: url(../img/background/body/geometry.jpg); // фоновое изображение для блоков Corporat Programm
 @corporateProgrammItemPadding: 10px; // внутренние круговые отступы для блоков Corporat Programm
 @corporateProgrammItemMarginRight: 2px; // отступ с права для блоков Corporat Programm
-@corporateProgrammItemMarginBottom: 2px; // отступ с низу для блоков Corporat Programm
+@corporateProgrammItemMarginBottom: 15px; // отступ с низу для блоков Corporat Programm
 @corporateProgrammItemMaxWidth: 290px; // максимальная ширина блоков Corporat Programm
 @corporateProgrammItemLinkFontSize: 12px; // размер шрифта ссылок блоков Corporat Programm
 
 // ==== Next Training Block
+@nextTrainingBlockBackgroundImageUrl: url(../img/background/body/vichy.jpg); // фоновое изображение для блока списка тренингов
+@nextTrainingBlockBorderColor: #373E44; // цвет рамки блока списка тренингов
+
 @nextTrainingListPaddingVertical: 5px; // отступ сверху и снизу блока списка тренингов
 @nextTrainingListPaddingHorizontal: 10px; // отступ справа и слева блока списка тренингов
 
-@nextTrainingListBorderColor: #000; // цвет рамки пункта списка тренингов
+@nextTrainingListBorderColor: #373E44; // цвет рамки пункта списка тренингов
 @nextTrainingListMarginBottom: 5px; // отступ снизу пункта списка тренингов
 
 @nextTrainingListLinkFontSize: 12px; // размер шрифта ссылки пункта списка тренингов
@@ -204,7 +221,7 @@
 
 
 /* 2.0 PAGE INDEX */
-/* 4.0 SECTION FOOTER */
+/* 2.3 SECTION FOOTER */
 // ==== Main footer ===============================================
 @mainFooterMarginTop: 40px; // отступ сверху всего блока футера
 @mainFooterItemPaddingVertical: 0px; // отступ сверху и снизу подблоков футера
@@ -215,6 +232,7 @@
 @footerMenuListLiFontSize: 14px; // размер шрифта списков меню футера
 @footerMenuListLiColor: #2d3033; // цвет шрифта списков меню футера
 @footerMenuListLiLinkColor: #2d3033; // цвет шрифта ссылок списков меню футера
+@footerMenuListLiLinkHoverColor: #fff; // цвет шрифта ссылок списков меню футера при hovere
 
 // ==== Footer Social Network
 @socialIconFooterUrl: url(../img/sprite.png);
@@ -261,9 +279,23 @@
 @blockquoteCustomFontSize: 12px; // размер шрифта в цитатах
 @blockquoteCustomBorderRightColor: #366; // цвет правой рамки в цитатах
 
+@bradkrumbsLinkFontSize: 10px; // размер шрифта ссылок блока bradkrumbs
+@bradkrumbsLinkColor: #366; // цвет ссылок блока bradkrumbs
+@bradkrumbsLinkHoverColor: #4E49F9; // цвет ссылок при hovere блока bradkrumbs
+@bradkrumbsActiveLinkColor: #4E49F9; // цвет активной ссылки блока bradkrumbs
+
 
 /* 4.0 PAGE CONTACTS */
+@formContactsMarginLeft: 10px; // внешний отступ слева формы-contacts обратной связи
 
+@formContactsFieldInputHeight: 40px; // высота поля input формы-contacts обратной связи
+@formContactsFieldInputWidth: 300px; // ширина поля input формы-contacts обратной связи
+
+@formContactsFieldTextareaMinHeight: 180px; // минимальная высота поля textarea формы-contacts обратной связи
+@formContactsFieldTextareaMaxHeight: 180px; // максимальная высота поля textarea формы-contacts обратной связи
+
+@formContactsFieldTextareaMinWidth: 300px; // минимальная ширина поля textarea формы-contacts обратной связи
+@formContactsFieldTextareaMaxWidth: 300px; // максимальная ширина поля textarea формы-contacts обратной связи
 
 
 /* 5.0 MEDIA RESPONSIVE STYLE */
@@ -272,24 +304,30 @@
   /* ======== Carousel Block ================ */
 @carouselChildPadding1200: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
 
-
+  /* 4.0 PAGE CONTACTS */
+@mapWidth1200: 750px; // ширна блока гугл-мэп
+@mapHeight1200: 750px; // высота блока гугл-мэп
 
 
 /* Medium devices .col-md- (desktops, 992px and up) */
-  /* ========2.1 SECTION TOP  */
-  /* ==== Top Social Icon Block*/
+  /* ========2.1 SECTION TOP =============  */
+  /* ==== Top Social Icon Block =========*/
 @socialIconRowMarginRight992: 10px; // отступ строки соц иконок справа
 
-/* =======Header Menu Block*/
+  /* =======Header Menu Block ========*/
 @logoBrandWidth992: 250px;                  // ширина логотипа компании
 @headerMenuListLinkFontSize992: 12px;       // размер шрифта ссылок в меню
 
-// ==== Corporat Programm Block
+  // ==== Corporat Programm Block
 @corporateProgrammItemMaxWidth992: 240px; // максимальная ширина блоков Corporat Programm
 @corporateProgrammItemLinkFontSize992: 10px; // размер шрифта ссылок блоков Corporat Programm
 
-/* ======== Carousel Block ================ */
+  /* ======== Carousel Block ================ */
 @carouselChildPadding992: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
+
+/* 4.0 PAGE CONTACTS */
+@mapWidth992: 620px; // ширна блока гугл-мэп
+@mapHeight992: 320px; // высота блока гугл-мэп
 
 
 
@@ -305,12 +343,23 @@
 @logoBrandWidth768: 100px;                  // ширина логотипа компании
 @headerMenuListLinkFontSize768: 10px;       // размер шрифта ссылок в меню
 
+  /* 2.2 SECTION CONTENT */
+@wrapperContentPaddingTop768: @blockSocialIconHeigth + @headerMenuHeigth768; // внутренний отступ с верху в блоке CONTENT
+
   // ==== Corporat Programm Block
 @corporateProgrammItemMarginLeft768:56px; // отступы слева для блоков Corporat Programm
 @corporateProgrammItemMarginBottom768: @corporateProgrammItemMarginLeft768; // отступ с низу для блоков Corporat Programm
 
   // ==== Next Training Block
 @nextTrainingListMargin768: 0 180px; // отступ справа и слева блока списка тренингов
+
+/* ==============SPA-CONTENT Block ===========================*/
+@spaContentMarginTop768: 5px; // наружный отступ сверху блока SPA-CONTENT
+
+
+  /* 4.0 PAGE CONTACTS */
+@mapWidth768: 720px; // ширна блока гугл-мэп
+@mapHeight768: 300px; // высота блока гугл-мэп
 
 
 
@@ -332,7 +381,16 @@
 @headerMenuListLinkHoverColor320: #fff; // цвет шрифта ссылки пункта списка в Header меню при Hovere
 @headerMenuListLinkHoverBackgroundColor320: #366; // цвет фона ссылки пункта списка в Header меню при Hovere
 
-
+/* 2.2 SECTION CONTENT */
+@wrapperContentPaddingTop320: @blockSocialIconHeigth + @headerMenuHeigth320; // внутренний отступ с верху в блоке CONTENT
 
   // ==== Corporat Programm Block
 @corporateProgrammItemMargin320: 0 auto 2px; // отступы для блоков Corporat Programm
+
+/* ==============SPA-CONTENT Block ===========================*/
+@spaContentMarginTop320: 5px; // наружный отступ сверху блока SPA-CONTENT
+
+
+  /* 4.0 PAGE CONTACTS */
+@mapWidth320: 300px; // ширна блока гугл-мэп
+@mapHeight320: 300px; // высота блока гугл-мэп

@@ -59,6 +59,21 @@ body {
   font-size: @h4CustomFontSize;
 }
 
+.h-decor {
+  padding-bottom: @hDecorPaddingBottom;
+  border-bottom: @hDecorBordergBottomHeight solid @hDecorBordergBottomColor;
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+    margin: @hDecorAfterMargin auto;
+    top: @hDecorAfterTop;
+    background-color: @hDecorAfterBackgroundColor;
+    height: @hDecorAfterHeight;
+    width: @hDecorAfterWidth;
+  }
+}
+
 a {
   color: @linksColor;
   text-decoration: none;
@@ -161,6 +176,10 @@ img {                 // правило для адаптирования бол
 }
 
 /* ================= Banner Block ============= */
+.banner-row{
+  background-image: @bannerBackgroundImageUrl;
+}
+
 /* ===== Buttons ========= */
 .btn-primary-custom {
   margin-bottom: @btnPrimaryCustomMarginBottom;
@@ -350,6 +369,7 @@ fieldset[disabled] .btn-link-custom:focus {
   margin-bottom: @corporateProgrammItemMarginBottom;
   box-sizing: border-box;
   max-width: @corporateProgrammItemMaxWidth;
+  .btn-shadow();
   a {
     font-size: @corporateProgrammItemLinkFontSize;
   }
@@ -357,6 +377,11 @@ fieldset[disabled] .btn-link-custom:focus {
 
 /* ================= Next Training Block ============= */
 .next-training {
+  .next-training-block {
+    border: 1px solid @nextTrainingBlockBorderColor;
+    background-image: @nextTrainingBlockBackgroundImageUrl;
+    .btn-shadow();
+  }
   .next-training-list {
     list-style-type: none;
     padding: @nextTrainingListPaddingVertical @nextTrainingListPaddingHorizontal;
@@ -463,6 +488,10 @@ fieldset[disabled] .btn-link-custom:focus {
     }
     a {
       color: @footerMenuListLiLinkColor;
+      &:hover {
+        color: @footerMenuListLiLinkHoverColor;
+        .text-shadow();
+      }
     }
   }
 }
@@ -614,6 +643,22 @@ div.social-icon-footer div {
   border-right: 2px solid @blockquoteCustomBorderRightColor;
 }
 
+.bradkrumbs {
+  .bradkrumbs-active-link {
+    color: @bradkrumbsActiveLinkColor;
+    .text-shadow();
+  }
+  a {
+    font-size: @bradkrumbsLinkFontSize;
+    color: @bradkrumbsLinkColor;
+    &:hover {
+      color: @bradkrumbsLinkHoverColor;
+      .text-shadow();
+    }
+  }
+}
+
+
 /*============= 3.2 PAGE T_COMMUNICATION (ТРЕНИНГ КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ) ===== */
 .list-marker li {
   &:before {
@@ -624,16 +669,16 @@ div.social-icon-footer div {
 
 /*============================== 4.0 PAGE CONTACTS ===== */
 .form-contacts {
-  margin-left: 10px;
-  .field {
-    height: 40px;
-    width: 300px;
+  margin-left: @formContactsMarginLeft;
+  .field-input {
+    height: @formContactsFieldInputHeight;
+    width: @formContactsFieldInputWidth;
   }
-  .field-1 {
-    min-height: 180px;
-    max-height: 180px;
-    min-width: 300px;
-    max-width: 300px;
+  .field-textarea {
+    min-height: @formContactsFieldTextareaMinHeight;
+    max-height: @formContactsFieldTextareaMaxHeight;
+    min-width: @formContactsFieldTextareaMinWidth;
+    max-width: @formContactsFieldTextareaMaxWidth;
   }
 }
 
@@ -656,8 +701,8 @@ div.social-icon-footer div {
 
   /*=============== 4.0 PAGE CONTACTS =====================*/
   .map {
-    width: 750px;
-    height: 320px;
+    width: @mapWidth1200;
+    height: @mapHeight1200;
   }
 
 
@@ -700,8 +745,8 @@ div.social-icon-footer div {
 
   /*=============== 4.0 PAGE CONTACTS =====================*/
   .map {
-    width: 620px;
-    height: 320px;
+    width: @mapWidth992;
+    height: @mapHeight992;
   }
 
 
@@ -741,18 +786,29 @@ div.social-icon-footer div {
     }
   }
 
+  /* 2.2 SECTION CONTENT */
+  .wrapper-content {
+    padding-top: @wrapperContentPaddingTop768;
+  }
+
+
 
   /* ================= Corporate Programm Block ============= */
   .corporate-programm-item {
     margin-left: @corporateProgrammItemMarginLeft768;
     margin-bottom: @corporateProgrammItemMarginBottom768;
-
   }
+
+  /* ==============SPA-CONTENT Block ===========================*/
+.spa-content {
+  margin-top: @spaContentMarginTop768;
+}
+
 
   /*=============== 4.0 PAGE CONTACTS =====================*/
   .map {
-    width: 720px;
-    height: 300px;
+    width: @mapWidth768;
+    height: @mapHeight768;
   }
 
 
@@ -796,15 +852,27 @@ div.social-icon-footer div {
     margin-left: 30px;
   }
 
+  /* 2.2 SECTION CONTENT */
+  .wrapper-content {
+    padding-top: @wrapperContentPaddingTop320;
+  }
+
+
   /* ================= Corporate Programm Block ============= */
   .corporate-programm-item {
     margin: @corporateProgrammItemMargin320;
   }
 
+  /* ==============SPA-CONTENT Block ===========================*/
+.spa-content {
+  margin-top: @spaContentMarginTop320;
+}
+
+
   /*=============== 4.0 PAGE CONTACTS =====================*/
   .map {
-    width: 300px;
-    height: 300px;
+    width: @mapWidth320;
+    height: @mapHeight320;
   }
 
 
