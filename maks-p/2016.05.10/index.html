@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular example</title>
+  </head>
+  <body>
+    <div ng-app="testApp">
+      <div ng-controller="phonesController">
+        {{name}}
+        <div>
+          <input type="text" ng-model="query" />
+          | {{query}}
+          <input type="text" ng-model="maxPrice" />
+        <div>
+          <button ng-click="sort()">sort</button>
+
+          Order by:
+          <button ng-click="order('name')">Name</button>
+          <button ng-click="order('price')">Price</button> 
+        <ul>
+          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp:reverse" ng-if="phone.price <= maxPrice">
+            <strong>{{phone.name}} -
+                    {{phone.price | currency}}</strong>
+          </li>
+        </ul>
+      <div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers.js"></script>
+    <script src="/app/services.js"></script>
+  </body>
+</html>
