@@ -1,0 +1,25 @@
+main page
+
+
+<div>
+    <input ng-model="query">
+    <div class="pull-right">
+      <button ng-click="refresh()" class="btn btn-default">Refresh Users</button>
+    </div>
+</div>
+
+<table class="table table-striped">
+  <tr class="row">
+    <th ng-click="sort('name.first')" class="col-md-3">First Name</th>
+    <th ng-click="sort('name.last')" class="col-md-3">Last Name</th>
+    <th ng-click="sort('phone')" class="col-md-3">Phone</th>
+    <th ng-click="sort('registered')" class="col-md-3">Registered</th>
+  </tr>
+  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:revers" class="row">
+    <td class="col-md-3">{{user.name.first}}</td>
+    <td class="col-md-3">{{user.name.last}}</td>
+    <td class="col-md-3">{{user.phone}}</td>
+    <td class="col-md-3">{{user.registered | date}}</td>
+  </tr>
+
+</table>
