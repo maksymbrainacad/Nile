@@ -1,0 +1,19 @@
+<a href="#/">Go to main</a>
+
+<div class="row">
+  <div class="col-md-2">
+    <img src="{{user.picture.large}}"/>
+  </div>
+  <div class="col-md-3">
+    {{user.name.last}} {{user.name.first}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-">
+    <input ng-model="newTask"> <button ng-click="addTask()">Add</button>
+  </div>
+  <div ng-repeat="todoItem in user.todoList">
+    {{todoItem.task}}
+  </div>
+</div>

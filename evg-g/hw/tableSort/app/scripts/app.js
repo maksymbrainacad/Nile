@@ -7,6 +7,10 @@ angular.module('usersList', ['ngRoute'])   // создали angular прило�
         controller: 'MainController',
         templateUrl: '/app/views/main.html'
       })
+      .when('/users/:id', {        // :id - создает переменную id и ложит в нее все что ввел пользователь после /users/
+        controller: 'UserController',
+        templateUrl: '/app/views/user.html'
+      })
       .otherwise({             // в противном случае
         redirectTo: '/'         // redirectTo - перенаправить пользователя на страницу '/'
       });

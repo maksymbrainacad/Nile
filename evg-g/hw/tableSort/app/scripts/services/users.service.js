@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('usersList')
-  .service('usersService', function($http, $q) {      // сщздали сервис usersService в приложении usersList ($q промисы на обещание что то вернуть)
+  .service('usersService', function($http, $q, $filter) {      // сoздали сервис usersService в приложении usersList ($q промисы на обещание что то вернуть)
 
 
 
@@ -18,12 +18,26 @@ angular.module('usersList')
           $http.get('http://api.randomuser.me/?results=15')   // запрос на сервер за данными
             .success(function (users) {
               localStorage.setItem('users', JSON.stringify(users.results));   // ложим в локалсторедж строку с полученными пользователями
-              deferred.resolve(users.results);            //  полученные данные передаем на выполнение в функции then в файйле main.controller.js
+              deferred.resolve(users.results);            // resolve - полученные данные передаем на выполнение в функции then в файйле main.controller.js
             });
         }
 
 
-        return deferred.promise;        //
+        return deferred.promise;        // вернули обещание от промиса
+      },
+      saveUsers: function(users) {
+        var deferred = $q.defer();
+
+        localStorage.setItem('users', JSON.stringify(users));   // перезаписали в локалсторедж строку с откорректированными пользователями
+        deferred.resolve();            //  resolve - передаем на выполнение в функции then в файйле main.controller.js
+
+
+        return deferred.promise;        // вернули обещание от промиса
+      },
+      getUserById: function(id) {
+        var users = JSON.parse(localStorage.getItem('users'));
+
+        return $filter('filter')(users, {dob: id})[0];
       }
     };
-  })
+  });
