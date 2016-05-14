@@ -1,0 +1,35 @@
+<div class="form-inline">
+  <input ng-model="query" class="form-control" />
+  <select ng-model="queryBy" class="form-control">
+    <option value="">Any</option>
+    <option value="name.last">Last Name</option>
+    <option value="name.first">First Name</option>
+    <option value="phone">Phone</option>
+  </select>
+  <div class="pull-right">
+    <button ng-if="usersChanged" ng-click="saveUsers()" class="btn btn-default">Save Users</button>
+    <button ng-click="refresh()" class="btn btn-default">Refresh</button>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <tr class="row">
+    <th ng-click="sort('name.last')" class="col-md-3">Last Name</th>
+    <th ng-click="sort('name.first')" class="col-md-3">First Name</th>
+    <th ng-click="sort('phone')" class="col-md-2">Phone</th>
+    <th ng-click="sort('registered')" class="col-md-2">Registered</th>
+    <th class="col-md-2">Actions</th>
+  </tr>
+  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:reverse" class="row">
+    <td class="col-md-3">{{user.name.last}}</td>
+    <td class="col-md-3">{{user.name.first}}</td>
+    <td class="col-md-2">{{user.phone}}</td>
+    <td class="col-md-2">{{user.registered}}</td>
+    <td class="col-md-2">
+      <a href="#/users/{{user.dob}}">
+        <i class="glyphicon glyphicon-user"></i>
+      </a>
+      <i ng-click="remove(user)" class="glyphicon glyphicon-trash"></i>
+    </td>
+  </tr>
+</table>
