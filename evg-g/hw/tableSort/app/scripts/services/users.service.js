@@ -34,10 +34,22 @@ angular.module('usersList')
 
         return deferred.promise;        // вернули обещание от промиса
       },
-      getUserById: function(id) {
+      getUserById: function(id) {                                // выводим юзера к предпросмотру
         var users = JSON.parse(localStorage.getItem('users'));
 
         return $filter('filter')(users, {dob: id})[0];
+      },
+      saveUser: function(user) {                    // сохранение задач для пользователя
+        var users = JSON.parse(localStorage.getItem('users'));  // получаем из локалсторедж строку с пользователями
+
+        angular.forEach(users, function(item, key) {    // ищем нужного пользователя в массиве всех пользователей, для сохранений ему изменений
+          if (item.dob === user.dob) {
+            users[key] = user;
+          }
+        });
+
+        localStorage.setItem('users', JSON.stringify(users));   // ложим в локалсторедж строку с полученными пользователями
+
       }
     };
   });

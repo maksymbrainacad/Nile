@@ -26,7 +26,7 @@ main page
     <th ng-click="sort('registered')" class="col-md-2">Registered</th>
     <th class="col-md-2">Action</th>
   </tr>
-  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:revers" class="row">
+  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:revers | startFrom:pageSize*currentPage | limitTo:pageSize" class="row">
     <td class="col-md-3">{{user.name.last}}</td>
     <td class="col-md-3">{{user.name.first}}</td>
     <td class="col-md-2">{{user.phone}}</td>

@@ -10,6 +10,10 @@ angular.module('usersList')
     $scope.revers = false;
 
 
+    $scope.pageSize = 10;
+    $scope.currentPage = 0;
+
+
     $scope.query = '';
     $scope.queryBy = '';
 
