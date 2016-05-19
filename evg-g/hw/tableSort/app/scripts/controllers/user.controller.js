@@ -51,36 +51,25 @@ angular.module('usersList')
       $scope.changed = false;     // сохраняем изменения задач для пользователя, скрываем кнопку сэйв
     };
 
-    $scope.up = function(todoItem) {               // переместить задачу вверх по списку
-      var index;
-
-      angular.forEach($scope.user.todoList, function(item, key) {
-        if (todoItem.id === item.id) {
-          index = key;
-        }
-      });
-
-      if (index !== 0) {
-        var tempSortId = $scope.user.todoList[index].sortId;
-        $scope.user.todoList[index].sortId = $scope.user.todoList[index - 1].sortId;
-        $scope.user.todoList[index - 1].sortId = tempSortId;
+    $scope.up = function($index) {               // переместить задачу вверх по списку
+      if ($index > 0) {
+        var temp = $scope.user.todoList[$index - 1];
+        $scope.user.todoList[$index - 1] = $scope.user.todoList[$index];
+        $scope.user.todoList[$index] = temp;
+      } else {
+        alert('Куда еще выше?')
       }
-    }
+    };
 
-    $scope.down = function(todoItem) {              // переместить задачу вниз по списку
-      var index;
-
-      angular.forEach($scope.user.todoList, function(item, key) {
-        if (todoItem.id === item.id) {
-          index = key;
-        }
-      });
-
-      var tempSortId = $scope.user.todoList[index].sortId;
-      $scope.user.todoList[index].sortId = $scope.user.todoList[index + 1].sortId;
-      $scope.user.todoList[index + 1].sortId = tempSortId;
-
-    }
+    $scope.down = function($index) {              // переместить задачу вниз по списку
+      if ($index + 1 < $scope.user.todoList.length) {
+        var temp = $scope.user.todoList[$index + 1];
+        $scope.user.todoList[$index + 1] = $scope.user.todoList[$index];
+        $scope.user.todoList[$index] = temp;
+      } else {
+        alert('Куда еще ниже?')
+      }
+    };
 
     $scope.edited = function(todoItem) {
       todoItem.isEditing = false;
