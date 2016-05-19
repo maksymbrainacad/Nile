@@ -3,7 +3,7 @@
     {"motivator": {
       "picture": {
         "large": "/img/motivators/large/1.jpg",
-        "medium": "/img/motivators/medium/1.png",
+        "medium": "/img/motivators/medium/1.jpg",
         "thumbnail": "/img/motivators/thumbnail/1.jpg"
         }
       }
@@ -91,7 +91,7 @@
     {"motivator": {
       "picture": {
         "large": "/img/motivators/large/12.jpg",
-        "medium": "/img/motivators/medium/12.jpg",
+        "medium": "/img/motivators/medium/12.png",
         "thumbnail": "/img/motivators/thumbnail/12.jpg"
         }
       }

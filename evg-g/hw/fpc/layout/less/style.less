@@ -688,12 +688,14 @@ div.social-icon-footer div {
 // ===== gallery block ==
 ul.gallery-preview {
   -webkit-padding-start: 0;
+  -moz-padding-start: 0;
 }
 
 .gallery-preview {
   list-style-type: none;
   position: relative;
-  width: 720px;
+  min-width: 250px;
+  max-width: 720px;
   height: 300px;
   box-sizing: border-box;
   overflow: hidden;
@@ -711,8 +713,37 @@ ul.gallery-preview {
   display: block;
 }
 
+.arrow-preview {
+  height: 40px;
+  position: relative;
+  margin-top: -45px;
+}
+
+.left-preview-arrow {
+  font-size: 28px;
+  margin-left: 20px;
+}
+
+.right-preview-arrow {
+  font-size: 28px;
+  margin-right: 20px;
+}
+
+.arrow-preview-decor {
+  width: 27px;
+  height: 27px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background-color: #366;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
 .gallery-thumbnails-box {
   width: 400px;
+  margin-top: 10px;
 }
 
 .left-thumbnails-arrow {
@@ -776,6 +807,8 @@ ul.gallery-preview {
   height: 100%;
 }
 
+
+
 .modals-overlay .modal {
   background-color: #fff;
   width: 400px;
@@ -784,6 +817,7 @@ ul.gallery-preview {
   top: 200px;
   left: 50%;
   margin-left: -200px;
+  display: block;
 }
 
 .modals-overlay .modal .modal-header {
