@@ -25,7 +25,7 @@ angular.module('components')   // создали в модуле components ди
           } else {
             alert('Нет такой страницы!')
           }
-        }
+        };
       },
       link: function(scope) { // описываем логику для линков; принимаем scope, element, atribute
         console.log(scope.pageSize, scope.currentPage);

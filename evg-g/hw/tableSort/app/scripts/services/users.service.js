@@ -15,7 +15,7 @@ angular.module('usersList')
           deferred.resolve(JSON.parse(localUsers));
 
         } else {
-          $http.get('http://api.randomuser.me/?results=15')   // запрос на сервер за данными
+          $http.get('http://api.randomuser.me/?results=35')   // запрос на сервер за данными
             .success(function (users) {
               localStorage.setItem('users', JSON.stringify(users.results));   // ложим в локалсторедж строку с полученными пользователями
               deferred.resolve(users.results);            // resolve - полученные данные передаем на выполнение в функции then в файйле main.controller.js

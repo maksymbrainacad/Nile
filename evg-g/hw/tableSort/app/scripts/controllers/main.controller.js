@@ -39,7 +39,7 @@ angular.module('usersList')
       }
 
       return false;
-    }
+    };
 
 
 
