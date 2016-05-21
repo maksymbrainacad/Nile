@@ -20,7 +20,7 @@
     <th ng-click="sort('registered')" class="col-md-2">Registered</th>
     <th class="col-md-2">Actions</th>
   </tr>
-  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:reverse" class="row">
+  <tr ng-repeat="user in users | filter:searchFunction | orderBy:orderProp:reverse | startFrom:pageSize*currentPage | limitTo:pageSize" class="row">
     <td class="col-md-3">{{user.name.last}}</td>
     <td class="col-md-3">{{user.name.first}}</td>
     <td class="col-md-2">{{user.phone}}</td>
@@ -33,3 +33,5 @@
     </td>
   </tr>
 </table>
+
+<pagination page-size="pageSize" current-page="currentPage" pages-count="users.length/pageSize" items-count="users.length"></pagination>

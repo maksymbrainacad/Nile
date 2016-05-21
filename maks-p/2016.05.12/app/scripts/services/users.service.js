@@ -2,7 +2,7 @@
 
 angular.module('usersList')
   .service('usersService', function($http, $q, $filter) {
-
+    
 
     return {
       getUsers: function(options) {
@@ -37,6 +37,17 @@ angular.module('usersList')
         var users = JSON.parse(localStorage.getItem('users'));
 
         return $filter('filter')(users, {dob: id})[0];
+      },
+      saveUser: function(user) {
+        var users = JSON.parse(localStorage.getItem('users'));
+
+        angular.forEach(users, function(item, key) {
+          if (item.dob === user.dob) {
+            users[key] = user;
+          }
+        });
+
+        localStorage.setItem('users', JSON.stringify(users));
       }
     };
   });

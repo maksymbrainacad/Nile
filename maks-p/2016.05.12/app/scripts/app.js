@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('usersList', ['ngRoute'])
+angular.module('usersList', ['ngRoute', 'components'])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {

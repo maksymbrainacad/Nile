@@ -9,6 +9,9 @@ angular.module('usersList')
     $scope.orderProp = 'name.last';
     $scope.reverse = false;
 
+    $scope.pageSize = 5;
+    $scope.currentPage = 0;
+
     $scope.query = '';
     $scope.queryBy = '';
 
