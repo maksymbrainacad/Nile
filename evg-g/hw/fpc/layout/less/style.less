@@ -15,9 +15,10 @@
 
   4.0 PAGE CONTACTS
   5.0 PAGE MOTIVATORS
+  6.0 PAGE SITE MAP
 
 
-  5.0 MEDIA RESPONSIVE STYLE
+  X.0 MEDIA RESPONSIVE STYLE
 */
 
 
@@ -686,6 +687,7 @@ div.social-icon-footer div {
 
 /* ==================== 5.0 PAGE MOTIVATORS =======================*/
 // ===== gallery block ==
+// ===== gallery Preview ==
 ul.gallery-preview {
   -webkit-padding-start: 0;
   -moz-padding-start: 0;
@@ -694,12 +696,12 @@ ul.gallery-preview {
 .gallery-preview {
   list-style-type: none;
   position: relative;
-  min-width: 250px;
-  max-width: 720px;
-  height: 300px;
+  min-width: @galleryPreviewMinWidth;
+  max-width: @galleryPreviewMaxWidth;
+  height: @galleryPreviewHeight;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid #366;
+  border: 1px solid @galleryPreviewBorderColor;
 }
 
 .gallery-preview li {
@@ -714,81 +716,81 @@ ul.gallery-preview {
 }
 
 .arrow-preview {
-  height: 40px;
+  height: @galleryPreviewArrowPreviewHeight;
   position: relative;
-  margin-top: -45px;
+  margin-top: @galleryPreviewArrowPreviewMarginTop;
 }
 
 .left-preview-arrow {
-  font-size: 28px;
-  margin-left: 20px;
+  font-size: @galleryPreviewArrowPreviewFontSize;
+  margin-left: @galleryPreviewArrowPreviewMargin;
 }
 
 .right-preview-arrow {
-  font-size: 28px;
-  margin-right: 20px;
+  font-size: @galleryPreviewArrowPreviewFontSize;
+  margin-right: @galleryPreviewArrowPreviewMargin;
 }
 
 .arrow-preview-decor {
-  width: 27px;
-  height: 27px;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  background-color: #366;
-  color: #fff;
+  width: @galleryPreviewArrowPreviewDecorWidth;
+  height: @galleryPreviewArrowPreviewDecorHeight;
+  border-radius: @galleryPreviewArrowPreviewDecorBorderRadius;
+  border: 1px solid @galleryPreviewArrowPreviewDecorBorderColor;
+  background-color: @galleryPreviewArrowPreviewDecorBackgroundrColor;
+  color: @galleryPreviewArrowPreviewDecorColor;
   cursor: pointer;
 }
 
 
-
+// ===== gallery Thumbnails ==
 .gallery-thumbnails-box {
-  width: 400px;
-  margin-top: 10px;
+  width: @galleryThumbnailsBoxWidth;
+  margin-top: @galleryThumbnailsBoxMarginTop;
 }
 
 .left-thumbnails-arrow {
-  font-size: 21px;
-  margin-top: 11px;
+  font-size: @galleryThumbnailsArrowFontSize;
+  margin-top: @galleryThumbnailsLeftArrowMarginTop;
 }
 
 .right-thumbnails-arrow {
-  font-size: 21px;
-  margin-top: -34px;
+  font-size: @galleryThumbnailsArrowFontSize;
+  margin-top: @galleryThumbnailsRightArrowMarginTop;
 }
 
-.arrow-decor {
-  width: 25px;
-  height: 25px;
-  border: 1px solid #666;
-  border-radius: 20px;
-  background-color: #366;
-  color: #fff;
+.arrow-thumbnails-decor {
+  width: @galleryThumbnailsArrowThumbnailsDecorWidth;
+  height: @galleryThumbnailsArrowThumbnailsDecorHeight;
+  border-radius: @galleryThumbnailsArrowThumbnailsDecorBorderRadius;
+  border: 1px solid @galleryThumbnailsArrowThumbnailsDecorBorderColor;
+  background-color: @galleryThumbnailsArrowThumbnailsDecorBackgroundrColor;
+  color: @galleryThumbnailsArrowThumbnailsDecorColor;
   cursor: pointer;
 }
 
 .gallery-thumbnails-overflow {
   box-sizing: border-box;
   overflow: hidden;
-  width: 254px;
-  margin-left: 74px;
+  width: @galleryThumbnailsOverflowWidth;
+  margin-left: @galleryThumbnailsOverflowMarginLeft;
 }
 
 
 .gallery-thumbnails {
   list-style-type: none;
-  width: 10000px;
-  padding-left: 1px;
-  margin-bottom: 1px;
+  width: @galleryThumbnailsWidth;
+  padding-left: @galleryThumbnailsPaddingnLeft;
+  margin-bottom: @galleryThumbnailsMarginBottom;
 }
 
 .gallery-thumbnails li {
   float: left;
-  margin: 0 1px;
+  margin: @galleryThumbnailsLiMargin;
 }
 
 .gallery-thumbnails li.active {
-  border: 2px solid #366;
-  margin: 0 -1px;
+  border: 2px solid @galleryThumbnailsLiActiveBorderColor;
+  margin: @galleryThumbnailsLiActiveMargin;
 }
 
 .gallery-thumbnails::after {
@@ -799,55 +801,123 @@ ul.gallery-preview {
 
 /* ======= Modal Window Block ===== */
 .modals-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: @modalsOverlayBackground;
   position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
-  height: 100%;
+  top: @modalsOverlayTop;
+  left: @modalsOverlayLeft;
+  width: @modalsOverlayWidth;
+  height: @modalsOverlayHeight;
+  z-index: @modalsOverlayZindex;
 }
 
-
-
 .modals-overlay .modal {
-  background-color: #fff;
-  width: 400px;
-  height: 200px;
+  background-color: @modalBackgroundColor;
+  min-width: @modalMinWidth;
+  max-width: @modalMaxWidth;
+  min-height: @modalMinHeight;
+  max-height: @modalMaxHeight;
   position: absolute;
-  top: 200px;
-  left: 50%;
-  margin-left: -200px;
+  top: @modalTop;
+  left: @modalLeft;
   display: block;
 }
 
 .modals-overlay .modal .modal-header {
-  background: #666;
-  color: #ccc;
+  background: @modalHeaderBackground;
+  color: @modalHeaderColor;
+  height: @modalHeaderHeight;
+  padding: @modalHeaderPadding;
 }
 
 .modals-overlay .modal .modal-header .btn-close {
   cursor: pointer;
   float: right;
-  margin-right: 10px;
-  font-size: 22px;
+  margin-right: @modalHeaderBtnCloseMarginRight;
+  margin-top: @modalHeaderBtnCloseMarginTop;
+  font-size: @modalHeaderBtnCloseFontSize;
+}
+
+.modals-overlay .modal .modal-body img {
+  max-width: @modalBodyImgMaxWidth;
+  height: @modalBodyImgHeight;
+  margin-left: @modalBodyImgMarginLeft;
+  margin-right: @modalBodyImgMarginRight;
 }
 
 .modals-overlay .modal .modal-footer {
-  background: #666;
+  background: @modalFooterBackground;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: #ccc;
+  bottom: @modalFooterBottom;
+  left: @modalFooterLeft;
+  width: @modalFooterWidth;
+  color: @modalFooterColor;
 }
 
+// ========= 2d-animation ==
+.d2-animation {
+  background-image: @d2AnimationBackgroundImage;
+  background-size: cover;
+  width: @d2AnimationWidth;
+  height: @d2AnimationHeight;
+  margin-bottom: @d2AnimationMarginBottom;
+  margin-left: @d2AnimationMarginLeft;
+  position: relative;
+}
 
+.d2-animation-element {
+  width: @d2AnimationElementWidth;
+  height: @d2AnimationElementHeight;
+  border: 1px solid @d2AnimationElementBorderColor;
+  border-radius: @d2AnimationElementBorderRadius;
+  background-color: @d2AnimationElementBackgoundColor;
+  color: @d2AnimationElementColor;
+  font-size: @d2AnimationElementFontSize;
+  padding-top: @d2AnimationElementPaddingTop;
+  display: block;
+  position: relative;
+  top: @d2AnimationElementTop;
+  .btn-shadow();
+}
 
+.bum {
+  margin-left: @d2AnimationElementBumMarginLeft;
+  .d2-transform-bum();
+}
 
-/* 5.0 MEDIA RESPONSIVE STYLE */
+.learner {
+  margin-right: @d2AnimationElementLearnerMarginRight;
+  .d2-transform-learner();
+}
 
-/* Large devices .col-lg- (large desktops, 1200px and up) */
+/* 6.0 PAGE SITE MAP */
+.site-link-list {
+  background-image: @siteLinkListBackgroundImageUrl;
+  background-repeat: no-repeat;;
+  background-position: right;
+  .h4-custom {
+    .text-shadow();
+  }
+  li {
+    a {
+      text-transform: lowercase;
+      &:hover {
+        color: @siteLinkListHoverColor;
+        text-transform: uppercase;
+        .text-shadow();
+      }
+    }
+  }
+}
+
+/* X.0 MEDIA RESPONSIVE STYLE */
+
+/* Start Large devices .col-lg- (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop1200;
+  }
+
   /* ============================ 2.1 SECTION TOP  ============================== */
   /* ======== Carousel Block ================ */
   .carousel-child {
@@ -861,11 +931,18 @@ ul.gallery-preview {
   }
 
 
-}
+} /* End Large devices .col-lg- (large desktops, 1200px and up) */
 
 
-/* Medium devices .col-md- (desktops, 992px and up) */
+
+/* Start Medium devices .col-md- (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop992;
+  }
+
+
   /* ============================ 2.1 SECTION TOP  ============================== */
   /* ================= Top Soci Icon Block ===== =======*/
   .social-icon-row {
@@ -905,13 +982,36 @@ ul.gallery-preview {
   }
 
 
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-height: @modalMaxHeight992;
+    left: @modalLeft992;
+  }
+
+  .modals-overlay .modal .modal-body img {
+    max-width: @modalBodyImgMaxWidth992;
+  }
+
+  // ========= 2d-animation ==
+  .d2-animation {
+    margin-left: @d2AnimationMarginLeft992;
+  }
 
 
-}
 
 
-/* Small devices .col-sm- (tablets, 768px and up) */
+} /* End Medium devices .col-md- (desktops, 992px and up) */
+
+
+
+/* Start Small devices .col-sm- (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop768;
+  }
+
     /* ============================ 2.1 SECTION TOP  ============================== */
     /* ================= Top Soci Icon Block ===== =======*/
   .social-icon-row {
@@ -957,6 +1057,7 @@ ul.gallery-preview {
   /* ==============SPA-CONTENT Block ===========================*/
 .spa-content {
   margin-top: @spaContentMarginTop768;
+  margin-bottom: @spaContentMarginBottom768;
 }
 
 
@@ -967,11 +1068,28 @@ ul.gallery-preview {
   }
 
 
-}
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-width: @modalMaxWidth768;
+    max-height: @modalMaxHeight768;
+    top: @modalTop768;
+    left: @modalLeft768;
+  }
 
 
-/* Extra small devices .col-xs- (phones,320px and up) */
+
+} /* End Small devices .col-sm- (tablets, 768px and up) */
+
+
+
+/* Start Extra small devices .col-xs- (phones,320px and up) */
 @media (min-width: 320px) and (max-width: 767px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop320;
+  }
+
     /* ============================ 2.1 SECTION TOP  ============================== */
     /* ================= Top Soci Icon Block ===== =======*/
   .social-icon-row {
@@ -1021,6 +1139,7 @@ ul.gallery-preview {
   /* ==============SPA-CONTENT Block ===========================*/
 .spa-content {
   margin-top: @spaContentMarginTop320;
+  margin-bottom: @spaContentMarginBottom320;
 }
 
 
@@ -1030,5 +1149,35 @@ ul.gallery-preview {
     height: @mapHeight320;
   }
 
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  // ===== gallery block ==
+  // ===== gallery Preview ==
+  .gallery-preview {
+    height: @galleryPreviewHeight320;
+  }
 
-}
+  // ===== gallery Thumbnails ==
+  .gallery-thumbnails-box {
+    width: @galleryThumbnailsBoxWidth320;
+  }
+
+  .gallery-thumbnails-overflow {
+    width: @galleryThumbnailsOverflowWidth320;
+    margin-left: @galleryThumbnailsOverflowMarginLeft320;
+  }
+
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-height: @modalMaxHeight320;
+    top: @modalTop320;
+    left: @modalLeft320;
+  }
+
+  /* 6.0 PAGE SITE MAP */
+  .site-link-list {
+    background-image: none;
+  }
+
+
+
+} /* End Extra small devices .col-xs- (phones,320px and up) */

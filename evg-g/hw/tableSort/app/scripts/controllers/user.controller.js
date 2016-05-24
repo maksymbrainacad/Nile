@@ -71,7 +71,7 @@ angular.module('usersList')
       }
     };
 
-    $scope.edited = function(todoItem) {
+    $scope.edited = function(todoItem) {  // редактировать задачу
       todoItem.isEditing = false;
       $scope.changed = true;
     };

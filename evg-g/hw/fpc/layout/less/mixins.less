@@ -28,6 +28,11 @@
   text-transform: uppercase;
 }
 
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+
 .indent {             // внутренние отступы для блока
   padding-top: @indentPaddingTop;
   padding-bottom: @indentPaddingBottom;
@@ -91,23 +96,53 @@
 }
 
 // CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
-.transform { // начальная координата вращения
-  -webkit-transform: @transformRotateX @transformRotateY @transformRotateZ;
-     -moz-transform: @transformRotateX @transformRotateY @transformRotateZ;
-      -ms-transform: @transformRotateX @transformRotateY @transformRotateZ;
-       -o-transform: @transformRotateX @transformRotateY @transformRotateZ;
-          transform: @transformRotateX @transformRotateY @transformRotateZ;
-  &:hover { // конечная координата вращения
-    -webkit-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
-       -moz-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
-        -ms-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
-         -o-transform: @transformHoverRotateX @transformHoverRotateY @transformHoverRotateZ;
-    -webkit-border-radius: @transformHoverBorderRadius;  // округление углов при наведении
-       -moz-border-radius: @transformHoverBorderRadius;
-            border-radius: @transformHoverBorderRadius;
-    -webkit-transition: all @transformHoverTimeAnimation ease-out; // время прохождения анимации при наведении
-       -moz-transition: all @transformHoverTimeAnimation ease-out;
-         -o-transition: all @transformHoverTimeAnimation ease-out;
-            transition: all @transformHoverTimeAnimation ease-out;
+.d3-transition-time { // время прохождения анимации при наведении
+  -webkit-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+     -moz-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+       -o-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+          transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+}
+
+.transform {
+  &:hover {
+    -webkit-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+       -moz-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+        -ms-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+         -o-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+    -webkit-border-radius: @d3TransformHoverBorderRadius;  // округление углов при наведении
+       -moz-border-radius: @d3TransformHoverBorderRadius;
+            border-radius: @d3TransformHoverBorderRadius;
+    .d3-transition-time();
+  }
+}
+
+// CSS3 2D ANIMATION EFFECT (для перемещения элементов на странице МОТИВАТОРОВ)
+.d2-transition-time { // время прохождения анимации при наведении
+  -webkit-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+     -moz-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+      -ms-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+       -o-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+          transition: all @d2TransitionTransformHoverTimeAnimation ease;
+}
+
+.d2-transform-bum {
+  &:hover {
+    -webkit-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+       -moz-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+        -ms-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+         -o-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+            transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+    .d2-transition-time();
+  }
+}
+
+.d2-transform-learner {
+  &:hover {
+    -webkit-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+       -moz-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+        -ms-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+         -o-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+            transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+    .d2-transition-time();
   }
 }

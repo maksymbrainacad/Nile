@@ -13,13 +13,16 @@
       var popupHtml = popupHandlebars({
         modalId: '',
         name: '',
-        content: '<img src="' + url + '">',
+        content: '<img class="img-responsive" src="' + url + '">',
         footer: ''
       });
 
       var popupEl = document.createElement('div');
+      popupEl.className = "modal-window";
       popupEl.innerHTML = popupHtml;
       document.body.appendChild(popupEl);  // добавили отрисованное окно в хтмд структуру последним элементом
+
+     closePopup(popupEl);  // навесили обработчики событий на модальное окно
     };
 
 
@@ -45,6 +48,28 @@
       popupNode.addEventListener('click', showPopup);
     })
   };
+
+
+
+  var closePopup = function(e) {
+    var popupElNode = document.getElementsByClassName('modal-window'),
+        modalsOverlayNode = document.querySelector('[data-action="close-modal"]');
+
+      modalsOverlayNode.addEventListener('click', function(e) {
+        var btnCloseNode = document.querySelector('[data-action="close"]'),
+            modalsOverlay = e.currentTarget,
+            btnClose = e.target;
+
+        if (modalsOverlay === btnClose || btnCloseNode === btnClose) {
+           document.body.removeChild(popupElNode[0]);
+        }
+
+        e.stopPropagation();
+        return false;
+      });
+  };
+
+
 
   window.Popup = {
     init: init

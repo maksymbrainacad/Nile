@@ -55,17 +55,34 @@
 @scheduleListLiLinkBottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона ссылок пунктов списка расписания тренингов
 
 // ==== CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
-@transformRotateX: rotateX(0deg); // начальная координата вращения по оси Х
-@transformRotateY: rotateY(0deg); // начальная координата вращения по оси Y
-@transformRotateZ: rotateZ(0deg); // начальная координата вращения по оси Z
+@d3TransformHoverRotateX: rotateX(0deg); // конечная координата вращения по оси Х
+@d3TransformHoverRotateY: rotateY(360deg); // конечная координата вращения по оси Y
+@d3TransformHoverRotateZ: rotateZ(360deg); // конечная координата вращения по оси Z
 
-@transformHoverRotateX: rotateX(0deg); // конечная координата вращения по оси Х
-@transformHoverRotateY: rotateY(360deg); // конечная координата вращения по оси Y
-@transformHoverRotateZ: rotateZ(360deg); // конечная координата вращения по оси Z
+@d3TransformHoverBorderRadius: 50px; // округление углов при наведении
 
-@transformHoverBorderRadius: 50px; // округление углов при наведении
+@d3TransitionTransformHoverTimeAnimation: 1s; // время прохождения анимации при наведении
 
-@transformHoverTimeAnimation: 1s; // время прохождения анимации при наведении
+// CSS3 2D ANIMATION EFFECT (для перемещения элементов на странице МОТИВАТОРОВ)
+@d2TransitionTransformHoverTimeAnimation: 2.5s; // время прохождения анимации при наведении
+
+ // элемент Bum 2D ANIMATION
+@d2TransformHoverBumScale: scale(1.2); // увеличение элемента bum 2д анимации
+@d2TransformHoverBumRotate: rotate(1080deg); // градус вращения элемента bum 2д анимации
+@d2TransformHoverBumTranslateX: translateX(98px); // конечная координата перемещения элемента bum 2д анимации по оси Х
+@d2TransformHoverBumTranslateY: translateY(137px); // конечная координата перемещения элемента bum 2д анимации по оси Y
+@d2TransformHoverBumSkewX: skewX(0deg); // конечная координата наклона элемента bum 2д анимации по оси Х
+@d2TransformHoverBumSkewY: skewY(0deg); // конечная координата наклона элемента bum 2д анимации по оси Y
+
+ // элемент Learner 2D ANIMATION
+@d2TransformHoverLearnerScale: scale(1.2); // увеличение элемента learner 2д анимации
+@d2TransformHoverLearnerRotate: rotate(-1080deg); // градус вращения элемента learner 2д анимации
+@d2TransformHoverLearnerTranslateX: translateX(-125px); // конечная координата перемещения элемента learner 2д анимации по оси Х
+@d2TransformHoverLearnerTranslateY: translateY(-110px); // конечная координата перемещения элемента learner 2д анимации по оси Y
+@d2TransformHoverLearnerSkewX: skewX(0deg); // конечная координата наклона элемента learner 2д анимации по оси Х
+@d2TransformHoverLearnerSkewY: skewY(0deg); // конечная координата наклона элемента learner 2д анимации по оси Y
+
+
 
 
 /* 1.0 GLOBAL */
@@ -220,8 +237,8 @@
 
 
 
-/* 2.0 PAGE INDEX */
-/* 2.3 SECTION FOOTER */
+/* ================= 2.0 PAGE INDEX ====================== */
+/* =============== 2.3 SECTION FOOTER ==================*/
 // ==== Main footer ===============================================
 @mainFooterMarginTop: 40px; // отступ сверху всего блока футера
 @mainFooterItemPaddingVertical: 0px; // отступ сверху и снизу подблоков футера
@@ -253,7 +270,7 @@
 
 
 
-/*  3.0 PAGE SCHEDULE */
+/* ======================== 3.0 PAGE SCHEDULE ===================== */
 @scheduleListPaddingVertical: 5px; // отступ сверху и снизу списка расписания тренингов
 @scheduleListPaddingHorizontal: 10px; // отступ справа и слева списка расписания тренингов
 
@@ -285,7 +302,9 @@
 @bradkrumbsActiveLinkColor: #4E49F9; // цвет активной ссылки блока bradkrumbs
 
 
-/* 4.0 PAGE CONTACTS */
+
+
+/* ===================== 4.0 PAGE CONTACTS ========================= */
 @formContactsMarginLeft: 10px; // внешний отступ слева формы-contacts обратной связи
 
 @formContactsFieldInputHeight: 40px; // высота поля input формы-contacts обратной связи
@@ -298,8 +317,125 @@
 @formContactsFieldTextareaMaxWidth: 300px; // максимальная ширина поля textarea формы-contacts обратной связи
 
 
-/* 5.0 MEDIA RESPONSIVE STYLE */
+
+
+/* ==================== 5.0 PAGE MOTIVATORS =======================*/
+// ===== gallery block ==
+// ===== gallery Preview ==
+@galleryPreviewMinWidth: 250px; // мин ширина изображений галереи мотиваторов
+@galleryPreviewMaxWidth: 720px; // макс ширина изображений галереи мотиваторов
+@galleryPreviewHeight: 300px; // высота изображений галереи мотиваторов
+@galleryPreviewBorderColor: #366; // цвет рамки изображений галереи мотиваторов
+
+@galleryPreviewArrowPreviewHeight: 40px; // высота блока стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewMarginTop: -(@galleryPreviewArrowPreviewHeight + 5px); // внешний отступ сверху блока стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewFontSize: 28px; // размер шрифта стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewMargin: 20px; // внешний отступ слева и справа для соответствующих стрелок навигации изображений галереи мотиваторов
+
+@galleryPreviewArrowPreviewDecorWidth: @galleryPreviewArrowPreviewFontSize - 1px; // ширина стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorHeight: @galleryPreviewArrowPreviewFontSize - 1px; // высота стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBorderRadius: @galleryPreviewArrowPreviewDecorWidth - 7px; // радиус скругления рамки стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBorderColor: #fff; // цвет рамки стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBackgroundrColor: #366; // цвет фона стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorColor: #fff; // цвет шрифтаи стрелок навигации изображений галереи мотиваторов
+
+// ===== gallery Thumbnails ==
+@galleryThumbnailsBoxWidth: 400px; // ширина блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsBoxMarginTop: 10px; // внешний отступ сверху блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsArrowFontSize: 21px; // размер шрифта стрелок навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsLeftArrowMarginTop: 11px; // внешний отступ сверху левой стрелки навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsRightArrowMarginTop: -34px; // внешний отступ сверху правой стрелки навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorWidth: @galleryThumbnailsArrowFontSize + 4px; // ширина стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorHeight: @galleryThumbnailsArrowFontSize + 4px; // высота стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBorderRadius: @galleryThumbnailsArrowThumbnailsDecorWidth - 5px; // радиус скругления рамки стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBorderColor: #666; // цвет рамки стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBackgroundrColor: #366; // цвет фона стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorColor: #fff; // цвет шрифтаи стрелок навигации линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsOverflowWidth: 254px; // ширина видимого блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsOverflowMarginLeft: 74px; // внешний отступ слева видимого блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsWidth: 10000px; // ширина невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+@galleryThumbnailsPaddingnLeft: 1px; // внутренний отступ слева невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+@galleryThumbnailsMarginBottom: 1px; // внешний отступ снизу невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+
+@galleryThumbnailsLiMargin: 0 1px; // внешний отступ справа и слева иконок в линейке изображений галереи мотиваторов
+
+@galleryThumbnailsLiActiveBorderColor: #366; // цвет рамки активной иконоки в линейке изображений галереи мотиваторов
+@galleryThumbnailsLiActiveMargin: 0 -1px; // внешний отступ справа и слева активной иконоки в линейке изображений галереи мотиваторов
+
+
+// ========= 2d-animation ==
+@d2AnimationBackgroundImage: url(../img/motivators/2Dbg.jpg); // фоновое изображение для блока 2D Animation
+@d2AnimationWidth: 450px; // ширина блока 2D Animation
+@d2AnimationHeight: 450px; // высота блока 2D Animation
+@d2AnimationMarginBottom: 15px; // внешний отступ снизу блока 2D Animation
+@d2AnimationMarginLeft: 165px; // внешний отступ слева блока 2D Animation
+
+@d2AnimationElementWidth: 35px; // ширина элемента 2D Animation
+@d2AnimationElementHeight: 35px; // высота элемента 2D Animation
+@d2AnimationElementBorderColor: #fff; // цвет рамки элемента 2D Animation
+@d2AnimationElementBorderRadius: 20px; // радиус скругления рамки элемента 2D Animation
+@d2AnimationElementBackgoundColor: #ed1711; // цвет фона элемента 2D Animation
+@d2AnimationElementColor: #fff; // цвет шрифта элемента 2D Animation
+@d2AnimationElementFontSize: 18px; // размер шрифта элемента 2D Animation
+@d2AnimationElementPaddingTop: 5px; // внутренний отступ сверху элемента 2D Animation
+@d2AnimationElementTop: 42%; // начальная позиция сверху элемента 2D Animation
+
+@d2AnimationElementBumMarginLeft: 159px; // внешний отступ слева элемента bum 2D Animation
+@d2AnimationElementLearnerMarginRight: 159px; // внешний отступ справа элемента learner 2D Animation
+
+
+
+/* ======= Modal Window Block ===== */
+@modalsOverlayBackground: rgba(0, 0, 0, 0.5); // цвет фона обложки модального окна
+@modalsOverlayTop: 0; // начальная позиция сверху обложки модального окна
+@modalsOverlayLeft: 0; // начальная позиция слева обложки модального окна
+@modalsOverlayWidth: 100%; // ширина обложки модального окна
+@modalsOverlayHeight: 100%; // высота обложки модального окна
+@modalsOverlayZindex: 1040; // позиция слоя обложки модального окна
+
+@modalBackgroundColor: #fff; // цвет фона модального окна
+@modalMinWidth: 300px; // мин ширина модального окна
+@modalMaxWidth: 750px; // макс ширина модального окна
+@modalMinHeight: auto; // мин высота модального окна
+@modalMaxHeight: 670px; // макс высота модального окна
+@modalTop: 5px; // начальная позиция сверху модального окна
+@modalLeft: 20%; // начальная позиция слева модального окна
+
+@modalHeaderBackground: #666; // цвет фона headera модального окна
+@modalHeaderColor: #ccc; // цвет шрифта headera модального окна
+@modalHeaderHeight: 40px; // высота headera модального окна
+@modalHeaderPadding: 0 5px; // внутренние круговые отступы headera модального окна
+
+@modalHeaderBtnCloseMarginRight: 10px; // внешний отступ справа кнопки закрыть в  headerе модального окна
+@modalHeaderBtnCloseMarginTop: 5px; // внешний отступ сверху кнопки закрыть в  headerе модального окна
+@modalHeaderBtnCloseFontSize: 22px; // размер шривта кнопки закрыть в  headerе модального окна
+
+@modalBodyImgMaxWidth: 82%; // макс ширина изображений в теле модального окна
+@modalBodyImgHeight: auto; // высота изображений в теле модального окна
+@modalBodyImgMarginLeft: auto; // внешний отступ слева изображений в теле модального окна
+@modalBodyImgMarginRight: auto; // внешний отступ справа изображений в теле модального окна
+
+@modalFooterBackground: #666; // цвет фона footera модального окна
+@modalFooterBottom: 0; // начальная позиция снизу footera модального окна
+@modalFooterLeft: 0; // начальная позиция слева footera модального окна
+@modalFooterWidth: 100%; // ширина footera модального окна
+@modalFooterColor: #ccc; // цвет шрифта footera модального окна
+
+
+/* ==================== 6.0 PAGE SITE MAP =======================*/
+@siteLinkListHoverColor: #366; // цвет ссылок при наведении в списке карты сайта
+@siteLinkListBackgroundImageUrl: url(../img/pegas.png); // фоновое изображение для списка ссылок карты сайта
+
+
+
+/* X.0 MEDIA RESPONSIVE STYLE */
 /* Large devices .col-lg- (large desktops, 1200px and up) */
+  /* 1.0 GLOBAL */
+@h1CustomMarginTop1200: 15px; // отступ с верху от Заголовков h1
+
   /* ========2.1 SECTION TOP  */
   /* ======== Carousel Block ================ */
 @carouselChildPadding1200: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
@@ -310,6 +446,10 @@
 
 
 /* Medium devices .col-md- (desktops, 992px and up) */
+  /* 1.0 GLOBAL */
+@h1CustomMarginTop992: 15px; // отступ с верху от Заголовков h1
+
+
   /* ========2.1 SECTION TOP =============  */
   /* ==== Top Social Icon Block =========*/
 @socialIconRowMarginRight992: 10px; // отступ строки соц иконок справа
@@ -329,9 +469,25 @@
 @mapWidth992: 620px; // ширна блока гугл-мэп
 @mapHeight992: 320px; // высота блока гугл-мэп
 
+/* 5.0 PAGE MOTIVATORS */
+  /* ======= Modal Window Block ===== */
+@modalMaxHeight992: 595px; // макс высота модального окна
+@modalLeft992: 13%; // начальная позиция слева модального окна
+
+@modalBodyImgMaxWidth992: 71%; // макс ширина изображений в теле модального окна
+
+// ========= 2d-animation ==
+@d2AnimationMarginLeft992: 97px; // внешний отступ слева блока 2D Animation
+
+
+
+
 
 
 /* Small devices .col-sm- (tablets, 768px and up) */
+/* 1.0 GLOBAL */
+@h1CustomMarginTop768: 5px; // отступ с верху от Заголовков h1
+
   /* ========2.1 SECTION TOP  */
   /* ==== Top Social Icon Block*/
 @socialIconRowMarginRight768: 10px; // отступ строки соц иконок справа
@@ -355,17 +511,28 @@
 
 /* ==============SPA-CONTENT Block ===========================*/
 @spaContentMarginTop768: 5px; // наружный отступ сверху блока SPA-CONTENT
+@spaContentMarginBottom768: 5px; // наружный отступ снизу блока SPA-CONTENT
 
 
   /* 4.0 PAGE CONTACTS */
 @mapWidth768: 720px; // ширна блока гугл-мэп
 @mapHeight768: 300px; // высота блока гугл-мэп
 
+  /* 5.0 PAGE MOTIVATORS */
+  /* ======= Modal Window Block ===== */
+@modalMaxWidth768: 615px; // макс ширина модального окна
+@modalMaxHeight768: 570px; // макс высота модального окна
+@modalTop768: 566px; // начальная позиция сверху модального окна
+@modalLeft768: 9%; // начальная позиция слева модального окна
+
 
 
 
 
 /* Extra small devices .col-xs- (phones,320px and up) */
+/* 1.0 GLOBAL */
+@h1CustomMarginTop320: 5px; // отступ с верху от Заголовков h1
+
   /* ========2.1 SECTION TOP  */
   /* ==== Top Social Icon Block*/
 @socialIconRowMarginRight320: 10px; // отступ строки соц иконок справа
@@ -389,8 +556,24 @@
 
 /* ==============SPA-CONTENT Block ===========================*/
 @spaContentMarginTop320: 5px; // наружный отступ сверху блока SPA-CONTENT
-
+@spaContentMarginBottom320: 5px; // наружный отступ снизу блока SPA-CONTENT
 
   /* 4.0 PAGE CONTACTS */
 @mapWidth320: 300px; // ширна блока гугл-мэп
 @mapHeight320: 300px; // высота блока гугл-мэп
+
+/* 5.0 PAGE MOTIVATORS */
+// ===== gallery block ==
+// ===== gallery Preview ==
+@galleryPreviewHeight320: 122px; // высота изображений галереи мотиваторов
+
+// ===== gallery Thumbnails ==
+@galleryThumbnailsBoxWidth320: 290px; // ширина блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsOverflowWidth320: 212px; // ширина видимого блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsOverflowMarginLeft320: 40px; // внешний отступ слева видимого блока линейки иконок изображений галереи мотиваторов
+
+/* ======= Modal Window Block ===== */
+@modalMaxHeight320: 330px; // макс высота модального окна
+@modalTop320: 995px; // начальная позиция сверху модального окна
+@modalLeft320: 0%; // начальная позиция слева модального окна
