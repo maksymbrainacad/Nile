@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Table Sort</title>
-    <link  href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- include: "type": "stylesheet", "bower": "bootstrap" -->
+
   </head>
   <body style="margin-left: 20px">
 
@@ -13,15 +14,23 @@
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.min.js"></script>
 
+    <!-- bower: js -->
+    <!-- endbower -->
 
-    <script src="/app/scripts/app.js"></script>
+    <!-- include: "type": "js", "files": "app/**/*.js" -->
+    <!-- это инструкция для гранд таски includeSource -->
+
+
+  <!-- версия 3 должны подключиться файлы ниже -->
+
+    <!-- <script src="/app/scripts/app.js"></script>
     <script src="/app/scripts/startFromFilter.js"></script>
     <script src="/app/scripts/controllers/main.controller.js"></script>
     <script src="/app/scripts/controllers/user.controller.js"></script>
     <script src="/app/scripts/services/users.service.js"></script>
 
     <script src="/app/scripts/components/components.js"></script>
-    <script src="/app/scripts/components/pagination/pagination.directive.js"></script>
+    <script src="/app/scripts/components/pagination/pagination.directive.js"></script> -->
 
   </body>
 </html>

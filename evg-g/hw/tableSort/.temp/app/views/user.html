@@ -1,0 +1,26 @@
+<a href="#/">Go to main</a>
+
+<div class="row">
+  <div class="col-md-2">
+    <img src="{{user.picture.large}}"/>
+  </div>
+  <div class="col-md-3">
+    {{user.name.last}} {{user.name.first}}
+  </div>
+</div>
+
+<button ng-if="changed" ng-click="saveUser()">Save</button>
+
+<div class="row">
+  <div class="col-md-">
+    <input ng-model="newTask"> <button ng-disabled="!newTask" ng-click="addTask()" class="btn btn-default">Add</button>
+  </div>
+  <div ng-repeat="todoItem in user.todoList">
+    <span ng-if="!todoItem.isEditing" ng-dblclick="todoItem.isEditing = true">{{todoItem.task}}</span>
+                                                                <!-- ng-blur - обработчик на событие : Потеря Фокуса -->
+    <span ng-if="todoItem.isEditing"><input ng-model="todoItem.task" ng-blur="edited(todoItem)"></span>
+    <span><i ng-click="removeTask(todoItem)" class="glyphicon glyphicon-remove"></i></span>
+    <span ng-click="up($index)">up</span>
+    <span ng-click="down($index)">down</span>
+  </div>
+</div>
