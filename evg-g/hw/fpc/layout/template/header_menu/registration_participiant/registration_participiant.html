@@ -91,11 +91,15 @@
     </section>
     <!-- End Top -->
 
+
+
     <!-- Start anchor Scroll-Top -->
     <section>
       <div><a id='scroll-top'></a></div>
     </section>
     <!-- End anchor Scroll-Top -->
+
+
 
     <!-- Start Content -->
     <section class="wrapper-content">
@@ -172,43 +176,88 @@
             <div class="col-md-8 spa-content">
               <h1 class="h1-custom">Регистрация участника тренинга</h1>
               <h3 class="h3-custom">Для записи на тренинг, заполните пожалуйста форму ниже</h3>
-              <p>
-                Все поля, отмеченные звёздочкой, являются обязательными к заполнению.
-              </p>
+              <!-- Start Block Form Registration Participiant -->
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="h4-custom">Форма регистрации участника:</h4>
+                  <p>(Все поля, отмеченные * звёздочкой, являются обязательными к заполнению)</p>
+                  <form class="form-registration-participi" name="regForm" novalidate="novalidate" data-id="regForm" method="get">
+                    <div class="form-group">
+                      <label for="name">* Ваше имя:</label><br>
+                      <span data-id="name" class="warning-massage hidden">Отсутствует или некорректный ввод Вашего имени</span>
+                      <input id="name" name="name" type="text" value="" required placeholder="* Введите Ваше имя">
+                    </div>
 
-              <form name="regForm" novalidate="" data-id="regForm" method="post">
-                <label> name
-                  <input id="name" name="name" type="text" value="" required>
-                </label>
-                <label> email
-                  <input id="email" name="email" type="email" value="">
-                </label>
-                <label> password
-                  <input id="password" name="password" type="password" value="" required>
-                </label>
-                <label> confirm password
-                  <input id="confirmPassword" name="confirmPassword" type="password" value="" required>
-                </label>
-                <label for="address">Adress</label>
-                <textarea  name="address" id="address"></textarea>
+                    <div class="form-group">
+                      <label for="email">* Ваш E-mail:</label><br>
+                      <span data-id="email" class="warning-massage hidden">Отсутствует или некорректный ввод Вашего E-mail</span>
+                      <input id="email" name="email" type="email" value="" required placeholder="* Введите Ваш E-mail">
+                    </div>
 
-                <div>
-                  <span data-id="capcha"></span>
-                  <input type="button" value="R" data-id="reload-capcha">
-                  <input type="text" name="capcha" value="" placeholder="Enter Capcha">
+                    <div class="form-group">
+                      <label for="phone">* Ваш номер телефона:</label><br>
+                      <span data-id="phone" class="warning-massage hidden">Отсутствует или некорректный ввод Вашего номера телефона </span>
+                      <input id="phone" name="phone" type="text" value="" required placeholder="* Введите Ваш номер телефона">
+                    </div>
+
+                    <div class="" id="selectionTraining">
+                      <label for="selectionTraining">* Выберите в каких тренингах хотите учавствовать:</label><br>
+                      <span data-id="selectionTraining" class="warning-massage hidden">Вы не выбрали интересующий Вас тренинг, сделайте выбор</span>
+
+                      <input type="checkbox" name="anyNearby" value="anyNearby" checked="checked">Любой ближайший тренинг<br>
+                      <input type="checkbox" name="communication" value="communication">Коммуникация и конфликтология<br>
+                      <input type="checkbox" name="telemarketing" value="telemarketing">Телемаркетинг<br>
+                      <input type="checkbox" name="perfectionism" value="perfectionism">Перфекционизм<br>
+                      <input type="checkbox" name="goalSetting" value="goalSetting">Тренинг целеполагание<br>
+                      <input type="checkbox" name="stress" value="stress">Стресс-менеджмент<br>
+                      <input type="checkbox" name="timeManagement" value="timeManagement">Целеполагание и тайм-менеджмент на 100%<br>
+                      <input type="checkbox" name="emotionalIntelligence" value="emotionalIntelligence">Эмоциональный интеллект<br>
+                      <input type="checkbox" name="salesSkills" value="salesSkills">Мастерство продаж<br>
+                      <input type="checkbox" name="procrastination" value="procrastination">Прокрастинации<br>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="daysOfParticipation">* Выберите количество дней участия:</label><br>
+
+                      <select class="" id="daysOfParticipation" name="daysOfParticipation">
+                        <option value="oneDayParticipation">Один день участия</option>
+                        <option value="twoDaysParticipation" selected="selected">Два дня участия</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="dataParticipation">Укажите желаемую дату участия:</label><br>
+                      <input id="dataParticipation" type="date" name="dataParticipation" value="">
+                    </div>
+
+                    <div class="form-group" id="communicationParticipation">
+                      <label for="communicationParticipation">Как с Вами связаться, для уточнения деталей?</label><br>
+
+                      <input type="radio" name="communicationParticipation" value="communicationPhone" checked="checked">Телефонный звонок<br>
+                      <input type="radio" name="communicationParticipation" value="communicationEmail">Письмо на E-mail<br>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="messageParticipation">Если у Вас есть какие либо вопросы или сообщение для нас, введите их здесь:</label><br>
+                      <textarea  name="messageParticipation" id="messageParticipation" placeholder="Введите Ваши вопросы / сообщения"></textarea>
+                    </div>
+
+                    <div class="form-group" id="capcha">
+                      <label for="capcha">* Введите код с картинки. Защита от роботов.</label><br>
+
+                      <span data-id="capcha"></span>
+                      <input type="button" value="Обновить Код" data-id="reload-capcha"><br>
+                      <span data-id="capchaNotCorrect" class="warning-massage hidden">Отсутствует или некорректный ввод кода защиты</span>
+                      <input type="text" name="capcha" value="" required placeholder="* Введите код с картинки">
+                    </div>
+
+                    <span data-id="accessSubmissionFormRegistration" class="access-massage hidden">Форма регистрации успешно отправленна, наш менеджер свяжется с Вами в ближайшее время для уточнения деталей</span>
+
+                      <input type="submit" value="Отправить">
+                  </form>
                 </div>
-                  <input type="submit"  value="Registr">
-              </form>
-
-              <article class="">
-                <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
-                <p>
-                  Самая сложная работа в мире - это <em>работа над собой</em>. Но только она <em>приносит реальные результаты</em> и способна продвигать нас в выбранном направлении. <em>Развиваясь</em> профессионально и личностно, <em>Вы выходите на новый уровень</em>, укрепляете личные качества и компетенции, <em>раскрываете собственный потенциал, реализуете планы и амбиции</em>. Работа над собой - самое выгодное и ценное вложение сил, средств и времени. Ведь только <em>так мы становимся счастливыми и успешными</em>.
-                </p>
-                <p class="indent">
-                  <strong><em>Действуйте, начните вкладывать в себя и свое будущее уже сегодня</em></strong>.
-                </p>
-              </article>
+              </div>
+              <!-- End Block Form Registration Participiant -->
             </div>
             <!-- End SPA-CONTENT -->
             <!-- Start BlockNext Training & Director for SM and XS screens -->
@@ -277,13 +326,6 @@
               </div>
             </div>
             <!-- End BlockNext Training & Director for SM and XS screens -->
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
-                <a href="/template/header_menu/registration_participiant/registration_participiant.html">записаться на тренинг</a>
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -500,6 +542,7 @@
           });
         </script>
 
+        <script src="/template/header_menu/registration_participiant/tampering_class.js"></script>
         <script src="/template/header_menu/registration_participiant/registration_participiant.js"></script>
   </body>
 </html>

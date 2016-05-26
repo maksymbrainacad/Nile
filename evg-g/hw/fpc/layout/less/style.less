@@ -16,6 +16,7 @@
   4.0 PAGE CONTACTS
   5.0 PAGE MOTIVATORS
   6.0 PAGE SITE MAP
+  7.0 PAGE REGISTRATION PARTCIPIANT
 
 
   X.0 MEDIA RESPONSIVE STYLE
@@ -548,9 +549,9 @@ div.social-icon-footer div {
 
 /* ===== Contact ===== */
 .contact-info {
-  padding-top: 8px;
-  padding-left: 40px;
-  font-size: 12px;
+  padding-top: @contactInfoPaddingTop;
+  padding-left: @contactInfoPaddingLeft;
+  font-size: @contactInfoFontSize;
 }
 
 .contact-mail {
@@ -908,6 +909,40 @@ ul.gallery-preview {
     }
   }
 }
+
+
+/* 7.0 PAGE REGISTRATION PARTCIPIANT */
+.form-registration-participiant input {
+  margin-bottom: 5px;
+  [type="radio"], [type="checkbox"] {            // НЕ ОТРАБАТЫВАЕТ !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    margin: 4px 5px 0;
+  }
+}
+
+.warning-massage {
+  background-color: rgba(242, 105, 38, 0.81);
+  border: 1px solid #f40f0f;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  // max-width: 300px;
+  .btn-shadow();
+}
+
+.access-massage {
+  background-color: rgba(38, 242, 138, 0.81);
+  border: 1px solid #366;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  // max-width: 300px;
+  .btn-shadow();
+
+}
+
+
+
+
 
 /* X.0 MEDIA RESPONSIVE STYLE */
 
