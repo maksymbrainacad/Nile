@@ -912,32 +912,86 @@ ul.gallery-preview {
 
 
 /* 7.0 PAGE REGISTRATION PARTCIPIANT */
+// ==== fields form registration participiant block
 .form-registration-participiant input {
-  margin-bottom: 5px;
-  [type="radio"], [type="checkbox"] {            // НЕ ОТРАБАТЫВАЕТ !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    margin: 4px 5px 0;
-  }
+  width: @formRegistrationParticipiantInputWidth;
+  border-radius: @formRegistrationParticipiantInputBorderRadius;
+  margin-bottom: @formRegistrationParticipiantInputMarginBottom;
+  padding-left: @formRegistrationParticipiantInputPaddingLeft;
 }
 
+.form-registration-participiant input[type="checkbox"] {
+  width: @formRegistrationParticipiantInputTypeCheckboxWidth;
+  margin-right: @formRegistrationParticipiantInputTypeCheckboxMarginRight;
+}
+
+.form-registration-participiant select {
+  width: @formRegistrationParticipiantSelectWidth;
+  border-radius: @formRegistrationParticipiantSelectBorderRadius;
+  padding-left: @formRegistrationParticipiantSelectPaddingLeft;
+}
+
+.form-registration-participiant input.date {
+  width: @formRegistrationParticipiantInputDateWidth;
+  padding-left: @formRegistrationParticipiantInputDatePaddingLeft;
+}
+
+.form-registration-participiant input[type="radio"] {
+  width: @formRegistrationParticipiantInputTypeRadioWidth;
+}
+
+.form-registration-participiant textarea {
+  min-width: @formRegistrationParticipiantTextareaMinWidth;
+  max-width: @formRegistrationParticipiantTextareaMaxWidth;
+  min-height: @formRegistrationParticipiantTextareaMinHeight;
+  max-height: @formRegistrationParticipiantTextareaMaxHeight;
+  border-radius: @formRegistrationParticipiantTextareaBorderRadius;
+  padding-left: @formRegistrationParticipiantTextareaPaddingLeft;
+}
+
+.capcha {
+  border: 1px solid @formRegistrationParticipiantCapchaBorderColor;
+  border-radius: @formRegistrationParticipiantCapchaBorderRadius;
+  padding: @formRegistrationParticipiantTCapchaPadding;
+  font-family: @formRegistrationParticipiantCapchaFontFamily;
+  font-size: @formRegistrationParticipiantCapchaFontSize;
+  color: @formRegistrationParticipiantCapchaColor;
+  letter-spacing: @formRegistrationParticipiantCapchaLetterSpacing;
+}
+
+.form-registration-participiant input[type="button"] {
+  width: @formRegistrationParticipiantInputTypeButtonWidth;
+  margin-left: @formRegistrationParticipiantInputTypeButtonMarginLeft;
+  background-color: @formRegistrationParticipiantInputTypeButtonBackgroundColor;
+  color: @formRegistrationParticipiantInputTypeButtonColor;
+  .btn-shadow();
+}
+
+.form-registration-participiant input[type="submit"] {
+  background-color: @formRegistrationParticipiantInputTypeSubmitBackgroundColor;
+  color: @formRegistrationParticipiantInputTypeSubmitColor;
+  margin-bottom: @formRegistrationParticipiantInputTypeSubmitMarginBottom;
+  .btn-shadow();
+
+}
+
+// ==== Message Warning & Access block
 .warning-massage {
-  background-color: rgba(242, 105, 38, 0.81);
-  border: 1px solid #f40f0f;
-  border-radius: 5px;
-  padding-left: 5px;
-  margin-bottom: 5px;
-  // max-width: 300px;
+  margin-bottom: @warningMassageMarginBottom;
+  padding-left: @warningMassagePaddingLeft;
+  background-color: @warningMassageBackgroundColor;
+  border: 1px solid @warningMassageBorderColor;
+  border-radius: @warningMassageBorderRadius;
   .btn-shadow();
 }
 
 .access-massage {
-  background-color: rgba(38, 242, 138, 0.81);
-  border: 1px solid #366;
-  border-radius: 5px;
-  padding-left: 5px;
-  margin-bottom: 5px;
-  // max-width: 300px;
+  margin-bottom: @accessMassageMarginBottom;
+  padding-left: @accessMassagePaddingLeft;
+  background-color: @accessMassageBackgroundColor;
+  border: 1px solid @accessMassageBorderColor;
+  border-radius: @accessMassageBorderRadius;
   .btn-shadow();
-
 }
 
 
@@ -1021,6 +1075,7 @@ ul.gallery-preview {
   /* ======= Modal Window Block ===== */
   .modals-overlay .modal {
     max-height: @modalMaxHeight992;
+    margin-top: @modalTop992;
     left: @modalLeft992;
   }
 
@@ -1212,6 +1267,22 @@ ul.gallery-preview {
   .site-link-list {
     background-image: none;
   }
+
+  /* 7.0 PAGE REGISTRATION PARTCIPIANT */
+  // ==== fields form registration participiant block
+  .form-registration-participiant input {
+    width: @formRegistrationParticipiantInputWidth320;
+  }
+
+  .form-registration-participiant textarea {
+    min-width: @formRegistrationParticipiantTextareaMinWidth320;
+  }
+
+  .capcha {
+    padding: @formRegistrationParticipiantTCapchaPadding320;
+    font-size: @formRegistrationParticipiantCapchaFontSize320;
+  }
+
 
 
 
