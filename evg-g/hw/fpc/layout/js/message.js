@@ -16,19 +16,25 @@
       messageForNode.className = newClass;
   };
 
+  var statusMessage = function(messageFor) {             //  ---- функция отдает статус сообщения: показанное - 1 / скрытое - 0, принимает селектор для какого поля скрываем сообщение: '[data-id="..."]'
+    var messageForNode = document.querySelector(messageFor),
+        messageForNodeClass = messageForNode.className,
+        indexShow = TamperingClass.searchClass("show", messageForNodeClass),
+        statusMessage;
+
+        if (indexShow == -1) {
+          statusMessage = 0;
+        } else {
+          statusMessage = 1;
+        }
+
+      return statusMessage;
+  };
+
 
   window.Message = {
     show: showMessage,
-    hidden: hiddenMessage
+    hidden: hiddenMessage,
+    status: statusMessage
   };
 })();
-
-
-var timeShowMessage = function(counterMessage, messageFor) {  // функция  показывает и скрывает сообщение пользователю за определенное время
-  Message.show(messageFor, counterMessage);
-  counterMessage = ++counterMessage;
-
-  setTimeout(Message.hidden(messageFor, counterMessage), counterMessage * 5 * 1000);
-  counterMessage = --counterMessage;
-
-};

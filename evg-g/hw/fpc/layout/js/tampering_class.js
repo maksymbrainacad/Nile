@@ -12,13 +12,18 @@
   }
 
   var removeClass = function(indexRemovedClass, inClasses) {          //удаление класса
-    if (typeof(inClasses) !== 'object') {
-      var inClassesArr = inClasses.split(' ');
+    if (indexRemovedClass != -1) {
+      if (typeof(inClasses) !== 'object') {
+        var inClassesArr = inClasses.split(' ');
+      } else {
+        inClassesArr = inClasses;
+      }
+            inClassesArr.splice(indexRemovedClass, 1);
+          var newClasses = inClassesArr.join(' ');
+
     } else {
-      inClassesArr = inClasses;
+      newClasses = inClasses;
     }
-          inClassesArr.splice(indexRemovedClass, 1);
-        var newClasses = inClassesArr.join(' ');
 
           return newClasses;
   }
