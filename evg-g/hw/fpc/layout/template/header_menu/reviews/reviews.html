@@ -180,10 +180,21 @@
                   Ниже представлен список участников которые проходили обучение в тренинговом центре "Пегас".
                 </p>
                 <p>
-                  Связавшись с ними вы получите прямые отзывы о качестве и сервисе обучения от реальных участников тренинов.
+                  Связавшись с ними вы получите прямые отзывы о качестве и сервисе обучения.
                 </p>
               </article>
               <h3 class="h3-custom">Участники которые могут поделиться опытом и впечатлениями от наших тренингов:</h3>
+              <div class="row">
+                <div class="col-md-12 table-reviews table-responsive">
+                  <table class="table table-striped table-hover table-condensed table-users" data-id="tableUsers"></table>
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-primary-custom btn-shadow" data-id="refreshUsers">другие участники тренингов</button>
+                </div>
+
+              </div>
+
+
               <article class="">
                 <h3 class="h3-custom indent">Вы получите результат, к которому стремитесь.</h3>
                 <p>
@@ -195,6 +206,17 @@
               </article>
             </div>
             <!-- End SPA-CONTENT -->
+
+            <!-- Start Block  Btn - "sign up for training" for SM and XS screens -->
+            <div class="row visible-xs visible-sm hidden-md hidden-lg">
+              <div class="col-md-12">
+                <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
+                  <a href="/template/header_menu/registration_participiant/registration_participiant.html">записаться на тренинг</a>
+                </button>
+              </div>
+            </div>
+            <!-- End Block  Btn - "sign up for training" for SM and XS screens -->
+
             <!-- Start BlockNext Training & Director for SM and XS screens -->
             <div class="col-md-4 visible-xs visible-sm hidden-md hidden-lg">
               <div class="container-fluid">
@@ -262,13 +284,17 @@
             </div>
             <!-- End BlockNext Training & Director for SM and XS screens -->
           </div>
-          <div class="row">
+
+          <!-- Start Block  Btn - "sign up for training" for LG and MD screens -->
+          <div class="row hidden-xs hidden-sm visible-md visible-lg">
             <div class="col-md-12">
               <button type="button" class="btn btn-default btn-default-custom btn-shadow center-block">
                 <a href="/template/header_menu/registration_participiant/registration_participiant.html">записаться на тренинг</a>
               </button>
             </div>
           </div>
+          <!-- End Block  Btn - "sign up for training" for LG and MD screens -->
+
         </div>
       </section>
       <section>
@@ -483,5 +509,10 @@
           interval: false
           });
         </script>
+
+
+        <script src="/js/$ajax.js"></script>
+        <script src="/template/header_menu/reviews/reviews.js"></script>
+
   </body>
 </html>

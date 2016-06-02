@@ -17,6 +17,7 @@
   5.0 PAGE MOTIVATORS
   6.0 PAGE SITE MAP
   7.0 PAGE REGISTRATION PARTCIPIANT
+  8.0 PAGE REVIEWS
 
 
   X.0 MEDIA RESPONSIVE STYLE
@@ -995,7 +996,16 @@ ul.gallery-preview {
 }
 
 
-
+/* 8.0 PAGE REVIEWS */
+.table-users {
+  th {
+    &:after {
+      padding-left: @tableUsersThAfterPaddingLeft;
+      content: '▼';
+      cursor: pointer;
+    }
+  }
+}
 
 
 /* X.0 MEDIA RESPONSIVE STYLE */
@@ -1144,6 +1154,14 @@ ul.gallery-preview {
     margin-bottom: @corporateProgrammItemMarginBottom768;
   }
 
+  /* ================= Block Btn - "sign up for training" ============= */
+  .next-training {
+    .btn-default-custom {
+      margin-top: @btnDefaultCustomMarginTop768;
+    }
+  }
+
+
   /* ==============SPA-CONTENT Block ===========================*/
 .spa-content {
   margin-top: @spaContentMarginTop768;
@@ -1226,10 +1244,18 @@ ul.gallery-preview {
     margin: @corporateProgrammItemMargin320;
   }
 
+
   /* ==============SPA-CONTENT Block ===========================*/
 .spa-content {
   margin-top: @spaContentMarginTop320;
   margin-bottom: @spaContentMarginBottom320;
+}
+
+/* ================= Block Btn - "sign up for training" ============= */
+.next-training {
+  .btn-default-custom {
+    margin-top: @btnDefaultCustomMarginTop320;
+  }
 }
 
 

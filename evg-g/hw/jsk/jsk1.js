@@ -148,6 +148,7 @@ console.log(o['fname']); // обращение к тому же элементу
 o.a = {b: { c: { d:{}}}}
 console.log(o);
 ==========================================================
+*/
 
 var markerAvto = +prompt('Введите количество авто');
 
@@ -168,6 +169,8 @@ for (var i = 0; i < markerAvto; i++) {
   }
 }
 
+
+
 avto.sort(function(a, b) {
     if (a.firmName < b.firmName) {
       return -1;
@@ -179,6 +182,8 @@ avto.sort(function(a, b) {
 })
 
 console.log(avto);
+
+/*
 =====================================================
 
 function sum(x, y) {
@@ -359,7 +364,7 @@ var rabbit = {
   jumps: true,
   __proto__: animal
 };
-                                       // hasOwnProperty(Х) - проверяет, есть ли у обьекта метод (прототип) Х 
+                                       // hasOwnProperty(Х) - проверяет, есть ли у обьекта метод (прототип) Х
 for (var x in rabbit) {               // вернуть все пропперти свойственные rabbit.
   if (rabbit.hasOwnProperty(x)) {    // вернуть только пропперти свойственные rabbit.
     console.log(x, rabbit[x]);
