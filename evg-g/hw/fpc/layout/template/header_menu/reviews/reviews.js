@@ -1,96 +1,122 @@
 window.addEventListener('load', function() {
 
-  var getRandomUsers = function() {       // функция запроса на сервер за пользователями и отрисовка их в таблице
+  var revers = false;  // параметр для сортировки в алфавитном и обратном порядке
+
+
+  var getRandomUsers = function() {       // функция запроса на сервер за пользователями
     $ajax({
       url: 'http://api.randomuser.me/?results=10',                         // запрос на сервер randomuser.me данных пользователей в кол-ве result=10
       responseType: 'json',                       //  передаваемые данные в json формате
       success: function(users) {
         localStorage.setItem('users', JSON.stringify(users.results));   // ложим в локалсторедж строку с полученными пользователями
-        var users = JSON.parse(localStorage.getItem('users'));
-        var usersCount = users.length,
-            userTableRow = '',
-            i = 0;
+        var users = JSON.parse(localStorage.getItem('users'));  // получили массив обьектов пользователей из локалсторедж
 
-        if (usersCount) {
-          for (; i < usersCount; i++) {
-            if (i == 0) {
-              userTableRow += '<tr class="info" data-id="tableUsersHeaders"> <th data-id="userFirstName">Имя</th> <th data-id="userLastName">Фамилия</th> <th data-id="userPhone">Телефон</th> <th data-id="userEmail">E-mail</th> </tr>'
-            }
-
-            userTableRow += '<tr> <td data-id="userFirstName" value="userFirstName">' + users[i].name.first + '</td> <td data-id="userLastName" value="userLastName">' + users[i].name.last + '</td> <td data-id="userPhone" value="userPhone">' + users[i].phone + '</td> <td data-id="userEmail" value="userEmail">' + users[i].email + '</td></tr>';
-          }
-        }
-
-        var tableNode = document.querySelector('[data-id="tableUsers"]');  // получаем ноду таблицы
-        tableNode.innerHTML = userTableRow; // вписываем пользователей в таблицу
-
-        var tableUsersHeadersNode = document.querySelector('[data-id="tableUsersHeaders"]');  // получаем ноду заголовков таблицы
-        sortUsers(tableUsersHeadersNode);                                              // вешаем на заголовки таблицы обработчик событий (сортировку пользователей)
+        viewsTableUsers(users, revers);  // вызвали функцию отрисовки таблицы пользователей
       }
     });
   };
 
 
-
-  getRandomUsers(); // запросили пользователей и отрисовали их на странице
-
+  getRandomUsers(revers); // запросили пользователей и отрисовали их на странице
 
 
-  var revers = false;
 
-  var sortUsers = function(tableUsersHeadersNode) {       // функция сортировки пользователей в алфавитном и обратном порядке по всем полям
+  var viewsTableUsers = function(users, revers) {  // функция отрисовки таблици пользователей
+    var usersCount = users.length,
+        userTableRow = '',
+        i = 0;
+
+    if (usersCount) {
+      for (; i < usersCount; i++) {
+        if (i == 0) { // на первой итерации цикла формирую строку с заголовками таблицы
+          userTableRow += '<tr class="info" data-id="tableUsersHeaders"> <th data-id="userFirstName">Имя</th> <th data-id="userLastName">Фамилия</th> <th data-id="userPhone">Телефон</th> <th data-id="userEmail">E-mail</th> </tr>'
+        }
+
+        userTableRow += '<tr> <td data-id="userFirstName" value="userFirstName">' + users[i].name.first + '</td> <td data-id="userLastName" value="userLastName">' + users[i].name.last + '</td> <td data-id="userPhone" value="userPhone">' + users[i].phone + '</td> <td data-id="userEmail" value="userEmail">' + users[i].email + '</td></tr>'; // дописываю строки данных всех пользователей
+      }
+    }
+
+    var tableNode = document.querySelector('[data-id="tableUsers"]');  // получаем ноду таблицы
+    tableNode.innerHTML = userTableRow; // вписываем пользователей в таблицу
+
+    var tableUsersHeadersNode = document.querySelector('[data-id="tableUsersHeaders"]');  // получаем ноду заголовков таблицы
+    sortUsers(tableUsersHeadersNode, revers);                                              // вешаем на заголовки таблицы обработчик событий (сортировку пользователей)
+
+  };
+
+
+
+  var sortUsers = function(tableUsersHeadersNode, revers) {       // функция сортировки пользователей в алфавитном и обратном порядке по всем полям
     tableUsersHeadersNode.addEventListener('click', function(e) {
 
-      var sortField = e.target.getAttribute('data-id'),
-          users = JSON.parse(localStorage.getItem('users'));
+      var sortField = e.target.getAttribute('data-id'),        // ловим куда был клик и считываем значение из data-id для определения по какому полю сортировать
+          users = JSON.parse(localStorage.getItem('users'));  // забрали массив обьектов пользователей из localStorage
 
-      console.log(users);
 
-      switch (sortField) {
+      switch (sortField) {        // определяем и перезаписываем путь по каким ключам заходить к полю сортировки массива пользователей
         case 'userFirstName':
-          sortField = '.name.first';
+          sortField = 'name.first';
           break;
         case 'userLastName':
-          sortField = '.name.last';
+          sortField = 'name.last';
           break;
         case 'userPhone':
-          sortField = '.phone';
+          sortField = 'phone';
           break;
         case 'userEmail':
-          sortField = '.email';
+          sortField = 'email';
           break;
       }
 
 
-      console.log(sortField);
+
+      if (revers == false) {
+        users.sort(asc(sortField));  // формирую отсортированный массив пользователей  в алфавитном порядке
+        revers = !revers;   // меняем значение реверса на противоположное, при повторном клике сортировка пойдет в обратном порядке
+        viewsTableUsers(users, revers);  // отрисовали отсортированных пользователей
+
+      } else {
+        users.sort(desc(sortField));  // формирую отсортированный массив пользователей  в обратном алфавитному порядке
+        revers = !revers;  // меняем значение реверса на противоположное, при повторном клике сортировка пойдет в обратном порядке
+        viewsTableUsers(users, revers); // отрисовали отсортированных пользователей
+      }
 
 
 
+    function asc(sortField) { // функция для сортировки в алфавитном порядке
+      return function (a, b) {
+        return deepFind(a, sortField) > deepFind(b, sortField);
+      }
+     };
 
-      var userSort = users.sort(asc(sortField));
+
+    function desc(sortField) { // функция для сортировки в обратном алфавитном порядке
+      return function (a, b) {
+        return deepFind(a, sortField) < deepFind(b, sortField);
+      }
+     };
 
 
-     function asc(sortField) { // функция для сортировки в прямом порядке (по возрастанию)
-       return function (x, y) {
-         console.log(x);
-         console.log(typeof(x));
-         console.log(x[sortField]);
-         console.log(y);
-         return x[sortField] > y[sortField];
+     function deepFind(obj, path) {   // функция достает данные из обьекта по вложенным ключами типа: obj.key1.key2.keyN
+       var paths = path.split('.'),
+           current = obj,
+           i;
+
+       for (i = 0; i < paths.length; ++i) {
+        if (current[paths[i]] == undefined) {
+          return undefined;
+        } else {
+          current = current[paths[i]];
+        }
        }
-      };
 
-     function desc(sortField) { // функция для сортировки в обратном порядке (по убыванию)
-       return function (x, y) {
-         return x[sortField] < y[sortField];
-       }
-      };
+       return current;
+     };
 
 
 
-      console.log(userSort);
 
-      e.sortPropogation;
+      e.stopPropagation();
       return false;
     });
 
@@ -99,8 +125,9 @@ window.addEventListener('load', function() {
 
 
 
+
   var refreshUsersNode = document.querySelector('[data-id="refreshUsers"]'); // Нода кнопки "другие участники тренингов"
-  
+
   refreshUsersNode.addEventListener('click', function() {   // обработчик событий на кнопке "другие участники тренингов" - обновляем список участников
     localStorage.removeItem('users');  // удаляем из localStorage старый обьект пользователей
 

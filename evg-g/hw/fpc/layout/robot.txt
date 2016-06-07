@@ -1,0 +1,6 @@
+User-agent : *
+Disallow : /                   # блокирует доступ ко всему сайту
+Allow : /index.html            # разрешает доступ к /index.html
+Allow : /img                   # разрешает доступ ко всему в папке /img
+Allow : /template/*.html       # разрешает доступ ко всем файлам.html в папке template
+Host: localhost:8080           # имя хоста сайта (на данный момент локальный сервер)
