@@ -1,0 +1,148 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  zoom: 1;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.sticky {                      // фиксированный элемент
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+
+.indent {             // внутренние отступы для блока
+  padding-top: @indentPaddingTop;
+  padding-bottom: @indentPaddingBottom;
+}
+
+.offset {             // наружные отступы для блока
+  margin-top: @offsetMarginTop;
+  margin-bottom: @offsetMarginTBottom;
+}
+
+.marker-tick {        // маркер списка "галочка"
+  font-family: Wingdings;
+  font-size: @markerTickFontSize;
+  color: @markerTickColor;
+  content: 'ü';
+}
+
+.text-shadow {         // тени для текста
+-webkit-text-shadow: @textShadowHorizontalShift @textShadowVerticalShift @textShadowBlur @textShadowColor;
+   -moz-text-shadow: @textShadowHorizontalShift @textShadowVerticalShift @textShadowBlur @textShadowColor;
+        text-shadow: @textShadowHorizontalShift @textShadowVerticalShift @textShadowBlur @textShadowColor;
+}
+
+.btn-shadow {         // тени для кнопок и блоков
+-webkit-box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur @btnShadowEnhanced @btnShadowColor;
+   -moz-box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur @btnShadowEnhanced @btnShadowColor;
+        box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur @btnShadowEnhanced @btnShadowColor;
+}
+
+.liner-gradient {    // линейный градиент (фон для футера)
+  background: @topColor;
+  background:        -webkit-gradient(left top, left bottom, color-stop(@topColorLocation, @topColor), color-stop(@middleColorLocation, @middleColor), color-stop(@bottomColorLocation, @bottomColor));
+  background: -webkit-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:    -moz-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:     -ms-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:      -o-linear-gradient(top, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  background:         linear-gradient(to bottom, @topColor @topColorLocation, @middleColor @middleColorLocation, @bottomColor @bottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#277076', GradientType=0 );
+}
+
+.schedule-list-li-liner-gradient {  // линейный градиент (фон для пунктов списка расписания тренингов)
+  background: @scheduleListLiTopColor;
+  background:        -webkit-gradient(left top, right top, color-stop(@scheduleListLiTopColorLocation, @scheduleListLiTopColor), color-stop(@scheduleListLiMiddleColorLocation, @scheduleListLiMiddleColor), color-stop(@scheduleListLiBottomColorLocation, @scheduleListLiBottomColor));
+  background: -webkit-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:    -moz-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:     -ms-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:      -o-linear-gradient(left, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  background:         linear-gradient(to right, @scheduleListLiTopColor @scheduleListLiTopColorLocation, @scheduleListLiMiddleColor @scheduleListLiMiddleColorLocation, @scheduleListLiBottomColor @scheduleListLiBottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5a5b5', endColorstr='#fafafa', GradientType=1 );
+}
+
+.schedule-list-li-a-liner-gradient {  // линейный градиент (фон для ссылок пункта списка расписания тренингов)
+  background: @scheduleListLiLinkTopColor;
+  background:        -webkit-gradient(left top, left bottom, color-stop(@scheduleListLiLinkTopColorLocation, @scheduleListLiLinkTopColor), color-stop(@scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkMiddleColor), color-stop(@scheduleListLiLinkBottomColorLocation, @scheduleListLiLinkBottomColor));
+  background: -webkit-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:    -moz-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:     -ms-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:      -o-linear-gradient(top, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  background:         linear-gradient(to bottom, @scheduleListLiLinkTopColor @scheduleListLiLinkTopColorLocation, @scheduleListLiLinkMiddleColor @scheduleListLiLinkMiddleColorLocation, @scheduleListLiLinkBottomColor @scheduleListLiLinkBottomColorLocation);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39bded', endColorstr='#b7deed', GradientType=0 );
+}
+
+// CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
+.d3-transition-time { // время прохождения анимации при наведении
+  -webkit-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+     -moz-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+       -o-transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+          transition: all @d3TransitionTransformHoverTimeAnimation ease-out;
+}
+
+.transform {
+  &:hover {
+    -webkit-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+       -moz-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+        -ms-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+         -o-transform: @d3TransformHoverRotateX @d3TransformHoverRotateY @d3TransformHoverRotateZ;
+    -webkit-border-radius: @d3TransformHoverBorderRadius;  // округление углов при наведении
+       -moz-border-radius: @d3TransformHoverBorderRadius;
+            border-radius: @d3TransformHoverBorderRadius;
+    .d3-transition-time();
+  }
+}
+
+// CSS3 2D ANIMATION EFFECT (для перемещения элементов на странице МОТИВАТОРОВ)
+.d2-transition-time { // время прохождения анимации при наведении
+  -webkit-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+     -moz-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+      -ms-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+       -o-transition: all @d2TransitionTransformHoverTimeAnimation ease;
+          transition: all @d2TransitionTransformHoverTimeAnimation ease;
+}
+
+.d2-transform-bum {
+  &:hover {
+    -webkit-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+       -moz-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+        -ms-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+         -o-transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+            transform: @d2TransformHoverBumScale @d2TransformHoverBumRotate @d2TransformHoverBumTranslateX @d2TransformHoverBumTranslateY @d2TransformHoverBumSkewX @d2TransformHoverBumSkewY;
+    .d2-transition-time();
+  }
+}
+
+.d2-transform-learner {
+  &:hover {
+    -webkit-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+       -moz-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+        -ms-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+         -o-transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+            transform: @d2TransformHoverLearnerScale @d2TransformHoverLearnerRotate @d2TransformHoverLearnerTranslateX @d2TransformHoverLearnerTranslateY @d2TransformHoverLearnerSkewX @d2TransformHoverLearnerSkewY;
+    .d2-transition-time();
+  }
+}

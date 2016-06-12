@@ -65,7 +65,7 @@ angular.module('usersList')
       $scope.revers = false;
     };
 
-    $scope.remove = function(user) {      // функция удаления пользователей по полям таблицы в алфавитном порядке
+    $scope.remove = function(user) {      // функция удаления пользователей 
       if (confirm('Вы действительно хотите удалить пользователя?' + user.name.first)) {
         $scope.users.splice($scope.users.indexOf(user), 1);
         $scope.usersChange = true;

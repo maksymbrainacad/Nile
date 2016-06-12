@@ -2,7 +2,7 @@ module.exports = function(grunt) {   // exports - модуль который э
   grunt.initConfig({      // запускаем конфиг на выполнение
     pkg: grunt.file.readJSON('package.json'),  // говорим, считай данные с файла package.json
 
-    jshint: {    // таска проверяющая синтатические ошибки в файлах 
+    jshint: {    // таска проверяющая синтатические ошибки в файлах
 /*      default: [],   // указываем как запускать таску
       dev: []       // указываем как запускать таску    */
       options: {   // указываем опуии для jshint,
@@ -68,6 +68,17 @@ module.exports = function(grunt) {   // exports - модуль который э
       dev: {
         src: '.temp/index.html'
       }
+    },
+    sitemap_xml: {
+      files: [
+        {
+          src: '{,**/}*.html',
+          dest: '.temp/app/build/sitemap.xml'
+        }
+      ],
+      options: {
+        siteRoot : 'index.html'
+      }
     }
   });
 
@@ -77,9 +88,10 @@ module.exports = function(grunt) {   // exports - модуль который э
   // grunt.loadNpmTasks('grunt-contrib-less'); // подгружаем установленную grunt-contrib-less таску, модуль для генерации лесс файла в ксс файл
 
   grunt.registerTask('default', ['jshint']); // регистрируем таску, которая будет запускаться по умолчанию в консоли при вызове grunt dev, or grunt production
-  grunt.registerTask('dev', ['jshint', 'clean:dev', 'includeSource:dev', 'wiredep:dev', 'copy:dev', 'less:dev', 'express:all', 'open:all', 'watch']); // регистрируем таску, которая будет запускаться по умолчанию в консоли при вызове grunt dev, or grunt production
+  grunt.registerTask('dev', ['jshint', 'clean:dev',  'sitemap_xml', 'less:dev', 'copy:dev', 'wiredep:dev', 'includeSource:dev', 'express:all', 'open:all', 'watch']); // регистрируем таску, которая будет запускаться по умолчанию в консоли при вызове grunt dev, or grunt production
   grunt.registerTask('prod', ['clean:prod', 'less:prod']); // регистрируем таску, которая будет запускаться по умолчанию в консоли при вызове grunt dev, or grunt production
   grunt.registerTask('serve', []); // регистрируем таску, ????????????????????????????????????????
+  grunt.registerTask('sitemap', ['sitemap_xml']); // регистрируем таску, ????????????????????????????????????????
 
 
 };
