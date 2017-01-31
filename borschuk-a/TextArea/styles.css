@@ -1,0 +1,34 @@
+.edit-block {
+  border: 1px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 200px;
+  margin: 5px auto;
+}
+
+.textarea {
+  display: block;
+  width: 400px;
+  height: 200px;
+  margin: 5px auto;
+  font-size: 15px;
+}
+
+.button {
+  margin: 5px auto;
+  display: block;
+}
+
+span:hover {
+  background: blue;
+  transition:  all 0.8s;
+  color: #fff;
+  cursor: pointer;
+}
+
+span:nth-child(even):hover {
+  background: red;
+  transition:  all 0.8s;
+  color: #fff;
+}
