@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      [data-id="json-textarea"] {
+        width: 600px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <form data-id="json-form" novalidate method="post">
+      <div>
+      <textarea data-id="json-textarea">[
+        {
+          "type": "text",
+          "name": "firstname",
+          "value": "",
+          "text": "First Name",
+          "placeholder": "Enter your first name",
+          "required": true
+        },
+         {
+          "type": "select",
+          "option": {
+           "1": "London",
+          "2": "Kiev",
+          "3": "Austria"
+          },
+          "name": "choose",
+          "value": "choose",
+          "required": true
+        } 
+        ]</textarea>
+      </div>
+      <div>
+      <input type="submit" value="Parse">
+    </div>
+    </form>
+    <div data-id="form-preview">
+    </div>
+    <script src="js/json-form.js">
+
+    </script>
+  </body>
+</html>

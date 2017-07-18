@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>todolist</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<div class="container" >
+	<header class = "header">
+		<h1 class="list-name">todolist</h1>
+		<form class="form-input" data-id="submit">
+			<input type="text" placeholder="What needs to be done?" class="text-input" data-id="inputText"></input>
+		</form>		
+	</header>
+	<section class="section">
+		<input type="checkbox" class="check-all display-none" data-id="checking-all"></input>
+		<ul data-id="item-list" class="ul-list">
+		<!-- 	<li class="item-list-style">
+				<input type="checkbox" class="item-checkbox"></input>
+				<span class="item-inner">skf;klsd;</span>
+			</li> -->
+			
+		</ul>
+	</section>
+	<footer class="footer-showed display-none" data-id="footer">
+		<span class="footer-number" data-id="footer-count"></span>
+		<span class="footer-counter">  items in the list</span>
+		<button class="clear-all-btn" data-id="clear-all">Dellete All</button>
+	</footer>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
