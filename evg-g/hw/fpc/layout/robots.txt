@@ -1,0 +1,7 @@
+User-agent : *
+Disallow : /                                 # блокирует доступ ко всему сайту
+Allow : /index.html                          # разрешает доступ к /index.html
+Allow : /img                                 # разрешает доступ ко всему в папке /img
+Allow : /template/*.html                     # разрешает доступ ко всем файлам.html в папке template
+Host: localhost:8080                         # имя хоста сайта (на данный момент локальный сервер)
+Sitemap: http://localhost:8080/sitemap.xml   # путь к файлу sitemap.xml для поисковых роботов (на данный момент на локальном сервере)

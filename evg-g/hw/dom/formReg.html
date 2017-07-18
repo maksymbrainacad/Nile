@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Registration</title>
+  </head>
+  <body>
+    <form name="regForm" novalidate="" data-id="regForm" method="post">
+      <label> name
+        <input id="name" name="name" type="text" value="" required>
+      </label>
+      <label> email
+        <input id="email" name="email" type="email" value="">
+      </label>
+      <label> password
+        <input id="password" name="password" type="password" value="" required>
+      </label>
+      <label> confirm password
+        <input id="confirmPassword" name="confirmPassword" type="password" value="" required>
+      </label>
+      <label for="address">Adress</label>
+      <textarea  name="address" id="address"></textarea>
+
+      <div>
+        <span data-id="capcha"></span>
+        <input type="button" value="R" data-id="reload-capcha">
+        <input type="text" name="capcha" value="" placeholder="Enter Capcha">
+      </div>
+        <input type="submit"  value="Registr">
+    </form>
+
+    <script src="dom.js">  </script>
+  </body>
+</html>

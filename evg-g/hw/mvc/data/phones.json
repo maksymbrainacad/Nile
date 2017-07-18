@@ -1,0 +1,8 @@
+[
+  {"name":"Nokia", "price": 50},
+  {"name":"Motorolla", "price": 40},
+  {"name":"Samsung", "price": 60},
+  {"name":"LG", "price": 30},
+  {"name":"Apple", "price": 90}
+
+]

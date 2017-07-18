@@ -1,0 +1,1315 @@
+@import "variables.less";
+@import "mixins.less";
+
+/*
+  NAVIGATION
+  1.0 GLOBAL
+  2.0 PAGE INDEX
+  2.1 SECTION TOP
+  2.2 SECTION CONTENT
+  2.3 SECTION FOOTER
+
+  3.0 PAGE SCHEDULE
+  3.1 PAGE T_GOAL_SETTING (ТРЕНИНГ ЦЕЛЕПОЛАГАНИЯ)
+  3.2 PAGE T_COMMUNICATION (ТРЕНИНГ КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ)
+
+  4.0 PAGE CONTACTS
+  5.0 PAGE MOTIVATORS
+  6.0 PAGE SITE MAP
+  7.0 PAGE REGISTRATION PARTCIPIANT
+  8.0 PAGE REVIEWS
+
+
+  X.0 MEDIA RESPONSIVE STYLE
+*/
+
+
+/* 1.0 GLOBAL */
+body {
+  position: relative;
+  font-family: @bodyFontFamily;
+  font-weight: @bodyFontWeight;
+  font-size: @bodyFontSize;
+  color: @bodyColor;
+  line-height: @bodyLineHeight;
+  background-image: @bodyBackgroundImageUrl;
+}
+
+.h1-custom,
+.h2-custom,
+.h3-custom,
+.h4-custom {
+  font-family: @hCustomFontFamily;
+  font-weight: @hCustomFontWeight;
+  line-height: @hCustomLineHeight;
+  color: @hCustomColor;
+  margin-top: @hCustomMarginTop;
+  margin-bottom: @hCustomMarginBottom;
+}
+
+.h1-custom {
+  font-size: @h1CustomFontSize;
+}
+
+.h2-custom {
+  font-size: @h2CustomFontSize;
+}
+
+.h3-custom {
+  font-size: @h3CustomFontSize;
+}
+
+.h4-custom {
+  font-size: @h4CustomFontSize;
+}
+
+.h-decor {
+  padding-bottom: @hDecorPaddingBottom;
+  border-bottom: @hDecorBordergBottomHeight solid @hDecorBordergBottomColor;
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+    margin: @hDecorAfterMargin auto;
+    top: @hDecorAfterTop;
+    background-color: @hDecorAfterBackgroundColor;
+    height: @hDecorAfterHeight;
+    width: @hDecorAfterWidth;
+  }
+}
+
+a {
+  color: @linksColor;
+  text-decoration: none;
+  &:active {
+    text-decoration: none;
+    color: @linksHoverColor;
+  }
+  &:hover {
+    text-decoration: none;
+    color: @linksHoverColor;
+  }
+  &:visited {
+    color: @linksVisitedColor;
+    text-decoration: none;
+  }
+}
+
+img {                 /* правило для адаптирования больших изображений */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================ 2.0 PAGE INDEX ================================ */
+/* ============================ 2.1 SECTION TOP  ============================== */
+
+.wrapper-top {                         /*??????? не срабатывает ширина обложки ((( */
+  width: @wrapperTopWidth;
+}
+
+/* ================= Top Social Icon Block ===== =======*/
+
+.block-social-icon {
+  background-image: @blockSocialIconBackgroundImageUrl;
+  height: @blockSocialIconHeigth;
+  a {
+    display: block;
+    padding-left: @socialIconPaddingLeft;
+    i {
+      color: @socialIconColor;
+      &:hover {
+      color: @socialIconColorHover;
+      }
+    }
+  }
+}
+
+
+/* ================= Header Menu Block =============*/
+
+.logo-brand {
+  width: @logoBrandWidth;
+}
+
+.header-menu-block {
+  top: @blockSocialIconHeigth;
+  height: @headerMenuHeigth;
+  .btn-shadow();
+}
+
+.navbar-default {
+  .navbar-collapse {
+    .header-menu-list {
+      li {
+      margin-top: (@headerMenuHeigth / 2) - (@bodyFontSize / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
+      text-transform: uppercase;
+        a {
+          font-weight: 400;
+          color: @headerMenuListLinkColor;
+          padding-top: @headerMenuListLinkPaddingTop;
+          padding-bottom: @headerMenuListLinkPaddingBottom;
+          &:hover {
+            border-bottom: 2px solid @headerMenuListLinkActiveBorderColor;
+            box-shadow: 3px 3px 3px @headerMenuListLinkActiveShadowColor;
+            color: @headerMenuListLinkHoverColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-collapse {
+    .navbar-nav {
+      .menu-active-link {
+        border-bottom: 2px solid @headerMenuListLinkActiveBorderColor;
+        box-shadow: 3px 3px 3px @headerMenuListLinkActiveShadowColor;
+        a {
+          color: @headerMenuListLinkActiveColor;
+        }
+      }
+    }
+  }
+}
+
+/* ======================= 2.2 SECTION CONTENT ================================ */
+.wrapper-content {
+  padding-top: @wrapperContentPaddingTop;
+}
+
+/* ================= Banner Block ============= */
+.banner-row{
+  background-image: @bannerBackgroundImageUrl;
+}
+
+/* ===== Buttons ========= */
+.btn-primary-custom {
+  margin-bottom: @btnPrimaryCustomMarginBottom;
+  font-size: @btnPrimaryCustomFontSize;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background-color: @btnPrimaryCustomColor;
+  border-color: @btnPrimaryCustomBorderColor;
+}
+
+.btn-primary-custom:focus,
+.btn-primary-custom.focus {
+  background-color: @btnPrimaryCustomFocusColor;
+  border-color: @btnPrimaryCustomBorderFocusColor;
+  box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur (@btnShadowEnhanced - 2px) @btnShadowColor;;
+}
+
+.btn-primary-custom:hover {
+  background-color: @btnPrimaryCustomHoverColor;
+  border-color: @btnPrimaryCustomBorderHoverColor;
+  box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur (@btnShadowEnhanced - 2px) @btnShadowColor;;
+}
+
+.btn-primary-custom:active,
+.btn-primary-custom.active,
+.open > .dropdown-toggle.btn-primary-custom {
+  background-color: @btnPrimaryCustomActiveColor;
+  border-color: @btnPrimaryCustomBorderActiveColor;
+}
+
+.btn-primary-custom:active:hover,
+.btn-primary-custom.active:hover,
+.open > .dropdown-toggle.btn-primary-custom:hover,
+.btn-primary-custom:active:focus,
+.btn-primary-custom.active:focus,
+.open > .dropdown-toggle.btn-primary-custom:focus,
+.btn-primary-custom:active.focus,
+.btn-primary-custom.active.focus,
+.open > .dropdown-toggle.btn-primary-custom.focus {
+  background-color: @btnPrimaryCustomPushColor;
+  border-color: @btnPrimaryCustomBorderPushColor;
+}
+
+.btn-primary-custom:active,
+.btn-primary-custom.active,
+.open > .dropdown-toggle.btn-primary-custom {
+  background-image: none;
+}
+
+.btn-primary-custom.disabled:hover,
+.btn-primary-custom[disabled]:hover,
+fieldset[disabled] .btn-primary-custom:hover,
+.btn-primary-custom.disabled:focus,
+.btn-primary-custom[disabled]:focus,
+fieldset[disabled] .btn-primary-custom:focus,
+.btn-primary-custom.disabled.focus,
+.btn-primary-custom[disabled].focus,
+fieldset[disabled] .btn-primary-custom.focus {
+  background-color: @btnPrimaryCustomColor;
+  border-color: @btnPrimaryCustomBorderColor;
+}
+
+.btn-default-custom {
+  margin-bottom: @btnDefaultCustomMarginBottom;
+  font-size: @btnDefaultCustomFontSize;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background-color: @btnDefaultCustomColor;
+  border-color: @btnDefaultCustomBorderColor;
+}
+
+.btn-default-custom:focus,
+.btn-default-custom.focus {
+  background-color: @btnDefaultCustomFocusColor;
+  border-color: @btnDefaultCustomBorderFocusColor;
+  box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur (@btnShadowEnhanced - 2px) @btnShadowColor;;
+}
+
+.btn-default-custom:hover {
+  background-color: @btnDefaultCustomHoverColor;
+  border-color: @btnDefaultCustomBorderHoverColor;
+  box-shadow: @btnShadowHorizontalShift @btnShadowVerticalShift @btnShadowBlur (@btnShadowEnhanced - 2px) @btnShadowColor;;
+}
+
+.btn-default-custom:active,
+.btn-default-custom.active,
+.open > .dropdown-toggle.btn-default-custom {
+  background-color: @btnDefaultCustomActiveColor;
+  border-color: @btnDefaultCustomBorderActiveColor;
+}
+
+.btn-default-custom:active:hover,
+.btn-default-custom.active:hover,
+.open > .dropdown-toggle.btn-default-custom:hover,
+.btn-default-custom:active:focus,
+.btn-default-custom.active:focus,
+.open > .dropdown-toggle.btn-default-custom:focus,
+.btn-default-custom:active.focus,
+.btn-default-custom.active.focus,
+.open > .dropdown-toggle.btn-default-custom.focus {
+  background-color: @btnDefaultCustomPushColor;
+  border-color: @btnDefaultCustomBorderPushColor;
+}
+
+.btn-default-custom:active,
+.btn-default-custom.active,
+.open > .dropdown-toggle.btn-default-custom {
+  background-image: none;
+}
+
+.btn-default-custom.disabled:hover,
+.btn-default-custom[disabled]:hover,
+fieldset[disabled] .btn-default-custom:hover,
+.btn-default-custom.disabled:focus,
+.btn-default-custom[disabled]:focus,
+fieldset[disabled] .btn-default-custom:focus,
+.btn-default-custom.disabled.focus,
+.btn-default-custom[disabled].focus,
+fieldset[disabled] .btn-default-custom.focus {
+  background-color: @btnDefaultCustomColor;
+  border-color: @btnDefaultCustomBorderColor;
+}
+
+.btn-link-custom,
+.btn-link-custom:active,
+.btn-link-custom.active,
+.btn-link-custom[disabled],
+fieldset[disabled] .btn-link-custom {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-link-custom,
+.btn-link-custom:hover,
+.btn-link-custom:focus,
+.btn-link-custom:active {
+  border-color: transparent;
+}
+
+.btn-link-custom:hover,
+.btn-link-custom:focus {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.btn-link-custom[disabled]:hover,
+fieldset[disabled] .btn-link-custom:hover,
+.btn-link-custom[disabled]:focus,
+fieldset[disabled] .btn-link-custom:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* ==== Buttons Link */
+.btn-primary-custom,
+.btn-default-custom,
+.btn-link-custom {
+  a {
+    color: @btnLinkColor;
+    &:hover {
+      text-decoration: none;
+      color: @btnLinkHoverColor;
+    }
+    &:active {
+      text-decoration: none;
+      color: @btnLinkHoverColor;
+    }
+    &:focus {
+      text-decoration: none;
+      color: @btnLinkHoverColor;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* ================= Corporate Programm Block ============= */
+.corporate-programm-item {
+  background-image: @corporateProgrammItemBackgroundImageUrl;
+  padding: @corporateProgrammItemPadding;
+  margin-right: @corporateProgrammItemMarginRight;
+  margin-bottom: @corporateProgrammItemMarginBottom;
+  box-sizing: border-box;
+  max-width: @corporateProgrammItemMaxWidth;
+  .btn-shadow();
+  a {
+    font-size: @corporateProgrammItemLinkFontSize;
+  }
+}
+
+/* ================= Next Training Block ============= */
+.next-training {
+  .next-training-block {
+    border: 1px solid @nextTrainingBlockBorderColor;
+    background-image: @nextTrainingBlockBackgroundImageUrl;
+    .btn-shadow();
+  }
+  .next-training-list {
+    list-style-type: none;
+    padding: @nextTrainingListPaddingVertical @nextTrainingListPaddingHorizontal;
+    li {
+      border: 1px solid @nextTrainingListBorderColor;
+      margin-bottom: @nextTrainingListMarginBottom;
+      a {
+        text-transform: uppercase;
+        font-size: @nextTrainingListLinkFontSize;
+        padding-left: @nextTrainingListLinkPaddingLeft;
+        background-color: @nextTrainingListLinkBackgroundColor;
+        display: block;
+        &:hover {
+          background-color: @nextTrainingListLinkHoverBackgroundColor;
+          color: @nextTrainingListLinkHoverColor;
+          text-decoration: none;
+          .btn-shadow();
+        }
+      }
+    }
+    .next-training-active-li-link {
+      background-color: @nextTrainingListActiveLiLinkBackgroundColor;
+      color: @nextTrainingListActiveLiLinkColor;
+      text-decoration: none;
+      .btn-shadow();
+    }
+  }
+  .btn-default-custom {
+    .offset();
+  }
+}
+
+
+/* =============== Director ===========================*/
+.foto {                           /* фото блок руководитель проекта */
+  max-width: @fotoMaxWidth;
+  max-height: auto;
+  border: 1px solid @fotoBorderColor;
+  padding: @fotoPadding;
+  .btn-shadow();
+}
+
+#svgelem-think {
+  max-width: @fotoMaxWidth;
+  max-height: 120px;
+}
+
+#svg-gradient {
+  .of-start {
+    stop-color: @gradientOfStartColor;
+    stop-opacity: 0;
+  }
+
+  .of-end {
+    stop-color: @gradientOfEndColor;
+    stop-opacity: 1;
+  }
+}
+
+.svg-gradient {
+  fill: url(#svg-gradient);
+  stroke: @gradientBorderColor;
+  stroke-width: @gradientBorderWidth;
+}
+
+.svg-text {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.svg-text-autor {
+  .svg-text();
+  font-size: @svgTextAutorFontSize;
+}
+
+/* =============== SPA-CONTENT Block ===========================*/
+
+.spa-content {
+  background-color: #f8f8f8;
+  .btn-shadow();
+}
+
+
+/* ======================== 2.3 SECTION FOOTER ================================ */
+/* Main Footer*/
+.main-footer {
+  margin-top: @mainFooterMarginTop;
+  .liner-gradient ();
+  .main-footer-item {
+    padding: @mainFooterItemPaddingVertical @mainFooterItemPaddingHorizontal;
+  }
+}
+
+/* Footer Menu*/
+.footer-menu-list {
+  text-transform: lowercase;
+  list-style-type: none;
+  padding-left: @footerMenuListPaddingLeft;
+  li {
+    font-size: @footerMenuListLiFontSize;
+    color: @footerMenuListLiColor;
+    &:before {
+    content: "»";
+    }
+    a {
+      color: @footerMenuListLiLinkColor;
+      &:hover {
+        color: @footerMenuListLiLinkHoverColor;
+        .text-shadow();
+      }
+    }
+  }
+}
+
+
+/* ===== Social Network ===== */
+div.social-icon-footer div {
+  margin-right: 10px;
+}
+
+.social-icon-footer a {
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
+  display: block;
+}
+
+.social-icon-footer-facebook {
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: 0 -40px;
+}
+
+.social-icon-footer-facebook a:hover {
+  background: @socialIconFooterUrl;
+  background-position: 0 0;
+}
+
+.social-icon-footer-google {
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: -40px -40px;
+}
+
+.social-icon-footer-google a:hover {
+  background: @socialIconFooterUrl;
+  background-position: -40px 0;
+}
+
+.social-icon-footer-twitter {
+  width: @socialIconFooterSizeImgWidth;
+  height: @socialIconFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: -80px -40px;
+}
+
+.social-icon-footer-twitter a:hover {
+  background: @socialIconFooterUrl;
+  background-position: -80px 0;
+}
+
+/* ===== Contact ===== */
+.contact-info {
+  padding-top: @contactInfoPaddingTop;
+  padding-left: @contactInfoPaddingLeft;
+  font-size: @contactInfoFontSize;
+}
+
+.contact-mail {
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: -120px -40px;
+}
+
+.contact-phone {
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: -160px -40px;
+}
+
+.contact-adress {
+  width: @contactFooterSizeImgWidth;
+  height: @contactFooterSizeImgHeigth;
+  background: @socialIconFooterUrl;
+  background-position: -200px -40px;
+}
+
+/* Bottom Footer*/
+.bottom-footer {
+  background-color: @bottomFooterBacgroundColor;
+  padding-top: @bottomFooterPaddingTop;
+  color: @bottomFooterColor;
+  font-size: @bottomFooterFontSize;
+}
+
+.scroll-top {
+  width: @scrollTopWidth;
+  height: @scrollTopHeight;
+  border: 1px solid @scrollTopBorderColor;
+  display: block;
+  background: @socialIconFooterUrl;
+  background-position: -241px -1px;
+  .transform();
+  a {
+    display: block;
+  }
+}
+
+
+/* =================  3.0 PAGE SCHEDULE ========================= */
+.schedule-list {
+  list-style-type: none;
+  padding: @scheduleListPaddingVertical @scheduleListPaddingHorizontal;
+  li {
+    border: 1px solid @scheduleListLiBorderColor;
+    margin-bottom: @scheduleListLiMarginBottom;
+    border-radius: @scheduleListLiBorderRadius;
+    overflow: hidden;
+    .schedule-list-li-liner-gradient();
+    .btn-shadow ();
+    a {
+      text-transform: uppercase;
+      font-size: @scheduleListLinkFontSize;
+      color: @scheduleListLinkrColor;
+      padding-left: @scheduleListLinkPaddingLeft;
+      background-color: @scheduleListLinkBackgroundColor;
+      display: block;
+      .schedule-list-li-a-liner-gradient();
+      &:hover {
+        background: @scheduleListLinkHoverBackgroundColor;
+        color: @scheduleListLinkHoverColor;
+        text-decoration: none;
+        .btn-shadow();
+      }
+      &:after {
+      font-size: @scheduleListLinkAfterFontSize;
+      padding-left: @scheduleListLinkAfterPaddingLeft;
+      content: "→";
+      }
+    }
+    p {
+      margin: @scheduleListTextMargin;
+      font-size: @scheduleListTextFontSize;
+      span {
+        font-style: italic;
+        .text-shadow ();
+      }
+    }
+  }
+}
+
+/* ===================== 3.1 PAGE T_GOAL_SETTING (ТРЕНИНГ ЦЕЛЕПОЛАГАНИЯ) ============== */
+.blockquote-custom {
+  font-size: @blockquoteCustomFontSize;
+  font-style: italic;
+  border-right: 2px solid @blockquoteCustomBorderRightColor;
+}
+
+.bradkrumbs {
+  .bradkrumbs-active-link {
+    color: @bradkrumbsActiveLinkColor;
+    .text-shadow();
+  }
+  a {
+    font-size: @bradkrumbsLinkFontSize;
+    color: @bradkrumbsLinkColor;
+    &:hover {
+      color: @bradkrumbsLinkHoverColor;
+      .text-shadow();
+    }
+  }
+}
+
+
+/*============= 3.2 PAGE T_COMMUNICATION (ТРЕНИНГ КОММУНИКАЦИЯ И КОНФЛИКТОЛОГИЯ) ===== */
+.list-marker li {
+  &:before {
+    .marker-tick();
+  }
+}
+
+
+/*============================== 4.0 PAGE CONTACTS ===== */
+.form-contacts {
+  margin-left: @formContactsMarginLeft;
+  .field-input {
+    height: @formContactsFieldInputHeight;
+    width: @formContactsFieldInputWidth;
+  }
+  .field-textarea {
+    min-height: @formContactsFieldTextareaMinHeight;
+    max-height: @formContactsFieldTextareaMaxHeight;
+    min-width: @formContactsFieldTextareaMinWidth;
+    max-width: @formContactsFieldTextareaMaxWidth;
+  }
+}
+
+
+/* ==================== 5.0 PAGE MOTIVATORS =======================*/
+/* ===== gallery block == */
+/* ===== gallery Preview == */
+ul.gallery-preview {
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
+}
+
+.gallery-preview {
+  list-style-type: none;
+  position: relative;
+  min-width: @galleryPreviewMinWidth;
+  max-width: @galleryPreviewMaxWidth;
+  height: @galleryPreviewHeight;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid @galleryPreviewBorderColor;
+}
+
+.gallery-preview li {
+  position: absolute;
+  transition: all 1s ease;
+  display: none;
+
+}
+
+.gallery-preview li.active {
+  display: block;
+}
+
+.arrow-preview {
+  height: @galleryPreviewArrowPreviewHeight;
+  position: relative;
+  margin-top: @galleryPreviewArrowPreviewMarginTop;
+}
+
+.left-preview-arrow {
+  font-size: @galleryPreviewArrowPreviewFontSize;
+  margin-left: @galleryPreviewArrowPreviewMargin;
+}
+
+.right-preview-arrow {
+  font-size: @galleryPreviewArrowPreviewFontSize;
+  margin-right: @galleryPreviewArrowPreviewMargin;
+}
+
+.arrow-preview-decor {
+  width: @galleryPreviewArrowPreviewDecorWidth;
+  height: @galleryPreviewArrowPreviewDecorHeight;
+  border-radius: @galleryPreviewArrowPreviewDecorBorderRadius;
+  border: 1px solid @galleryPreviewArrowPreviewDecorBorderColor;
+  background-color: @galleryPreviewArrowPreviewDecorBackgroundrColor;
+  color: @galleryPreviewArrowPreviewDecorColor;
+  cursor: pointer;
+}
+
+
+/* ===== gallery Thumbnails == */
+.gallery-thumbnails-box {
+  width: @galleryThumbnailsBoxWidth;
+  margin-top: @galleryThumbnailsBoxMarginTop;
+}
+
+.left-thumbnails-arrow {
+  font-size: @galleryThumbnailsArrowFontSize;
+  margin-top: @galleryThumbnailsLeftArrowMarginTop;
+}
+
+.right-thumbnails-arrow {
+  font-size: @galleryThumbnailsArrowFontSize;
+  margin-top: @galleryThumbnailsRightArrowMarginTop;
+}
+
+.arrow-thumbnails-decor {
+  width: @galleryThumbnailsArrowThumbnailsDecorWidth;
+  height: @galleryThumbnailsArrowThumbnailsDecorHeight;
+  border-radius: @galleryThumbnailsArrowThumbnailsDecorBorderRadius;
+  border: 1px solid @galleryThumbnailsArrowThumbnailsDecorBorderColor;
+  background-color: @galleryThumbnailsArrowThumbnailsDecorBackgroundrColor;
+  color: @galleryThumbnailsArrowThumbnailsDecorColor;
+  cursor: pointer;
+}
+
+.gallery-thumbnails-overflow {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: @galleryThumbnailsOverflowWidth;
+  margin-left: @galleryThumbnailsOverflowMarginLeft;
+}
+
+
+.gallery-thumbnails {
+  list-style-type: none;
+  width: @galleryThumbnailsWidth;
+  padding-left: @galleryThumbnailsPaddingnLeft;
+  margin-bottom: @galleryThumbnailsMarginBottom;
+}
+
+.gallery-thumbnails li {
+  float: left;
+  margin: @galleryThumbnailsLiMargin;
+}
+
+.gallery-thumbnails li.active {
+  border: 2px solid @galleryThumbnailsLiActiveBorderColor;
+  margin: @galleryThumbnailsLiActiveMargin;
+}
+
+.gallery-thumbnails::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ======= Modal Window Block ===== */
+.modals-overlay {
+  background: @modalsOverlayBackground;
+  position: absolute;
+  top: @modalsOverlayTop;
+  left: @modalsOverlayLeft;
+  width: @modalsOverlayWidth;
+  height: @modalsOverlayHeight;
+  z-index: @modalsOverlayZindex;
+}
+
+.modals-overlay .modal {
+  background-color: @modalBackgroundColor;
+  min-width: @modalMinWidth;
+  max-width: @modalMaxWidth;
+  min-height: @modalMinHeight;
+  max-height: @modalMaxHeight;
+  position: absolute;
+  top: @modalTop;
+  left: @modalLeft;
+  display: block;
+}
+
+.modals-overlay .modal .modal-header {
+  background: @modalHeaderBackground;
+  color: @modalHeaderColor;
+  height: @modalHeaderHeight;
+  padding: @modalHeaderPadding;
+}
+
+.modals-overlay .modal .modal-header .btn-close {
+  cursor: pointer;
+  float: right;
+  margin-right: @modalHeaderBtnCloseMarginRight;
+  margin-top: @modalHeaderBtnCloseMarginTop;
+  font-size: @modalHeaderBtnCloseFontSize;
+}
+
+.modals-overlay .modal .modal-body img {
+  max-width: @modalBodyImgMaxWidth;
+  height: @modalBodyImgHeight;
+  margin-left: @modalBodyImgMarginLeft;
+  margin-right: @modalBodyImgMarginRight;
+}
+
+.modals-overlay .modal .modal-footer {
+  background: @modalFooterBackground;
+  position: absolute;
+  bottom: @modalFooterBottom;
+  left: @modalFooterLeft;
+  width: @modalFooterWidth;
+  color: @modalFooterColor;
+}
+
+/* ========= 2d-animation == */
+.d2-animation {
+  background-image: @d2AnimationBackgroundImage;
+  background-size: cover;
+  width: @d2AnimationWidth;
+  height: @d2AnimationHeight;
+  margin-bottom: @d2AnimationMarginBottom;
+  margin-left: @d2AnimationMarginLeft;
+  position: relative;
+}
+
+.d2-animation-element {
+  width: @d2AnimationElementWidth;
+  height: @d2AnimationElementHeight;
+  border: 1px solid @d2AnimationElementBorderColor;
+  border-radius: @d2AnimationElementBorderRadius;
+  background-color: @d2AnimationElementBackgoundColor;
+  color: @d2AnimationElementColor;
+  font-size: @d2AnimationElementFontSize;
+  padding-top: @d2AnimationElementPaddingTop;
+  display: block;
+  position: relative;
+  top: @d2AnimationElementTop;
+  .btn-shadow();
+}
+
+.bum {
+  margin-left: @d2AnimationElementBumMarginLeft;
+  .d2-transform-bum();
+}
+
+.learner {
+  margin-right: @d2AnimationElementLearnerMarginRight;
+  .d2-transform-learner();
+}
+
+/* 6.0 PAGE SITE MAP */
+.site-link-list {
+  background-image: @siteLinkListBackgroundImageUrl;
+  background-repeat: no-repeat;;
+  background-position: right;
+  .h4-custom {
+    .text-shadow();
+  }
+  li {
+    a {
+      text-transform: lowercase;
+      &:hover {
+        color: @siteLinkListHoverColor;
+        text-transform: uppercase;
+        .text-shadow();
+      }
+    }
+  }
+}
+
+
+/* 7.0 PAGE REGISTRATION PARTCIPIANT */
+/* ==== fields form registration participiant block */
+.form-registration-participiant input {
+  width: @formRegistrationParticipiantInputWidth;
+  border-radius: @formRegistrationParticipiantInputBorderRadius;
+  margin-bottom: @formRegistrationParticipiantInputMarginBottom;
+  padding-left: @formRegistrationParticipiantInputPaddingLeft;
+}
+
+.form-registration-participiant input[type="checkbox"] {
+  width: @formRegistrationParticipiantInputTypeCheckboxWidth;
+  margin-right: @formRegistrationParticipiantInputTypeCheckboxMarginRight;
+}
+
+.form-registration-participiant select {
+  width: @formRegistrationParticipiantSelectWidth;
+  border-radius: @formRegistrationParticipiantSelectBorderRadius;
+  padding-left: @formRegistrationParticipiantSelectPaddingLeft;
+}
+
+.form-registration-participiant input.date {
+  width: @formRegistrationParticipiantInputDateWidth;
+  padding-left: @formRegistrationParticipiantInputDatePaddingLeft;
+}
+
+.form-registration-participiant input[type="radio"] {
+  width: @formRegistrationParticipiantInputTypeRadioWidth;
+}
+
+.form-registration-participiant textarea {
+  min-width: @formRegistrationParticipiantTextareaMinWidth;
+  max-width: @formRegistrationParticipiantTextareaMaxWidth;
+  min-height: @formRegistrationParticipiantTextareaMinHeight;
+  max-height: @formRegistrationParticipiantTextareaMaxHeight;
+  border-radius: @formRegistrationParticipiantTextareaBorderRadius;
+  padding-left: @formRegistrationParticipiantTextareaPaddingLeft;
+}
+
+.capcha {
+  border: 1px solid @formRegistrationParticipiantCapchaBorderColor;
+  border-radius: @formRegistrationParticipiantCapchaBorderRadius;
+  padding: @formRegistrationParticipiantTCapchaPadding;
+  font-family: @formRegistrationParticipiantCapchaFontFamily;
+  font-size: @formRegistrationParticipiantCapchaFontSize;
+  color: @formRegistrationParticipiantCapchaColor;
+  letter-spacing: @formRegistrationParticipiantCapchaLetterSpacing;
+}
+
+.form-registration-participiant input[type="button"] {
+  width: @formRegistrationParticipiantInputTypeButtonWidth;
+  margin-left: @formRegistrationParticipiantInputTypeButtonMarginLeft;
+  background-color: @formRegistrationParticipiantInputTypeButtonBackgroundColor;
+  color: @formRegistrationParticipiantInputTypeButtonColor;
+  .btn-shadow();
+}
+
+.form-registration-participiant input[type="submit"] {
+  background-color: @formRegistrationParticipiantInputTypeSubmitBackgroundColor;
+  color: @formRegistrationParticipiantInputTypeSubmitColor;
+  margin-bottom: @formRegistrationParticipiantInputTypeSubmitMarginBottom;
+  .btn-shadow();
+
+}
+
+/* ==== Message Warning & Access block */
+.warning-massage {
+  margin-bottom: @warningMassageMarginBottom;
+  padding-left: @warningMassagePaddingLeft;
+  background-color: @warningMassageBackgroundColor;
+  border: 1px solid @warningMassageBorderColor;
+  border-radius: @warningMassageBorderRadius;
+  .btn-shadow();
+}
+
+.access-massage {
+  margin-bottom: @accessMassageMarginBottom;
+  padding-left: @accessMassagePaddingLeft;
+  background-color: @accessMassageBackgroundColor;
+  border: 1px solid @accessMassageBorderColor;
+  border-radius: @accessMassageBorderRadius;
+  .btn-shadow();
+}
+
+
+/* 8.0 PAGE REVIEWS */
+.table-users {
+  th {
+    &:after {
+      padding-left: @tableUsersThAfterPaddingLeft;
+      content: '▼';
+      cursor: pointer;
+    }
+  }
+}
+
+
+/* X.0 MEDIA RESPONSIVE STYLE */
+
+/* Start Large devices .col-lg- (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop1200;
+  }
+
+  /* ============================ 2.1 SECTION TOP  ============================== */
+  /* ======== Carousel Block ================ */
+  .carousel-child {
+    padding: @carouselChildPadding1200;
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: @mapWidth1200;
+    height: @mapHeight1200;
+  }
+
+
+} /* End Large devices .col-lg- (large desktops, 1200px and up) */
+
+
+
+/* Start Medium devices .col-md- (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop992;
+  }
+
+
+  /* ============================ 2.1 SECTION TOP  ============================== */
+  /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight992;
+  }
+
+  /* ================= Header Menu Block =============*/
+  .logo-brand {
+    width: @logoBrandWidth992;
+  }
+
+  .header-menu-list {
+    li {
+      a {
+        font-size: @headerMenuListLinkFontSize992;
+      }
+    }
+  }
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    max-width: @corporateProgrammItemMaxWidth992;
+    a {
+      font-size: @corporateProgrammItemLinkFontSize992;
+    }
+  }
+
+  /* ======== Carousel Block ================ */
+  .carousel-child {
+    padding: @carouselChildPadding992;
+  }
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: @mapWidth992;
+    height: @mapHeight992;
+  }
+
+
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-height: @modalMaxHeight992;
+    margin-top: @modalTop992;
+    left: @modalLeft992;
+  }
+
+  .modals-overlay .modal .modal-body img {
+    max-width: @modalBodyImgMaxWidth992;
+  }
+
+  /* ========= 2d-animation == */
+  .d2-animation {
+    margin-left: @d2AnimationMarginLeft992;
+  }
+
+
+
+
+} /* End Medium devices .col-md- (desktops, 992px and up) */
+
+
+
+/* Start Small devices .col-sm- (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop768;
+  }
+
+    /* ============================ 2.1 SECTION TOP  ============================== */
+    /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight768;
+  }
+
+    /* ================= Header Menu Block =============*/
+  .header-menu-block {
+    height: @headerMenuHeigth768;
+  }
+
+
+  .logo-brand {
+    width: @logoBrandWidth768;
+  }
+
+  .navbar-default {
+    .navbar-collapse {
+      .header-menu-list {
+        li {
+          margin-top: (@headerMenuHeigth768 / 2) - (@headerMenuListLinkFontSize768 / 2) - @headerMenuListLinkPaddingTop - @headerMenuListLinkPaddingBottom;
+          a {
+            font-size: @headerMenuListLinkFontSize768;
+          }
+        }
+      }
+    }
+  }
+
+  /* 2.2 SECTION CONTENT */
+  .wrapper-content {
+    padding-top: @wrapperContentPaddingTop768;
+  }
+
+
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    margin-left: @corporateProgrammItemMarginLeft768;
+    margin-bottom: @corporateProgrammItemMarginBottom768;
+  }
+
+  /* ================= Block Btn - "sign up for training" ============= */
+  .next-training {
+    .btn-default-custom {
+      margin-top: @btnDefaultCustomMarginTop768;
+    }
+  }
+
+
+  /* ==============SPA-CONTENT Block ===========================*/
+.spa-content {
+  margin-top: @spaContentMarginTop768;
+  margin-bottom: @spaContentMarginBottom768;
+}
+
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: @mapWidth768;
+    height: @mapHeight768;
+  }
+
+
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-width: @modalMaxWidth768;
+    max-height: @modalMaxHeight768;
+    top: @modalTop768;
+    left: @modalLeft768;
+  }
+
+
+
+} /* End Small devices .col-sm- (tablets, 768px and up) */
+
+
+
+/* Start Extra small devices .col-xs- (phones,320px and up) */
+@media (min-width: 320px) and (max-width: 767px) {
+  /* 1.0 GLOBAL */
+  .h1-custom {
+    margin-top: @h1CustomMarginTop320;
+  }
+
+    /* ============================ 2.1 SECTION TOP  ============================== */
+    /* ================= Top Soci Icon Block ===== =======*/
+  .social-icon-row {
+    margin-right: @socialIconRowMarginRight320;
+  }
+
+  /* ================= Header Menu Block =============*/
+  .header-menu-block {
+    height: @headerMenuHeigth320;
+  }
+
+  .navbar-default {
+    .navbar-collapse {
+      .header-menu-list {
+        background-color: @headerMenuListBackgroundColor320;
+        margin-top: @headerMenuListMarginTop320;
+        li {
+          margin-top: @headerMenuListLiMarginTop320;
+          a {
+            &:hover {
+              background-color: @headerMenuListLinkHoverBackgroundColor320;
+              color: @headerMenuListLinkHoverColor320;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .logo-brand {
+    width: @logoBrandWidth320;
+    margin-left: 30px;
+  }
+
+  /* 2.2 SECTION CONTENT */
+  .wrapper-content {
+    padding-top: @wrapperContentPaddingTop320;
+  }
+
+
+  /* ================= Corporate Programm Block ============= */
+  .corporate-programm-item {
+    margin: @corporateProgrammItemMargin320;
+  }
+
+
+  /* ==============SPA-CONTENT Block ===========================*/
+.spa-content {
+  margin-top: @spaContentMarginTop320;
+  margin-bottom: @spaContentMarginBottom320;
+}
+
+/* ================= Block Btn - "sign up for training" ============= */
+.next-training {
+  .btn-default-custom {
+    margin-top: @btnDefaultCustomMarginTop320;
+  }
+}
+
+
+  /*=============== 4.0 PAGE CONTACTS =====================*/
+  .map {
+    width: @mapWidth320;
+    height: @mapHeight320;
+  }
+
+  /* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  /* ===== gallery block == */
+  /* ===== gallery Preview == */
+  .gallery-preview {
+    height: @galleryPreviewHeight320;
+  }
+
+  /* ===== gallery Thumbnails == */
+  .gallery-thumbnails-box {
+    width: @galleryThumbnailsBoxWidth320;
+  }
+
+  .gallery-thumbnails-overflow {
+    width: @galleryThumbnailsOverflowWidth320;
+    margin-left: @galleryThumbnailsOverflowMarginLeft320;
+  }
+
+  /* ======= Modal Window Block ===== */
+  .modals-overlay .modal {
+    max-height: @modalMaxHeight320;
+    top: @modalTop320;
+    left: @modalLeft320;
+  }
+
+  /* 6.0 PAGE SITE MAP */
+  .site-link-list {
+    background-image: none;
+  }
+
+  /* 7.0 PAGE REGISTRATION PARTCIPIANT */
+  /* ==== fields form registration participiant block */
+  .form-registration-participiant input {
+    width: @formRegistrationParticipiantInputWidth320;
+  }
+
+  .form-registration-participiant textarea {
+    min-width: @formRegistrationParticipiantTextareaMinWidth320;
+  }
+
+  .capcha {
+    padding: @formRegistrationParticipiantTCapchaPadding320;
+    font-size: @formRegistrationParticipiantCapchaFontSize320;
+  }
+
+
+
+
+} /* End Extra small devices .col-xs- (phones,320px and up) */

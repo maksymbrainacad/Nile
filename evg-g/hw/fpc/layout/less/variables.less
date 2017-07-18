@@ -1,0 +1,665 @@
+/* 0.0 MIXINS.LESS */
+// ============= Внутренние отступы для блока
+@indentPaddingTop: 20px; // внутренний отступ сверху для блока
+@indentPaddingBottom: 10px; // внутренний отступ снизу для блока
+
+// ============= Наружные отступы для блока
+@offsetMarginTop: 20px; // наружный отступ сверху для блока
+@offsetMarginTBottom: 10px; // наружный отступ снизу для блока
+
+// ============= Маркер списка "галочка"
+@markerTickFontSize: @bodyFontSize; // размер шрифта маркера списка
+@markerTickColor: @bodyColor; // цвет шрифта маркера списка
+
+// ============= Тени для текста
+@textShadowColor: rgba(51, 102, 102, 0.74);  // цвет тени текста
+@textShadowHorizontalShift: 3px; // смещение по горизонтали тени текста
+@textShadowVerticalShift: 2px;   // смещение по вертикали тени текста
+@textShadowBlur: 4px;   // размытие тени текста
+
+// ============= Тени для кнопок и блоков
+@btnShadowColor: rgba(51, 102, 102, 0.5);  // цвет тени кнопок
+@btnShadowHorizontalShift: 2px; // смещение по горизонтали тени кнопок
+@btnShadowVerticalShift: 3px;   // смещение по вертикали тени кнопок
+@btnShadowBlur: 4px;   // размытие тени кнопок
+@btnShadowEnhanced: 2px;   // расширение тени кнопок
+
+// ============= Фон для футера - Линейный градиент
+@topColor: rgba(39,112,118,0.5); // верхний первый цвет фона футера
+@topColorLocation: 0%; // локация размаха верхнего первого цвет фона футера
+
+@middleColor: rgba(246,246,246,0.7); // средний второй цвет фона футера
+@middleColorLocation: 47%; // локация размаха среднего второго цвет фона футера
+
+@bottomColor: rgba(39,112,118,1); // нижний третий цвет фона футера
+@bottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона футера
+
+// ============= Фон для пунктов списка расписания тренингов - Линейный градиент
+@scheduleListLiTopColor: rgba(255,255,255,1); // верхний первый цвет фона пунктов списка расписания тренингов
+@scheduleListLiTopColorLocation: 0%; // локация размаха верхнего первого цвет фона пунктов списка расписания тренингов
+
+@scheduleListLiMiddleColor: rgba(255,255,255,0.5); // средний второй цвет фона пунктов списка расписания тренингов
+@scheduleListLiMiddleColorLocation: 80%; // локация размаха среднего второго цвет фона пунктов списка расписания тренингов
+
+@scheduleListLiBottomColor: rgba(255,255,255,0.2); // нижний третий цвет фона пунктов списка расписания тренингов
+@scheduleListLiBottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона пунктов списка расписания тренингов
+
+// ============= Фон для ссылок пунктов списка расписания тренингов - Линейный градиент
+@scheduleListLiLinkTopColor: rgba(33,180,226,0.5); // верхний первый цвет фона ссылок пунктов списка расписания тренингов rgba(33,180,226,0.7)
+@scheduleListLiLinkTopColorLocation: 44%; // локация размаха верхнего первого цвет фона ссылок пунктов списка расписания тренингов
+
+@scheduleListLiLinkMiddleColor: rgba(33,180,226,0.3); // средний второй цвет фона ссылок пунктов списка расписания тренингов
+@scheduleListLiLinkMiddleColorLocation: 76%; // локация размаха среднего второго цвет фона ссылок пунктов списка расписания тренингов
+
+@scheduleListLiLinkBottomColor: rgba(33,180,226,0.2); // нижний третий цвет фона ссылок пунктов списка расписания тренингов
+@scheduleListLiLinkBottomColorLocation: 100%; // локация размаха нижнего третьего цвет фона ссылок пунктов списка расписания тренингов
+
+// ==== CSS3 3D ANIMATION EFFECT (для кнопки прокрутки сайта наверх)
+@d3TransformHoverRotateX: rotateX(0deg); // конечная координата вращения по оси Х
+@d3TransformHoverRotateY: rotateY(360deg); // конечная координата вращения по оси Y
+@d3TransformHoverRotateZ: rotateZ(360deg); // конечная координата вращения по оси Z
+
+@d3TransformHoverBorderRadius: 50px; // округление углов при наведении
+
+@d3TransitionTransformHoverTimeAnimation: 1s; // время прохождения анимации при наведении
+
+// CSS3 2D ANIMATION EFFECT (для перемещения элементов на странице МОТИВАТОРОВ)
+@d2TransitionTransformHoverTimeAnimation: 2.5s; // время прохождения анимации при наведении
+
+ // элемент Bum 2D ANIMATION
+@d2TransformHoverBumScale: scale(1.2); // увеличение элемента bum 2д анимации
+@d2TransformHoverBumRotate: rotate(1080deg); // градус вращения элемента bum 2д анимации
+@d2TransformHoverBumTranslateX: translateX(98px); // конечная координата перемещения элемента bum 2д анимации по оси Х
+@d2TransformHoverBumTranslateY: translateY(137px); // конечная координата перемещения элемента bum 2д анимации по оси Y
+@d2TransformHoverBumSkewX: skewX(0deg); // конечная координата наклона элемента bum 2д анимации по оси Х
+@d2TransformHoverBumSkewY: skewY(0deg); // конечная координата наклона элемента bum 2д анимации по оси Y
+
+ // элемент Learner 2D ANIMATION
+@d2TransformHoverLearnerScale: scale(1.2); // увеличение элемента learner 2д анимации
+@d2TransformHoverLearnerRotate: rotate(-1080deg); // градус вращения элемента learner 2д анимации
+@d2TransformHoverLearnerTranslateX: translateX(-125px); // конечная координата перемещения элемента learner 2д анимации по оси Х
+@d2TransformHoverLearnerTranslateY: translateY(-110px); // конечная координата перемещения элемента learner 2д анимации по оси Y
+@d2TransformHoverLearnerSkewX: skewX(0deg); // конечная координата наклона элемента learner 2д анимации по оси Х
+@d2TransformHoverLearnerSkewY: skewY(0deg); // конечная координата наклона элемента learner 2д анимации по оси Y
+
+
+
+
+/* 1.0 GLOBAL */
+@bodyBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body
+@bodyFontFamily: 'Open Sans', sans-serif; // основное семейство шрифтов для body ( Condensed)
+@bodyFontWeight: normal; // основное начертание шрифтов для body
+@bodyFontSize: 14px; // основное размер шрифта для body
+@bodyColor: #373E44; // основное цвет шрифта для body
+@bodyLineHeight: 22px; // основной межстрочный интервал для body
+
+@hCustomFontFamily: inherit; // основное семейство шрифтов для Заголовков h
+@hCustomFontWeight: 500; // основное начертание шрифтов для Заголовков h
+@hCustomLineHeight: 1.1;  // основной межстрочный интервал для Заголовков h
+@hCustomColor: inherit; // основное цвет шрифта для Заголовков h
+@hCustomMarginTop: 20px; // отступ с верху от Заголовков h
+@hCustomMarginBottom: 10px; // отступ с низу от Заголовков h
+
+@h1CustomFontSize: 30px; // размер шрифта для Заголовков h1 36
+@h2CustomFontSize: 26px; // размер шрифта для Заголовков h2 30
+@h3CustomFontSize: 22px; // размер шрифта для Заголовков h3 24
+@h4CustomFontSize: 18px; // размер шрифта для Заголовков h4 18
+
+@hDecorPaddingBottom: 5px; // внутренний отступ декора снизу от заголовков h
+@hDecorBordergBottomHeight: 1px; // высота рамки снизу декора заголовков h
+@hDecorBordergBottomColor: rgba(112, 126, 138, 0.69); // цвет рамки снизу декора заголовков h
+
+@hDecorAfterMargin: -1px; // внешние отступы сверху и снизу декор-планки от заголовков h
+@hDecorAfterTop: 5px; // позиция сверху декор-планки от заголовков h
+@hDecorAfterBackgroundColor: #277076; // цвет фона декор-планки заголовков h
+@hDecorAfterHeight: 1px; // высота декор-планки заголовков h
+@hDecorAfterWidth: 150px; // ширина декор-планки заголовков h
+
+
+@linksColor: #666;            // цвет ссылок
+@linksHoverColor: darken(@linksColor, 15%);   // цвет ссылок при наведении
+@linksVisitedColor: darken(@linksColor, 25%);  // цвет просмотренных ссылок
+
+
+/* 2.0 PAGE INDEX */
+/* 2.1 SECTION TOP */
+
+@wrapperTopWidth: 900px;     // ширина обложки блока ТОР                               ??? не срабатывает
+@blockSocialIconHeigth: 25px;    // высота блока социальных иконок
+@blockSocialIconBackgroundImageUrl: url(../img/background/body/school_blue.jpg); // фоновое изображение для body блока социальных иконок
+@socialIconColor: rgba(65, 75, 76, 0.52);     // цвет социальных иконок
+@socialIconColorHover: #366;   // цвет социальных иконок при наведении
+@socialIconPaddingLeft: 5px; // отступ социальных иконок друг от друга
+
+@logoBrandWidth: 250px;                  // ширина логотипа компании
+
+@headerMenuHeigth: 100px;                // высота горизонтального меню
+@headerMenuListLinkPaddingTop: 10px;     // отступ с верхуссылок в меню
+@headerMenuListLinkPaddingBottom: 10px;  // отступ с низу от ссылок в меню
+@headerMenuListLinkColor: #373E44;       // цвет шрифта ссылок в меню
+@headerMenuListLinkActiveColor: #366; // цвет шрифта активной ссылки в меню
+@headerMenuListLinkHoverColor: #366;  // цвет шрифта ссылок при наведении в меню
+@headerMenuListLinkActiveBorderColor: #366; // цвет рамки активной ссылоки в меню
+@headerMenuListLinkHoverBorderColor: #366;  // цвет рамки ссылок при наведении в меню
+@headerMenuListLinkActiveShadowColor: rgba(201, 201, 201, 1); // цвет тени активной ссылоки в меню
+@headerMenuListLinkHoverShadowColor: rgba(201, 201, 201, 1);  // цвет тени ссылок при наведении в меню
+
+
+/* 2.0 PAGE INDEX */
+  /* 2.2 SECTION CONTENT */
+@wrapperContentPaddingTop: @blockSocialIconHeigth + @headerMenuHeigth; // внутренний отступ с верху в блоке CONTENT
+  // ===== Banner block
+@bannerBackgroundImageUrl: url(../img/background/body/light_grey.jpg); // фоновое изображение для bannera
+
+
+  // ===== Button Primary
+@btnPrimaryCustomMarginBottom: 10px; // отступ  снизу от кнопки в банере
+@btnPrimaryCustomFontSize: 14px; // размер шрифта для кнопки в банере
+
+@btnPrimaryCustomColor: #366; // цвет кнопки в банере
+@btnPrimaryCustomBorderColor: darken(@btnPrimaryCustomColor, 25%); // цвет рамки кнопки в банере
+
+@btnPrimaryCustomHoverColor: lighten(@btnPrimaryCustomColor, 12%); // цвет кнопки в банере при наведении
+@btnPrimaryCustomBorderHoverColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при наведении
+
+@btnPrimaryCustomActiveColor: lighten(@btnPrimaryCustomColor, 15%); // цвет кнопки в банере при Active
+@btnPrimaryCustomBorderActiveColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnPrimaryCustomPushColor: lighten(@btnPrimaryCustomColor, 12%); // цвет кнопки в банере при Active
+@btnPrimaryCustomBorderPushColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnPrimaryCustomFocusColor: lighten(@btnPrimaryCustomColor, 10%); // цвет кнопки в банере при фокусе
+@btnPrimaryCustomBorderFocusColor: darken(@btnPrimaryCustomColor, 10%); // цвет рамки кнопки в банере при фокусе
+
+  // ===== Button Default
+@btnDefaultCustomMarginBottom: 10px; // отступ  снизу от кнопки в банере
+@btnDefaultCustomFontSize: 14px; // размер шрифта для кнопки в банере
+
+@btnDefaultCustomColor: #7cc7c7; // цвет кнопки в банере
+@btnDefaultCustomBorderColor: darken(@btnDefaultCustomColor, 25%); // цвет рамки кнопки в банере
+
+@btnDefaultCustomHoverColor: darken(@btnDefaultCustomColor, 12%); // цвет кнопки в банере при наведении
+@btnDefaultCustomBorderHoverColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при наведении
+
+@btnDefaultCustomActiveColor: darken(@btnDefaultCustomColor, 15%); // цвет кнопки в банере при Active
+@btnDefaultCustomBorderActiveColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnDefaultCustomPushColor: darken(@btnDefaultCustomColor, 12%); // цвет кнопки в банере при Active
+@btnDefaultCustomBorderPushColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при Active
+
+@btnDefaultCustomFocusColor: darken(@btnDefaultCustomColor, 10%); // цвет кнопки в банере при фокусе
+@btnDefaultCustomBorderFocusColor: darken(@btnDefaultCustomColor, 10%); // цвет рамки кнопки в банере при фокусе
+
+  // ==== Buttons Link
+@btnLinkColor: #fff; // цвет ссылок в кнопках Primary & Default
+@btnLinkHoverColor: #000; // цвет ссылок при наведении в кнопках Primary & Default
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemBackgroundImageUrl: url(../img/background/body/geometry.jpg); // фоновое изображение для блоков Corporat Programm
+@corporateProgrammItemPadding: 10px; // внутренние круговые отступы для блоков Corporat Programm
+@corporateProgrammItemMarginRight: 2px; // отступ с права для блоков Corporat Programm
+@corporateProgrammItemMarginBottom: 15px; // отступ с низу для блоков Corporat Programm
+@corporateProgrammItemMaxWidth: 290px; // максимальная ширина блоков Corporat Programm
+@corporateProgrammItemLinkFontSize: 12px; // размер шрифта ссылок блоков Corporat Programm
+
+  // ==== Next Training Block
+@nextTrainingBlockBackgroundImageUrl: url(../img/background/body/vichy.jpg); // фоновое изображение для блока списка тренингов
+@nextTrainingBlockBorderColor: #373E44; // цвет рамки блока списка тренингов
+
+@nextTrainingListPaddingVertical: 5px; // отступ сверху и снизу блока списка тренингов
+@nextTrainingListPaddingHorizontal: 10px; // отступ справа и слева блока списка тренингов
+
+@nextTrainingListBorderColor: #373E44; // цвет рамки пункта списка тренингов
+@nextTrainingListMarginBottom: 5px; // отступ снизу пункта списка тренингов
+
+@nextTrainingListLinkFontSize: 12px; // размер шрифта ссылки пункта списка тренингов
+@nextTrainingListLinkPaddingLeft: 5px; // отступ слева ссылки пункта списка тренингов
+@nextTrainingListLinkBackgroundColor: #fff; // цвет фона ссылки пункта списка тренингов
+
+@nextTrainingListLinkHoverColor: #fff; // цвет шрифта ссылки пункта списка тренингов при Hovere
+@nextTrainingListLinkHoverBackgroundColor: #366; // цвет фона ссылки пункта списка тренингов при Hovere
+
+@nextTrainingListActiveLiLinkColor: #fff; // цвет шрифта ссылки активного пункта списка тренингов
+@nextTrainingListActiveLiLinkBackgroundColor: #366; // цвет фона ссылки активного пункта списка тренингов
+
+  // ==== Director
+@fotoMaxWidth: 250px; // макс ширина фото
+@fotoBorderColor: #373E44; // цвет рамки фото
+@fotoPadding: 3px; // внутренний круговой отступ фото от рамки
+
+@gradientOfStartColor: rgb(240, 168, 237); // внутренний цвет мыслей
+@gradientOfEndColor: rgb(123, 201, 212); // наружный цвет мыслей
+
+@gradientBorderWidth: 1px; // толщина рамки обводки мыслей
+@gradientBorderColor: rgb(123, 201, 212); // цвет рамки обводки мыслей
+
+@svgTextAutorFontSize: 12px; //размер шрифта подписи автора в мыслях
+
+
+
+/* ================= 2.0 PAGE INDEX ====================== */
+  /* =============== 2.3 SECTION FOOTER ==================*/
+  // ==== Main footer ===============================================
+@mainFooterMarginTop: 40px; // отступ сверху всего блока футера
+@mainFooterItemPaddingVertical: 0px; // отступ сверху и снизу подблоков футера
+@mainFooterItemPaddingHorizontal: 20px; // отступ слева и справа подблоков футера
+
+  // ==== Footer Menu
+@footerMenuListPaddingLeft: 0px; // отступ слева списков меню футера
+@footerMenuListLiFontSize: 14px; // размер шрифта списков меню футера
+@footerMenuListLiColor: #2d3033; // цвет шрифта списков меню футера
+@footerMenuListLiLinkColor: #2d3033; // цвет шрифта ссылок списков меню футера
+@footerMenuListLiLinkHoverColor: #fff; // цвет шрифта ссылок списков меню футера при hovere
+
+  // ==== Footer Social Network
+@socialIconFooterUrl: url(../img/sprite.png);
+@socialIconFooterSizeImgWidth: 40px;
+@socialIconFooterSizeImgHeigth: 40px;
+@contactFooterSizeImgWidth: 40px;
+@contactFooterSizeImgHeigth: 40px;
+
+  // ==== Footer Contact
+@contactInfoPaddingTop: 10px; // внутренний отступ сверху абзацев контактной информации
+@contactInfoPaddingLeft: 40px; // внутренний отступ слева абзацев контактной информации
+@contactInfoFontSize: 12px; // размер шрифта абзацев контактной информации
+
+
+  // ==== Bottom footer =================================================
+@bottomFooterBacgroundColor: rgba(39,112,118,1); // цвет фона нижнего футера
+@bottomFooterPaddingTop: 20px; // внутренний отступ сверху в блоке нижнего футера
+@bottomFooterColor: #fff; // цвет шрифта нижнего футера
+@bottomFooterFontSize: 12px; // размер шрифта нижнего футера
+
+@scrollTopWidth: 40px;  // ширина кнопки прокрутки сайта в начало страници
+@scrollTopHeight: 40px; // высота кнопки прокрутки сайта в начало страници
+@scrollTopBorderColor: #fff;  // цвет рамки кнопки прокрутки сайта в начало страници
+
+
+
+/* ======================== 3.0 PAGE SCHEDULE ===================== */
+@scheduleListPaddingVertical: 5px; // отступ сверху и снизу списка расписания тренингов
+@scheduleListPaddingHorizontal: 10px; // отступ справа и слева списка расписания тренингов
+
+@scheduleListLiBorderColor: #000; // цвет рамки пункта списка расписания тренингов
+@scheduleListLiMarginBottom: 5px; // отступ снизу пункта списка расписания тренингов
+@scheduleListLiBorderRadius: 40px 0 40px 0; // закругление рамки пункта списка расписания тренингов
+
+@scheduleListLinkFontSize: 12px; // размер шрифта ссылки пункта списка расписания тренингов
+@scheduleListLinkrColor: #333639;  // цвет шрифта ссылки пункта списка расписания тренингов
+@scheduleListLinkPaddingLeft: 25px; // отступ слева ссылки пункта списка расписания тренингов
+@scheduleListLinkBackgroundColor: #fff; // цвет фона ссылки пункта списка расписания тренингов
+@scheduleListLinkAfterFontSize: 15px; // размер шрифта контента After ссылки пункта списка расписания тренингов
+@scheduleListLinkAfterPaddingLeft: 10px; // отступ слева контента After ссылки пункта списка расписания тренингов
+
+@scheduleListLinkHoverColor: #fff; // цвет шрифта ссылки пункта списка расписания тренингов при Hovere
+@scheduleListLinkHoverBackgroundColor: #366; // цвет фона ссылки пункта списка расписания тренингов при Hovere
+
+@scheduleListTextMargin: -7px 23px 0; // отступы текста после ссылки пункта списка расписания тренингов
+@scheduleListTextFontSize: 10px; // размер шрифта текста после ссылки пункта списка расписания тренингов
+
+
+/* ===================== 3.1 PAGE T_GOAL_SETTING ============== */
+@blockquoteCustomFontSize: 12px; // размер шрифта в цитатах
+@blockquoteCustomBorderRightColor: #366; // цвет правой рамки в цитатах
+
+@bradkrumbsLinkFontSize: 10px; // размер шрифта ссылок блока bradkrumbs
+@bradkrumbsLinkColor: #366; // цвет ссылок блока bradkrumbs
+@bradkrumbsLinkHoverColor: #4E49F9; // цвет ссылок при hovere блока bradkrumbs
+@bradkrumbsActiveLinkColor: #4E49F9; // цвет активной ссылки блока bradkrumbs
+
+
+
+
+/* ===================== 4.0 PAGE CONTACTS ========================= */
+@formContactsMarginLeft: 10px; // внешний отступ слева формы-contacts обратной связи
+
+@formContactsFieldInputHeight: 40px; // высота поля input формы-contacts обратной связи
+@formContactsFieldInputWidth: 300px; // ширина поля input формы-contacts обратной связи
+
+@formContactsFieldTextareaMinHeight: 180px; // минимальная высота поля textarea формы-contacts обратной связи
+@formContactsFieldTextareaMaxHeight: 180px; // максимальная высота поля textarea формы-contacts обратной связи
+
+@formContactsFieldTextareaMinWidth: 300px; // минимальная ширина поля textarea формы-contacts обратной связи
+@formContactsFieldTextareaMaxWidth: 300px; // максимальная ширина поля textarea формы-contacts обратной связи
+
+
+
+
+/* ==================== 5.0 PAGE MOTIVATORS =======================*/
+  // ===== gallery block ==
+  // ===== gallery Preview ==
+@galleryPreviewMinWidth: 250px; // мин ширина изображений галереи мотиваторов
+@galleryPreviewMaxWidth: 720px; // макс ширина изображений галереи мотиваторов
+@galleryPreviewHeight: 300px; // высота изображений галереи мотиваторов
+@galleryPreviewBorderColor: #366; // цвет рамки изображений галереи мотиваторов
+
+@galleryPreviewArrowPreviewHeight: 40px; // высота блока стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewMarginTop: -(@galleryPreviewArrowPreviewHeight + 5px); // внешний отступ сверху блока стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewFontSize: 28px; // размер шрифта стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewMargin: 20px; // внешний отступ слева и справа для соответствующих стрелок навигации изображений галереи мотиваторов
+
+@galleryPreviewArrowPreviewDecorWidth: @galleryPreviewArrowPreviewFontSize - 1px; // ширина стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorHeight: @galleryPreviewArrowPreviewFontSize - 1px; // высота стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBorderRadius: @galleryPreviewArrowPreviewDecorWidth - 7px; // радиус скругления рамки стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBorderColor: #fff; // цвет рамки стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorBackgroundrColor: #366; // цвет фона стрелок навигации изображений галереи мотиваторов
+@galleryPreviewArrowPreviewDecorColor: #fff; // цвет шрифтаи стрелок навигации изображений галереи мотиваторов
+
+  // ===== gallery Thumbnails ==
+@galleryThumbnailsBoxWidth: 400px; // ширина блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsBoxMarginTop: 10px; // внешний отступ сверху блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsArrowFontSize: 21px; // размер шрифта стрелок навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsLeftArrowMarginTop: 11px; // внешний отступ сверху левой стрелки навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsRightArrowMarginTop: -34px; // внешний отступ сверху правой стрелки навигации блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorWidth: @galleryThumbnailsArrowFontSize + 4px; // ширина стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorHeight: @galleryThumbnailsArrowFontSize + 4px; // высота стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBorderRadius: @galleryThumbnailsArrowThumbnailsDecorWidth - 5px; // радиус скругления рамки стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBorderColor: #666; // цвет рамки стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorBackgroundrColor: #366; // цвет фона стрелок навигации линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsArrowThumbnailsDecorColor: #fff; // цвет шрифтаи стрелок навигации линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsOverflowWidth: 254px; // ширина видимого блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsOverflowMarginLeft: 74px; // внешний отступ слева видимого блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsWidth: 10000px; // ширина невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+@galleryThumbnailsPaddingnLeft: 1px; // внутренний отступ слева невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+@galleryThumbnailsMarginBottom: 1px; // внешний отступ снизу невидимого блока линейки иконок изображений галереи мотиваторов (в который вкладываются иконки изображений)
+
+@galleryThumbnailsLiMargin: 0 1px; // внешний отступ справа и слева иконок в линейке изображений галереи мотиваторов
+
+@galleryThumbnailsLiActiveBorderColor: #366; // цвет рамки активной иконоки в линейке изображений галереи мотиваторов
+@galleryThumbnailsLiActiveMargin: 0 -1px; // внешний отступ справа и слева активной иконоки в линейке изображений галереи мотиваторов
+
+
+  // ========= 2d-animation ==
+@d2AnimationBackgroundImage: url(../img/motivators/2Dbg.jpg); // фоновое изображение для блока 2D Animation
+@d2AnimationWidth: 450px; // ширина блока 2D Animation
+@d2AnimationHeight: 450px; // высота блока 2D Animation
+@d2AnimationMarginBottom: 15px; // внешний отступ снизу блока 2D Animation
+@d2AnimationMarginLeft: 165px; // внешний отступ слева блока 2D Animation
+
+@d2AnimationElementWidth: 35px; // ширина элемента 2D Animation
+@d2AnimationElementHeight: 35px; // высота элемента 2D Animation
+@d2AnimationElementBorderColor: #fff; // цвет рамки элемента 2D Animation
+@d2AnimationElementBorderRadius: 20px; // радиус скругления рамки элемента 2D Animation
+@d2AnimationElementBackgoundColor: #ed1711; // цвет фона элемента 2D Animation
+@d2AnimationElementColor: #fff; // цвет шрифта элемента 2D Animation
+@d2AnimationElementFontSize: 18px; // размер шрифта элемента 2D Animation
+@d2AnimationElementPaddingTop: 5px; // внутренний отступ сверху элемента 2D Animation
+@d2AnimationElementTop: 42%; // начальная позиция сверху элемента 2D Animation
+
+@d2AnimationElementBumMarginLeft: 159px; // внешний отступ слева элемента bum 2D Animation
+@d2AnimationElementLearnerMarginRight: 159px; // внешний отступ справа элемента learner 2D Animation
+
+
+
+  /* ======= Modal Window Block ===== */
+@modalsOverlayBackground: rgba(0, 0, 0, 0.5); // цвет фона обложки модального окна
+@modalsOverlayTop: 0; // начальная позиция сверху обложки модального окна
+@modalsOverlayLeft: 0; // начальная позиция слева обложки модального окна
+@modalsOverlayWidth: 100%; // ширина обложки модального окна
+@modalsOverlayHeight: 100%; // высота обложки модального окна
+@modalsOverlayZindex: 1040; // позиция слоя обложки модального окна
+
+@modalBackgroundColor: #fff; // цвет фона модального окна
+@modalMinWidth: 300px; // мин ширина модального окна
+@modalMaxWidth: 750px; // макс ширина модального окна
+@modalMinHeight: auto; // мин высота модального окна
+@modalMaxHeight: 670px; // макс высота модального окна
+@modalTop: 5px; // начальная позиция сверху модального окна
+@modalLeft: 20%; // начальная позиция слева модального окна
+
+@modalHeaderBackground: #666; // цвет фона headera модального окна
+@modalHeaderColor: #ccc; // цвет шрифта headera модального окна
+@modalHeaderHeight: 40px; // высота headera модального окна
+@modalHeaderPadding: 0 5px; // внутренние круговые отступы headera модального окна
+
+@modalHeaderBtnCloseMarginRight: 10px; // внешний отступ справа кнопки закрыть в  headerе модального окна
+@modalHeaderBtnCloseMarginTop: 5px; // внешний отступ сверху кнопки закрыть в  headerе модального окна
+@modalHeaderBtnCloseFontSize: 22px; // размер шривта кнопки закрыть в  headerе модального окна
+
+@modalBodyImgMaxWidth: 82%; // макс ширина изображений в теле модального окна
+@modalBodyImgHeight: auto; // высота изображений в теле модального окна
+@modalBodyImgMarginLeft: auto; // внешний отступ слева изображений в теле модального окна
+@modalBodyImgMarginRight: auto; // внешний отступ справа изображений в теле модального окна
+
+@modalFooterBackground: #666; // цвет фона footera модального окна
+@modalFooterBottom: 0; // начальная позиция снизу footera модального окна
+@modalFooterLeft: 0; // начальная позиция слева footera модального окна
+@modalFooterWidth: 100%; // ширина footera модального окна
+@modalFooterColor: #ccc; // цвет шрифта footera модального окна
+
+
+/* ==================== 6.0 PAGE SITE MAP =======================*/
+@siteLinkListHoverColor: #366; // цвет ссылок при наведении в списке карты сайта
+@siteLinkListBackgroundImageUrl: url(../img/pegas.png); // фоновое изображение для списка ссылок карты сайта
+
+
+
+/* ============= 7.0 PAGE REGISTRATION PARTCIPIANT ================ */
+  // ==== fields form registration participiant block
+@formRegistrationParticipiantInputWidth: 350px; // ширина полей input формы регистрации участника
+@formRegistrationParticipiantInputBorderRadius: 2px; // радиус округления углов полей input формы регистрации участника
+@formRegistrationParticipiantInputMarginBottom: 5px; // внешний отступ снизу полей input формы регистрации участника
+@formRegistrationParticipiantInputPaddingLeft: 5px; // внутренний отступ слева текста в полях input формы регистрации участника
+
+@formRegistrationParticipiantInputTypeCheckboxWidth: 20px; // ширина полей input[type="checkbox"] формы регистрации участника
+@formRegistrationParticipiantInputTypeCheckboxMarginRight: 5px; // внешний отступ справа полей input[type="checkbox"] формы регистрации участника
+
+@formRegistrationParticipiantSelectWidth: 262px; // ширина полей select формы регистрации участника
+@formRegistrationParticipiantSelectBorderRadius: 2px; // радиус округления углов полей select формы регистрации участника
+@formRegistrationParticipiantSelectPaddingLeft: 5px; // внутренний отступ слева текста в полях select формы регистрации участника
+
+@formRegistrationParticipiantInputDateWidth: 262px; // ширина полей input.date формы регистрации участника
+@formRegistrationParticipiantInputDatePaddingLeft: 5px; // внутренний отступ слева текста в полях input.date формы регистрации участника
+
+@formRegistrationParticipiantInputTypeRadioWidth: 20px; // ширина полей input[type="radio"] формы регистрации участника
+
+@formRegistrationParticipiantTextareaMinWidth: 350px; // min ширина полей textarea формы регистрации участника
+@formRegistrationParticipiantTextareaMaxWidth: 350px; // max ширина полей textarea формы регистрации участника
+@formRegistrationParticipiantTextareaMinHeight: 180px; // min высота полей textarea формы регистрации участника
+@formRegistrationParticipiantTextareaMaxHeight: 180px; // max высота полей textarea формы регистрации участника
+@formRegistrationParticipiantTextareaBorderRadius: 2px; // радиус округления углов полей textarea формы регистрации участника
+@formRegistrationParticipiantTextareaPaddingLeft: 5px; // внутренний отступ слева текста в полях textarea формы регистрации участника
+
+@formRegistrationParticipiantCapchaBorderColor: #000; // цвет рамки капчи формы регистрации участника
+@formRegistrationParticipiantCapchaBorderRadius: 2px; // радиус округления углов капчи формы регистрации участника
+@formRegistrationParticipiantTCapchaPadding: 5px 0 5px 5px; // внутренние отступы сверху/справа/снизу/слева  текста капчи формы регистрации участника
+@formRegistrationParticipiantCapchaFontFamily: 'Modern Antiqua', cursive; // семейство шрифтов капчи формы регистрации участника
+@formRegistrationParticipiantCapchaFontSize: 19px; // размер шрифтов капчи формы регистрации участника
+@formRegistrationParticipiantCapchaColor: #fff; // цвет шрифта капчи формы регистрации участника
+@formRegistrationParticipiantCapchaLetterSpacing: 26px; // отступы между буквами капчи формы регистрации участника
+
+@formRegistrationParticipiantInputTypeButtonWidth: 120px; // ширина кнопки "Обновить Код" капчи (полей input[type="button"]) формы регистрации участника
+@formRegistrationParticipiantInputTypeButtonMarginLeft: 10px; // внешний отступ слева кнопки "Обновить Код" капчи (полей input[type="button"]) формы регистрации участника
+@formRegistrationParticipiantInputTypeButtonBackgroundColor: #7cc7c7; // цвет фона кнопки "Обновить Код" капчи (полей input[type="button"]) формы регистрации участника
+@formRegistrationParticipiantInputTypeButtonColor: #fff; // цвет шрифта кнопки "Обновить Код" капчи (полей input[type="button"]) формы регистрации участника
+
+@formRegistrationParticipiantInputTypeSubmitBackgroundColor: #366; // цвет фона кнопки "Отправить" (полей input[type="submit"]) форму регистрации участника
+@formRegistrationParticipiantInputTypeSubmitColor: #fff; // цвет шрифта кнопки "Отправить" (полей input[type="submit"]) форму регистрации участника
+@formRegistrationParticipiantInputTypeSubmitMarginBottom: 20px; // внешний отступ снизу кнопки "Отправить" (полей input[type="submit"]) форму регистрации участника
+
+  // ==== Message Warning & Access block
+@warningMassageMarginBottom: 5px; // внешний отступ снизу сообщений предупреждений
+@warningMassagePaddingLeft: 5px; // внутренний отступ слева текста сообщений предупреждений
+@warningMassageBackgroundColor: rgba(242, 105, 38, 0.81); // цвет фона сообщений предупреждений
+@warningMassageBorderColor: #f40f0f; // цвет рамки сообщений предупреждений
+@warningMassageBorderRadius: 5px; // радиус округления углов сообщений предупреждений
+
+@accessMassageMarginBottom: 5px; // внешний отступ снизу сообщений об успехе
+@accessMassagePaddingLeft: 5px; // внутренний отступ слева текста сообщений об успехе
+@accessMassageBackgroundColor: rgba(38, 242, 138, 0.81); // цвет фона сообщений об успехе
+@accessMassageBorderColor: #366; // цвет рамки сообщений об успехе
+@accessMassageBorderRadius: 5px; // радиус округления углов сообщений об успехе
+
+
+/* 8.0 PAGE REVIEWS */
+@tableUsersThAfterPaddingLeft: 5px; // внутренний отступ слева у "стрелки вниз" в заголовках таблицы участников тренингов
+
+
+
+
+/* X.0 MEDIA RESPONSIVE STYLE */
+/* Large devices .col-lg- (large desktops, 1200px and up) */
+  /* 1.0 GLOBAL */
+@h1CustomMarginTop1200: 15px; // отступ с верху от Заголовков h1
+
+  /* ========2.1 SECTION TOP  */
+  /* ======== Carousel Block ================ */
+@carouselChildPadding1200: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
+
+  /* 4.0 PAGE CONTACTS */
+@mapWidth1200: 750px; // ширна блока гугл-мэп
+@mapHeight1200: 750px; // высота блока гугл-мэп
+
+
+/* Medium devices .col-md- (desktops, 992px and up) */
+  /* 1.0 GLOBAL */
+@h1CustomMarginTop992: 15px; // отступ с верху от Заголовков h1
+
+
+  /* ========2.1 SECTION TOP =============  */
+  /* ==== Top Social Icon Block =========*/
+@socialIconRowMarginRight992: 10px; // отступ строки соц иконок справа
+
+  /* =======Header Menu Block ========*/
+@logoBrandWidth992: 250px;                  // ширина логотипа компании
+@headerMenuListLinkFontSize992: 12px;       // размер шрифта ссылок в меню
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemMaxWidth992: 240px; // максимальная ширина блоков Corporat Programm
+@corporateProgrammItemLinkFontSize992: 10px; // размер шрифта ссылок блоков Corporat Programm
+
+  /* ======== Carousel Block ================ */
+@carouselChildPadding992: 20px; // внутренние круговые отступы изображений карусели (без них при 1200 и 992 ширине экрана последний элемент не отображается пикселей на 10-15 справа !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1)
+
+/* 4.0 PAGE CONTACTS */
+@mapWidth992: 620px; // ширна блока гугл-мэп
+@mapHeight992: 320px; // высота блока гугл-мэп
+
+/* 5.0 PAGE MOTIVATORS */
+  /* ======= Modal Window Block ===== */
+@modalMaxHeight992: 595px; // макс высота модального окна
+@modalTop992: 20px; // начальная позиция сверху модального окна
+@modalLeft992: 13%; // начальная позиция слева модального окна
+
+@modalBodyImgMaxWidth992: 71%; // макс ширина изображений в теле модального окна
+
+// ========= 2d-animation ==
+@d2AnimationMarginLeft992: 97px; // внешний отступ слева блока 2D Animation
+
+
+
+
+
+
+/* Small devices .col-sm- (tablets, 768px and up) */
+/* 1.0 GLOBAL */
+@h1CustomMarginTop768: 5px; // отступ с верху от Заголовков h1
+
+  /* ========2.1 SECTION TOP  */
+  /* ==== Top Social Icon Block*/
+@socialIconRowMarginRight768: 10px; // отступ строки соц иконок справа
+
+  /* =======Header Menu Block*/
+@headerMenuHeigth768: 60px;                // высота горизонтального меню
+
+
+@logoBrandWidth768: 100px;                  // ширина логотипа компании
+@headerMenuListLinkFontSize768: 10px;       // размер шрифта ссылок в меню
+
+  /* 2.2 SECTION CONTENT */
+@wrapperContentPaddingTop768: @blockSocialIconHeigth + @headerMenuHeigth768; // внутренний отступ с верху в блоке CONTENT
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemMarginLeft768:56px; // отступы слева для блоков Corporat Programm
+@corporateProgrammItemMarginBottom768: @corporateProgrammItemMarginLeft768; // отступ с низу для блоков Corporat Programm
+
+  // ==== Next Training Block
+@nextTrainingListMargin768: 0 180px; // отступ справа и слева блока списка тренингов
+
+/* ==============SPA-CONTENT Block ===========================*/
+@spaContentMarginTop768: 5px; // наружный отступ сверху блока SPA-CONTENT
+@spaContentMarginBottom768: 5px; // наружный отступ снизу блока SPA-CONTENT
+
+/* ================= Block Btn - "sign up for training" ============= */
+@btnDefaultCustomMarginTop768: 0; // внешний отступ сверху кнопки "записаться на тренинг"
+
+
+  /* 4.0 PAGE CONTACTS */
+@mapWidth768: 720px; // ширна блока гугл-мэп
+@mapHeight768: 300px; // высота блока гугл-мэп
+
+  /* 5.0 PAGE MOTIVATORS */
+  /* ======= Modal Window Block ===== */
+@modalMaxWidth768: 615px; // макс ширина модального окна
+@modalMaxHeight768: 570px; // макс высота модального окна
+@modalTop768: 25px; // начальная позиция сверху модального окна
+@modalLeft768: 9%; // начальная позиция слева модального окна
+
+
+
+
+
+/* Extra small devices .col-xs- (phones,320px and up) */
+/* 1.0 GLOBAL */
+@h1CustomMarginTop320: 5px; // отступ с верху от Заголовков h1
+
+  /* ========2.1 SECTION TOP  */
+  /* ==== Top Social Icon Block*/
+@socialIconRowMarginRight320: 10px; // отступ строки соц иконок справа
+
+  /* =======Header Menu Block*/
+@headerMenuHeigth320:70px;  // высота выпадающего блока Header Menu
+
+@logoBrandWidth320: 150px;                  // ширина логотипа компании
+
+@headerMenuListBackgroundColor320: #daf5ed;       // цвет фона списка в Header меню
+@headerMenuListMarginTop320: 19px;       // отступ списка сверху в Header меню
+@headerMenuListLiMarginTop320: 0;       // отступ пункта списка сверху в Header меню
+@headerMenuListLinkHoverColor320: #fff; // цвет шрифта ссылки пункта списка в Header меню при Hovere
+@headerMenuListLinkHoverBackgroundColor320: #366; // цвет фона ссылки пункта списка в Header меню при Hovere
+
+/* 2.2 SECTION CONTENT */
+@wrapperContentPaddingTop320: @blockSocialIconHeigth + @headerMenuHeigth320; // внутренний отступ с верху в блоке CONTENT
+
+  // ==== Corporat Programm Block
+@corporateProgrammItemMargin320: 0 auto 2px; // отступы для блоков Corporat Programm
+
+/* ==============SPA-CONTENT Block ===========================*/
+@spaContentMarginTop320: 5px; // наружный отступ сверху блока SPA-CONTENT
+@spaContentMarginBottom320: 5px; // наружный отступ снизу блока SPA-CONTENT
+
+/* ================= Block Btn - "sign up for training" ============= */
+@btnDefaultCustomMarginTop320: 0; // внешний отступ сверху кнопки "записаться на тренинг"
+
+
+  /* 4.0 PAGE CONTACTS */
+@mapWidth320: 300px; // ширна блока гугл-мэп
+@mapHeight320: 300px; // высота блока гугл-мэп
+
+/* 5.0 PAGE MOTIVATORS */
+// ===== gallery block ==
+// ===== gallery Preview ==
+@galleryPreviewHeight320: 122px; // высота изображений галереи мотиваторов
+
+// ===== gallery Thumbnails ==
+@galleryThumbnailsBoxWidth320: 290px; // ширина блока линейки иконок изображений галереи мотиваторов
+
+@galleryThumbnailsOverflowWidth320: 212px; // ширина видимого блока линейки иконок изображений галереи мотиваторов
+@galleryThumbnailsOverflowMarginLeft320: 40px; // внешний отступ слева видимого блока линейки иконок изображений галереи мотиваторов
+
+/* ======= Modal Window Block ===== */
+@modalMaxHeight320: 330px; // макс высота модального окна
+@modalTop320: 100px; // начальная позиция сверху модального окна
+@modalLeft320: 0%; // начальная позиция слева модального окна
+
+/* ============= 7.0 PAGE REGISTRATION PARTCIPIANT ================ */
+  // ==== fields form registration participiant block
+@formRegistrationParticipiantInputWidth320: 290px; // ширина полей input формы регистрации участника
+
+@formRegistrationParticipiantTextareaMinWidth320: 290px; // min ширина полей textarea формы регистрации участника
+
+@formRegistrationParticipiantTCapchaPadding320: 5px 0 5px 4px; // внутренние отступы сверху/справа/снизу/слева  текста капчи формы регистрации участника
+@formRegistrationParticipiantCapchaFontSize320: 15px; // размер шрифтов капчи формы регистрации участника

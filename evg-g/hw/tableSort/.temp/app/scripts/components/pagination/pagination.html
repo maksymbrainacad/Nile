@@ -1,0 +1,15 @@
+<div class="">
+
+  <a ng-if="currentPage !== 0" ng-click="prevPage()" class="btn ntn-link">
+    << Previos {{pageSize}} users |
+  </a>
+    Showing {{currentPage + 1}} page: {{pageSize * currentPage + 1}} - {{pageSize * (currentPage + 1) > itemsCount ? itemsCount : pageSize * (currentPage + 1)}} of {{itemsCount}} users
+  <a ng-if="currentPage < pagesCount - 1" ng-click="nextPage()" class="btn ntn-link">
+    | Next {{pageSize}} users >>
+  </a>
+  <div>
+    Введите номер страницы:
+    <input ng-model="page" type="number">
+    <button ng-click="goToPage()">Go</button>
+  </div>
+</div>

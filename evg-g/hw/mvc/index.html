@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+  </head>
+  <body>
+    <div ng-app="testApp">             <!-- ng-app начало  angular приложения с именем testApp -->
+      <div ng-controller="phonesController">    <!-- ng-controller начало контроллера с именем phonesController для angular приложения testApp-->
+        {{name}}
+        <div>
+          <input type="text" ng-model="query" />  <!-- ng-model - создает на лету переменную qery (равносильно $scope.query в файле controllers.js)-->
+          | {{query}}
+          <input type="text" ng-model="maxPrice">
+        </div>
+        <button ng-click="sort()">sort</button>  <!-- ng-click обработчик событий на клик -->
+        <button ng-click="order('name')">sort name</button>  <!-- ng-click обработчик событий на клик -->
+        <button ng-click="order('price')">sort prace</button>  <!-- ng-click обработчик событий на клик -->
+        <ul>
+          <li ng-repeat="i in phones | filter:query | orderBy:orderProp:reversSort" ng-if="i.price <= maxPrice"><strong>{{i.name}} - {{i.price | currency}}</strong></li>  <!-- ng-repeat создал цикл для действий внутри {{действие}}, | filter: устанавливает фильтр на обработку данных, | currency фильтр на валюту, | orderBy:orderProp:reversSort(параметр сортировки из файла controllers.js) сортировка по полю name, ng-if задает условия для цикла, переменную i создали на лету( она доступна только в этом месте хтмл)-->
+        </ul>
+      </div>
+    </div>
+
+
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers.js"></script>
+    <script src="/app/services.js"></script>
+  </body>
+</html>
